@@ -4,14 +4,15 @@
 
 // Our variables
 //-------------------------------------
-$base-font-family:        Overpass, Helvetica, Arial, sans-serif;
+$title-font-family:       "Merriweather", "Fxira Sans", Overpass, Helvetica, Arial, sans-serif;
+$base-font-family:        "Fira Sans", Overpass, Helvetica, Arial, sans-serif;
 
 $ratio:                   1.20;
 $base:                    1;
-$base-em:                 $base * 1em;
-$base-px:                 $base * 16px;
+$base-em:                 $base * 0.9em;
+$base-px:                 $base * 8px;
 
-$ms0:                     1;
+$ms0:                     0.8;
 $ms1:                     $ratio;        /* 1.2   */
 $ms2:                     $ratio * $ms1; /* 1.44  */
 $ms3:                     $ratio * $ms2; /* 1.728 */
@@ -35,6 +36,10 @@ body {
   font-weight: 400;
   font-size: $base-em * $ms0;
   line-height: $base * $ms3;
+}
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  font-family: $title-font-family;
 }
 
 h3,
@@ -115,7 +120,7 @@ h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
   }
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 

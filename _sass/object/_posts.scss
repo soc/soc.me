@@ -12,15 +12,6 @@
   }
 }
 
-.posts-archive {
-  @include list-inline();
-  > li {
-    &:not(:last-child):after {
-      content: ' - ';
-    }
- }
-}
-
 .post-meta {
   font-weight: 700;
 }

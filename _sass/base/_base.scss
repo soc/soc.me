@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: $color-primary;
 }
 
@@ -52,13 +52,21 @@ figcaption {
 // -------------------------
 
 a {
-  text-decoration: underline;
+  /*text-decoration: none;*/
   color: $link-color;
+
   &:visited {
     color: $link-color;
   }
   &:hover {
     text-decoration: none;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff;
+    background:  linear-gradient(#999, #999) center 1.15em no-repeat;
+    background-size: 85% 2px;
   }
   &:focus {
     outline: thin dotted;
@@ -68,6 +76,17 @@ a {
   }
 }
 
+main a {
+  text-shadow:
+    1px 1px 0 #fff,
+    -1px 1px 0 #fff,
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff;
+
+  background: linear-gradient(#999, #999) center 1.15em no-repeat;
+  background-size: 75% 2px;
+  transition: background-size .2s ease;
+}
 // Lists
 // -------------------------
 

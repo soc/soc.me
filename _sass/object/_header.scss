@@ -4,6 +4,7 @@
 
 // Site Header
 .site-header {
+  font-family: $title-font-family;
   padding: 0.5em 0 0;
   text-align: center;
   @media #{$medium-up} {
@@ -35,9 +36,18 @@
     font-weight: 600;
     color: #000;
     text-align: center;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff;
+    background:  linear-gradient(#FFF, #FFF) center 1.15em no-repeat;
+    background-size: 75% 3px;
     &:hover {
-      opacity: 0.88;
-      text-decoration: underline;
+      text-decoration: none;
+      background:  linear-gradient(#999, #999) center 1.15em no-repeat;
+      background-size: 85% 3px;
+      transition: background-size .2s ease;
     }
   }
 }
@@ -45,9 +55,13 @@
 .site-header {
   nav {
     a {
+      background:  linear-gradient(#FFF, #FFF) center 1.15em no-repeat;
+      background-size: 75% 3px;
       &:hover,&:focus,&:active {
         text-decoration: none;
-        border-bottom: 2px solid #444;
+        background:  linear-gradient(#999, #999) center 1.20em no-repeat;
+        background-size: 100% 2px;
+        transition: background-size .2s ease;
       }
     }
   }

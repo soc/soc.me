@@ -1,11 +1,12 @@
 ---
 layout: page
-title: Archives
+title: Archive
 navigation: true
 ---
 
 <div class="posts">
-{% for post in site.posts %}
+{% assign documents = site.documents | sort: 'date'%}
+{% for post in documents %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
