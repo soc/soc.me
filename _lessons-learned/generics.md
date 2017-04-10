@@ -6,6 +6,8 @@ date:   2017-04-30 12:00:00 +0200
 
 #### Why is `[]` better than `<>` for generic types?
 
+**`<>` has poor parsability and readibility**
+
 Many languages that were created without generics in mind have trouble adding generics later on, as all pairs of brackets, `(` and `)`, `{` and `}`, `<` and `>`, have already been put to use.
 
 Of that group, `<` and `>` are usually the only symbols left that are practical to overload with a new, different meaning (`<` and `>` are often employed as binary operators expressing comparisons or bitshift operations, not as brackets).
@@ -22,9 +24,9 @@ instance.<String>foo()    // usage: generics before method name
 
 Other languages try to retain a more consistent syntax by introducing unlimited look-ahead: The parser will keep reading input after the `<` until it can make a decision.
 
-Scala was designed with generics from the start and doesn't suffer these issues.
+A language designed with generics from the start and should not repeat these mistakes.
 
-- The usage of a generic type mirrors it's definition:
+**The usage of a generic type mirrors it's definition:**
 
 ```scala
 class Foo[T]
@@ -34,10 +36,13 @@ def foo[T] = ???
 foo[String]
 ```
 
-- In Scala, the use of brackets is straight-forward and easy to understand:
+**In Scala, the use of brackets is straight-forward and easy to understand:**
+
   - Whenever you see `[]`, you know that everything in between is a type.
   - Whenever you see `()`, you know it is a parameter list, a single expression or a tuple.
   - Whenever you see `{}`, you know it is a refinement or block that can contain multiple statements and definitions.
 
-Additionally, having type parameters (`[T]`) next to value parameters (`(value: T)`) makes generics feel less "special":
+**Generics are easier to grasp**
+
+Having type parameters (`[T]`) next to value parameters (`(value: T)`) makes generics feel less "special":
 Scala has zero or one parameter lists for types and zero or more parameter lists for values. This helps getting beginners up to speed and improves upon languages in which generics are completely pushed into "advanced" parts of tutorials.
