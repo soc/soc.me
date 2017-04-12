@@ -13,7 +13,7 @@ Many languages that were created without generics in mind have trouble adding ge
 Of that group, `<` and `>` are usually the only symbols left that are practical to overload with a new, different meaning (`<` and `>` are often employed as binary operators expressing comparisons or bitshift operations, not as brackets).
 Unfortunately, even `<` and `>` have troubling parsing issues that require workarounds. While parsing should be solely considered a problem for compiler writers, it is often the case that things that are hard to parse for machines are often hard to read for humans, too.
 
-The general issue is that it's hard to tell for the compiler, given a token stream of `instance . foo <`, whether this is the left side of a comparison and `<` is a binary operator or the start of a generic type argument within a method call.
+The general issue is that it's hard to tell for the compiler, given a token stream of `instance` `.` `foo` `<`, whether this is the left side of a comparison and `<` is a binary operator or the start of a generic type argument within a method call.
 
 Some languages try to avoid this issue by making the syntax less consistent: As an example, Java's syntax for _defining_ and _using_ generics in instance methods is completely different:
 

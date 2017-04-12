@@ -4,8 +4,15 @@
 
 // Our variables
 //-------------------------------------
-$title-font-family:       "Merriweather", "Fxira Sans", Overpass, Helvetica, Arial, sans-serif;
-$base-font-family:        "Fira Sans", Overpass, Helvetica, Arial, sans-serif;
+$title-font-family:       "Merriweather", Overpass, Helvetica, Arial, sans-serif;
+$base-font-family:        Overpass, Helvetica, Arial, sans-serif;
+
+code,
+kbd,
+pre,
+samp {
+  font-family: "Overpass Mono", monospace;
+}
 
 $ratio:                   1.20;
 $base:                    1;
@@ -33,9 +40,16 @@ $base-line:               floor(($base-em * $line-height-base));
 
 body {
   font-family: $base-font-family;
-  font-weight: 400;
+  font-weight: 300;
   font-size: $base-em * $ms0;
   line-height: $base * $ms3;
+  text-align: justify;
+  hyphens: auto;
+  hanging-punctuation: first last;
+}
+
+code {
+  /*hyphens: none;*/
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
