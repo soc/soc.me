@@ -1,11 +1,8 @@
 ---
 layout: post
 title:  "Leaving Scala Development – The End"
-date:   2017-04-20 12:00:00 +0200
-published: false
+date:   2018-05-20 12:00:00 +0200
 ---
-
-### Conclusion
 
 As it had become abundantly clear, my vision has not been shared.
 

@@ -5,7 +5,7 @@
   {% if page.previous %}
   <div class="left">
     <a class="pagination-item" href="{{ page.previous.url }}">
-      {{ page.previous.title }}
+      {{ page.previous.title | remove_first: "Leaving Scala Development – " | remove_first: "Lessons Learned – "}}
     </a>
   </div>
   {% endif %}
@@ -13,7 +13,7 @@
   {% if page.next %}
   <div class="right">
     <a class="pagination-item" href="{{ page.next.url }}">
-      {{ page.next.title }}
+      {{ page.next.title | remove_first: "Leaving Scala Development – " | remove_first: "Lessons Learned – "}}
     </a>
   </div>
   {% endif %}

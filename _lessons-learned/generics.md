@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Lessons Learned – Generics"
-date:   2017-04-30 12:00:00 +0200
+date:   2018-04-30 12:00:00 +0200
 ---
 
 #### Why is `[]` better than `<>` for generic types?
