@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Leaving Scala Development – Part V – Empathy"
+title:  "Six Years of Scala Development – Part V: Empathy"
 date:   2018-05-13 12:00:00 +0200
 ---
 

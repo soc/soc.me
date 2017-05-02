@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Leaving Scala Development – Part IV – Paul's Departure"
+title:  "Six Years of Scala Development – Part IV: Paul's Departure"
 date:   2018-05-12 12:00:00 +0200
 ---
 

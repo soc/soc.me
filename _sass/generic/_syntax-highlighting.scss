@@ -1,14 +1,14 @@
 /**
  * Syntax highlighting styles
  */
- 
+
 .highlight {
     margin: 0 0 $base_line / 2;
-    text-align: left !important; // override .post .figure 
+    text-align: left !important; // override .post .figure
     background: #fff;
 
     .highlighter-rouge & {
-      background: #eef;
+      background: #fdfdfd;
     }
 
     .c     { color: #998; font-style: italic } // Comment

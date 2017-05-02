@@ -2,13 +2,13 @@
 layout: default
 ---
 
-{% assign title_drop = post.title | append: " – " %}
+{% assign title_parts = page.title | split: " – " %}
 
 <div class="wrapper">
   <article class="post">
-    <h1 class="post-title"><a href="{{page.url}}/..">{{page.title | split: " – " | first  }}</a></h1>
+    <h1 class="post-title"><a href="{{page.url}}/..">{{ title_parts[0] }}</a></h1>
     <!--<p class="post-meta">{{ page.date | date: "%d/%m/%Y" }}</p>-->
-    <h3>{{page.title | remove_first: "Leaving Scala Development – "  }}</h3>
+    <h3>{{title_parts[1] }}</h3>
     {{ content | markdownify }}
   </article>
 

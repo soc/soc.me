@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Home
-permalink: /leaving-scala-complete/
+permalink: /six-years-of-scala-development-complete/
 ---
 
 <div class="wrapper">
-{% assign collection = site.collections[0] %}
+{% assign collection = site.collections[2] %}
 <h1><a href="{{page.url | remove_first: "-complete" }}/..">{{collection.name}}</a></h1>
 {% for post in collection.docs %}
   {% assign title_drop = collection.name | append: " – " %}

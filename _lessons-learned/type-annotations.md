@@ -12,19 +12,19 @@ In expressive languages, developers generally need to use less temporary variabl
 This means that in a typical piece of code there are fewer names defined, but
 those names carry higher importance.
 
-Scala let's developers focus on them by placing them first.
+`ident: Type` let's developers focus on the names by placing them first.
 
 **Type inference**
 
-As Scala has type inference (which means that the compiler can figure out types on its own) it also ensures that the names can be found at a glance, regardless of whether you write they type down or let it be inferred by the compiler:
+In languages with type inference[^type-inference] it also ensures that the
+names can be found at a glance, regardless of whether the type was specified
+explicitly or was inferred by the compiler:
 
 ```scala
 val x: String = "hello"
 val y: Int = 23
 val z = 42
-
-// vs.
-
+// vs. (hypothetical syntax)
 val String x = "hello"
 val Int y = 23
 val z = 42
@@ -32,15 +32,20 @@ val z = 42
 
 **Input before output**
 
-The `i: Int` syntax naturally leads to a method syntax where the inputs (parameters) are defined before the output (result type), which in turn leads to more consistency with lambdas (whose inputs are also defined before its output).
+The `i: Int` syntax naturally leads to a method syntax where the inputs
+(parameters) are defined before the output (result type), which in turn leads to
+more consistency with lambda syntax (whose inputs are also defined before its
+output).
 
 **Consistency between definition and usage**
 
-The way a method is defined should mirror the way it can be used. (See [Why is `[]` better than `<>` for generic types?](generics))
+The way a method is defined should mirror the way it can be used.
+(See [Why is `[]` better than `<>` for generic types?](generics))
 
 **Definition before usage**
 
-A generic type parameter should be declared before it is used. Otherwise it's hard to tell to what a type argument refers to:
+A generic type parameter should be declared before it is used.
+Otherwise it's hard to tell to what a type argument refers to:
 
 ```java
 class Id<T>() {
@@ -48,7 +53,10 @@ class Id<T>() {
 }                            // or to the method's <T> that comes after it?
 ```
 
-As languages have explored various designs, we can check whether they satisfy the three desirable properties mentioned above:
+#### Language Comparison
+
+As languages have explored various designs, we can check whether they satisfy
+the last three properties mentioned above:
 
 **Java**
 
@@ -59,7 +67,7 @@ As languages have explored various designs, we can check whether they satisfy th
 **Kotlin**
 
 ```kotlin
-fun <T> id(value: T) { TODO() }
+fun <T> id(value: T): T { ... }
 ```
 
 **Ceylon**
@@ -71,15 +79,17 @@ T id<T>(T \ivalue) { ... }
 **Scala**
 
 ```scala
-def id[T](value: T): T = ???
+def id[T](value: T): T = ...
 ```
 
 Scala's design choice is the only one that delivers all three desirable properties:
 
-|              | Input before output | Definition-usage consistency | Definition before usage |
+|              | Input before output | Definition/usage consistency | Definition before usage |
 |--------------|:-------------------:|:----------------------------:|:-----------------------:|
 | ***Java***   | No                  | No                           | Yes                     |
 | ***Kotlin*** | Yes                 | No                           | Yes                     |
 | ***Ceylon*** | No                  | Yes                          | No                      |
 | ***Scala***  | Yes                 | Yes                          | Yes                     |
 {: style="width:100%"}
+
+[^type-inference]: type inference means that the compiler can figure out types without having a developer writing them down explicitly

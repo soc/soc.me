@@ -5,7 +5,7 @@ permalink: /lessons-learned/
 ---
 
 <div class="wrapper">
-{% assign collection = site.collections[1] %}
+{% assign collection = site.collections[0] %}
 <h1>{{collection.name}}</h1>
 {% for post in collection.docs %}
   {% assign title_drop = collection.name | append: " – " %}

@@ -25,15 +25,18 @@ twitter_username: oxnrtr
 github_username:  soc
 future: false
 collections:
-  leaving-scala:
+  six-years-of-scala-development:
     output: true
-    name: "Leaving Scala Development"
+    name: "Six Years of Scala Development"
+    published: true
   lessons-learned:
     output: true
     name: "Lessons Learned"
+    published: false
 # Build settings
 markdown: kramdown
 
 exclude:
   - Gemfile
   - Gemfile.lock
+  - _vendor/

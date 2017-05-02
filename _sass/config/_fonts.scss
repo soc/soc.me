@@ -1,3 +1,21 @@
+/* Webfont: Merriweather-Bold */@font-face {
+    font-family: 'Merriweather';
+    src: local("Merriweather Bold"),
+         url('../fonts/Merriweather-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Merriweather-Regular */@font-face {
+    font-family: 'Merriweather';
+    src: local("Merriweather"),
+         url('../fonts/Merriweather-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+}
+
 /* Webfont: Overpass-Bold */@font-face {
     font-family: 'Overpass';
     src: local("Overpass Bold"),

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Leaving Scala Development – Part VI – Community"
+title:  "Six Years of Scala Development – Part VI: Community"
 date:   2018-05-13 12:00:00 +0200
 ---
 

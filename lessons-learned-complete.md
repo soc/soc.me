@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-permalink: /leaving-scala-complete/
+permalink: /lessons-learned-complete/
 ---
 
 <div class="wrapper">

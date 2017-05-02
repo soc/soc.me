@@ -16,3 +16,12 @@ date:   2018-04-30 12:00:00 +0200
 
 Scala's collections scores very well when it comes to usability, but it fares
 poorly on modularity, reusability, complexity, efficiency and performance.
+
+Separate
+
+Individual libraries have engineered themselves into a design corner, and it's
+hard to persuade them to abandon their "local optimum" design of their library
+for a more general, common "global optimum" design.
+
+It's likely that Scala won't be the language that will be able to make step
+toward a more consistent, general design.
