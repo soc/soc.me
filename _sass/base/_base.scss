@@ -89,13 +89,18 @@ main a {
 
 main p a,
 main ol a {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #666666;
   text-shadow: none;
   background: none;
   background-size: 100%;
   transition: none;
   &:hover {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #999999;
     color: #333333;
-    text-decoration: underline;
     text-shadow: none;
     background: none;
     background-size: 100%;

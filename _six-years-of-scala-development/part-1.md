@@ -42,7 +42,7 @@ eventually be higher than the rate of newly added cruft.
 Considering the speed of which badly designed and outright broken additions are
 proposed and implemented, as well as the mounting problems caused by not
 addressing pressing issues
-["even when the failings were grossly apparent"](https://news.ycombinator.com/item?id=8277626),
+"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
 it has become abundantly clear that this expectation turned out to be wrong.
 
 I have concluded that continued work on Scala is not a good use of my resources.
