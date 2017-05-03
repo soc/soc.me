@@ -34,8 +34,8 @@ Considering both paid and unpaid contributors in that period, this makes me
 <!--<br/>![Filed issues sorted by reporter](/assets/img/scala-issues.png)-->
 
 <br/>
-I had the expectation that Scala development would learn from and avoid past
-mistakes – instead of repeating them over and over – and achieve a marginal
+I had the expectation that Scala's future development would take lessons from
+past mistakes – instead of repeating them over and over – and achieve a marginal
 level of quality and stability, in which the rate of cleanup and repair would
 eventually be higher than the rate of newly added cruft.
 
@@ -43,16 +43,17 @@ Considering the speed of which badly designed and outright broken additions are
 proposed and implemented, as well as the mounting problems caused by not
 addressing pressing issues
 ["even when the failings were grossly apparent"](https://news.ycombinator.com/item?id=8277626),
-it has become abundantly clear that this expectation turned out to be wrong and
-continued work on Scala is not a good use of my time.
+it has become abundantly clear that this expectation turned out to be wrong.
 
-Therefore I'm leaving Scala development.
+I have concluded that continued work on Scala is not a good use of my resources.
+Therefore I cease Scala development.
 
 <br/>
-As a consequence I have dropped all work on Scala itself, as well as all
-development, support and maintenance of my own Scala-related projects.
+As a consequence I have decided to drop all work on Scala itself, as well as
+development, support and maintenance of all Scala-related projects.
+All libraries I authored and distributed have reached their end of life.
 
-I will comment on the impact of this decision and potential mitigations at a
+I will comment on the impact of this announcement and potential mitigations at a
 later date.
 
 [^external]: i. e. not affiliated with EPFL, Type<!--safe, Light-->bend or ScalaCenter
