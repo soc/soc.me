@@ -1,4 +1,24 @@
-/* Webfont: Merriweather-Bold */@font-face {
+/**** Merriweather ****/
+
+@font-face {
+    font-family: 'Merriweather';
+    src: local("Merriweather Black"),
+         url('../fonts/Merriweather-Black.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 900;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: local("Merriweather Black Italic"),
+         url('../fonts/Merriweather-Black-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 900;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
     font-family: 'Merriweather';
     src: local("Merriweather Bold"),
          url('../fonts/Merriweather-Bold.ttf') format('truetype');
@@ -7,16 +27,34 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Merriweather-Regular */@font-face {
+@font-face {
+    font-family: 'Merriweather';
+    src: local("Merriweather Bold Italic"),
+         url('../fonts/Merriweather-Bold-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
     font-family: 'Merriweather';
     src: local("Merriweather"),
          url('../fonts/Merriweather-Regular.ttf') format('truetype');
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Overpass-Bold */@font-face {
+@font-face {
+    font-family: 'Merriweather';
+    src: local("Merriweather Italic"),
+         url('../fonts/Merriweather-Regular-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass Bold"),
          url('../fonts/Overpass-Bold.woff2') format('woff2'),
@@ -26,7 +64,7 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Overpass-BoldItalic */@font-face {
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass Bold Italic"),
          url('../fonts/Overpass-Bold-Italic.woff2') format('woff2'),
@@ -36,49 +74,91 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Overpass-Reg */@font-face {
+@font-face {
+    font-family: 'Overpass';
+    src: local("Overpass Bold"),
+         url('../fonts/Overpass-SemiBold.woff2') format('woff2'),
+         url('../fonts/Overpass-SemiBold.woff')  format('woff');
+    font-style: normal;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: local("Overpass Bold Italic"),
+         url('../fonts/Overpass-SemiBold-Italic.woff2') format('woff2'),
+         url('../fonts/Overpass-SemiBold-Italic.woff')  format('woff');
+    font-style: italic;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass Regular"),
          url('../fonts/Overpass-Regular.woff2') format('woff2'),
          url('../fonts/Overpass-Regular.woff')  format('woff');
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
 }
 
 
-/* Webfont: Overpass-Italic */@font-face {
+/**** Overpass ****/
+
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass Italic"),
          url('../fonts/Overpass-Italic.woff2') format('woff2'),
          url('../fonts/Overpass-Italic.woff')  format('woff');
     font-style: italic;
-    font-weight: 600;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
 }
 
-
-/* Webfont: Overpass-Light */@font-face {
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass Light"),
          url('../fonts/Overpass-Light.woff2') format('woff2'),
          url('../fonts/Overpass-Light.woff')  format('woff');
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Overpass-LightItalic */@font-face {
+
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass Light Italic"),
          url('../fonts/Overpass-Light-Italic.woff2') format('woff2'),
          url('../fonts/Overpass-Light-Italic.woff')  format('woff');
     font-style: italic;
-    font-weight: normal;
+    font-weight: 300;
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Overpass-ExtraLight */@font-face {
+@font-face {
+    font-family: 'Overpass';
+    src: local("Overpass Light"),
+         url('../fonts/Overpass-Light.woff2') format('woff2'),
+         url('../fonts/Overpass-Light.woff')  format('woff');
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: local("Overpass Light Italic"),
+         url('../fonts/Overpass-Light-Italic.woff2') format('woff2'),
+         url('../fonts/Overpass-Light-Italic.woff')  format('woff');
+    font-style: italic;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass ExtraLight"),
          url('../fonts/Overpass-ExtraLight.woff2') format('woff2'),
@@ -88,7 +168,7 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Overpass-ExtraLightItalic */@font-face {
+@font-face {
     font-family: 'Overpass';
     src: local("Overpass ExtraLight Italic"),
          url('../fonts/Overpass-ExtraLight-Italic.woff2') format('woff2'),
