@@ -125,6 +125,17 @@ Spec updates https://github.com/scala/scala-dist/pulls?q=is%3Apr+author%3Asoc+is
 
 ---
 
+The only expectation I had for putting in this amount of effort was that
+developers stopped repeating the same, obvious mistakes that I had been fixing
+for the last years.
+
+If you started to help to cleaning up your friend's house because he is really
+busy with other things, the least thing you might request is that he does not
+turn into a hoarder and starts bringing in new garbage he collected through the
+front door while you are busy to bring trash out through the back door.
+
+---
+
 The hardest part has been the need to carefully time the proposals to optimize
 the chance of success.
 This has been one of my core lessons from Paul's work. He was usually spot-on

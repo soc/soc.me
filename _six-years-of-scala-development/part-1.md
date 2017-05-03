@@ -34,17 +34,17 @@ Considering both paid and unpaid contributors in that period, this makes me
 <!--<br/>![Filed issues sorted by reporter](/assets/img/scala-issues.png)-->
 
 <br/>
-I had high hopes and expectations that learning from past mistakes – instead of
-repeating them over and over – would allow Scala development to achieve a
-marginal level of quality and stability, in which the rate of cleanup and repair
-would eventually be higher than the rate of newly added cruft.
+I had the expectation that Scala development would learn from and avoid past
+mistakes – instead of repeating them over and over – and achieve a marginal
+level of quality and stability, in which the rate of cleanup and repair would
+eventually be higher than the rate of newly added cruft.
 
-Considering the speed of which badly designed and outright broken changes are
+Considering the speed of which badly designed and outright broken additions are
 proposed and implemented, as well as the mounting problems caused by not
 addressing pressing issues
 ["even when the failings were grossly apparent"](https://news.ycombinator.com/item?id=8277626),
-it has become abundantly clear that this goal is not attainable and continued
-work on Scala is not a good use of my time.
+it has become abundantly clear that this expectation turned out to be wrong and
+continued work on Scala is not a good use of my time.
 
 Therefore I'm leaving Scala development.
 
