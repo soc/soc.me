@@ -31,30 +31,35 @@ Considering both paid and unpaid contributors in that period, this makes me
 [8<sup>th</sup> in committed changes](https://github.com/scala/scala/graphs/contributors?from=2011-11-25&to=2016-07-25&type=c) as well as
 4<sup>th</sup> in issues reported since Scala's migration to Trac.
 
-<!--<br/>![Filed issues sorted by reporter](/assets/img/scala-issues.png)-->
+<!-- successful work -->
 
 <br/>
-I had the expectation that Scala's future development would take lessons from
+
+An the beginning of this years I have ceased Scala development and resigned from
+all related activities.
+
+Reasons for my departure are the lack of interest in improving the experience of
+our users, the barrage of low-quality language extension and library addition
+proposals, the mounting problems caused by not addressing pressing issues
+"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
+the lack of honest and effective communication and the continued failure to
+correct organizational issues that cause contributors to leave.
+
+I had the expectation that Scala's future development would learn the lessons of
 past mistakes – instead of repeating them over and over – and achieve a marginal
 level of quality and stability, in which the rate of cleanup and repair would
 eventually be higher than the rate of newly added cruft.
+It has become abundantly clear that this expectation turned out to be wrong.
 
-Considering the speed of which badly designed and outright broken additions are
-proposed and implemented, as well as the mounting problems caused by not
-addressing pressing issues
-"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
-it has become abundantly clear that this expectation turned out to be wrong.
-
-I have concluded that continued work on Scala is not a good use of my resources.
-Therefore I cease Scala development.
+I have concluded that continued work on Scala is not a good use of my time.
 
 <br/>
-As a consequence I have decided to drop all work on Scala itself, as well as
+As a consequence, I have dropped all work on Scala itself as well as
 development, support and maintenance of all Scala-related projects.
 All libraries I authored and distributed have reached their end of life.
 
-I will comment on the impact of this announcement and potential mitigations at a
-later date.
+I will comment on the end-user impact of this announcement and potential
+mitigations at a later date.
 
 [^external]: i. e. not affiliated with EPFL, Type<!--safe, Light-->bend or ScalaCenter
 [^lost]: this does not take into account work done earlier than July 2011, for which detailed records have been lost during the migration from svn to git: [example](https://github.com/scala/scala/commit/a387c9f), [example](https://github.com/scala/legacy-svn-scala/pull/19/files) and most of the work on the [`scaladoc` tool](https://github.com/scala/legacy-svn-scala/pulls?page=1&q=+is%3Apr+author%3Asoc&utf8=%E2%9C%93)
