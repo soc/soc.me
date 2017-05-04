@@ -6,11 +6,11 @@ date:   2017-05-01 12:00:00 +0200
 Since I began my work on Scala around 2011, I have focused on increasing the
 quality of the language, its standard library, its tooling and documentation.
 My goal was to the improve the experience of Scala developers (especially
-newbies), making the language easier to adopt and therefore more attractive to
-a wider audience.
+newbies) by addressing frequently encountered issues, therefore making the
+language easier to adopt and more attractive to a wider audience.
 
 <br/>
-For the last six years I had been deeply committed to this goal, and looking
+For the last six years I had been deeply committed to this idea, and looking
 back, it has been quite a ride:
 
 In the period of time I was active (until end-2016), I have been the
@@ -30,7 +30,24 @@ Considering both paid and unpaid contributors in that period, this makes me
 [8<sup>th</sup> in committed changes](https://github.com/scala/scala/graphs/contributors?from=2011-11-25&to=2016-07-25&type=c) as well as
 4<sup>th</sup> in issues reported since Scala's migration to Trac.
 
-<!-- successful work -->
+{% comment %}
+successful work ->
+either
+deprecations (by version, by package)
+procedure syntax, view bounds
+didn't manage to completely remove scala.util, but I got close
+enum & annotations
+proposed, implemented, shipped prototype of web site & documentation overhaul
+proposed and implemented deprecation of numeric widening conversions
+scala-android.org
+scala-java-time for js, testng support on js, worked on sjt for native by implementing collections, regex, equality, floating point fixes
+...
+-> mixed bag
+either sip failure
+deprecations delayed
+website/documentation overhaul never merged
+numeric widening conversions still there
+{% endcomment %}
 
 <br/>
 

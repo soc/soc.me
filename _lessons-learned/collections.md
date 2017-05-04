@@ -24,3 +24,8 @@ for a more general, common "global optimum" design.
 
 It's likely that Scala won't be the language that will be able to make step
 toward a more consistent, general design.
+
+-> Closable, hard to figure out when a resource can be closed/discarded
+(there was a blog post arguing for the wrong direction ... Eric Meyer?)
+
+-> strymonas, slick, doobie, f2s, monix, akka-streams, quill
