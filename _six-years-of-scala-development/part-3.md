@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Six Years of Scala Development – Part III: Feedback"
 date:   2018-05-11 12:00:00 +0200
 ---

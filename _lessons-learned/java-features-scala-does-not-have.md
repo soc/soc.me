@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Lessons Learned – Java Features Scala Does Not Have"
 date:   2018-04-30 12:00:00 +0200
 ---

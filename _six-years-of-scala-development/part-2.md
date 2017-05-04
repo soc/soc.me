@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Six Years of Scala Development – Part II: History"
 date:   2018-05-10 12:00:00 +0200
 ---

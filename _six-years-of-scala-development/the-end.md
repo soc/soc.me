@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Six Years of Scala Development – The End"
 date:   2018-05-20 12:00:00 +0200
 ---

@@ -103,6 +103,9 @@
     text-align: center;
     margin: 0;
     padding: 0.2rem 1.6rem 0;
+    @media #{$medium-up} {
+      padding: 0.2rem 0.6rem 0;
+    }
   }
   a {
     font-weight: bold;

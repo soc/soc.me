@@ -1,14 +1,14 @@
 ---
 layout: page
-title: Archive
-permalink: /archive/
-navigation: true
+title: Talks
+permalink: /talks/
+#navigation: true
 ---
 
 <div class="posts">
-{% assign documents = site.documents | sort: 'date'%}
+{% assign collection = site.collections | where: "label", "talks" | first %}
+{% assign documents = collection.docs | sort: 'date'%}
 {% for post in documents %}
-  {% if post.layout != "talk" %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
@@ -20,7 +20,6 @@ navigation: true
   {% endif %}
   <li class="posts-archive__links"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
   {% assign date = currentdate %}
-  {% endif %}
   {% if forloop.last %}
   </ul><!--/posts-archive-last-->
   {% endif %}

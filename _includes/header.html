@@ -1,5 +1,5 @@
 <div class="skip-links">
-  <a href="#main">Contenu principal</a>
+  <a href="#main">Main content</a>
 </div>
 {% for page in site.html_pages %}
   {% if page.navigation %}
@@ -21,6 +21,8 @@
           <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
           {% endif %}
         {% endfor %}
+        <!--<li><a class="page-link" href="#">Talks</a></li>
+        <li><a class="page-link" href="#">About</a></li>-->
       </ul>
     </nav>
 

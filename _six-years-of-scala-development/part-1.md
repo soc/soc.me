@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Six Years of Scala Development – Part I: Departure"
 date:   2017-05-01 12:00:00 +0200
 ---
