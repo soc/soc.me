@@ -14,3 +14,5 @@ date:   2018-05-13 12:00:00 +0200
 **Evolution**
 
 **Documentation**
+
+<!-- http://grokbase.com/t/gg/scala-internals/1421pzsh92/removing-the-pain-from-the-partial-function-syntax -->

@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Six Years of Scala Development – Part I"
+title:  "Six Years of Scala Development – Part I: Departure"
 date:   2017-05-01 12:00:00 +0200
 ---
 
 Since I began my work on Scala around 2011, I have focused on increasing the
-quality of the language, its standard library, its tooling and documentation to
-improve the lives of Scala developers (especially those who were new to the
-language), making the language easier to adopt and therefore more attractive to
+quality of the language, its standard library, its tooling and documentation.
+My goal was to the improve the experience of Scala developers (especially
+newbies), making the language easier to adopt and therefore more attractive to
 a wider audience.
 
 <br/>
