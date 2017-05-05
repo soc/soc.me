@@ -24,8 +24,9 @@ deprecated Scala's [JSON parser](https://github.com/scala/scala/pull/2581),
 [overhauled](https://github.com/scala/scala/pull/5076) `@deprecated`
 and [introduced `@deprecatedInheritance` and `@deprecatedOverriding`](https://github.com/scala/scala/pull/1284),
 [deprecated view bounds](https://github.com/scala/scala/pull/2909),
-got quite close to eliminating `scala.util`[^util] altogether,
-[raised the issues](https://issues.scala-lang.org/browse/SI-4505) that got `scala.mobile` removed,
+turned [automatic `()` insertion in argument lists](https://github.com/scala/scala/pull/3260) into a deprecation.
+I got quite close to eliminating `scala.util`[^util] altogether,
+[raised the issue](https://issues.scala-lang.org/browse/SI-4505) that got `scala.mobile` removed,
 removed [`scala.testing`](https://github.com/scala/scala/pull/1921/commits/f931833df8cc69d119f636d8a553941bf7ce2349),
 deprecated [`scala.text`](https://github.com/scala/scala/pull/2733),
 cleaned up [a lot](https://github.com/scala/scala/pull/4838)
@@ -51,17 +52,20 @@ Considering both paid and unpaid contributors in that period, this makes me
 4<sup>th</sup> in issues reported since Scala's migration to Trac.
 
 <br/>
-Outside of `scala/scala`, I proposed, implemented and presented a website
-overhaul that merged the separate sites of [scala-lang.org](http://scala-lang.org),
+Outside of `scala/scala`, I proposed, implemented and presented a [website
+overhaul](http://get-scala.org) that merged the separate sites of
+[scala-lang.org](http://scala-lang.org),
 [docs.scala-lang.org](http://docs.scala-lang.org) and the
 [language specification](https://www.scala-lang.org/files/archive/spec/2.11/)
-into one coherent site which shared a responsive design that worked on all kinds
+into one coherent site with a responsive design that worked on all kinds
 of devices and ran on a consistent, reproducible and updated technology stack.
 I copy-edited, proof-read and updated substantial amounts of existing
-documentation and added new content where it was necessary.
+documentation (the frontpage, the tour, various guides and tutorials, the glossary etc.)
+and added new content where it was necessary (IDE and editor support, tooling,
+FAQ etc.).
 
-I ported the `java.time` package to Scala and Scala.js.
-I also fixed bugs in Scala-Native's handling of equality operations,
+I [ported the `java.time` package to Scala and Scala.js](https://github.com/soc/scala-java-time).
+I also fixed bugs in Scala-Native's handling of equality,
 debugged its LLVM backend, provided a Scala implementation of `java.util.regex`
 and implemented few additional collection classes to make `java.time` work
 on native platforms.
