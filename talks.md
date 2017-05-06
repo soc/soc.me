@@ -7,21 +7,14 @@ permalink: /talks/
 
 <div class="posts">
 {% assign collection = site.collections | where: "label", "talks" | first %}
-{% assign documents = collection.docs | sort: 'date'%}
+{% assign documents = collection.docs | sort: 'date' | reverse %}
 {% for post in documents %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
-  {% if currentdate != yeardate %}
-  <!--/posts-archive-->
+  <h2 id="date-{{ currentdate }}">{{ currentdate }}</h2>
   {% endif %}
-  <h2 id="date-{{currentdate}}">{{ currentdate }}</h2>
-  <ul class="posts-archive">
-  {% endif %}
-  <li class="posts-archive__links"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   {% assign date = currentdate %}
-  {% if forloop.last %}
-  </ul><!--/posts-archive-last-->
-  {% endif %}
 {% endfor %}
-</div><!--/posts-->
+</div>
