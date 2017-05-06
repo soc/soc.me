@@ -43,3 +43,13 @@ inventing new syntax or repeating the mistakes of `case` classes.
 - Java compatibility – Also fixes the incompatibility of thrid-party enum libraries
 - Conciseness – not worth introducing new syntax to save "extends Base"
 - Separating features
+
+
+Proposal:
+
+- Concise syntax
+- List of elements (at value and type level)
+- Element constructors have parent type
+- Replace enumerations
+
+All of this can be done without language changes, syntax additions, ...

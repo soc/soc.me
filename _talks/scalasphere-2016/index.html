@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>The Implementation Challenges of Language Simplification</title>
+
+    <meta name="description" content="The Implementation Challenges of Language Simplification">
+    <meta name="author" content="Simon Ochsenreither">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme/scala.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section data-background="backtop.jpg">
+          <section data-markdown><script type="text/template">
+            <br/><br/><br/><br/><br/>
+            #### The Implementation Challenges <br/> of Language Simplification
+            <small class="preserve-whitespace">ScalaSphere      ⁄      2016-02-12      ⁄      Krakow, Poland</small><br/><br/><br/><br/>
+            <!--<small class="preserve-whitespace">Simon Ochsenreither      ⁄      simon@ochsenreither.de</small>-->
+          </script></section>
+        </section>
+
+        <section data-state="intro"><style>.intro .title:after { content: "Introduction"; }</style>
+          <section data-markdown class="preserve-whitespace"><script type="text/template">
+            <br/>_Wait … language changes?_
+
+            <span class="fragment">_Aren't we at the DevTools summit?_</span>
+
+            <span class="fragment">_scalac is the ultimate devtool._</span>
+
+
+          </script></section>
+          <section data-markdown class="preserve-whitespace"><script type="text/template">
+            <br/>Ever thought …
+                <q>Wouldn’t the language be
+                  simpler without this feature?</q><br/>
+            <span class="fragment">“Can’t we just …?”</span><span class="fragment"> ☞ Probably not.</span><br/>
+            <span class="fragment">Follow me down the rabbit hole …</span>
+          </script></section>
+          <section data-markdown><script type="text/template">
+            <br/>Let's look at three simplification ideas and
+            explore the difficulties implementing them:
+
+            1. Removing _default imports_
+            2. Reducing _implicit widening conversions_
+            3. Right-biasing `Either`
+          </script></section>
+        </section>
+
+        <section data-state="imports">
+          <section data-markdown><script type="text/template">
+            <br/>Some imports exist in every compilation unit:
+            ([§9.1](http://get-scala.org/documentation/specification/09-top-level-definitions.html#compilation-units))
+
+            - `java.lang.*` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment" data-fragment-index="2"><small class="vertical-align-middle">Only additions since 1995</small></span>
+            - `scala._` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment" data-fragment-index="1"><small class="vertical-align-middle">Bug fixes, deprecations, removals …</small></span>
+            - `scala.Predef` &nbsp;&nbsp;&thinsp;<span class="fragment" data-fragment-index="1"><small class="vertical-align-middle">Bug fixes, deprecations, removals …</small></span>
+          </script></section>
+          <section data-markdown data-transition="slide-in fade-out"><script type="text/template">
+            <br/>What's so bad about `import java.lang.*`?
+            <table>
+            <thead>
+              <tr>
+                <th>Useless</th>
+                <th>Hidden</th>
+                <th>Dangerous</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>`Void`</td>
+                <td>`Double`</td>
+                <td>`Thread`</td>
+              </tr>
+              <tr>
+                <td>`Compiler`</td>
+                <td>`Class`</td>
+                <td>`System`</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>`String`</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>`reflect`</td>
+                <td></td>
+              </tr>
+            </tbody>
+            </table>
+          </script></section>
+          <section data-markdown data-transition="fade-in slide-out"><script type="text/template">
+            <br/>What's so bad about `import java.lang.*`?
+            - No control over fixes and changes
+            - Not that useful
+            - Looks awkward on other platforms
+            - Dependencies are less obvious
+
+            <br/>
+          </script></section>
+          <section data-markdown><script type="text/template">
+            <br/>
+            - `java.lang.*` <!-- .element: class="strikethrough" -->  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment"><small class="vertical-align-middle">`<-` That's the idea …</small></span>
+            - `scala._`
+            - `scala.Predef`
+
+            <br/><span class="fragment">
+            Not source compatible!<br/>
+            A lot of code will break!
+            </span>
+          </script></section>
+          <section data-markdown data-transition="slide-in fade-out"><script type="text/template">
+            <br/>Gameplan:
+
+            1. Replace `*` import by more “specific means”
+            2. Deprecate non-desirable “entities” <!-- .element: class="fragment" -->
+            3. Remove deprecated “entities” <!-- .element: class="fragment" -->
+            4. Profit? <!-- .element: class="fragment" -->
+
+            <br/><br/>
+          </script></section>
+          <section data-markdown data-transition="fade" data-state="imports1"><script type="text/template">
+            <br/>Gameplan:
+
+            1. Replace `*` import with more “specific means”
+
+            <br/>First approach:
+
+            `=>` Import entities of `java.lang.*` individually
+
+          </script></section>
+          <section data-markdown data-transition="fade-in slide-out" data-state="imports1"><script type="text/template">
+            <br/>Advantages:
+            - Feels straightforward?
+
+            <br/>Problems:
+            - Imports have different priorities!
+            - Requires language/spec/compiler changes to treat certain imports differently!
+          </script></section>
+          <section data-markdown data-state="imports1"><script type="text/template">
+            <br/>Gameplan:
+
+            1. Replace `*` import with more “specific means”
+            2. Identify and deprecate non-desirable “entities”
+
+            Problems:
+            - How do we “deprecate” imports?
+              `@deprecated import java.lang.String` does not compile!
+            - Requires language/spec/compiler additions to support new usage of `@deprecated`
+          </script></section>
+          <section data-markdown data-state="imports2"><script type="text/template">
+            <br/>Gameplan:
+
+            1. Replace `*` import with more “specific means”
+
+            <br/>Second approach:
+
+            `=>` Alias “entities” into the `scala` namespace
+          </script></section>
+          <section data-markdown data-state="imports2"><script type="text/template">
+            <br/>Advantages:
+            - Already done for `String`, `Class`, `Exception` …
+
+            <br/>Problems:
+            - Only works for entities without static members!
+            - You can only alias the type of _Java entities_,<br/>but not their term!
+            <!-- Show in code!
+              => `type Class = java.lang.String` works, `val String = java.lang.String` doesn't
+              => Extremely confusing! `new String()` would work, but `String.valueOf` wouldn't
+              => We could synthesize runtime instances holding forwarder methods to static members of Java types
+              => We would need to do that at every declaration site of `val Stuff = java.lang.Stuff`
+              => Equality of those instances? Relationship with original Java class?
+              -->
+          </script></section>
+
+          <section data-markdown><script type="text/template">
+            <br/>_Wait a minute …_
+
+            We are now talking about:
+            - adding hacks to adjust the priority of imports <!-- .element: class="fragment" -->
+            - synthesizing objects with forwarder methods <!-- .element: class="fragment" -->
+
+            <br/>How did we end up here?! <!-- .element: class="fragment" -->
+
+            _We just wanted to remove `import java.lang.*`!_  <!-- .element: class="fragment" -->
+          </script></section>
+        </section>
+
+        <section data-state="conversions"><style>.conversions .title:after { content: "Implicit Numeric Widening"; }</style>
+          <section data-markdown><script type="text/template">
+          <br/>Built-in implicit conversions from “smaller” to “larger” number types
+            ([§3.5.3](http://get-scala.org/documentation/specification/03-types.html#weak-conformance), [§12.2.1](http://get-scala.org/documentation/specification/12-the-scala-standard-library.html#numeric-value-types)), e.&thinsp;g.:
+            - `Byte  -> Short` <!-- .element: class="preserve-whitespace" -->
+            - `Int   -> Long` <!-- .element: class="preserve-whitespace" -->
+            - `Float -> Double` <!-- .element: class="preserve-whitespace" -->
+            - `Int   -> Float` <!-- .element: class="preserve-whitespace" --> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment"><small class="vertical-align-middle">Wait … what?</small></span>
+            - `Long  -> Float` <!-- .element: class="preserve-whitespace" --> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment"><small class="vertical-align-middle">WHAT?</small></span>
+          </script></section>
+          <section>
+            <br/><p>Wouldn't it be reasonable if code like …</p>
+
+            <pre><code class="hljs scala" data-trim contenteditable>
+def scramble(f: Float) = f
+scramble(1234567890L)
+//  =>   1.23456794E9
+            </code></pre>
+
+            <p>… was a compiler error instead of converting our <code>Long</code> to a <code>Float</code>?</p>
+          </section>
+          <section>
+            <br/><p>What about …</p>
+            <pre><code class="hljs scala" data-trim contenteditable>
+List(10, 5, 2.5)
+            </code></pre>
+            <p>If we don't convert <code>10</code> and <code>5</code> to <code>Doubles</code>,<br/>
+            what will be the element type of <code>List</code>?</p>
+            <br/><span class="fragment"><pre><code class="hljs scala" data-trim contenteditable>List[AnyVal]</code></pre>
+            Pretty useless: <code>AnyVal</code> offers no useful methods!</span>
+            <span class="fragment"><pre><code class="hljs scala" data-trim contenteditable>List[Int|Double] // with union types ...</code></pre>
+            Useless, but at least we know what went wrong!</span>
+          </section>
+          <section data-markdown><script type="text/template">
+          <br/>Problems:
+          - scalac handles conversions in multiple places <!-- .element: class="fragment" -->
+          - Migration requires supporting both settings … <!-- .element: class="fragment" -->
+          - <span>… ideally via a language feature import like <code>import language.noLossyWidenings</code> which means … </span><!-- .element: class="fragment" -->
+            - … we need to support multiple modes … <!-- .element: class="fragment" -->
+            - … depending on specific scopes … <!-- .element: class="fragment" -->
+            <!-- That's why we can't just add/remove the implicit conversions depending on a setting -->
+            - … inside the implicit resolution algorithm <!-- .element: class="fragment" -->
+          </script></section>
+        </section>
+
+        <section data-state="either"><style>.either .title:after { content: "Right-biasing Either"; }</style>
+          <section data-markdown><script type="text/template">
+          <br/>_What does that even mean_?
+
+            A `scala.util.Either` is
+
+            - either `scala.util.Left` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment"><small class="vertical-align-middle">“Bad” case</small></span>
+            - or `scala.util.Right` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hairsp;<span class="fragment"><small class="vertical-align-middle">“Good” case</small></span>
+
+
+            <span class="fragment">Good/bad is only a convention, unlike `scala.Option` or `scala.util.Try`</span>
+
+
+          </script></section>
+          <section data-markdown><script type="text/template">
+            <br/><br/><br/><br/>
+            ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demo
+          </script></section>
+        </section>
+
+        <section data-state="conclusions"><style>.conclusions .title:after { content: "Conclusions"; }</style>
+          <section data-markdown><script type="text/template">
+            <br/>Sometimes changes might be desirable, but …
+
+            - compatibility concerns <!-- .element: class="fragment" -->
+            - unexpected consequences <!-- .element: class="fragment" -->
+            - implementation complexity <!-- .element: class="fragment" -->
+
+            <span class="fragment">… require disproportional efforts!</span>
+          </script></section>
+        </section>
+
+        <section data-background="backtop.jpg">
+          <section data-markdown style="text-align: center;"><script type="text/template">
+            <br/><br/><br/>
+            ### Thanks!<br/><br/>
+            ### Questions? <!-- .element: class="fragment" -->
+          </script></section>
+        </section>
+      </div>
+
+      <header><div class="title"></div></header>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

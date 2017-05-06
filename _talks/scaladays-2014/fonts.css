@@ -1,0 +1,47 @@
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2014 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Yellow Design Studio
+ * License URL: http://www.fontspring.com/fflicense/yellow-design-studio
+ *
+ *
+ */
+
+@font-face {
+    font-family: 'Eveleth Clean Thin';
+    src: url('fonts/EvelethCleanThin-webfont.woff') format('woff'),
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.thin {
+  font-size:9px;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:900;
+  font-stretch:normal;
+  color:#FFFFFF;
+  text-align:start;
+  line-height:125%;
+  letter-spacing:0px;
+  word-spacing:0px;
+  writing-mode:lr-tb;
+  text-anchor:start;
+  font-family:"Eveleth Clean Light";
+}
