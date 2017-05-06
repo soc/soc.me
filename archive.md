@@ -6,23 +6,16 @@ navigation: true
 ---
 
 <div class="posts">
-{% assign documents = site.documents | sort: 'date'%}
+{% assign documents = site.documents | sort: 'date' | reverse %}
 {% for post in documents %}
   {% if post.layout != "talk" %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
-  {% if currentdate != yeardate %}
-  <!--/posts-archive-->
-  {% endif %}
   <h2 id="date-{{currentdate}}">{{ currentdate }}</h2>
-  <ul class="posts-archive">
   {% endif %}
-  <li class="posts-archive__links"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br/>
   {% assign date = currentdate %}
-  {% endif %}
-  {% if forloop.last %}
-  </ul><!--/posts-archive-last-->
   {% endif %}
 {% endfor %}
 </div><!--/posts-->
