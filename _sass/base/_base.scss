@@ -6,16 +6,13 @@ html,
 body {
   box-sizing: border-box;
   margin: 0;
+  color: $text-color;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-a {
-  color: $color-primary;
 }
 
 // Images
@@ -55,7 +52,7 @@ a {
   color: $link-color;
 
   &:visited {
-    color: $link-color;
+    /*color: $link-color;*/
   }
   &:hover {
     text-decoration: none;
@@ -88,10 +85,11 @@ main a {
 }
 
 main p a,
-main ol a {
+main ol a,
+main .posts a {
   text-decoration-line: underline;
   text-decoration-style: dotted;
-  text-decoration-color: #666666;
+  text-decoration-color: $color-grey-medium;
   text-shadow: none;
   background: none;
   background-size: 100%;
@@ -99,8 +97,8 @@ main ol a {
   &:hover {
     text-decoration-line: underline;
     text-decoration-style: dotted;
-    text-decoration-color: #999999;
-    color: #333333;
+    text-decoration-color: $color-grey;
+    color: $color-grey-darker;
     text-shadow: none;
     background: none;
     background-size: 100%;

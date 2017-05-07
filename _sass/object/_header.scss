@@ -5,6 +5,7 @@
 // Site Header
 .site-header {
   font-family: $title-font-family;
+  color: $title-color;
   padding: 0.5em 0 0;
   text-align: center;
   @media #{$medium-up} {
@@ -24,6 +25,7 @@
   }
   a {
     text-decoration: none;
+    color: $title-color;
   }
   .site-title {
     display: block;
@@ -34,7 +36,6 @@
       font-size: $base-em * $ms5;
     }
     font-weight: 500;
-    color: #000;
     text-align: center;
     text-shadow:
       1px 1px 0 #fff,
@@ -44,10 +45,14 @@
     background:  linear-gradient(#FFF, #FFF) center 1.15em no-repeat;
     background-size: 75% 3px;
     &:hover {
+      color: $title-color;
       text-decoration: none;
       background:  linear-gradient(#999, #999) center 1.15em no-repeat;
       background-size: 85% 3px;
       transition: background-size .2s ease;
+    }
+    &:visited {
+      color: $title-color;
     }
   }
 }

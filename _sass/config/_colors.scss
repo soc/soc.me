@@ -18,6 +18,7 @@ $green:                   #37b24d;
 $lime:                    #74b816;
 $yellow:                  #f59f00;
 $orange:                  #f76707;
+$black:                   #000000;
 
 
 // Site color
@@ -33,12 +34,15 @@ $color-secondary:         color(yellow,7);
 $color-secondary-light:   color(yellow,2);
 $color-secondary-dark:    color(yellow,8);
 
-$color-grey:              color(gray,7);
-$color-grey-light:        color(gray,2);
-$color-grey-dark:         color(gray,9);
 
-$title-color:             #000;
-$title-link-color:        #000;
+$color-grey-light:        color(gray,2);
+$color-grey-medium:       color(gray,6);
+$color-grey:              color(gray,7);
+$color-grey-dark:         color(gray,8);
+$color-grey-darker:       color(gray,9);
+
+$title-color:             $color-grey-dark;
+$title-link-color:        $color-grey-dark;
 $text-color:              $color-grey-dark;
-$link-color:              #000;
+$link-color:              $color-grey;
 $background-color:        $color-grey-light;
