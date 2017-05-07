@@ -14,11 +14,10 @@ navigation: true
   {% if currentdate != date %}
   <h2 id="date-{{ currentdate }}">{{ currentdate }}</h2>
   {% endif %}
-  {% if post.unlink %}
-  {{ post.title }}
-  {% else %}
-  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-  {% endif %}
+  {% unless post.unlink %}<a href="{{ site.baseurl }}{{ post.url }}">{% endunless %}{{
+    post.title
+  }}{% unless post.unlink %}</a>{% endunless %}
+  {% if post.note %}<em>{{post.note}}</em>{% endif %}
   <br/>
   {% assign date = currentdate %}
 {% endfor %}
