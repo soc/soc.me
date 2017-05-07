@@ -1,5 +1,5 @@
 ---
-title:  "Lessons Learned – Enumerations"
+title:  "Lessons Learned – Design Failure: Enumerations"
 date:   2018-04-30 12:00:00 +0200
 ---
 

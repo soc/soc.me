@@ -2,7 +2,7 @@
 layout: page
 title: Talks
 permalink: /talks/
-#navigation: true
+navigation: true
 ---
 
 <div class="posts">
@@ -14,7 +14,12 @@ permalink: /talks/
   {% if currentdate != date %}
   <h2 id="date-{{ currentdate }}">{{ currentdate }}</h2>
   {% endif %}
+  {% if post.unlink %}
+  {{ post.title }}
+  {% else %}
   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  {% endif %}
+  <br/>
   {% assign date = currentdate %}
 {% endfor %}
 </div>

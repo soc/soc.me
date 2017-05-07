@@ -1,6 +1,6 @@
 ---
-title:  "Lessons Learned – Implicit Numeric Conversions"
-date:   2018-04-30 12:00:00 +0200
+title:  "Lessons Learned – Design Failure: Implicit Numeric Conversions"
+date:   2017-05-06 12:00:00 +0200
 ---
 
 Implicit numeric conversions are a special compiler feature that adds
@@ -13,15 +13,15 @@ val num: Double = 123
 <br/>
 It is a feature that
 - is described as a mistake by the designers of Java[^mistake]
-- destroys data, loses numeric precision and changes semantics of overflow and
+- silently destroys data, loses numeric precision and changes semantics of overflow and
   division-by-zero
 - is inconsistently applied, and will become more inconsistent as new
   numeric types are introduced in future versions of Java
 - breaks all methods defined on numbers
-- cannot be deactivated
 - cannot be defended against
+- cannot be deactivated
 
-#### Good Intentions
+#### The Good: Intentions
 
 It was introduced due to the concern that inferring the type of `List(1, 2.3)`
 to the useless common supertype of `List[AnyVal]` (as `Int` and `Double` do not
@@ -44,9 +44,9 @@ val wat: Float     = 123456789L // Long -> Float
 //           result: 123456792.0f
 ```
 
-#### Type Inference Gone Bad
+#### The Bad: Type Inference
 
-Scala's type inference makes the behavior a lot more confusing than in languages
+Scala's type inference makes the behavior a lot more confusing than languages
 with mandatory type annotations.
 
 Creating a list with two numbers triggers the conversion, concatenating two
@@ -84,18 +84,18 @@ val nums5: List[Double] = nums4         // fails to compile
 Experienced developers understand the reasons that cause these differences, but
 it turns out to be quite baffling for users new to Scala.
 
-#### Extension Methods Gone Worse
+#### The Ugly: Extension Methods
 
 Another feature of Scala, extension methods, makes implicit numeric conversions
-much worse Java's.
+much worse.
 
 Java's primitive types come without any methods, only operations like `+`, `-`,
 `%`, `<<`.
 Scala's idea of minimizing the distinction between unboxed and boxed
-numbers means that numeric types could receive "convenience" extension methods.
-`round`, `floor`, `toBinaryString`, `toDegrees` as well as many others were added.
+numbers means that numeric types could receive "convenience" extension methods
+like `round`, `floor`, `toBinaryString` or `toDegrees`.
 
-This gives rise to another round of puzzlers like the following:
+This gives rise to another set of puzzlers like the following:
 
 ```scala
 123456789.round == 123456792
@@ -103,15 +103,17 @@ This gives rise to another round of puzzlers like the following:
 
 Investigating the issue, it was realized that the extension methods were not
 consistently defined on all number types. As the compiler could not find methods
-(like `round` on `Int`) the implicit numeric conversions were kicking in,
-converting and mangling numbers silently.
+on some type (like `round` on `Int`) implicit numeric conversions were kicking
+in, silently converting and mangling numbers to another type that had them.
 
 In response, people tried to put band-aid around it. `round` was added to every
 number implicitly convertible to `Float` to avoid triggering the implicit
 conversion.
 
-But as extension methods are statically dispatched (they only _look_ like
-instance methods) the issue is just pushed down another layer:
+But even if all the missing methods on numbers were filled in, these efforts are
+easily defeated, as extension methods are statically dispatched.
+(Extension methods only _look_ like instance methods, but act like static methods.)
+Thus the issue is just pushed down another layer:
 
 ```scala
 123456789.round == 123456789 // fixed
@@ -119,19 +121,18 @@ def round(value: Float) = value.round
 round(123456789) == 123456792 // unfixable
 ```
 
-Also, this issue does not require conversions to floating point numbers,
-conversions between integer types suffer from the same problem:
+Also, this issue does not require conversions to floating point numbers.
+Conversions between integer types suffer from the same problem:
 
 ```scala
 val bits: Byte = -1
 bits.toBinaryString == "11111111111111111111111111111111" // a byte with 32 bits?
 ```
 
-Even if all the missing methods on numbers were filled in, these efforts are
-easily defeated. This is a conceptual failure of design that cannot be fixed
-without abandoning implicit numeric conversions altogether.
+This is a conceptual failure of design that cannot be fixed without abandoning
+implicit numeric conversions altogether.
 
-#### The Worst: Having a Way Out and not Choosing it
+#### The Worst: Having a Way Out, but not Choosing It
 
 The far-reaching damage of implicit numeric conversions far outweighs the
 purported benefit of reducing beginner confusion and increasing convenience,
@@ -146,8 +147,8 @@ conversions and letting type inference do its job:
 val list = List(1, 2.3) // List[Int|Double]
 ```
 
-From an operational point of view inferring `List[Int|Double]` is hardly more
-useful than `List[AnyVal]` before, but that's not the point:
+From an operational point of view, inferring `List[Int|Double]` is hardly more
+useful than `List[AnyVal]` before. That's not the point, though:
 `List[Int|Double]` pinpoints the issue (mixing different number types) in a way
 new users can understand, whereas the old `List[AnyVal]` does not.
 Union types would enable the compiler to implement a more direct "what you see
@@ -160,7 +161,7 @@ ongoing considerations of introducing additional complexity on top of this schem
 
 {%comment%}
 Java also has this feature, but as types have to be specified in many places, it
-poses only Limited danger.
+poses only limited danger.
 
 ```java
 double eight  = Math.pow(2, 3);

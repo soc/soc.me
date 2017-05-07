@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Home
+title: Six Years of Scala Development
 permalink: /six-years-of-scala-development/
 ---
 
 <div class="wrapper">
-{% assign collection = site.collections[2] %}
+{% assign name = page.path | remove: ".md" %}
+{% assign collection = site.collections | where: "label", name | first %}
 <h1>{{collection.name}}</h1>
 {% for post in collection.docs %}
   {% assign title_drop = collection.name | append: " – " %}
