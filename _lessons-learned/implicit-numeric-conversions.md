@@ -4,7 +4,7 @@ date:   2017-05-06 12:00:00 +0200
 ---
 
 Implicit numeric conversions are a special compiler feature that adds
-"convenience" conversions from number types to other number types, for instance:
+"convenience" conversions between number types, for instance:
 
 ```scala
 val num: Double = 123
@@ -46,8 +46,8 @@ val wat: Float     = 123456789L // Long -> Float
 
 #### The Bad: Type Inference
 
-Scala's type inference makes the behavior a lot more confusing than languages
-with mandatory type annotations.
+Scala's type inference makes the behavior a lot more confusing compared to
+languages with mandatory type annotations.
 
 Creating a list with two numbers triggers the conversion, concatenating two
 lists with one number each does not:
@@ -64,8 +64,7 @@ val nums3 = List(1, 2L)        // List[Long]
 val nums3 = List(1, BigInt(2)) // List[Any]
 ```
 
-Although conversion only happens when there isn't another unrelated type in the
-list:
+Although conversion only happens when there isn't another unrelated type involved:
 
 ```scala
 val nums3 = List(1.2f, 3.4d)        // List[Double]
@@ -77,8 +76,9 @@ but fails when done in two:
 
 ```scala
 val nums4: List[Double] = List(1, 2, 3) // compiles
-val nums4 = List(1, 2, 3)
-val nums5: List[Double] = nums4         // fails to compile
+
+val nums5a = List(1, 2, 3)
+val nums5b: List[Double] = nums4         // fails to compile
 ```
 
 Experienced developers understand the reasons that cause these differences, but
@@ -101,12 +101,12 @@ This gives rise to another set of puzzlers like the following:
 123456789.round == 123456792
 ```
 
-Investigating the issue, it was realized that the extension methods were not
-consistently defined on all number types. As the compiler could not find methods
-on some type (like `round` on `Int`) implicit numeric conversions were kicking
-in, silently converting and mangling numbers to another type that had them.
+The reason for this behavior is that the extension methods are not consistently
+defined on all number types. As the compiler fails to find methods on some type
+(like `round` on `Int`), implicit numeric conversions are kicking in, silently
+converting and mangling numbers to another type that has them.
 
-In response, people tried to put band-aid around it. `round` was added to every
+In response, it was tried to put band-aid around it. `round` was added to every
 number implicitly convertible to `Float` to avoid triggering the implicit
 conversion.
 
@@ -155,9 +155,13 @@ Union types would enable the compiler to implement a more direct "what you see
 is what you get" approach instead of silently sprinkling magic over users' code.
 
 <br/>
-Disappointingly, the next version of Scala which adds union types does not
+Disappointingly, Dotty, the next version of Scala which adds union types, does not
 address these issues, but doubles down on the existing numeric conversions, with
 ongoing considerations of introducing additional complexity on top of this scheme.
+
+Scala users will have to settle for adding `Ywarn-numeric-widen` to their growing
+list of compiler flags and hope that Dotty decides to implement this diagnostic
+option.
 
 {%comment%}
 Java also has this feature, but as types have to be specified in many places, it
