@@ -66,10 +66,10 @@ documentation (the frontpage, the tour, various guides and tutorials, the
 glossary etc.) and added new content where it was necessary (available
 platforms, IDE and editor support, tooling, FAQ etc.).
 
-I bootstrapped [scala-android.org](http://scala-android.org) in an effort to
-support the contributors behind Scala on Android and provide developers who
-wanted to use Scala on smartphones with a single point of entry to tools,
-documentation and support venues that was kept accurate and updated.
+I bootstrapped the [scala-android.org](http://scala-android.org) site in an
+effort to support the contributors behind Scala on Android and provide
+developers who wanted to use Scala on smartphones with a single point of entry
+to tools, documentation and support venues that was kept accurate and updated.
 
 I implemented [sbs](https://github.com/soc/sbs), a tool that benefits both new
 users, experienced developers, library authors and library contributors:
@@ -123,7 +123,7 @@ mitigations at a later date.
 [^external]: i. e. not affiliated with EPFL, Type<!--safe, Light-->bend or ScalaCenter
 [^util]: [`scala.util.{automata,regexp}`](https://github.com/scala/scala/pull/1939), [`scala.util.logging`](https://github.com/scala/scala/pull/2543), [`scala.util.parsing.ast`](https://github.com/scala/scala/pull/2525), [`scala.util.parsing.combinator`](https://github.com/scala/scala/pull/2521), [`scala.util.grammar`](https://github.com/scala/scala/pull/1921/commits/b13bf260b46f6498d0e995d0bbf3ce7b39bc8b3b)
 [^lost]: this does not take into account work done earlier than July 2011, for which detailed records have been lost during the migration from svn to git: [example](https://github.com/scala/scala/commit/a387c9f), [example](https://github.com/scala/legacy-svn-scala/pull/19/files) and most of the work on the [`scaladoc` tool](https://github.com/scala/legacy-svn-scala/pulls?page=1&q=+is%3Apr+author%3Asoc&utf8=%E2%9C%93)
-[^leave]: Four contributors have quit working on the project and/or left the Scala community in the past year. The number of departures I'm not aware of is probably higher.
+[^leave]: Four contributors have quit working on the project and/or left the Scala community in the past year alone. The number of departures I'm not aware of is probably higher.
 
 <!-- https://github.com/scala/scala/graphs/contributors?from=2011-12-01&to=2016-07-31
 
