@@ -25,14 +25,15 @@ deprecated Scala's [JSON parser](https://github.com/scala/scala/pull/2581),
 and [introduced `@deprecatedInheritance` and `@deprecatedOverriding`](https://github.com/scala/scala/pull/1284),
 [deprecated view bounds](https://github.com/scala/scala/pull/2909),
 turned [automatic `()` insertion in argument lists](https://github.com/scala/scala/pull/3260) into a deprecation.
+
 I got quite close to eliminating `scala.util`[^util] altogether,
 [raised the issue](https://issues.scala-lang.org/browse/SI-4505) that got `scala.mobile` removed,
-removed [`scala.testing`](https://github.com/scala/scala/pull/1921/commits/f931833df8cc69d119f636d8a553941bf7ce2349),
-deprecated [`scala.text`](https://github.com/scala/scala/pull/2733),
+[removed `scala.testing`](https://github.com/scala/scala/pull/1921/commits/f931833df8cc69d119f636d8a553941bf7ce2349),
+[deprecated `scala.text`](https://github.com/scala/scala/pull/2733),
 cleaned up [a lot](https://github.com/scala/scala/pull/4838)
 [of code](https://github.com/scala/scala/pull/4814) in the compiler backend,
-implemented better compiler support for enums and annotations, and
-added support for [parameter names in class files](https://github.com/scala/scala/pull/4735) ([JEP-118](http://openjdk.java.net/jeps/118)).
+implemented better compiler support for enums and annotations, and added support
+for [parameter names in class files](https://github.com/scala/scala/pull/4735) ([JEP-118](http://openjdk.java.net/jeps/118)).
 
 In the period of time I was active (until end-2016), I have been the
 first- or second-most active external[^external] contributor to the main Scala
@@ -59,21 +60,34 @@ overhaul](http://get-scala.org) that merged the separate sites of
 [language specification](https://www.scala-lang.org/files/archive/spec/2.11/)
 into one coherent site with a responsive design that worked on all kinds
 of devices and ran on a consistent, reproducible and updated technology stack.
-I copy-edited, proof-read and updated substantial amounts of existing
-documentation (the frontpage, the tour, various guides and tutorials, the glossary etc.)
-and added new content where it was necessary (IDE and editor support, tooling,
-FAQ etc.).
 
-I [ported the `java.time` package to Scala and Scala.js](https://github.com/soc/scala-java-time).
-I also fixed bugs in Scala-Native's handling of equality,
-debugged its LLVM backend, provided a Scala implementation of `java.util.regex`
-and implemented few additional collection classes to make `java.time` work
-on native platforms.
+I copy-edited, proof-read and updated substantial amounts of existing
+documentation (the frontpage, the tour, various guides and tutorials, the
+glossary etc.) and added new content where it was necessary (available
+platforms, IDE and editor support, tooling, FAQ etc.).
 
 I bootstrapped [scala-android.org](http://scala-android.org) in an effort to
 support the contributors behind Scala on Android and provide developers who
 wanted to use Scala on smartphones with a single point of entry to tools,
 documentation and support venues that was kept accurate and updated.
+
+I implemented [sbs](https://github.com/soc/sbs), a tool that benefits both new
+users, experienced developers, library authors and library contributors:
+- New users enjoy a seamless introduction to Scala without requiring any kind of
+  manual software setup like installing a JDK, setting up SBT or downloading the
+  Scala distribution.
+- Experienced developers enjoy reproducible builds by having a tool that makes
+  sure that the JDK dependency never drifts due to updates of the host system or
+  differences between machines.
+- Library contributors enjoy the assurance that their build process corresponds
+  exactly to the configuration the library maintainer has specified.
+
+I [ported the `java.time` package to Scala and Scala.js](https://github.com/soc/scala-java-time).
+I also [fixed bugs in Scala-Native's handling of equality](https://github.com/scala-native/scala-native/pull/356),
+[debugged its LLVM backend](https://github.com/scala-native/scala-native/pull/356#discussion_r85254625),
+[uncovered bugs in the linker](https://github.com/scala-native/scala-native/issues/375),
+ported an implementation of `java.util.regex` to Scala-Native, and implemented
+few additional collection classes to make `java.time` work on native platforms.
 
 <br/>
 At the beginning of this years I have ceased Scala development and resigned from
@@ -109,7 +123,7 @@ mitigations at a later date.
 [^external]: i. e. not affiliated with EPFL, Type<!--safe, Light-->bend or ScalaCenter
 [^util]: [`scala.util.{automata,regexp}`](https://github.com/scala/scala/pull/1939), [`scala.util.logging`](https://github.com/scala/scala/pull/2543), [`scala.util.parsing.ast`](https://github.com/scala/scala/pull/2525), [`scala.util.parsing.combinator`](https://github.com/scala/scala/pull/2521), [`scala.util.grammar`](https://github.com/scala/scala/pull/1921/commits/b13bf260b46f6498d0e995d0bbf3ce7b39bc8b3b)
 [^lost]: this does not take into account work done earlier than July 2011, for which detailed records have been lost during the migration from svn to git: [example](https://github.com/scala/scala/commit/a387c9f), [example](https://github.com/scala/legacy-svn-scala/pull/19/files) and most of the work on the [`scaladoc` tool](https://github.com/scala/legacy-svn-scala/pulls?page=1&q=+is%3Apr+author%3Asoc&utf8=%E2%9C%93)
-[^leave]: Number of contributors who have quit working on the project and/or left the Scala community: At least four who I have spoken to personally in the past year alone .
+[^leave]: Four contributors have quit working on the project and/or left the Scala community in the past year. The number of departures I'm not aware of is probably higher.
 
 <!-- https://github.com/scala/scala/graphs/contributors?from=2011-12-01&to=2016-07-31
 

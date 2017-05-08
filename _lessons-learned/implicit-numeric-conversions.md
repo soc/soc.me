@@ -159,9 +159,18 @@ Disappointingly, Dotty, the next version of Scala which adds union types, does n
 address these issues, but doubles down on the existing numeric conversions, with
 ongoing considerations of introducing additional complexity on top of this scheme.
 
-Scala users will have to settle for adding `Ywarn-numeric-widen` to their growing
-list of compiler flags and hope that Dotty decides to implement this diagnostic
-option.
+Scala users will have to settle for adding the imperfect `Ywarn-numeric-widen`
+to their growing list of compiler flags and hope that Dotty also decides to
+implement this diagnostic option before it ships.
+
+#### Bonus
+
+Regardless of whether this problem is fixed, the implementation of `round` on
+`Float` and `Double` is still wrong and broken for unrelated reasons.
+Scala repeats another mistake from Java that was originating from C.
+Interestingly, while the .NET team copied a lot of design decisions from Java,
+they considered the issue to be so egregious that they fixed it before their
+first release of .NET.
 
 {%comment%}
 Java also has this feature, but as types have to be specified in many places, it
