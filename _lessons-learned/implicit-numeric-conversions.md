@@ -7,7 +7,7 @@ Implicit numeric conversions are a special compiler feature that adds
 "convenience" conversions between number types, for instance:
 
 ```scala
-val num: Double = 123
+val num: Double = 123 // num = 123.0
 ```
 
 <br/>
@@ -139,9 +139,9 @@ purported benefit of reducing beginner confusion and increasing convenience,
 considering how inconsistent the conversions are applied in the first place from
 the point of view of the target audience, new users.
 
-Union types would have been one way out of this mess. They can address the
+Union types would have been one way out of this mess. They naturally address the
 concern of beginner-unfriendly type inference by removing implicit numeric
-conversions and letting type inference do its job:
+conversions and simply letting type inference do its job:
 
 ```scala
 val list = List(1, 2.3) // List[Int|Double]
@@ -151,8 +151,9 @@ From an operational point of view, inferring `List[Int|Double]` is hardly more
 useful than `List[AnyVal]` before. That's not the point, though:
 `List[Int|Double]` pinpoints the issue (mixing different number types) in a way
 new users can understand, whereas the old `List[AnyVal]` does not.
-Union types would enable the compiler to implement a more direct "what you see
-is what you get" approach instead of silently sprinkling magic over users' code.
+
+Union types enable the compiler to implement a more direct "what you see is what
+you get" approach instead of silently sprinkling magic over users' code.
 
 <br/>
 Disappointingly, Dotty, the next version of Scala which adds union types, does not
@@ -163,10 +164,11 @@ Scala users will have to settle for adding the imperfect `Ywarn-numeric-widen`
 to their growing list of compiler flags and hope that Dotty also decides to
 implement this diagnostic option before it ships.
 
-#### Bonus
+#### Bonus Problem
 
 Regardless of whether this problem is fixed, the implementation of `round` on
 `Float` and `Double` is still wrong and broken for unrelated reasons.
+
 Scala repeats another mistake from Java that was originating from C.
 Interestingly, while the .NET team copied a lot of design decisions from Java,
 they considered the issue to be so egregious that they fixed it before their
@@ -182,6 +184,24 @@ double[] nums = {1, 2, 3, 4, 5};
 ```
 {%endcomment%}
 {%comment%}
+
+9: ldc           #30                 // float 1.23456788E14f
+11: f2i
+12: i2s
+
+1.23456788E14f.toShort
+different truncation modes saturation
+
+float x() {
+    return 123456789012345f;
+}
+short y = (short) x();
+y
+0
+int z = (int) x();
+z
+-2147483648
+
 
 (And even if Dotty fixed this, `round` would still be wrong and broken.)
 
@@ -213,4 +233,4 @@ round/rint
 https://stackoverflow.com/questions/311696/why-does-net-use-bankers-rounding-as-default
 {%endcomment%}
 
-[^mistake]: > It would be totally delightful to go through [Java] Puzzlers, another book that I wrote with Neal Gafter, which contains all the traps and pitfalls in the language and just excise them - one by one. Simply remove them.<br/>There are things that were just mistakes, so for example ... [misspeaks] ... int to float, is a primitive widening conversion and happens silently, but is lossy if you go from int to float and back to int. You often won't get the same int that you started with.<br/>Because, you know, floats, some of the bits are used for the exponent rather then the mantissa, so you loose precision. When you go to float and back to int you'll find that you didn't have the int you started with.<br/>So, you know, it was a mistake, it should corrected, it would break existing programs. So I do like the idea of essentially writing a new language which is very similar to Java which sort of fixes all these bad things. And if someone's to call it 'Java', that would be great, too. Just so long as traditional Java source code can still be compiled and run against the latest VMs. [...]<br/>_-- Joshua Bloch, Devoxx 2008_
+[^mistake]: > It would be totally delightful to go through [Java] Puzzlers, another book that I wrote with Neal Gafter, which contains all the traps and pitfalls in the language and just excise them – one by one. Simply remove them.<br/>There are things that were just mistakes, so for example ... [misspeaks] ... int to float, is a primitive widening conversion and happens silently, but is lossy if you go from int to float and back to int. You often won't get the same int that you started with.<br/>Because, you know, floats, some of the bits are used for the exponent rather then the mantissa, so you loose precision. When you go to float and back to int you'll find that you didn't have the int you started with.<br/>So, you know, it was a mistake, it should corrected, it would break existing programs. So I do like the idea of essentially writing a new language which is very similar to Java which sort of fixes all these bad things. And if someone's to call it 'Java', that would be great, too. Just so long as traditional Java source code can still be compiled and run against the latest VMs. [...]<br/><cite>Joshua Bloch, Devoxx 2008</cite>

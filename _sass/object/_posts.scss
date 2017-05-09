@@ -17,6 +17,10 @@
 }
 
 .footnotes {
-  margin-top: 40px;
-  border-top: 2px solid #999999;
+  margin-top: $base-line * 2;
+  padding-top: $base-line;
+  margin-bottom: $base-line;
+  font-size: $base-em;
+  letter-spacing: -1px;
+  border-top: 2px solid $color-grey-medium;
 }

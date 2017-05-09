@@ -164,10 +164,10 @@ q {
 }
 
 blockquote {
+  margin-left: $base-line;
   padding-left: $base-line / 2;
-  font-size: $base-em * $ms1;
   letter-spacing: -1px;
-  border-left: 4px solid $color-grey;
+  border-left: 2px solid $color-grey-medium;
   > :last-child {
     margin-bottom: 0;
   }
