@@ -4,14 +4,14 @@
 
 // Our variables
 //-------------------------------------
-$title-font-family:       "Merriweather", Overpass, Helvetica, Arial, sans-serif;
-$base-font-family:        Overpass, Helvetica, Arial, sans-serif;
+$title-font-family:       "Merriweather", serif;
+$base-font-family:        "Source Sans Pro", sans-serif;
 
 code,
 kbd,
 pre,
 samp {
-  font-family: "Overpass Mono", monospace;
+  font-family: monospace;
 }
 
 $ratio:                   1.20;
@@ -40,7 +40,7 @@ $base-line:               floor(($base-em * $line-height-base));
 
 body {
   font-family: $base-font-family;
-  font-weight: 300;
+  font-weight: 400;
   font-size: $base-em * $ms0;
   line-height: $base * $ms4;
   text-align: justify;
@@ -77,6 +77,7 @@ h1, .h1 { font-size: $title1; }
 @media #{$medium-up} {
   body {
     font-size: $base-em * $ms0;
+    font-weight: 300;
     @include csslock-fontsize($medium,$large,$ms0,$ms1);
     line-height: $base * $ms3;
   }
