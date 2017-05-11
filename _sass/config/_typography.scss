@@ -14,8 +14,8 @@ samp {
   font-family: monospace;
 }
 
-$ratio:                   1.20;
-$base:                    1;
+$ratio:                   1.2;
+$base:                    1.0;
 $base-em:                 $base * 0.9em;
 $base-px:                 $base * 8px;
 
@@ -77,9 +77,9 @@ h1, .h1 { font-size: $title1; }
 @media #{$medium-up} {
   body {
     font-size: $base-em * $ms0;
-    font-weight: 300;
     @include csslock-fontsize($medium,$large,$ms0,$ms1);
     line-height: $base * $ms3;
+    font-weight: 300;
   }
 }
 

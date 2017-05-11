@@ -63,8 +63,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro ExtraLight"),
-         url('WOFF2/TTF/SourceSansPro-ExtraLight.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-ExtraLight.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-ExtraLight.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-ExtraLight.otf.woff') format('woff');
 }
 
 @font-face{
@@ -74,8 +74,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro ExtraLight Italic"),
-         url('WOFF2/TTF/SourceSansPro-ExtraLight-Italic.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-ExtraLight-Italic.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-ExtraLight-Italic.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-ExtraLight-Italic.otf.woff') format('woff');
 }
 
 @font-face{
@@ -85,8 +85,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Light"),
-         url('WOFF2/TTF/SourceSansPro-Light.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Light.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Light.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Light.otf.woff') format('woff');
 }
 
 @font-face{
@@ -96,8 +96,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Light Italic"),
-         url('WOFF2/TTF/SourceSansPro-Light-Italic.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Light-Italic.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Light-Italic.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Light-Italic.otf.woff') format('woff');
 }
 
 @font-face{
@@ -107,8 +107,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro"),
-         url('WOFF2/TTF/SourceSansPro-Regular.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Regular.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Regular.otf.woff') format('woff');
 }
 
 @font-face{
@@ -118,8 +118,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Italic"),
-         url('WOFF2/TTF/SourceSansPro-Italic.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Italic.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Italic.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Italic.otf.woff') format('woff');
 }
 
 @font-face{
@@ -129,8 +129,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro SemiBold"),
-         url('WOFF2/TTF/SourceSansPro-Semibold.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Semibold.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Semibold.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Semibold.otf.woff') format('woff');
 }
 
 @font-face{
@@ -140,8 +140,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro SemiBold Italic"),
-         url('WOFF2/TTF/SourceSansPro-Semibold-Italic.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Semibold-Italic.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Semibold-Italic.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Semibold-Italic.otf.woff') format('woff');
 }
 
 @font-face{
@@ -151,8 +151,8 @@
     font-stretch: normal;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Bold"),
-         url('WOFF2/TTF/SourceSansPro-Bold.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Bold.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Bold.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Bold.otf.woff') format('woff');
 }
 
 @font-face{
@@ -163,8 +163,8 @@
     text-rendering: optimizeLegibility;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Bold Italic"),
-         url('WOFF2/TTF/SourceSansPro-Bold-Italic.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Bold-Italic.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Bold-Italic.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Bold-Italic.otf.woff') format('woff');
 }
 
 @font-face{
@@ -175,8 +175,8 @@
     text-rendering: optimizeLegibility;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Black"),
-         url('WOFF2/TTF/SourceSansPro-Black.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Black.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Black.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Black.otf.woff') format('woff');
 }
 
 @font-face{
@@ -187,6 +187,6 @@
     text-rendering: optimizeLegibility;
     text-rendering: optimizeLegibility;
     src: local("Source Sans Pro Black Italic"),
-         url('WOFF2/TTF/SourceSansPro-Black-Italic.ttf.woff2') format('woff2'),
-         url('WOFF/OTF/SourceSansPro-Black-Italic.otf.woff') format('woff');
+         url('../fonts/SourceSansPro-Black-Italic.otf.woff2') format('woff2'),
+         url('../fonts/SourceSansPro-Black-Italic.otf.woff') format('woff');
 }

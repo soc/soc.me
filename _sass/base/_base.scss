@@ -117,6 +117,10 @@ ul,ol {
   }
 }
 
+ul {
+  list-style-type: circle;
+}
+
 // List options
 // -------------------------
 
@@ -166,7 +170,6 @@ q {
 blockquote {
   margin-left: $base-line;
   padding-left: $base-line / 2;
-  letter-spacing: -1px;
   border-left: 2px solid $color-grey-medium;
   > :last-child {
     margin-bottom: 0;
@@ -200,7 +203,7 @@ code {
 
 code {
   padding: 1px 5px;
-  font-size-adjust: 0.4;
+  font-size-adjust: 0.5;
 }
 
 pre {
