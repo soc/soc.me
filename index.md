@@ -15,9 +15,5 @@ layout: default
   <h3>Part II</h3>
   <h3>Part III</h3>
   <h3>Part IV</h3>
-  <h3>Part V</h3>
-  <h3>Part VI</h3>
-  <h3>Part VII</h3>
-
   {% include pagination.html %}
 </div>

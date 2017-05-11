@@ -85,7 +85,8 @@ main a {
 }
 
 main p a,
-main ol a,
+main li a,
+main sup a,
 main .posts a {
   text-decoration-line: underline;
   text-decoration-style: dotted;

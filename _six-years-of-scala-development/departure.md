@@ -93,12 +93,6 @@ few additional collection classes to make `java.time` work on native platforms.
 At the beginning of this years I have ceased Scala development and resigned from
 all related activities.
 
-I had the expectation that Scala's future development would learn the lessons of
-past mistakes – instead of repeating them over and over – and achieve a marginal
-level of quality and stability, in which the rate of cleanup and repair would
-eventually be higher than the rate of newly added cruft.
-It has become abundantly clear that this expectation turned out to be wrong.
-
 Reasons for my departure are the lack of interest in improving the experience of
 our users, the barrage of low-quality language extension and library addition
 proposals, the mounting problems caused by not addressing pressing issues
@@ -107,6 +101,12 @@ the lack of honest and effective communication, repeated copyright violations[^x
 which endanger both the project itself as well as users of the language and the
 continued failure to correct organizational issues that cause contributors to
 leave[^leave].
+
+I had the expectation that Scala's future development would learn the lessons of
+past mistakes – instead of repeating them over and over – and achieve a marginal
+level of quality and stability, in which the rate of cleanup and repair would
+eventually be higher than the rate of newly added cruft.
+It has become abundantly clear that this expectation turned out to be wrong.
 
 {% comment %}
 I have concluded that continued work on Scala is not a good use of my time.
