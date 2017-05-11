@@ -42,7 +42,7 @@ body {
   font-family: $base-font-family;
   font-weight: 300;
   font-size: $base-em * $ms0;
-  line-height: $base * $ms3;
+  line-height: $base * $ms4;
   text-align: justify;
   hyphens: auto;
   hanging-punctuation: first last;
@@ -78,7 +78,7 @@ h1, .h1 { font-size: $title1; }
   body {
     font-size: $base-em * $ms0;
     @include csslock-fontsize($medium,$large,$ms0,$ms1);
-    line-height: $base * $ms2;
+    line-height: $base * $ms3;
   }
 }
 
