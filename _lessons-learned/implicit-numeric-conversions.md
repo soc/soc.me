@@ -84,7 +84,7 @@ but fails when done in two:
 val nums4: List[Double] = List(1, 2, 3) // compiles
 
 val nums5a = List(1, 2, 3)
-val nums5b: List[Double] = nums4         // fails to compile
+val nums5b: List[Double] = nums5a       // fails to compile
 ```
 
 On top of that, implicit numeric conversions also interact with type parameters.
@@ -125,9 +125,8 @@ defined on all number types. As the compiler fails to find methods on some type
 (like `round` on `Int`), implicit numeric conversions are kicking in, silently
 converting and mangling numbers to another type that has them.
 
-In response, it was tried to put band-aid around it. `round` was added to every
-number implicitly convertible to `Float` to avoid triggering the implicit
-conversion.
+In response, another band-aid was applied. `round` was added to every number
+implicitly convertible to `Float` to avoid triggering the implicit conversion.
 
 But even if all the missing methods on numbers were filled in, these efforts are
 easily defeated, as extension methods are statically dispatched.
