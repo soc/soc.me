@@ -12,8 +12,14 @@ layout: default
 {% endfor %}
 {% endif %}
 {% endfor %}
+  <h3>Scala Design Failure: Collections</h3>
+  <h3>Scala Design Failure: Enumerations</h3>
+  <h3>Scala Design Success: (Companion) Objects</h3>
+  <h3>Scala Design Success: Context Bounds</h3>
+  <h3>Scala Design Success: Implicit Classes</h3>
+  {%comment%}
   <h3>Part II</h3>
   <h3>Part III</h3>
   <h3>Part IV</h3>
-  {% include pagination.html %}
+  {%endcomment%}
 </div>

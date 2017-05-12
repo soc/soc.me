@@ -3,7 +3,13 @@ title:  "Lessons Learned – Scala Design Failure: Implicit Numeric Conversions"
 date:   2017-05-06 12:00:00 +0200
 ---
 
-Implicit numeric conversions are a special compiler feature that adds
+_**TL;DR:** The desire to make unrelated types act as if they were in a
+sub-typing relationship, which neither exists nor should exist, combined with
+syntax sugar that makes static dispatch look like dynamic dispatch creates a
+perfect storm of unintended, harmful consequences._
+
+<br/>
+Implicit numeric conversions[^term] are a special compiler feature that adds
 "convenience" conversions between number types, for instance:
 
 ```scala
@@ -23,13 +29,13 @@ It is a feature that
 
 #### The Good: Intentions
 
-It was introduced due to the concern that inferring the type of `List(1, 2.3)`
-to the useless common supertype of `List[AnyVal]` (as `Int` and `Double` do not
-have any interface in common) would have been too confusing for beginners coming
-from Java.
+Inferring the type of `List(1, 2.3)` to the useless common supertype of
+`List[AnyVal]` (as `Int` and `Double` do not have any interface in common) was
+deemed to be too confusing for beginners coming from Java.
 
-Instead, compiler magic was added to convert "smaller" number types to "larger"
-ones and thus `List[Double]` was inferred.
+Instead, compiler magic in the shape of "implicit numeric conversions" was
+added to convert "smaller" number types to "larger" ones, thus inferring
+`List[Double]` in the example above.
 
 While the mechanism looks quite innocent, it rears its ugly hand in many
 unintuitive and unexpected circumstances, as these kinds of numeric conversions
@@ -79,6 +85,19 @@ val nums4: List[Double] = List(1, 2, 3) // compiles
 
 val nums5a = List(1, 2, 3)
 val nums5b: List[Double] = nums4         // fails to compile
+```
+
+On top of that, implicit numeric conversions also interact with type parameters.
+Consider this change in type inference due to a binary compatible ["widening" of
+types in the method signature of `Stream`'s `#::` method](https://github.com/scala/scala/pull/5522)
+between Scala 2.12.1 and 2.12.2:
+
+```scala
+def fibonacci: Stream[Double] =
+  0 #:: 1 #:: (fibonacci zip fibonacci.tail).map {t => t._1 + t._2}
+// Compiles         in Scala 2.12.1 with def #::(hd: A): Stream[A].
+// Fails to compile in Scala 2.12.2 with def #::[B >: A](hd: B): Stream[B]:
+// error: type mismatch; found Stream[AnyVal], required Stream[Double]
 ```
 
 Experienced developers understand the reasons that cause these differences, but
@@ -164,7 +183,7 @@ Scala users will have to settle for adding the imperfect `Ywarn-numeric-widen`
 to their growing list of compiler flags and hope that Dotty also decides to
 implement this diagnostic option before it ships.
 
-#### Bonus Problem
+#### Bonus Quirk
 
 Regardless of whether this problem is fixed, the implementation of `round` on
 `Float` and `Double` is still wrong and broken for unrelated reasons.
@@ -173,6 +192,9 @@ Scala repeats another mistake from Java that was originating from C.
 Interestingly, while the .NET team copied a lot of design decisions from Java,
 they considered the issue to be so egregious that they fixed it before their
 first release of .NET.
+
+<br/>
+[*» Comment & Discuss «*](https://lobste.rs/s/avodew/scala_design_failure_implicit_numeric)
 
 {%comment%}
 Java also has this feature, but as types have to be specified in many places, it
@@ -233,4 +255,5 @@ round/rint
 https://stackoverflow.com/questions/311696/why-does-net-use-bankers-rounding-as-default
 {%endcomment%}
 
+[^term]: _Implicit numeric conversion_ is used as a general term in this document. In practice it comprises a) literal `implicit def`s in the [source code](https://github.com/scala/scala/blob/2.12.x/src/library/scala/Byte.scala#L471) which exist only for "educational purposes" and are not actually used by the compiler anymore, b) the non-implicit methods that the compiler uses instead, c) the notion of [_weak conformance_](https://www.scala-lang.org/files/archive/spec/2.12/03-types.html#weak-conformance) and d) the notion of "numeric harmonization"
 [^mistake]: > It would be totally delightful to go through [Java] Puzzlers, another book that I wrote with Neal Gafter, which contains all the traps and pitfalls in the language and just excise them – one by one. Simply remove them.<br/>There are things that were just mistakes, so for example ... [misspeaks] ... int to float, is a primitive widening conversion and happens silently, but is lossy if you go from int to float and back to int. You often won't get the same int that you started with.<br/>Because, you know, floats, some of the bits are used for the exponent rather then the mantissa, so you loose precision. When you go to float and back to int you'll find that you didn't have the int you started with.<br/>So, you know, it was a mistake, it should corrected, it would break existing programs. So I do like the idea of essentially writing a new language which is very similar to Java which sort of fixes all these bad things. And if someone's to call it 'Java', that would be great, too. Just so long as traditional Java source code can still be compiled and run against the latest VMs. [...]<br/><cite>Joshua Bloch, Devoxx 2008</cite>

@@ -1,6 +1,7 @@
 ---
-title:  "Six Years of Scala Development – Part I: Departure"
-date:   2017-05-01 12:00:00 +0200
+title:   "Six Years of Scala Development – Part I: Departure"
+date:    2017-05-01 12:00:00 +0200
+archive: false
 ---
 
 Since I began my work on Scala around 2011, I have focused on increasing the

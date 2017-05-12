@@ -8,7 +8,7 @@ navigation: true
 <div class="posts">
 {% assign documents = site.documents | sort: 'date' | reverse %}
 {% for post in documents %}
-  {% if post.layout != "talk" %}
+  {% if post.layout != "talk" and post.archive != false %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
