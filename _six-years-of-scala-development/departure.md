@@ -98,7 +98,7 @@ Reasons for my departure are the lack of interest in improving the experience of
 our users, the barrage of low-quality language extension and library addition
 proposals, the mounting problems caused by not addressing pressing issues
 "[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
-the lack of honest and effective communication, repeated copyright violations[^xml][^sort][^math]
+the lack of honest and effective communication, questionable copyright practices[^xml][^sort][^math]
 which endanger both the project itself as well as users of the language and the
 continued failure to correct organizational issues that cause contributors to
 leave[^leave].
