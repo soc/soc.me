@@ -67,24 +67,24 @@ Numbers of type `Int` are implicitly converted to `Long`, but not to `BigInt`:
 
 ```scala
 val nums3 = List(1, 2L)        // List[Long]
-val nums3 = List(1, BigInt(2)) // List[Any]
+val nums4 = List(1, BigInt(2)) // List[Any]
 ```
 
 Although conversion only happens when there isn't another unrelated type involved:
 
 ```scala
-val nums3 = List(1.2f, 3.4d)        // List[Double]
-val nums3 = List(1.2f, 3.4d, "abc") // List[Any]
+val nums5 = List(1.2f, 3.4d)        // List[Double]
+val nums6 = List(1.2f, 3.4d, "abc") // List[Any]
 ```
 
 Assigning a list of integers to a list of doubles works if done in a single line,
 but fails when done in two:
 
 ```scala
-val nums4: List[Double] = List(1, 2, 3) // compiles
+val nums7: List[Double] = List(1, 2, 3) // compiles
 
-val nums5a = List(1, 2, 3)
-val nums5b: List[Double] = nums5a       // fails to compile
+val nums8a = List(1, 2, 3)
+val nums8b: List[Double] = nums5a       // fails to compile
 ```
 
 On top of that, implicit numeric conversions also interact with type parameters.
@@ -162,7 +162,7 @@ concern of beginner-unfriendly type inference by removing implicit numeric
 conversions and simply letting type inference do its job:
 
 ```scala
-val list = List(1, 2.3) // List[Int|Double]
+val list = List(1, 2.3) // should be List[Int|Double]
 ```
 
 From an operational point of view, inferring `List[Int|Double]` is hardly more
@@ -174,9 +174,21 @@ Union types enable the compiler to implement a more direct "what you see is what
 you get" approach instead of silently sprinkling magic over users' code.
 
 <br/>
-Disappointingly, Dotty, the next version of Scala which adds union types, does not
-address these issues, but doubles down on the existing numeric conversions, with
-ongoing considerations of introducing additional complexity on top of this scheme.
+Disappointingly, Dotty, the next version of Scala which adds union types, barely
+addresses any of these issues and worsens the situation in some cases.
+
+The common approach of explicitly specifying an expected supertype stopped
+working in Dotty:
+
+```scala
+val nums10 = List[Any](1,2.3) // List[Any] = List(1.0, 2.3)
+```
+
+Even explicitly specifying union types does not prevent these conversions:
+
+```scala
+val nums9 = List[Int|Double](1, 2.3) // List[Int|Double] = List(1.0, 2.3)
+```
 
 Scala users will have to settle for adding the imperfect `Ywarn-numeric-widen`
 to their growing list of compiler flags and hope that Dotty also decides to
