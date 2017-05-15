@@ -25,7 +25,7 @@ collections:
   six-years-of-scala-development:
     output: true
     name: "Six Years of Scala Development"
-    published: false
+    published: true
   lessons-learned:
     output: true
     name: "Lessons Learned"

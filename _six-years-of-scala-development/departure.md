@@ -1,7 +1,6 @@
 ---
 title:   "Six Years of Scala Development – Part I: Departure"
 date:    2017-05-01 12:00:00 +0200
-archive: false
 ---
 
 Since I began my work on Scala around 2011, I have focused on increasing the
@@ -11,21 +10,8 @@ newbies) by addressing frequently encountered issues, therefore making the
 language easier to adopt and more attractive to a wider audience.
 
 <br/>
-At the beginning of this years I have ceased Scala development and resigned from
-all related activities.
-
-Reasons for my departure are the lack of interest in improving the experience of
-our users, the barrage of low-quality language extension and library addition
-proposals, the mounting problems caused by not addressing pressing issues
-"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
-the lack of honest and effective communication, questionable copyright practices[^xml][^sort][^math]
-which endanger both the project itself as well as users of the language and the
-continued failure to correct organizational issues that cause contributors to
-leave[^leave].
-
-<br/>
 For the last six years I had been deeply committed to improving every aspect of
-Scala, and looking back it has been quite a journey:
+Scala. Looking back it has been quite a journey:
 
 I [proposed](https://groups.google.com/forum/#!topic/scala-internals/q1YX7NC1geM/discussion)
 and [implemented](https://github.com/scala/scala/pull/3076) the deprecation of
@@ -48,6 +34,7 @@ cleaned up [a lot](https://github.com/scala/scala/pull/4838)
 implemented better compiler support for enums and annotations, and added support
 for [parameter names in class files](https://github.com/scala/scala/pull/4735) ([JEP-118](http://openjdk.java.net/jeps/118)).
 
+<br/>
 In the period of time I was active (until end-2016), I have been the
 first- or second-most active external[^external] contributor to the main Scala
 repository (either ahead or behind of [Andrew](https://github.com/som-snytt),
@@ -102,14 +89,33 @@ I also [fixed bugs in Scala-Native's handling of equality](https://github.com/sc
 ported an implementation of `java.util.regex` to Scala-Native, and implemented
 few additional collection classes to make `java.time` work on native platforms.
 
+I extended [SBT](http://www.scala-sbt.org/)'s [TestNG plugin](https://github.com/sbt/sbt-testng)
+with some [basic Scala.js support](https://github.com/soc/sbt-testng),
+ported many [algorithms for arbitrary-precision arithmetic](https://github.com/soc/bigint)
+to Scala, with the intention to provide a shared implementation of `BigInt` and
+`BigDecimal` that runs consistently on Scala, Scala.js and Scala-Native, and did
+a lot of other stuff that I fail to remember.
+
+<br/>
+At the beginning of this years I have ceased Scala development and resigned from
+all related activities.
+
+Reasons for my departure are the lack of interest in improving the experience of
+our users, the mounting problems caused by not addressing pressing issues
+"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
+the barrage of low-quality language extension and library addition proposals,
+the decline or outright lack of standards concerning the evolution of the language,
+the lack of honest and effective communication, questionable copyright practices[^xml][^sort][^math]
+which endanger both the project itself as well as users of the language, and the
+continued failure to correct organizational issues that cause contributors to
+leave[^leave].
+
 <br/>
 I had the expectation that Scala's future development would learn the lessons of
 past mistakes – instead of repeating them over and over – and achieve a marginal
 level of quality and stability, in which the rate of cleanup and repair would
 eventually be higher than the rate of newly added mistakes and cruft.
 It has become abundantly clear that this expectation turned out to be wrong.
-
-Therefore I have concluded that continued work on Scala is not a good use of my time.
 
 <br/>
 As a consequence, I have dropped all work on Scala itself as well as
@@ -125,7 +131,7 @@ mitigations at a later date.
 [^xml]: Google – [`scala.xml.MetaData`](https://groups.google.com/d/topic/scala-internals/FRPhY1FW9Q8/discussion)
 [^sort]: Sun/Oracle – `scala.util.Sorting`: Scala [#1](https://github.com/scala/scala/blob/v2.10.5/src/library/scala/util/Sorting.scala#L19), [#2](https://github.com/scala/scala/pull/4534), [Scala.js](https://github.com/scala-js/scala-js/issues/1765)
 [^math]: Apache Software Foundation, Google – `java.math.*`: [Scala.js](https://github.com/scala-js/scala-js/pull/1549), [Scala-Native](https://github.com/scala-native/scala-native/commit/804b5e187c0559f453d137e92055c2715279fe4b)
-[^leave]: Four contributors have quit working on the project and/or left the Scala community in the past year alone. The number of departures I'm not aware of is probably higher.
+[^leave]: I am aware of four contributors who have quit working on their projects and/or left the Scala community in the past year alone. The number of departures I'm not aware of is likely to be higher.
 
 <!-- https://github.com/scala/scala/graphs/contributors?from=2011-12-01&to=2016-07-31
 
