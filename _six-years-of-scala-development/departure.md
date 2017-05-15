@@ -11,9 +11,21 @@ newbies) by addressing frequently encountered issues, therefore making the
 language easier to adopt and more attractive to a wider audience.
 
 <br/>
-For the last six years I had been deeply committed to this idea, and looking
-back at a few of my contributions to the main Scala repository shows it has been
-quite a journey:
+At the beginning of this years I have ceased Scala development and resigned from
+all related activities.
+
+Reasons for my departure are the lack of interest in improving the experience of
+our users, the barrage of low-quality language extension and library addition
+proposals, the mounting problems caused by not addressing pressing issues
+"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
+the lack of honest and effective communication, questionable copyright practices[^xml][^sort][^math]
+which endanger both the project itself as well as users of the language and the
+continued failure to correct organizational issues that cause contributors to
+leave[^leave].
+
+<br/>
+For the last six years I had been deeply committed to improving every aspect of
+Scala, and looking back it has been quite a journey:
 
 I [proposed](https://groups.google.com/forum/#!topic/scala-internals/q1YX7NC1geM/discussion)
 and [implemented](https://github.com/scala/scala/pull/3076) the deprecation of
@@ -91,27 +103,13 @@ ported an implementation of `java.util.regex` to Scala-Native, and implemented
 few additional collection classes to make `java.time` work on native platforms.
 
 <br/>
-At the beginning of this years I have ceased Scala development and resigned from
-all related activities.
-
-Reasons for my departure are the lack of interest in improving the experience of
-our users, the barrage of low-quality language extension and library addition
-proposals, the mounting problems caused by not addressing pressing issues
-"[even when the failings were grossly apparent](https://news.ycombinator.com/item?id=8277626)",
-the lack of honest and effective communication, questionable copyright practices[^xml][^sort][^math]
-which endanger both the project itself as well as users of the language and the
-continued failure to correct organizational issues that cause contributors to
-leave[^leave].
-
 I had the expectation that Scala's future development would learn the lessons of
 past mistakes – instead of repeating them over and over – and achieve a marginal
 level of quality and stability, in which the rate of cleanup and repair would
-eventually be higher than the rate of newly added cruft.
+eventually be higher than the rate of newly added mistakes and cruft.
 It has become abundantly clear that this expectation turned out to be wrong.
 
-{% comment %}
-I have concluded that continued work on Scala is not a good use of my time.
-{% endcomment %}
+Therefore I have concluded that continued work on Scala is not a good use of my time.
 
 <br/>
 As a consequence, I have dropped all work on Scala itself as well as
