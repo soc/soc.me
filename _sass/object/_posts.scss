@@ -23,3 +23,9 @@
   font-size: $base-em;
   border-top: 2px solid $color-grey-medium;
 }
+
+.date {
+  font-size: $smaller;
+  font-style: italic;
+  margin-top: -$base-line * 1.5;
+}
