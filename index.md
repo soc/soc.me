@@ -16,12 +16,12 @@ layout: default
   <h3>Scala Design Success: Context Bounds</h3>
   <h3>Scala Design Success: Implicit Classes</h3>
   {% endif %}
-  {% if collection.name == "Six Years of Scala Development" %}
-  <h3>Part II</h3>
+  {% if post.title == "Six Years of Scala Development – Part II: Retrospective" %}
   <h3>Part III</h3>
   <h3>Part IV</h3>
   {% endif %}
 {% endfor %}
+<br/>
 {% endif %}
 {% endfor %}
 </div>
