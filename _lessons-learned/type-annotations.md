@@ -1,6 +1,6 @@
 ---
-title:  "Lessons Learned – Type Annotations"
-date:   2018-04-30 12:00:00 +0200
+title:  "Lessons Learned – Scala Design Success: Type Annotations"
+date:   2017-07-21 12:00:00 +0200
 ---
 
 #### Why is `ident: Type` better than `Type ident`?
@@ -38,29 +38,37 @@ output).
 
 **Consistency between definition and usage**
 
-The way a method is defined should mirror the way it can be used.
-(See [Why is `[]` better than `<>` for generic types?](generics))
+The way a class or method is defined should mirror the way it can be used.
+(See [Why is `[]` better than `<>` for generic types?](generics#why-is--better-than--for-generic-types).)
 
 **Definition before usage**
 
 A generic type parameter should be declared before it is used.
 Otherwise it's hard to tell to what a type argument refers to:
 
-```java
+```ceylon
 class Id<T>() {
-  T id<T>(T \ivalue) { ... } // Does T refer to the class' <T> in scope,
-}                            // or to the method's <T> that comes after it?
+  // Does the result type T refer to the class' <T> in scope,
+  // or to the method's <T> that comes after it?
+  T id<T>(T \ivalue) { ... }
+}                            
 ```
 
 #### Language Comparison
 
-As languages have explored various designs, we can check whether they satisfy
+As languages have explored various designs[^curly], we can check whether they satisfy
 the last three properties mentioned above:
 
 **Java**
 
 ```java
 <T> T id(T value) { ... }
+```
+
+**C#**
+
+```csharp
+T id<T>(T value) { ... }
 ```
 
 **Kotlin**
@@ -81,14 +89,16 @@ T id<T>(T \ivalue) { ... }
 def id[T](value: T): T = ...
 ```
 
-Scala's design choice is the only one that delivers all three desirable properties:
+Scala's design delivers all three desirable properties:
 
-|              | Input before output | Definition/usage consistency | Definition before usage |
+|              | Input before output | Definition/usage<br/> consistency | Definition before<br/> usage |
 |--------------|:-------------------:|:----------------------------:|:-----------------------:|
 | ***Java***   | No                  | No                           | Yes                     |
+| ***C#***     | No                  | Yes                          | No                      |
 | ***Kotlin*** | Yes                 | No                           | Yes                     |
 | ***Ceylon*** | No                  | Yes                          | No                      |
 | ***Scala***  | Yes                 | Yes                          | Yes                     |
 {: style="width:100%"}
 
 [^type-inference]: type inference means that the compiler can figure out types without having a developer writing them down explicitly
+[^curly]: focusing on curly-brace languages here, as languages like Haskell, ML and OCaml, Idris have slightly different design optima

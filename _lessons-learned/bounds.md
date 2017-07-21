@@ -39,7 +39,7 @@ Overview:
 - [C++ with concepts and constraints](http://en.cppreference.com/w/cpp/language/constraints),
   as `requires` accepts any kind of constant expression.
 
-With declaration-site variance, the amount of bounds is reduced.?
+With declaration-site variance, the amount of bounds a user has to specify is reduced.
 
 Lower bounds are far less common than upper bounds.
 
