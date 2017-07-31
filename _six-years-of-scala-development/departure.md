@@ -10,7 +10,7 @@ newbies) by addressing frequently encountered issues, therefore making the
 language easier to adopt and more attractive to a wider audience.
 
 <br/>
-At the beginning of this years I have ceased Scala development and resigned from
+At the beginning of this year I have ceased Scala development and resigned from
 all related activities.
 
 Reasons for my departure are the lack of interest in improving the experience of
