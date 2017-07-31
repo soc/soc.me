@@ -15,7 +15,7 @@ interconnected reasons:
   to understand and has superior readability compared to languages which
   overload `<>` to stand for Generics as well as comparisons and bitshifts,
   or use `[]` to stand for operations on arrays:<br/>
-  [Why is `[]` better than `<>` for generic types](#why-is--better-than--for-generic-types)
+  [Why is `[]` better than `<>` for generic types?](#why-is--better-than--for-generic-types)
 
 #### Why is `[]` better than `<>` for generic types?
 
@@ -66,6 +66,6 @@ Generics to "advanced" parts of their documentation.
 
 **Scala's use of brackets is straight-forward and easy to understand**
 
-  - `[]` encloses types.
-  - `()` groups: for instance a single expression, a parameter list or a tuple.
-  - `{}` sequences: for instance a block that can contain multiple statements and definitions.
+  - `[]` encloses types: everything inbetween is either a type parameter or a type argument
+  - `()` groups: for instance a single expression, a parameter list or a tuple
+  - `{}` sequences: for instance a block that can contain multiple statements and definitions
