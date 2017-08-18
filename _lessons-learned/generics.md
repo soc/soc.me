@@ -24,7 +24,7 @@ interconnected reasons:
 Many languages that were created without Generics in mind have trouble adding Generics later on, as all pairs of brackets, `(` and `)`, `{` and `}`, `<` and `>`, have already been put to use.
 
 Of that group, `<` and `>` are usually the only symbols left that are practical to overload with a new, different meaning (`<` and `>` are often employed as binary operators expressing comparisons or bitshift operations, not as brackets).
-Unfortunately, even `<` and `>` have troubling parsing issues that require workarounds.[^csharp-spec] While parsing should be solely considered a problem for compiler writers, it is often the case that language syntax which is hard to parse for machines is often hard to read for humans, too.
+Unfortunately, even `<` and `>` have troubling parsing issues that require workarounds.[^csharp-spec] While parsing should be solely considered a problem for compiler writers, it is often the case that language syntax which is hard to parse for machines is hard to read for humans, too.
 
 The general issue is that it's hard to tell for the compiler whether some token stream of `instance` `.` `foo` `<` should be parsed as the left side of a comparison (with `<` being the "less-than" operator) or as the start of a generic type argument within a method call. Another example is the requirement in older versions of C++ to add spaces to nested Generics to allow the compiler to distinguish between the right-shift operator `>>` and the end of a nested generic type.
 
