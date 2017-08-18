@@ -111,7 +111,7 @@ much worse.
 Java's primitive types come without any methods, only operations like `+`, `-`,
 `%`, `<<`.
 Scala's idea of minimizing the distinction between unboxed and boxed
-numbers means that numeric types could receive "convenience" extension methods
+numbers means that numeric types receive "convenience" extension methods
 like `round`, `floor`, `toBinaryString` or `toDegrees`.
 
 This gives rise to another set of puzzlers like the following:
