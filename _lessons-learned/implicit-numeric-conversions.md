@@ -147,8 +147,8 @@ val bits: Byte = -1
 bits.toBinaryString == "11111111111111111111111111111111" // a byte with 32 bits?
 ```
 
-This is a conceptual failure of design that cannot be fixed without abandoning
-implicit numeric conversions altogether.
+This is a design failure that cannot be fixed without abandoning implicit numeric
+conversions altogether.
 
 #### The Worst: Having a Way Out, but not Choosing It
 
