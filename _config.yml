@@ -34,6 +34,10 @@ collections:
     output: true
     name: "Talks"
     published: false
+  blog:
+    output: true
+    name: "XFCE"
+    published: true
 defaults:
   -
     scope:
@@ -50,6 +54,11 @@ defaults:
       type: talks
     values:
       layout: talk
+  -
+    scope:
+      type: blog
+    values:
+      layout: post
 # Build settings
 markdown: kramdown
 
