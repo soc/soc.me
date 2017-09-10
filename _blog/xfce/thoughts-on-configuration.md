@@ -103,17 +103,17 @@ Compared to the current state, the following changes are made:
 - _Window Manager → Style_: removed, settings have been moved to _Appearance → Themes_, _Appearance → Fonts_ and _Appearance → Title bar_
 - _Window Manager → Keyboard_: removed, settings have been merged with _Keyboard → Shortcuts_
 - _Window Manager → Focus_: kept, merged with settings from _Window Manager Tweaks → Focus_
-- _Window Manager → Advanced_: kept, received remaining settings of _Window Manager Tweaks → Compositor_
-- _Window Manager Tweaks → Cycling_: kept, but appearance-related settings might be moved to a new _Appearance → Switcher_ tab
+- _Window Manager → Advanced_: moved workspace-related parts to new _Workspaces → Behavior_ tab, general parts to _Window Manager → General_, renamed tab with remaining settings to _Window Management → Tiling and Snapping_
+- _Window Manager Tweaks → Cycling_: renamed to _Window Management → Switcher_, but appearance-related settings might be moved to a new _Appearance → Switcher_ tab
 - _Window Manager Tweaks → Focus_: removed, moved to _Window Management → Focus_
-- _Window Manager Tweaks → Accessibility_: work in progress, at least some parts should be moved to the _Accessibility_ panel
+- _Window Manager Tweaks → Accessibility_: removed, moved settings to more appropriate places
 - _Window Manager Tweaks → Workspaces_: removed, settings have been moved to _Workspaces_
-- _Window Manager Tweaks → Placement_: undecided, could be moved to _Window Management → General_
-- _Window Manager Tweaks → Compositor_: removed, moved appearance-related settings to _Appearance → Effects_, rest to _Window Management → Advanced_
+- _Window Manager Tweaks → Placement_: kept, but could be moved to _Window Management → General_
+- _Window Manager Tweaks → Compositor_: removed, moved most settings to _Appearance → Effects_
 
 This is the result:
 
-![Window Management](/assets/img/xfce/window-management-1.png)
+![Window Management](/assets/img/xfce/wm-new.png)
 
 #### End
 
