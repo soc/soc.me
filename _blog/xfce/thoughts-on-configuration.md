@@ -23,19 +23,17 @@ _Window Manager Tweaks_ and _Workspaces_ in `xfce4-settings-manager`, the co
 If one considers where the individual settings come from, it becomes more obvious
 that the settings are mostly organized by application.
 
-I believe this makes it a bit harder for users to discover the right place to change settings to their preferences,
-because it requires them to make a mental mapping between the application
+This requires users to make a mental mapping between the application
 (e.g. "which application is in charge of drawing the title bar? ... That should be the window manager!")
 and the settings panel associated with it
 ("let's open _Window Manager_ as this is the panel to configure XFWM4, XFCE's window manager").
 
+I believe this makes it a bit harder for users to discover the right place to change settings to their preferences.
 
 #### Idea
 
-XFCE is amazing, but I think it could be further improved:
-
-Instead of organizing settings based on which application in XFCE's stack makes use of the setting,
-group settings according to the general topic that is being configured!
+Instead of organizing settings based on the application in XFCE's stack that makes use of the setting,
+settings should grouped according to the general topic that is being configured.
 
 Specifically,
 
