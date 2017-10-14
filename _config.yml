@@ -36,7 +36,7 @@ collections:
     published: false
   blog:
     output: true
-    name: "XFCE"
+    name: "Articles"
     published: true
 defaults:
   -

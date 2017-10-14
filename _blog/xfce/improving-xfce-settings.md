@@ -1,5 +1,5 @@
 ---
-title:  "XFCE – Thoughts on Configuration"
+title:  "Improving XFCE's Settings UI"
 date:   2017-09-09 12:00:00 +0200
 ---
 
