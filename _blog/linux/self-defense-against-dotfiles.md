@@ -1,5 +1,5 @@
 ---
-title:  "Practical Self-Defense against the Scourge of Dot-Files"
+title:  "Self-Defense against Dot-Files"
 date:   2017-10-14 12:00:00 +0200
 ---
 
@@ -7,9 +7,12 @@ Here are a few practical steps for Linux users that are fed up with applications
 
 ### Step 1: Adjust some environment variables
 
+As the process of logging into an account tries to create some files in `$HOME`,
+we need to adjust some settings to instruct these applications to place them at more suitable locations.
+
 Add the following line to `.pam_environment`:
 
-    ICEAUTHORITY DEFAULT=${XDG_RUNTIME_DIR}/ICEauthority.
+    ICEAUTHORITY DEFAULT=${XDG_RUNTIME_DIR}/ICEauthority
 
 Add the following lines to `/etc/lightdm/lightdm.conf` (if you use LightDM)
 
