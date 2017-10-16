@@ -3,7 +3,22 @@ title:  "Self-Defense against Dot-Files"
 date:   2017-10-14 12:00:00 +0200
 ---
 
-Here are a few practical steps for Linux users that are fed up with applications littering in their home directory:
+### Introduction
+
+The [XDG base directory specification](https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html)
+defines the locations where applications should store application-private files on Linux. In short:
+
+- cache files go into `$XDG_CACHE_HOME/<appname>`<br/>
+  (use `~/.cache/<appname>` if `$XDG_CACHE_HOME` is not defined or empty)
+- settings go into `$XDG_CONFIG_HOME/<appname>`<br/>
+  (use `~/.config/<appname>` if `$XDG_CONFIG_HOME` is not defined or empty)
+- application data goes into `$XDG_DATA_HOME/<appname>`<br/>
+  (use `~/.local/share/<appname>` if `$XDG_DATA_HOME` is not defined or empty)
+
+While most applications and libraries have implemented the standard over the last 10 years,
+some applications (often due to a lack of awareness) fail to follow it.
+
+Here are a few practical steps for Linux users that are fed up with the latter applications littering in their home directory:
 
 ### Step 1: Adjust some environment variables
 

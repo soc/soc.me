@@ -7,6 +7,8 @@ date:   2017-12-30 12:00:00 +0200
 - Deprecate early
 - Cut down new features to the bare minimum
   - enum, @showInfix
+- Don't try to be smart: foo(a = b) – method arg or variable assignment?
+- varargs are a necessary evil, but avoid Seq in favor of VarArg
 - Give up on things that don't work
 - Correctness >>> Speed (number equality)
 - Learn from mistakes and don't repeat them (enum)
@@ -14,8 +16,26 @@ date:   2017-12-30 12:00:00 +0200
 - Avoid big bang releases
 - No abbreviations
 - Operators: Unsolved issue
-- Nullability
+- Nullability (interop important)
 - Generics and value-type order
+- experiment with new approaches to avoid adding overloading
+  - record receiver in method call
+  - require explicit type in source
+- fields, methods, properties? -> See C#
+  - hide fields, use values, variables, methods
+  - focus on evaluation: on init, on call, lazy, ...
+- separate static/non-static: object / class
+- disentangle "cannot be overridden" and "cannot be changed"
+- @hidden for @tailrec
+- Nothing because of control flow (see Java static initializer)
+- methods vs. functions:
+  - named/positional vs. positional parameters
+- currying by default? usability (also interacts with Unit/value discarding)
+- explicit return should fail typechecking in methods with Unit return type
+- type hierarchy
+- power vs. simplicity:
+  - immutability: declaration-site vs. use-site
+  - value types vs. reference types: declaration-site vs. use-site
 
 ## Library
 - Collections
