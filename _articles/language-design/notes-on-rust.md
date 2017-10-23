@@ -1,5 +1,5 @@
 ---
-title:  "Notes on Rust"
+title:  "Language Design: Notes on Rust"
 date:   2017-07-30 12:00:00 +0200
 ---
 

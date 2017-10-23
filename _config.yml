@@ -34,7 +34,7 @@ collections:
     output: true
     name: "Talks"
     published: false
-  blog:
+  articles:
     output: true
     name: "Articles"
     published: true
@@ -56,7 +56,7 @@ defaults:
       layout: talk
   -
     scope:
-      type: blog
+      type: articles
     values:
       layout: post
 # Build settings
@@ -65,4 +65,4 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
-  - .vendor/
+  - vendor/

@@ -1,5 +1,5 @@
 ---
-title:  "Self-Defense against Dot-Files"
+title:  "Linux: Self-Defense against Dot-Files"
 date:   2017-10-14 12:00:00 +0200
 ---
 
