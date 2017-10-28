@@ -36,6 +36,16 @@ date:   2017-12-30 12:00:00 +0200
 - power vs. simplicity:
   - immutability: declaration-site vs. use-site
   - value types vs. reference types: declaration-site vs. use-site
+- naming:
+  - apply   : if resulting instance contains verbatim value or ref to passed argument
+              i.e. wrapping
+  - ofX     : if resulting instance contains verbatim value or ref to parts of the passed argument
+              i.e. Name.ofPerson(person)
+  - fromX   : if argument is adapted, converted, etc.
+              i.e. value of instance is derived and does not contain a ref to the passed arg
+  - to      : implies a conversion of some sort
+  - as      : implies a reinterpretation/wrapping of a verbatim value
+
 
 ## Library
 - Collections
