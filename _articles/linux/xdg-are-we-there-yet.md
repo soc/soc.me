@@ -5,12 +5,12 @@ date:   2017-10-23 12:00:00 +0200
 
 #### Category: Status Unknown
 
-Dot-File/-Directory    | Application/Library | Status   | Comment
----------------------- | :------------------ | :------: | :---
-.java                  | JVM                 | unknown  |
-.scala_history         | Scala               | unknown  |
-.scalaide              | ScalaIDE            | unknown  |
-.swt                   | Eclipse             | unknown  |
+Dot-File/-Directory | Application/Library | Status  | Comment
+------------------- | :------------------ | :-----: | :------
+.java               |                     | unknown |
+.scala_history      | Scala               | unknown |
+.scalaide           | ScalaIDE            | unknown |
+.swt                | Eclipse             | unknown |
 
 
 #### Category: Bug Reported
@@ -29,7 +29,6 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 ------------------- | :------------------ | :------: | :---
 .atom               | Atom                | [planned](https://github.com/atom/atom/issues/8281) |
 .cargo              | Rust Cargo          | [planned](https://github.com/rust-lang/rfcs/pull/1615) |
-.nano/, .nanorc     | GNU Nano            | [pending](http://lists.gnu.org/archive/html/nano-devel/2017-10/msg00078.html) |
 .pam_environment    | Linux PAM           | [reported](https://github.com/linux-pam/linux-pam/issues/7) | <small>Bootstrap issue: How should pam_env know where to look for its environment file?</small>
 .pki                | Mozilla             | [reported](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
 .purple             | Pidgin              | [planned](https://developer.pidgin.im/ticket/10029) | <small>Will be addressed in [Pidgin 3](https://developer.pidgin.im/wiki/Roadmap3.0.0)</small>
@@ -39,7 +38,8 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 
 Dot-File/-Directory | Application/Library | Status   | Comment
 ------------------- | :------------------ | :------: | :---
-.coursier           | Coursier            | [reported](https://github.com/coursier/coursier/issues/204) |
+.coursier           | Coursier            | [merged](https://github.com/coursier/coursier/pull/676) |
+.nano/, .nanorc     | GNU Nano            | [merged](http://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403) |
 
 
 #### Category: Special Snowflakes
