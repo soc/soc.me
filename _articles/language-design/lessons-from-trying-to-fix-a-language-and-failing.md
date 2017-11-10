@@ -25,8 +25,8 @@ date:   2017-12-30 12:00:00 +0200
   - hide fields, use values, variables, methods
   - focus on evaluation: on init, on call, lazy, ...
 - separate static/non-static: object / class
-- disentangle "cannot be overridden" and "cannot be changed"
-- @hidden for @tailrec
+- disentangle "cannot be overridden" and "cannot be changed" like in Scala
+- @hidden accumulator args for @tailrec
 - Nothing because of control flow (see Java static initializer)
 - methods vs. functions:
   - named/positional vs. positional parameters
@@ -147,7 +147,7 @@ date:   2017-12-30 12:00:00 +0200
   - annot  throws                  : move to package annotation
   - annot  transient               : move to package annotation
   - annot  unchecked               : move to package annotation
-  - class  UninitializedError      : move to package runtime/$error fix type hierarchy
+  - class  UninitializedError      : move to package runtime/$error, fix type hierarchy
   - class  UninitializedFieldError : move to package runtime/$error
   - annot  volatile                : move to package annotation
 

@@ -87,6 +87,10 @@ main a {
 main p a,
 main li a,
 main sup a,
+main table tr th a,
+main table tr td a,
+main table tbody tr th a,
+main table tbody tr td a,
 main .posts a {
   text-decoration-line: underline;
   text-decoration-style: dotted;
@@ -219,17 +223,9 @@ pre {
 table {
   width: 100%;
   table-layout: fixed;
-  border: 1px solid #ccc;
-  > thead, > tbody, > tfoot {
-    > tr {
-      > th, > td {
-        border: 1px solid #ccc;
-      }
-    }
-  }
   > thead > tr {
     > th, > td {
-      border-bottom-width: 2px;
+      border-bottom: 2px solid #ccc;
     }
   }
 }
