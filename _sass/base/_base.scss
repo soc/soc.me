@@ -111,6 +111,24 @@ main .posts a {
   }
 }
 
+table.table-small {
+  font-size: 60%;
+  text-align: center;
+  line-height: 110%;
+}
+
+table.table-small tr:nth-child(even) {
+  background: #eee
+}
+table.table-small tr:nth-child(odd) {
+}
+
+table.table-small tr th:first-child,
+table.table-small tr td:first-child {
+  font-weight: bold;
+  border-right: 2px solid #cccccc;
+}
+
 // Lists
 // -------------------------
 
