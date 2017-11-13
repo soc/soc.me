@@ -6,7 +6,8 @@ layout: default
 
 {% assign articles = site.collections[0] %}
 <h1>{{articles.name}}</h1>
-{% for post in articles.docs %}
+{% assign sortedPosts = articles.docs | sort: 'title' %}
+{% for post in sortedPosts %}
   {% assign title_drop = articles.name | append: " – " %}
   <h3><a href="{{post.url | prepend: site.baseurl}}">{{post.title | remove_first: title_drop }}</a></h3>
 {% endfor %}
