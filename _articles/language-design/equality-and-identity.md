@@ -7,7 +7,7 @@ Most languages have a notion of equality comparisons based on _value equality_.
 Many of them also provide a more restricted equality comparison that works only
 on references, often called _reference equality_.
 
-Examples:
+As introduction, here is how some languages deal with value equality and reference equality:
 
 - *Java* uses `equals` (defined on `Object`) for value equality on reference types
   and `==` for reference equality on reference types.
@@ -17,7 +17,7 @@ Examples:
   As these wrapper classes are reference types, `==` can also be used for checking
   reference equality of wrapper classes.
 
-- C#'s approach is substantially more confused than Java's and is elided here for conciseness.
+- *C#*'s approach is substantially more confused than Java's and is elided here for conciseness.
 
 - In *Scala*, these two operations are embodied by `==` (value equality, defined on `Any`),
 and `eq` (reference equality, defined on `AnyRef`).
