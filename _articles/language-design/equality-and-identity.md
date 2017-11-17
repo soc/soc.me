@@ -82,7 +82,7 @@ looking at a few examples (first line stands for identity, second line stands fo
 |Double.NaN   |false<br/>false|false<br/>false|false<br/>false|true <br/>false|false<br/>false|false<br/>false|false<br/>false|false<br/>false|false<br/>false|
 |BigInt(1)    |false<br/>true |false<br/>true |false<br/>false|false<br/>false|true <br/>true |false<br/>true |false<br/>true |false<br/>true |false<br/>true |
 |BigDec("1")  |false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |true <br/>true |false<br/>true |false<br/>true |false<br/>true |
-|BigDec("1.0")|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |true <br/>true |true <br/>true |false<br/>true |false<br/>true |
+|BigDec("1.0")|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |true <br/>true |false<br/>true |false<br/>true |
 |Rational(1,1)|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |false<br/>true |true <br/>true |false<br/>true |
 |Rational(2,2)|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |false<br/>true |false<br/>true |true <br/>true |
 {: .table-small}
