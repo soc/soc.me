@@ -1,5 +1,5 @@
 ---
-title:  "Lessons Learned – Scala Design Success: Type Annotations"
+title:  "Language Design: Type Annotations"
 date:   2017-07-21 12:00:00 +0200
 ---
 

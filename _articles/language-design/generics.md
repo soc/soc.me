@@ -1,5 +1,5 @@
 ---
-title:  "Lessons Learned – Scala Design Success: Generics"
+title:  "Language Design: Generics"
 date:   2017-07-21 12:00:00 +0200
 ---
 

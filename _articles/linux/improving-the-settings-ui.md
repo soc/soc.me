@@ -1,5 +1,5 @@
 ---
-title:  "XFCE: Improving the Settings UI"
+title:  "Linux: XFCE – Improving the Settings UI"
 date:   2017-09-09 12:00:00 +0200
 ---
 

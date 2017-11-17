@@ -1,5 +1,5 @@
 ---
-title:  "Lessons Learned – Scala Design Failure: Implicit Numeric Conversions"
+title:  "Language Design: Implicit Numeric Conversions"
 date:   2017-05-12 12:00:00 +0200
 ---
 

@@ -30,13 +30,11 @@ layout: default
 {% for post in lessons.docs %}
   {% assign title_drop = lessons.name | append: " – " %}
   <h3><a href="{{post.url | prepend: site.baseurl}}">{{post.title | remove_first: title_drop }}</a></h3>
-  {% if forloop.last %}
+{% endfor %}
   <h3>Scala Design Failure: Collections</h3>
   <h3>Scala Design Failure: Enumerations</h3>
   <h3>Scala Design Success: (Companion) Objects</h3>
   <h3>Scala Design Success: Context Bounds</h3>
   <h3>Scala Design Success: Implicit Classes</h3>
-  {% endif %}
-{% endfor %}
 
 </div>

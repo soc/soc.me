@@ -1,5 +1,5 @@
 ---
-title:  "Linux: XDG - Are We There Yet?"
+title:  "Linux: XDG – Are We There Yet?"
 date:   2017-10-23 12:00:00 +0200
 ---
 
