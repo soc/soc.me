@@ -68,7 +68,7 @@ Take one of the cases where all the complexity comes together
 check for reference equality, then call `equals`, which is a crucial step
 because otherwise you will never find your `NaN` in a data structure again.
 
-This approach to _identity_ and _equality_ works out beautifully:
+Compared to this rather cpmplicated, indirect approach, introducing the concept of _identity_ and _equality_ works out beautifully:
 It reduces complexity, avoids unnecessary boxing and will therefore be faster with value types and specialized generics.
 
 Let's consider how this definition of _identity_ and _equality_ works out by
