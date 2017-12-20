@@ -7,9 +7,9 @@ date:   2018-04-30 12:00:00 +0200
 - raw types
 - array syntax (declaration, initializer, access, etc.)
 - operators
-- Action (and Func)
+- java.util.function
 - `synchronized` keyword
-- break/continue/goto statements
+- break/continue/goto statements and keywords
 - post- and prefix increment/decrement operators
 - `instanceof` operator (and special cast syntax)
 - `default`, `public` keywords
