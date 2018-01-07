@@ -22,7 +22,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .IntelliJIdea2017.2 | JetBrains IntelliJ  | [reported](https://youtrack.jetbrains.com/issue/IDEA-22407) |
 .ivy2               | Apache Ivy          | [reported](https://issues.apache.org/jira/browse/IVY-1502) |
 .sbt                | SBT                 | [reported](https://github.com/sbt/sbt/issues/3681) |
-.steam, .steampid, .steampath | Steam     | [reported](https://github.com/ValveSoftware/steam-for-linux/issues/1890)
+<small>.steam, .steampid, .steampath</small> | Steam     | [reported](https://github.com/ValveSoftware/steam-for-linux/issues/1890)
 
 
 #### Category: Work in Progress
