@@ -14,6 +14,7 @@ defines the locations where applications should store application-private files 
   (use `~/.config/<appname>` if `$XDG_CONFIG_HOME` is not defined or empty)
 - application data goes into `$XDG_DATA_HOME/<appname>`<br/>
   (use `~/.local/share/<appname>` if `$XDG_DATA_HOME` is not defined or empty)
+- runtime data goes into `$XDG_RUNTIME_DIR/<appname>`
 
 While most applications and libraries have implemented the standard over the last 10 years,
 some applications (often due to a lack of awareness) fail to follow it.
