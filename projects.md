@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Talks
-permalink: /talks/
+title: Projects
+permalink: /projects/
 navigation: true
 ---
 
 <div class="posts">
 {{collection}}
-{% assign collection = site.collections | where: "label", "talks" | first %}
+{% assign collection = site.collections | where: "label", "standards" | first %}
 {% assign documents = collection.docs | sort: 'date' | reverse %}
 {% for post in documents %}
   {% assign currentdate = post.date | date: "%Y" %}

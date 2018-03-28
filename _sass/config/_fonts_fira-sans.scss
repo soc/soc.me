@@ -1,0 +1,53 @@
+
+/**** Fira Sans ****/
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    font-style: normal;
+    src:
+      local('Fira Sans Regular'),
+      url('/assets/fonts/FiraSans-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    font-style: italic;
+    src:
+      local('Fira Sans Italic'),
+      url('/assets/fonts/FiraSans-RegularItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-weight: 500;
+    font-style: normal;
+    src:
+      local('Fira Sans Medium'),
+      url('/assets/fonts/FiraSans-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-weight: 500;
+    font-style: italic;
+    src:
+      local('Fira Sans Medium Italic'),
+      url('/assets/fonts/FiraSans-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-weight: 700;
+    font-style: normal;
+    src:
+      local('Fira Sans Bold'),
+      url('/assets/fonts/FiraSans-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    font-weight: 700;
+    font-style: italic;
+    src:
+      local('Fira Sans Bold Italic'),
+      url('/assets/fonts/FiraSans-BoldItalic.woff') format('woff');
+}

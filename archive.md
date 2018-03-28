@@ -2,7 +2,7 @@
 layout: page
 title: Archive
 permalink: /archive/
-navigation: true
+navigation: false
 ---
 
 <div class="posts">

@@ -93,22 +93,42 @@ main table tbody tr th a,
 main table tbody tr td a,
 main .posts a {
   text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: $color-grey-medium;
+  /*text-decoration-style: dotted;*/
+  text-decoration-color: $color-grey-regular;
   text-shadow: none;
   background: none;
   background-size: 100%;
   transition: none;
   &:hover {
     text-decoration-line: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: $color-grey;
+    /*text-decoration-style: dotted;*/
+    text-decoration-color: $color-grey-medium;
     color: $color-grey-darker;
     text-shadow: none;
     background: none;
     background-size: 100%;
     transition: none;
   }
+}
+
+.table-topic {
+  width: 7em;
+}
+
+table.table-medium {
+  table-layout: fixed;
+  line-height: 110%;
+  font-size: 90%;
+}
+
+table.table-medium th, table.table-medium td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.table-medium tr:nth-child(even) {
+  background: #eee;
 }
 
 table.table-small {

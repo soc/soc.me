@@ -28,6 +28,7 @@
     color: $title-color;
   }
   .site-title {
+    font-style: italic;
     display: block;
     margin: $base-line/2 auto;
     font-size: $base-em * $ms5;
@@ -84,6 +85,7 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
   }
+
   ul {
     margin: 0;
     padding: 0.3em 0;

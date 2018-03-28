@@ -1,0 +1,421 @@
+<meta charset="utf-8" lang="en">
+<title>directories – a tiny library that might help you</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    const headings = $("h1, h2").toArray();
+    console.log(headings);
+    $(document).keydown(function(e) {
+      const position = $("body").scrollTop();
+      //console.log(position);
+      if (e.keyCode == 39) {
+        let head = headings.find(function(element) {
+          //console.log($(element).position());
+          return $(element).position().top > position;
+        });
+        console.log(head);
+        const scroll = (head === undefined) ? 0 : $(head).position().top + 750;
+
+        $("html, body").animate({
+          scrollTop: scroll
+        }, 0);
+      }
+      if (e.keyCode == 37) {
+        let head = Array.from(headings).reverse().find(function(element) {
+          //console.log($(element).position());
+          return $(element).position().top < position-750;
+        });
+        const handleTop = (position == 0) ? $(document).height() : 0;
+        console.log(head);
+        const scroll = (head === undefined) ? handleTop : $(head).position().top + 750;
+        $("html, body").animate({
+          scrollTop: scroll
+        }, 0);
+      }
+    });
+  });
+    </script>
+
+  **_directories_<br/><small>a tiny library that might help you</small>**
+  <small>  Rust Hack &amp; Learn      ⁄      2018-03-19      ⁄      Karlsruhe</small>
+
+# Problem
+
+Applications keep dumping files into `$HOME` ...
+
+![](home.png)
+
+# Problem
+
+... instead they should follow the standards of the operating system:
+
+- the [XDG base directory](https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) and
+  the [XDG user directory](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/) specifications on Linux
+- the [Known Folder](https://msdn.microsoft.com/en-us/library/windows/desktop/bb776911.aspx) API on Windows
+- the [Standard Directories](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW6)
+  guidelines on macOS
+
+
+# Motivation
+
+- Cleaner `$HOME`
+
+# Motivation
+
+- Cleaner `$HOME`
+- Delete caches with confidence
+
+# Motivation
+
+- Cleaner `$HOME`
+- Delete caches with confidence
+- Organize your data the way you want
+
+# Motivation
+
+- Cleaner `$HOME`
+- Delete caches with confidence
+- Organize your data the way you want
+- Tools like disk cleaners or backup apps do a better job
+
+
+# Motivation
+
+- Cleaner `$HOME`
+- Delete caches with confidence
+- Organize your data the way you want
+- Tools like disk cleaners or backup apps do a better job
+- Distribute and manage config files across multiple machines
+
+# Motivation
+
+- Cleaner `$HOME`
+- Delete caches with confidence
+- Organize your data the way you want
+- Tools like disk cleaners or backup apps do a better job
+- Distribute and manage config files across multiple machines
+- Well-behaved applications by default, not by manual configuration
+
+# Ideas
+
+1. [Let's make `$HOME` read-only.](https://soc.github.io/articles/linux/self-defense-against-dotfiles.html)
+
+# Ideas
+
+1. [Let's make `$HOME` read-only.](https://soc.github.io/articles/linux/self-defense-against-dotfiles.html)
+
+2. [Let's fix _all_ the applications!](https://soc.github.io/articles/linux/xdg-are-we-there-yet.html)
+
+# Ideas
+
+1. [Let's make `$HOME` read-only.](https://soc.github.io/articles/linux/self-defense-against-dotfiles.html)
+
+2. [Let's fix _all_ the applications!](https://soc.github.io/articles/linux/xdg-are-we-there-yet.html)
+
+3. Let's write a library that makes it easy for developers to get it right!
+
+# Example I
+
+Q: "Where is the config directory?"
+
+A: "It depends!"
+
+|Platform | Value                       | Example                          |
+| ------- | --------------------------- | -------------------------------- |
+| Linux   | `$XDG_CONFIG_HOME`          | /home/alice/.config              |
+| macOS   | `$HOME/Library/Preferences` | /Users/Alice/Library/Preferences |
+| Windows | `{FOLDERID_RoamingAppData}` | C:\Users\Alice\AppData\Roaming   |
+
+# Example II
+
+Q: "Where is the download directory?"
+
+A: "It depends!"
+
+|Platform | Value                  | Example                  |
+| ------- | ---------------------- | ------------------------ |
+| Linux   | `XDG_DOWNLOAD_DIR`     | /home/alice/Downloads    |
+| macOS   | `$HOME/Downloads`      | /Users/Alice/Downloads   |
+| Windows | `{FOLDERID_Downloads}` | C:\Users\Alice\Downloads |
+
+# Example III
+
+Q: "Where does SuperApp – built by the UK company Mega Corp – store its cache files?"
+
+A: "It depends!"
+
+|Platform | Value                                          | Example                                              |
+| ------- | ---------------------------------------------- | ---------------------------------------------------- |
+| Linux   | <small>`$XDG_CACHE_HOME/_project_path_`</small>               | <small>/home/alice/.cache/superapp</small>                          |
+| macOS   | <small>`$HOME/Library/Caches/_project_path_`</small>          | <small>/Users/Alice/Library/Caches/uk.co.Mega-Corp.SuperApp</small> |
+| Windows | <small>`{FOLDERID_LocalAppData}\_project_path_\cache`</small> | <small>C:\Users\Alice\AppData\Local\Mega Corp\SuperApp\cache</small>  |
+
+# Goals
+
+Design objectives of the  _directories_ library:
+
+- Minimal conceptual footprint: a library, not a framework
+
+# Goals
+
+Design objectives of the  _directories_ library:
+
+- Minimal conceptual footprint: a library, not a framework
+- Focus on directories the user (and therefore the app) controls
+
+# Goals
+
+Design objectives of the  _directories_ library:
+
+- Minimal conceptual footprint: a library, not a framework
+- Focus on directories the user (and therefore the app) controls
+- Bridge the gap between operating systems without introducing traps
+
+# Goals
+
+Design objectives of the _directories_ library:
+
+- Minimal conceptual footprint: a library, not a framework
+- Focus on directories the user (and therefore the app) controls
+- Bridge the gap between operating systems without introducing traps
+- Make it easy to get things right
+
+# Implementation – JVM
+
+- First design implemented in Java (6)
+- Jar file size: 9kB
+- Final fields to access data
+- Returns `null` if directory not available
+- Supports Linux, macOS, Windows, BSD
+
+## Implementation – JVM – API
+
+First version:
+
+~~~~~~~
+public abstract class BaseDirectories {    public abstract class ProjectDirectories {
+  protected String homeDir;                  protected String projectName;
+  /* xdg base directories */                 /* project directories */
+  protected String cacheDir;                 protected String projectCacheDir;
+  protected String configDir;                protected String projectConfigDir;
+  protected String dataDir;                  protected String projectDataDir;
+  protected String runtimeDir;               /* factory methods */
+  /* xdg user directories */                 public static ProjectDirectories
+  protected String desktopDir;                 fromUnprocessedString(String value) { ... }
+  protected String documentsDir;             public static ProjectDirectories
+  protected String downloadDir;                fromQualifiedProjectName(String name) { ... }
+  protected String musicDir;                 public static ProjectDirectories
+  protected String picturesDir;                fromProjectName(String name) { ... }
+  protected String publicDir;              }
+  protected String templatesDir;
+  protected String videosDir;
+  // derived
+  protected String executablesDir;
+  protected String fontsDir;
+}
+~~~~~~~
+
+## Implementation – JVM – Problems
+
+- Fields get computed even if they aren't used
+- Factory methods require knowledge of operating system conventions
+- Missing the difference between Window's `LocalAppData` and `RoamingAppData`
+
+## Implementation – JVM – Problems: Windows
+
+Q: "How do we get the download directory on Windows?"
+
+A: "Well ... hold my beer."
+
+## Implementation – JVM – Problems: Windows
+
+Q: "How do we get the download directory on Windows?"
+
+A: "Well ... hold my beer."
+
+~~~~~~~
+var knownFolderId = "Downloads";
+new ProcessBuilder(
+  "powershell.exe", "-Command",
+  "[Environment]::GetFolderPath([Environment+SpecialFolder]::"+knownFolderId+")")
+~~~~~~~
+
+## Implementation – JVM – Problems: Windows
+
+Q: "How do we get the download directory on Windows?"
+
+A: "Well ... hold my beer."
+
+~~~~~~~
+var knownFolderId = "Downloads";
+new ProcessBuilder(
+  "powershell.exe", "-Command",
+  "[Environment]::GetFolderPath([Environment+SpecialFolder]::"+knownFolderId+")")
+~~~~~~~
+
+************************************************************************************
+*                                                                        +-------+ *
+*                                                                    +-->| Win32 | *
+* +---------------+                                              +---+---+-------+ *
+* | directories   +---+                                      +-->|           COM | *
+* +---------------+---v---+                              +---+---+---------------+ *
+* | Java Standard Library +---+                      +-->|                  .NET | *
+* +-----------------------+---v---+              +---+---+-----------------------+ *
+* | Java Virtual Machine          +---+      +-->|                    PowerShell | *
+* +-------------------------------+---v------+---+-------------------------------+ *
+* | Operating system (Windows)                                                   | *
+* +------------------------------------------------------------------------------+ *
+************************************************************************************
+
+# Implementation – Rust
+
+- Existing library situation: not so great
+
+| Library       | Status        | Lin | Mac | Win |Base|User|Proj|Conv|
+| ------------- | ------------- |:---:|:---:|:---:|:--:|:--:|:--:|:--:|
+| `dirs`        | Unmaintained? |  ✔  |  ✔  |  ✔  | 🞈  | ✖  | ✔  | ✖  |
+| `s_app_dir`   | Unmaintained? |  ✔  |  ✖  |  🞈  | ✖  | ✖  | 🞈  | ✖  |
+| `xdg`         | Maintaind     |  ✔  |  ✖  |  ✖  | ✔  | ✖  | ✔  | 🞈  |
+| `xdg-basedir` | Unmaintained? |  ✔  |  ✖  |  ✖  | ✔   | ✖  | ✖  | 🞈  |
+| `xdg-rs`      | Obsolete      |  ✔  |  ✖  |  ✖  | ✔   | ✖  | ✖  | 🞈  |
+
+<!--
+## Implementation – Rust – Differences to Java
+
+- Abbreviate all the things!
+
+## Implementation – Rust – Differences to Java
+
+- Abbreviate all the things!
+- Sane interop with platform APIs!
+
+## Implementation – Rust – Differences to Java
+
+- Abbreviate all the things!
+- Sane interop with platform APIs!
+- Ownership, borrowing, lifetimes instead of garbage collection! 
+-->
+
+## Implementation – Rust – API
+
+~~~~~~
+#[derive(Debug, Clone)]                       #[derive(Debug, Clone)]
+pub struct BaseDirs {                         pub struct UserDirs {
+  /* home directory */                          /* home directory */
+  home_dir:       PathBuf,                      home_dir:     PathBuf,
+  /* base directories */                        /* user directories */
+  cache_dir:      PathBuf,                      audio_dir:    Option&lt;PathBuf>,
+  config_dir:     PathBuf,                      desktop_dir:  Option&lt;PathBuf>,
+  data_dir:       PathBuf,                      document_dir: Option&lt;PathBuf>,
+  data_local_dir: PathBuf,                      download_dir: Option&lt;PathBuf>,
+  executable_dir: Option&lt;PathBuf>,              font_dir:     Option&lt;PathBuf>,
+  runtime_dir:    Option&lt;PathBuf>               picture_dir:  Option&lt;PathBuf>,
+}                                               public_dir:   Option&lt;PathBuf>,
+                                                template_dir: Option&lt;PathBuf>,
+#[derive(Debug, Clone)]                         // trash_dir:    PathBuf,
+pub struct ProjectDirs {                        video_dir:    Option&lt;PathBuf>
+  project_path:   PathBuf,                    }
+  /* base directories */
+  cache_dir:      PathBuf,
+  config_dir:     PathBuf,
+  data_dir:       PathBuf,
+  data_local_dir: PathBuf,
+  runtime_dir:    Option&lt;PathBuf>
+}
+~~~~~~
+
+## Implementation – Rust – Changes
+
+- Split `BaseDirs` into `BaseDirs` and `UserDirs`
+- Added distinction between local and roaming data
+
+************************************************************************************
+*                  +------------------+    +------------------+                    *
+*              +-->| data_dir         +--->| data_local_dir   +--->                *
+*             /    +------------------+    +------------------+                    *
+* +----------+                                                                     *
+* | data_dir |            v0.0.1                  v0.4.0                           *
+* +----------+                                                                     *
+*             \    +------------------+    +------------------+                    *
+*              +-->| data_roaming_dir +--->| data_dir         +--->                *
+*                  +------------------+    +------------------+                    *
+************************************************************************************
+
+
+## Implementation – Rust – Changes
+
+- Split `BaseDirs` into `BaseDirs` and `UserDirs`
+- Added distinction between local and roaming data
+- Overhaul factory functions
+
+~~~~~~
+impl BaseDirs {
+  pub fn new() -> BaseDirs { ... }
+}
+
+impl UserDirs {
+  pub fn new() -> UserDirs { ... }
+}
+
+impl ProjectDirs {
+  pub fn from(qualifier: &str, organization: &str, project: &str) -> ProjectDirs { ... }
+  // use strongly discouraged
+  pub fn from_path(project_path: PathBuf) -> ProjectDirs { ... }
+}
+~~~~~~
+
+## Implementation – Rust – Changes
+
+- Split `BaseDirs` into `BaseDirs` and `UserDirs`
+- Added distinction between local and roaming data
+- Overhaul factory functions
+
+************************************************************************************
+*         +-----------------------------------------------------+                  *
+*         | ProjectDirs::from("uk.co", "Mega Corp", "SuperApp") |                  *
+*         +----+---------------------+---------------------+----+                  *
+*             /                      |                      \                      *
+*      Linux /                 macOS |               Windows \                     *
+*           /                        |                        \                    *
+*          v                         v                         v                   *
+*      superapp/         uk.co.Mega-Corp.SuperApp/    Mega Corp\SuperApp\          *
+************************************************************************************
+
+## Implementation – Rust – Changes
+
+- Added distinction between local and roaming data
+- Split `BaseDirs` into `BaseDirs` and `UserDirs`
+- Overhaul factory functions
+- Abbreviations:
+  - Rename `Directories` to `Dirs`
+  - Remove `project` prefix from `ProjectDirs` functions
+
+## Implementation – Rust – Comparison
+
+| Library           | Status         | Lin | Mac | Win |Base|User|Proj|Conv|
+| ----------------- | -------------- |:---:|:---:|:---:|:--:|:--:|:--:|:--:|
+| `dirs`            | Unmaintained?  |  ✔  |  ✔  |  ✔  | 🞈  | ✖  | ✔  | ✖  |
+| `s_app_dir`       | Unmaintained?  |  ✔  |  ✖  |  🞈  | ✖  | ✖  | 🞈  | ✖  |
+| `xdg`             | Maintaind      |  ✔  |  ✖  |  ✖  | ✔  | ✖  | ✔  | 🞈  |
+| `xdg-basedir`     | Unmaintained?  |  ✔  |  ✖  |  ✖  | ✔   | ✖  | ✖  | 🞈  |
+| `xdg-rs`          | Obsolete       |  ✔  |  ✖  |  ✖  | ✔   | ✖  | ✖  | 🞈  |
+| `directories-jvm` | "Developed"    |  ✔  |  ✔  |  ✔  | ✔  | ✔  | ✔  | ✔  |
+| `directories-rs`  | "Developed"    |  ✔  |  ✔  |  ✔  | ✔  | ✔  | ✔  | ✔  |
+
+# Overview
+
+| Library           | Version | Artifacts                                                                                                           | Docs                                                          | Sources                                          | Examples                                                  |
+| ----------------- | -------:| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------- |
+| `directories-jvm` | 7       | [Maven Central](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22io.github.soc%22%20AND%20a%3A%22directories%22) | [javadoc.io](http://javadoc.io/doc/io.github.soc/directories) | [GitHub](https://github.com/soc/directories-jvm) | [coursier](https://github.com/coursier/coursier/pull/676) |
+| `directories-rs`  | 0.8.4   | [crates.io](https://crates.io/crates/directories)                                                                   | [docs.rs](https://docs.rs/directories/0.8.3/directories/)     | [GitHub](https://github.com/soc/directories-rs)  | [cargo](https://github.com/rust-lang/cargo/pull/5183)     |
+
+# Questions?
+
+# Thanks!
+
+<link rel="stylesheet" href="slides.css?"><script>markdeepOptions={tocStyle:'none'}</script>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style><script src="markdeep.js?"></script>
+

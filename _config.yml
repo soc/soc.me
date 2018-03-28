@@ -22,31 +22,54 @@ twitter_username: oxnrtr
 github_username:  soc
 future: false
 collections:
-  six-years-of-scala-development:
+  standards:
     output: true
-    name: "Six Years of Scala Development"
+    name: "Standards"
     published: true
-  lessons-learned:
+  hardware:
     output: true
-    name: "Lessons Learned"
+    name: "Hardware"
+    published: true
+  languages:
+    output: true
+    name: "Languages"
+    published: true
+  interfaces:
+    output: true
+    name: "Interfaces"
+    published: true
+  scala:
+    output: true
+    name: "Scala"
     published: true
   talks:
     output: true
     name: "Talks"
     published: false
-  articles:
-    output: true
-    name: "Articles"
-    published: true
 defaults:
   -
     scope:
-      type: six-years-of-scala-development
+      type: standards
     values:
       layout: post
   -
     scope:
-      type: lessons-learned
+      type: hardware
+    values:
+      layout: post
+  -
+    scope:
+      type: languages
+    values:
+      layout: post
+  -
+    scope:
+      type: interfaces
+    values:
+      layout: post
+  -
+    scope:
+      type: scala
     values:
       layout: post
   -
@@ -54,11 +77,7 @@ defaults:
       type: talks
     values:
       layout: talk
-  -
-    scope:
-      type: articles
-    values:
-      layout: post
+
 # Build settings
 markdown: kramdown
 

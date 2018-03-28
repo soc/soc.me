@@ -1,0 +1,19 @@
+/**** Fira Mono ****/
+
+@font-face {
+    font-family: 'Fira Mono';
+    font-weight: 500;
+    font-style: normal;
+    src:
+      local('Fira Mono Medium'),
+      url('/assets/fonts/FiraMono-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Fira Mono';
+    font-weight: 700;
+    font-style: normal;
+    src:
+      local('Fira Mono Bold'),
+      url('/assets/fonts/FiraMono-Bold.woff') format('woff');
+}
