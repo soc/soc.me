@@ -42,7 +42,8 @@ layout: default
   <tr>
     <th class="table-topic">Languages</th>
     <td>
-      <a href="languages/equality-and-identity.html">Equality &amp; Identity</a><br/>
+      <a href="languages/equality-and-identity-part1.html">Equality &amp; Identity – Part 1</a><br/>
+      <a href="languages/equality-and-identity-part2.html">Equality &amp; Identity – Part 2</a><br/>
       <a href="languages/generics.html">Generics</a><br/>
       <a href="languages/type-annotations.html">Type Annotations</a><br/>
       <a href="languages/implicit-numeric-conversions.html">Implicit Numeric Conversions</a><br/>
