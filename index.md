@@ -49,7 +49,9 @@ layout: default
       <a href="languages/package-objects.html">Package Objects</a><br/>
       <a href="languages/notes-on-rust">Notes on Rust</a><br/>
     </td>
-    <td></td>
+    <td>
+      Merging if-expressions and pattern matching
+    </td>
     <td>
       <a href="talks/scalasphere-2016.html">Language Simplification</a><br/>
       <a href="talks/scaladays-2015.html">Value Types on the JVM</a><br/>

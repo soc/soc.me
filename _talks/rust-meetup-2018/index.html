@@ -7,7 +7,7 @@
 <script>
   $(document).ready(function() {
     const headings = $("h1, h2").toArray();
-    console.log(headings);
+    //console.log(headings);
     $(document).keydown(function(e) {
       const position = $("body").scrollTop();
       //console.log(position);
@@ -16,7 +16,7 @@
           //console.log($(element).position());
           return $(element).position().top > position;
         });
-        console.log(head);
+        //console.log(head);
         const scroll = (head === undefined) ? 0 : $(head).position().top + 750;
 
         $("html, body").animate({
@@ -29,7 +29,7 @@
           return $(element).position().top < position-750;
         });
         const handleTop = (position == 0) ? $(document).height() : 0;
-        console.log(head);
+        //console.log(head);
         const scroll = (head === undefined) ? handleTop : $(head).position().top + 750;
         $("html, body").animate({
           scrollTop: scroll
