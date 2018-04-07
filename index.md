@@ -10,6 +10,7 @@ layout: default
     <th>Articles</th>
     <th>Projects</th>
     <th>Talks</th>
+    <th>Links</th>
   </tr>
   <tr>
     <th class="table-topic">Standards</th>
@@ -27,16 +28,23 @@ layout: default
     <td>
       <a href="talks/rust-meetup-2018.html">directories: a tiny library that might help you</a><br/>
     </td>
+    <td>
+      <a href="https://googleprojectzero.blogspot.de/2016/02/the-definitive-guide-on-win32-to-nt.html">Path handling on Windows</a><br/>
+      <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Unicode and Character Sets</a><br/>
+      <a href="https://yakking.branchable.com/posts/falsehoods-programmers-believe-about-file-paths/">Falsehoods about paths</a><br/>
+      <a href="https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/">Falsehoods about addresses</a><br/>
+    </td>
   </tr>
   <tr>
     <th class="table-topic">Hardware</th>
     <td>
       <a href="hardware/keyboard-design.html">Keyboard Design</a><br/>
-      <a href="hardware/keyboard-protocol.html">Improving the USB-HID protocol</a>
+      Improving the USB-HID protocol
     </td>
     <td>
-      <a href="hardware/keyboard-build.html">Keyboard Build</a><br/>
+      Keyboard Build<br/>
     </td>
+    <td></td>
     <td></td>
   </tr>
   <tr>
@@ -51,7 +59,7 @@ layout: default
       <a href="languages/notes-on-rust">Notes on Rust</a><br/>
     </td>
     <td>
-      Merging if-expressions and pattern matching
+      Merging if-expressions, if-let and pattern matching
     </td>
     <td>
       <a href="talks/scalasphere-2016.html">Language Simplification</a><br/>
@@ -59,12 +67,17 @@ layout: default
       <a href="talks/scaladays-2014.html">Simplifying Scala</a><br/>
       <a href="talks/functional-meetup-2014.html">Scala Puzzlers</a><br/>
     </td>
+    <td>
+      <a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness: Functional Data Structures</a><br/>
+      <a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a><br/>
+    </td>
   </tr>
   <tr>
     <th class="table-topic">Interfaces</th>
     <td>
-      <a href="interfaces/improving-the-settings-ui.html">XFCE – Improving the Settings UI</a><br/>
+      <a href="interfaces/improving-the-xfce-settings-ui.html">Improving the XFCE Settings UI</a><br/>
     </td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -79,10 +92,10 @@ layout: default
       <a href="languages/package-objects.html">Package Objects</a><br/>
     </td>
     <td>
-      <a href="scala/scala-enum.html">scala-enum</a><br/>
-      <a href="scala/scala-java-time.html">scala-java-time</a><br/>
-      <a href="scala/sbs.html">SBS</a><br/>
-      <a href="scala/documentation.html">Documentation &amp; Website Overhaul</a><br/>
+      scala-enum<br/>
+      scala-java-time<br/>
+      SBS<br/>
+      Documentation &amp; Website Overhaul<br/>
     </td>
     <td>
       <a href="talks/scalasphere-2016.html">Language Simplification</a><br/>
@@ -90,6 +103,11 @@ layout: default
       <a href="talks/scaladays-2015.html">Value Types on the JVM</a><br/>
       <a href="talks/scaladays-2014.html">Simplifying Scala</a><br/>
       <a href="talks/functional-meetup-2014.html">Scala Puzzlers</a><br/>
+    </td>
+    <td>
+      <a href="https://www.youtube.com/watch?v=TS1lpKBMkgg">We're Doing It All Wrong</a><br/>
+      <a href="https://www.youtube.com/watch?v=uiJycy6dFSQ">Scala Collections: Why Not?</a><br/>
+      <a href="https://www.youtube.com/watch?v=4jh94gowim0">psp collections: views and more</a><br/>
     </td>
   </tr>
 </table>
