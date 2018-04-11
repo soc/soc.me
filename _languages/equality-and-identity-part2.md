@@ -1,9 +1,7 @@
 ---
-title:  "Language Design: On Equality & Identity – Part 2"
+title:  "Language Design: On Equality & Identity – Part 2: Solution"
 date:   2017-10-31 12:00:00 +0200
 ---
-
-### Fundamental considerations
 
 Let's take a step back and think about what these equality operations do:
 

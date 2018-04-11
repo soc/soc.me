@@ -6,12 +6,13 @@ layout: default
 
 <div class="wrapper">
   <article class="post">
-    <h1 class="post-title"><a href="{{page.url}}/..">{{ title_parts[0] }}</a></h1>
+    <h1 class="post-title"><!--<a href="{{page.url}}/..">-->{{ title_parts[0] }}<!--</a>--></h1>
     <!--<p class="post-meta">{{ page.date | date: "%d/%m/%Y" }}</p>-->
-    <h3>{{title_parts[1] }}</h3>
-    <div class="date">Published on {{page.date | date: "%Y-%m-%d"}}.</div><br/>
+    {% if title_parts[1] != nil and title_parts[1] != empty %}
+    <h3>{{ title_parts[1] }}</h3>
+    {% endif %}
+    <div class="date">Published on {{page.date | date: "%Y-%m-%d"}}.</div>
     {{ content | markdownify }}
   </article>
-
   {% include pagination.html %}
 </div>

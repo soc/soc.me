@@ -1,9 +1,7 @@
 ---
-title:  "Language Design: On Equality & Identity – Part 1"
+title:  "Language Design: On Equality & Identity – Part 1: Introduction"
 date:   2017-10-31 12:00:00 +0200
 ---
-
-### Introduction
 
 Most languages have a notion of equality comparisons based on _value equality_.
 Many of them also provide a more restricted equality comparison that works only

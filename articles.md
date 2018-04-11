@@ -2,7 +2,7 @@
 layout: page
 title: Articles
 permalink: /articles/
-navigation: true
+navigation: false
 ---
 
 <div class="posts">

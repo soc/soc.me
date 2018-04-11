@@ -152,9 +152,9 @@ table.table-small tr td:first-child {
 
 ul,ol {
   margin-top: 0;
-  margin-bottom: $base-line;
+  margin-bottom: 0; /* $base-line;*/
   li {
-    margin-bottom: 0.5rem;
+    /*margin-bottom: 0.5rem;*/
   }
 }
 

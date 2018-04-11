@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-navigation: true
+navigation: false
 ---
 
 <div class="posts">

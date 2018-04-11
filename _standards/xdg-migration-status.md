@@ -1,5 +1,5 @@
 ---
-title:  "XDG Standard – Are We There Yet?"
+title:  "XDG Migration Status"
 date:   2017-10-23 12:00:00 +0200
 ---
 
@@ -21,6 +21,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .android            | <small>Android development tools</small> |          |
 .IntelliJIdea2017.2 | JetBrains IntelliJ  | [reported](https://youtrack.jetbrains.com/issue/IDEA-22407) |
 .ivy2               | Apache Ivy          | [reported](https://issues.apache.org/jira/browse/IVY-1502) |
+.m2                 | Maven               | [reported](http://maven.40175.n5.nabble.com/Implementing-XDG-base-directory-support-td5903021.html)
 .sbt                | SBT                 | [reported](https://github.com/sbt/sbt/issues/3681) |
 <small>.steam, .steampid, .steampath</small> | Steam     | [reported](https://github.com/ValveSoftware/steam-for-linux/issues/1890)
 
@@ -31,6 +32,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 ------------------- | :------------------ | :------: | :---
 .atom               | Atom                | [planned](https://github.com/atom/atom/issues/8281) |
 .cargo, .rustup     | Rust Cargo, Rustup  | [pull request](https://github.com/rust-lang/cargo/pull/5183) |
+.code, .vscode      | Visual Studio Code  | [reported](https://github.com/Microsoft/vscode/issues/3884) |
 .pam_environment    | Linux PAM           | [reported](https://github.com/linux-pam/linux-pam/issues/7) | <small>Bootstrap issue: How should pam_env know where to look for its environment file?</small>
 .pki                | Mozilla             | [reported](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
 
