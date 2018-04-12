@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Generics"
 date:   2017-07-21 12:00:00 +0200
+redirect_from: "/lessons-learned/generics.html"
 ---
 
 Scala's Generics reside in a language design sweet-spot largely due to three,

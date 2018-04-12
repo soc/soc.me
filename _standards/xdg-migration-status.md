@@ -1,6 +1,7 @@
 ---
 title:  "XDG Migration Status"
 date:   2017-10-23 12:00:00 +0200
+redirect_from: "/standards/xdg-are-we-there-yet.html"
 ---
 
 #### Category: Status Unknown
@@ -8,7 +9,6 @@ date:   2017-10-23 12:00:00 +0200
 Dot-File/-Directory | Application/Library | Status  | Comment
 ------------------- | :------------------ | :-----: | :------
 .java               |                     | unknown |
-.m2                 | Maven               | unknown |
 .scala_history      | Scala               | unknown |
 .scalaide           | ScalaIDE            | unknown |
 .swt                | Eclipse             | unknown |
@@ -56,6 +56,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .gem                | RubyGems            | [rejected](https://github.com/rubygems/rubygems/issues/1599) |
 .gnupg              | GnuPG               | [rejected](https://dev.gnupg.org/T1456) |
 .mozilla            | Firefox             | [whine](https://bugzilla.mozilla.org/show_bug.cgi?id=259356) |
+.npm                | NPM                 | [rejected](https://github.com/npm/npm/issues/6675) |
 .ssh                | OpenSSH             | [rejected](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) |
 .thunderbird        | Thunderbird         | [whine](https://bugzilla.mozilla.org/show_bug.cgi?id=735285) |
 .var                | FlatPak             | [rejected](https://github.com/flatpak/flatpak/issues/46), [whine](https://github.com/flatpak/flatpak.github.io/issues/191) |

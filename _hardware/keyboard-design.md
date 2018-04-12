@@ -1,5 +1,5 @@
 ---
-title:  "Hardware – Keyboard Design"
+title:  "Hardware – Keyboard Design (WIP)"
 date:   2018-03-28 12:00:00 +0200
 ---
 

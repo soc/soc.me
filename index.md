@@ -15,7 +15,7 @@ layout: default
   <tr>
     <th class="table-topic">Standards</th>
     <td>
-      <a href="standards/self-defense-against-dotfiles">Self-Defense against Dotfiles</a><br/>
+      <a href="standards/defending-home">Defending <kbd>$HOME</kbd></a><br/>
       <a href="standards/xdg-migration-status">XDG Migration Status</a>
     </td>
     <td>
@@ -37,7 +37,7 @@ layout: default
   <tr>
     <th class="table-topic">Hardware</th>
     <td>
-      <a href="hardware/keyboard-design">Keyboard Design</a><br/>
+      <a href="hardware/keyboard-design">Keyboard Design (WIP)</a><br/>
       Improving the USB-HID protocol
     </td>
     <td>
@@ -51,6 +51,7 @@ layout: default
     <td>
       <a href="languages/equality-and-identity-part1">Equality &amp; Identity – Part 1</a><br/>
       <a href="languages/equality-and-identity-part2">Equality &amp; Identity – Part 2</a><br/>
+      <a href="languages/equality-and-identity-part3">Equality &amp; Identity – Part 3</a><br/>
       <a href="languages/generics">Generics</a><br/>
       <a href="languages/type-annotations">Type Annotations</a><br/>
       <a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a><br/>

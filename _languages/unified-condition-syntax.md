@@ -29,14 +29,18 @@ not to minimize keywords (i. e. `a == b then c else d`) or turn conditions into 
 
 #### Examples
 
-Simple case:
+The following examples assume that the language has indentation-sensitive syntax to ensure unambiguous parsing.
+
+Languages without indentation-sensitve syntax require either mandatory braces around the bodies of `then` branches, or ending `then` branches explicitly, for instance with `end` or a `,`.
+
+##### simple if expression
 ```lua
 if x == 1.0        /* same as */
 then "a"           if x == 1.0 then "a" else "z"
 else "z"
 ```
 
-One comparison operator, multiple targets:
+##### one comparison operator on multiple targets
 ```lua
 if x ==            if x                   /* same as */
   1.0 then "a"       == 1.0 then "a"      if x == 1.0      then "a"
@@ -44,7 +48,7 @@ if x ==            if x                   /* same as */
       else "z"              else "z"      else                  "z"
 ```
 
-Different comparison operators (equality and identity):
+##### different comparison operators, equality and identity
 ```lua
 if x                           /* same as */
   == 1.0 then "a"              if x == 1.0      then "a"
@@ -52,7 +56,7 @@ if x                           /* same as */
          else "z"              else                  "z"
 ```
 
-Method calls:
+##### method calls
 ```lua
 if xs                          /* same as */
   .isEmpty       then "e"      if xs.isEmpty            then "e"
@@ -60,7 +64,7 @@ if xs                          /* same as */
                  else "z"      else                          "z"
 ```
 
-Pattern matching (`is`), introducing bindings (`@`):
+##### pattern matching (`is`), introducing bindings (`@`)
 ```lua
 if alice
   .age < 18                then "m"
@@ -68,14 +72,14 @@ if alice
                            else "a"
 ```
 
-Pattern matching, "if-let":
+##### pattern matching using "if-let"
 ```lua
 if person is Person("Alice", @age)
-  then "$age"
-  else "o"
+then "$age"
+else "o"
 ```
 
-Wildcards (`_`) and pattern guards:
+##### wildcards (`_`) and pattern guards
 ```lua
 if person
   is Person("Alice", _)           then "alice"

@@ -1,6 +1,7 @@
 ---
 title:  "Linux: Improving the XFCE Settings UI"
 date:   2017-09-09 12:00:00 +0200
+redirect_from: "/blog/xfce/thoughts-on-configuration"
 ---
 
 It often irritates me how the settings of XFCE, a light-weight desktop environment, are distributed across _Appearance_, _Window Manager_,

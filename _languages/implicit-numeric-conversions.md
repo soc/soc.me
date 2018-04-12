@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Implicit Numeric Conversions"
 date:   2017-05-12 12:00:00 +0200
+redirect_from: "/lessons-learned/implicit-numeric-conversions.html"
 ---
 
 _**TL;DR:** The desire to make unrelated types act as if they were in a
@@ -9,7 +10,7 @@ syntax sugar that makes static dispatch look like dynamic dispatch creates a
 perfect storm of unintended, harmful consequences._
 
 <br/>
-Implicit numeric conversions[^term] are a special compiler feature that adds
+Implicit numeric conversions[^term] are a special compiler feature in Scala that adds
 "convenience" conversions between number types, for instance:
 
 ```scala

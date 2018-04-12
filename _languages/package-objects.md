@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Package Objects"
 date:   2017-12-20 00:00:00
+redirect_from: "/articles/language-design/package-objects.html"
 ---
 
 Scala has the concept of

@@ -1,6 +1,7 @@
 ---
-title:  "Language Design: On Equality & Identity – Part 1: Introduction"
+title:  "Language Design: Equality & Identity – Part 1: Overview"
 date:   2017-10-31 12:00:00 +0200
+redirect_from: "/articles/language-design/equality-and-identity.html"
 ---
 
 Most languages have a notion of equality comparisons based on _value equality_.
@@ -42,41 +43,3 @@ on references, often called _reference equality_. Here are a few examples:
 - `==` is overloaded to implement value equality.
   - An extended version of value equality is used in which different numeric types can be equal if they represent the same value.
 - `IEquatable.Equals` can be implemented to reduce boxing for value types, but should return the same results as overridden `Equals` methods on that type.
-
-
-### Problems
-
-The problem can be demonstrated by considering what it means to "contain" a value:
-
-Java:
-```java
-List.of(Double.NaN).contains(Double.NaN); // true
-```
-Scala:
-```scala
-List(Double.NaN).contains(Double.NaN) // false
-```
-Rust:
-```rust
-&[0.0/0.0].contains(0.0/0.0) // false
-```
-C#:
-```csharp
-var list = new List<double>() { double.NaN };
-list.Contains(double.NaN); // true
-```
-Only Java and C# get this right.
-
-The core point is that checking equality is a necessary step, but not sufficient on its own, to decide whether some value is "contained". 
-
-The design decisions made by languages also come with additional substantial issues, for instance:
-
-- There are many, often confusing options which `equals` method should be overridden or how `==` should be overloaded.
-- It is hard to know which of the many methods to use, and which semantics have been implemented by the author of the type.
-- Value types are often unnecessarily boxed for equality operations.
-- Generic code has to decide at declaration-site whether it requires arguments to be reference or value types.
-  - Java works around this by only supporting reference types in generics.
-  - Scala requires explicit bounds (`<: AnyRef`) to mark types that require reference equality.
-  - C# provides `class` (reference type) and `struct` (value type) constraints on generic types.
-- Language creators (Java) or users (Scala) need to decide whether interfaces
-  support value types, or require that all subtypes are reference types.
