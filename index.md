@@ -37,11 +37,11 @@ layout: default
   <tr>
     <th class="table-topic">Hardware</th>
     <td>
-      <a href="hardware/keyboard-design">Keyboard Design (WIP)</a><br/>
+      <a href="hardware/keyboard-design">DZ60: Keyboard Design</a><br/>
       Improving the USB-HID protocol
     </td>
     <td>
-      Keyboard Build<br/>
+      DZ60: Keyboard Build<br/>
     </td>
     <td></td>
     <td></td>
