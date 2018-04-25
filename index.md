@@ -38,7 +38,7 @@ layout: default
     <th class="table-topic">Hardware</th>
     <td>
       <a href="hardware/keyboard-design">DZ60: Keyboard Design</a><br/>
-      Improving the USB-HID protocol
+      <a href="hardware/usb-standard">USB-HID Protocol Evolution</a>
     </td>
     <td>
       DZ60: Keyboard Build<br/>
