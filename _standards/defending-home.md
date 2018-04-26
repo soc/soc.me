@@ -1,5 +1,5 @@
 ---
-title:  "Defending $HOME"
+title:  "Standards: Defending $HOME"
 date:   2017-10-14 12:00:00 +0200
 redirect_from: "/standards/self-defense-against-dotfiles.html"
 redirect_from: "/blog/linux/self-defense-against-dotfiles.html"

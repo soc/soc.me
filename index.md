@@ -29,19 +29,21 @@ layout: default
       <a href="talks/rust-meetup-2018">directories: a tiny library that might help you</a><br/>
     </td>
     <td>
-      <a href="https://googleprojectzero.blogspot.de/2016/02/the-definitive-guide-on-win32-to-nt.html">Path handling on Windows</a><br/>
       <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Unicode &amp; Character Sets</a><br/>
+      <a href="https://googleprojectzero.blogspot.de/2016/02/the-definitive-guide-on-win32-to-nt.html">Path handling on Windows</a><br/>
       <a href="https://yakking.branchable.com/posts/falsehoods-programmers-believe-about-file-paths/">Falsehoods about paths</a><br/>
+      <a href="http://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a>
     </td>
   </tr>
   <tr>
     <th class="table-topic">Hardware</th>
     <td>
-      <a href="hardware/keyboard-design">DZ60: Keyboard Design</a><br/>
+      <a href="hardware/keyboard-design">Keyboard Design</a><br/>
       <a href="hardware/usb-standard">USB-HID Protocol Evolution</a>
     </td>
     <td>
-      DZ60: Keyboard Build<br/>
+      <a href="hardware/keyboard-build">Keyboard Build</a><br/>
+      <a href="hardware/keyboard-setup">Keyboard Setup</a>
     </td>
     <td></td>
     <td></td>

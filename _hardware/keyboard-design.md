@@ -1,6 +1,6 @@
 ---
-title:  "Hardware – DZ60: Keyboard Design"
-date:   2018-03-28 12:00:00 +0200
+title:  "Hardware: Keyboard Design"
+date:   2018-04-18 12:00:00 +0200
 ---
 
 Most common keyboard layouts are biased to the left, and require a far larger reach to access keys on the right side of the keyboard.
@@ -15,7 +15,7 @@ which is optimized for writing both German and English texts, and tries to minim
 fingers or hands need to leave the home row.
 
 <figure>
-  <img src="{{site.url}}/assets/img/keyboard/dz60_v2_prototype.jpg" alt="Keyboard prototype (v2)"/>
+  <img src="{{site.url}}/assets/img/keyboard/dz60_v2_hardware.jpg" alt="Keyboard prototype (v2)"/>
   <figcaption>Mid-to-late prototype exploring these ideas</figcaption>
 </figure>
 

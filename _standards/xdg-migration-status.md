@@ -1,5 +1,5 @@
 ---
-title:  "XDG Migration Status"
+title:  "Standards: XDG Migration Status"
 date:   2017-10-23 12:00:00 +0200
 redirect_from: "/standards/xdg-are-we-there-yet.html"
 ---
