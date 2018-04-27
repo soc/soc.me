@@ -58,6 +58,7 @@ layout: default
       <a href="languages/type-annotations">Type Annotations</a><br/>
       <a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a><br/>
       <a href="languages/package-objects">Package Objects</a><br/>
+      <a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a><br/>
       <a href="languages/notes-on-rust">Notes on Rust</a><br/>
     </td>
     <td>
