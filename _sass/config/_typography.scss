@@ -62,7 +62,7 @@ h2 { line-height: $base * $ms1; }
 h1 { line-height: $base * $ms0; }
 
 h6, .h6 { font-size: $smaller; }
-h5, .h5 { font-size: $normal; }
+h5, .h5 { font-size: $normal * 1.2; }
 h4, .h4 { font-size: $bigger; }
 h3, .h3 { font-size: $title3; }
 h2, .h2 { font-size: $title2; }

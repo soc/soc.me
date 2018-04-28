@@ -67,14 +67,15 @@ if xs                          /* same as */
 ##### pattern matching (`is`), introducing bindings (`@`)
 ```lua
 if alice
-  .age < 18                then "m"
-  is Person("Alice", @age) then "$age"
-                           else "a"
+  .age < 18                  then "18"
+  is Person("Alice", age@)   then "$age"
+  is person@Person("Bob", _) then "{$person.age}"
+                             else "0"
 ```
 
-##### pattern matching using "if-let"
+##### pattern matching using "if-let"[^rust][^swift]
 ```lua
-if person is Person("Alice", @age)
+if person is Person("Alice", age@)
 then "$age"
 else "o"
 ```
@@ -83,6 +84,35 @@ else "o"
 ```lua
 if person
   is Person("Alice", _)           then "alice"
+  is Person(_, age@) && age >= 18 then "adult"
+                                  else "minor"
+```
+
+#### Further Considerations
+
+A reasonable question that might be asked is whether this design can be extended to also handle thrown exceptions,
+and whether such an extension could completely replace the `try-catch-finally` idiom.
+
+One language that has done something similar is Ocaml, which has
+[extended its pattern matching syntax/semantics](https://blog.janestreet.com/pattern-matching-and-exception-handling-unite/).
+
+One option might be something along the lines of
+
+```lua
+if readPersonFromFile(file)
+  throws[IOException](ex@)        then "unknown, due to $ex"
+  is Person("Alice", _)           then "alice"
   is Person(_, @age) && age >= 18 then "adult"
                                   else "minor"
 ```
+
+This might require adding some amount of language magic to deal with the `throws` construct though, depending on the expressiveness of the core language.
+
+#### Related Work
+
+- Haskell – [multi-way if-expressions](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-MultiWayIf)
+- CommonLisp – [cond](http://www.lispworks.com/documentation/HyperSpec/Body/m_cond.htm)
+  and [case](http://www.lispworks.com/documentation/HyperSpec/Body/m_case_.htm#case)
+
+[^rust]: Rust – https://doc.rust-lang.org/book/second-edition/ch06-03-if-let.html
+[^swift]: Swift – https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html
