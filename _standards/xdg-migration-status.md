@@ -1,7 +1,9 @@
 ---
 title:  "Standards: XDG Migration Status"
 date:   2017-10-23 12:00:00 +0200
-redirect_from: "/standards/xdg-are-we-there-yet.html"
+redirect_from:
+  - "/standards/xdg-are-we-there-yet.html"
+  - "/articles/linux/xdg-are-we-there-yet.html"
 ---
 
 #### Category: Status Unknown
@@ -47,7 +49,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .purple             | Pidgin              | [fixed](https://developer.pidgin.im/ticket/10029) | <small>will be shipped in [Pidgin 3](https://developer.pidgin.im/wiki/Roadmap3.0.0)</small>
 
 
-#### Category: Special Snowflakes
+#### Category: Holdouts
 
 Dot-File/-Directory | Application/Library | Status   | Comment
 ------------------- | :------------------ | :------: | :---
@@ -55,8 +57,8 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .cups               | Cups                | [rejected](https://github.com/apple/cups/issues/4243) |
 .gem                | RubyGems            | [rejected](https://github.com/rubygems/rubygems/issues/1599) |
 .gnupg              | GnuPG               | [rejected](https://dev.gnupg.org/T1456) |
-.mozilla            | Firefox             | [whine](https://bugzilla.mozilla.org/show_bug.cgi?id=259356) |
+.mozilla            | Firefox             | [rejected?](https://bugzilla.mozilla.org/show_bug.cgi?id=259356) |
 .npm                | NPM                 | [rejected](https://github.com/npm/npm/issues/6675) |
 .ssh                | OpenSSH             | [rejected](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) |
-.thunderbird        | Thunderbird         | [whine](https://bugzilla.mozilla.org/show_bug.cgi?id=735285) |
-.var                | FlatPak             | [rejected](https://github.com/flatpak/flatpak/issues/46), [whine](https://github.com/flatpak/flatpak.github.io/issues/191) |
+.thunderbird        | Thunderbird         | [rejected?](https://bugzilla.mozilla.org/show_bug.cgi?id=735285) |
+.var                | FlatPak             | [rejected](https://github.com/flatpak/flatpak/issues/46), [rejected](https://github.com/flatpak/flatpak.github.io/issues/191) |
