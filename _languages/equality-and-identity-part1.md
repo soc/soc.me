@@ -11,12 +11,10 @@ on references, often called _reference equality_. Here are a few examples:
 #### Java
 
 - `==` implements reference equality on reference types.
-- `Object.equals` and `Objects.equals` implement reference equality be default,
-   but can be overridden to implement value equality on reference types.
+- `Object.equals` and `Objects.equals` implement reference equality by default, but can be overridden to implement value equality on reference types.
 - `Arrays.deepEquals` implements value equality on arrays (`equals` does reference equality on arrays).
 - `==` implements value equality on primitive types.
-  - Primitive types can be implicitly converted to special wrapper classes,
-    which implement `equals` slightly differently.
+  - Primitive types can be implicitly converted to special wrapper classes, which implement `equals` slightly differently.
   - As these wrapper classes are reference types, `==` checks for reference equality of the wrapper classes.
 
 #### Scala
@@ -35,11 +33,10 @@ on references, often called _reference equality_. Here are a few examples:
 
 #### C\#
 
-- `Object.Equals` implements reference equality be default,
-   but can be overridden to implement value equality on reference types.
-- `ValueType.Equals` performs a byte-by-byte comparison on value types.
+- `Object.Equals` implements reference equality be default, but can be overridden to implement value equality on reference types.
+- `ValueType.Equals` calls `Equals` on each field contained within a value types.
 - `Object.ReferenceEquality` implements reference equality. The method always returns false for value types.
-- `==` implements reference equality on reference types, but can be overloaded to implement value equality.
-- `==` is overloaded to implement value equality.
-  - An extended version of value equality is used in which different numeric types can be equal if they represent the same value.
+- `==` implements reference equality on reference types, but can be overloaded to implement value equality (as done on `System.String`).
+- `==` can be overloaded to implement value equality for value types.
+- Numeric types use an extended version of value equality in which different numeric types are equal if they represent the same value.
 - `IEquatable.Equals` can be implemented to reduce boxing for value types, but should return the same results as overridden `Equals` methods on that type.
