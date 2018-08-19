@@ -37,9 +37,9 @@ Having one operation, which is well-defined on both value types and reference ty
 #### How do equality and identity comparisons work?
 
 Compared to the rather complicated, indirect approaches shown earlier, introducing the concept of _identity_ and _equality_ works out beautifully:
-It reduces complexity, avoids unnecessary boxing and will therefore be faster with value types and specialized generics on the JVM.
+It reduces complexity and avoids unnecessary boxing.
 
-The following table shows how this definition of _identity_ and _equality_ works in practice
+The following table shows how this definition of _identity_ and _equality_ could work in practice
 (the first line in each row stands for identity, the second line stands for equality)[^1]:
 
 |             | 1             | 1.0           | '\01'         | Double.NaN    | BigInt(1)     | BigDec("1")   | BigDec("1.0") | Rational(1,1) | Rational(2,2) |

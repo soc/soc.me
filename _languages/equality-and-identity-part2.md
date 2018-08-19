@@ -3,13 +3,17 @@ title:  "Language Design: Equality & Identity – Part 2: Problems"
 date:   2017-10-31 12:00:00 +0200
 ---
 
+<!--
 #### Abstraction
 
 _todo_
+-->
 
 #### Containment
 
-The problems can be demonstrated by a simple piece of code. The core point is that checking equality is a necessary step, but not sufficient on its own, to decide whether some value is "contained":
+The core issue is that equality on its own is insufficient to implement some, rather mundane, algorithms.
+
+Asking the simple question "is some element contained in this data structure" in different languages demonstrates the problem:
 
 ```
 Java:     List.of(Double.NaN).contains(Double.NaN); // true
@@ -20,7 +24,8 @@ C#:       var list = new List<double>() { double.NaN };
 Haskell:  elem (0.0/0.0) [0.0/0.0]                  // false
 ```
 
-Only Java and C# get this right, and the reason why it works in Java is rather incidental:
+Only Java and C# get this right, and the reason why it works in Java is quite incidental:
+
 Methods like `equals` or `contains` box the arguments before comparison, first check for reference equality,
 then call `equals`. Without boxing, it would not be possible to find a `NaN` value in a data structure in Java.
 
