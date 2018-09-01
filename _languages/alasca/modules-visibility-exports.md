@@ -8,7 +8,7 @@ date:   2018-08-31 12:00:00 +0200
   - nested or pure name-spacing (relevant for visibility)?
     e. g. is private content of package foo.bar visible in package foo.bar.impl?
 
-```
+```scala
 package foo.bar
 
 ... // more code here
@@ -23,7 +23,7 @@ package foo.bar
 
 - objects and modules as values:
 
-```
+```scala
 // file 1:
 package foo.bar.impl
 	class X
