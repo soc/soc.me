@@ -35,47 +35,47 @@ Languages without indentation-sensitve syntax require either mandatory braces ar
 
 ##### simple if expression
 ```lua
-if x == 1.0        /* same as */
-then "a"           if x == 1.0 then "a" else "z"
+if x == 1.0                         /* same as */
+then "a"                            if x == 1.0 then "a" else "z"
 else "z"
 ```
 
 ##### one comparison operator on multiple targets
 ```lua
-if x ==            if x                   /* same as */
-  1.0 then "a"       == 1.0 then "a"      if x == 1.0      then "a"
-  2.0 then "b"       == 2.0 then "b"      else if x == 2.0 then "b"
-      else "z"              else "z"      else                  "z"
+if x ==                 if x                    /* same as */
+  1.0 then "a"            == 1.0 then "a"       if x == 1.0      then "a"
+  2.0 then "b"            == 2.0 then "b"       else if x == 2.0 then "b"
+      else "z"                   else "z"       else                  "z"
 ```
 
 ##### different comparison operators, equality and identity
 ```lua
-if x                           /* same as */
-  == 1.0 then "a"              if x == 1.0      then "a"
-  eq NaN then "n"              else if x eq NaN then "b"
-         else "z"              else                  "z"
+if x                                /* same as */
+  == 1.0 then "a"                   if x == 1.0      then "a"
+  eq NaN then "n"                   else if x eq NaN then "b"
+         else "z"                   else                  "z"
 ```
 
 ##### method calls
 ```lua
-if xs                          /* same as */
-  .isEmpty       then "e"      if xs.isEmpty            then "e"
-  .contains(0.0) then "n"      else if xs.contains(0.0) then "n"      
-                 else "z"      else                          "z"
+if xs                               /* same as */
+  .isEmpty       then "e"           if xs.isEmpty            then "e"
+  .contains(0.0) then "n"           else if xs.contains(0.0) then "n"      
+                 else "z"           else                          "z"
 ```
 
 ##### pattern matching (`is`), introducing bindings (`@`)
 ```lua
 if alice
-  .age < 18                  then "18"
-  is Person("Alice", age@)   then "$age"
-  is person@Person("Bob", _) then "{$person.age}"
-                             else "0"
+  .age < 18                         then "18"
+  is Person("Alice", $age)          then "$age"
+  is Person("Bob", _)$person        then "{$person.age}"
+                                    else "0"
 ```
 
 ##### pattern matching using "if-let"[^rust][^swift]
 ```lua
-if person is Person("Alice", age@)
+if person is Person("Alice", $age)
 then "$age"
 else "o"
 ```
@@ -83,9 +83,9 @@ else "o"
 ##### wildcards (`_`) and pattern guards
 ```lua
 if person
-  is Person("Alice", _)           then "alice"
-  is Person(_, age@) && age >= 18 then "adult"
-                                  else "minor"
+  is Person("Alice", _)             then "alice"
+  is Person(_, $age) && age >= 18   then "adult"
+                                    else "minor"
 ```
 
 #### Further Considerations
@@ -100,9 +100,9 @@ One option might be something along the lines of
 
 ```lua
 if readPersonFromFile(file)
-  throws[IOException](ex@)        then "unknown, due to $ex"
+  throws[IOException]($ex)        then "unknown, due to $ex"
   is Person("Alice", _)           then "alice"
-  is Person(_, @age) && age >= 18 then "adult"
+  is Person(_, $age) && age >= 18 then "adult"
                                   else "minor"
 ```
 
