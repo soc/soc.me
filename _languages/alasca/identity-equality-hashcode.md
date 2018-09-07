@@ -47,7 +47,8 @@ rat1 ==  rat2
 rat1 !== rat2
 ```
 
-hashcode – similar to equality?
+- hashcode – similar to equality?
+
 ```scala
 1.0.hashCode
 ```
