@@ -3,8 +3,8 @@ title:  "Alasca: Classes and Values"
 date:   2018-08-31 12:00:00 +0200
 ---
 
-- class: reference type
-- value: value type, immutable (better name?)
+- `class`: reference type
+- `value`: value type, immutable
 
 - classes and values have one or more constructor fields, they are the only way to introduce state into a class or value:
 
@@ -21,7 +21,7 @@ class LivingThing
 class Cat extends LivingThing
 ```
 
-- class fields can be mutable (structs cannot):
+- class fields can be mutable (value fields cannot):
 
 ```scala
 class Weather(var niceness: Float64)
@@ -38,7 +38,7 @@ value Pet(petName: String) extends Name
 	let name = "Sir " ++ petName
 ```
 
-- trait members can be implemented by lets:
+- trait `fun`s can be implemented by `let`s:
 
 ```scala
 class Person(name: String) extends Name

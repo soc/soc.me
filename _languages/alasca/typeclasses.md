@@ -4,10 +4,12 @@ date:   2018-08-31 12:00:00 +0200
 ---
 
 ```scala
+// normal interface ...
 trait Order[T]
-	fun <=(this: T, that: T) // note the `this`
+	fun <=(this: T, that: T) // ... but note the `this`
 	fun > = !<=
 
+// normal subtyping usage:
 class Person(name: String) extends Order[Person]
 	fun <=(that: T) = name <= that.name
 ```
@@ -15,15 +17,14 @@ class Person(name: String) extends Order[Person]
 - typeclass ideas:
 
 ```scala
-object Order[Person]
+module Order[Person]
 	fun <=(this: T, that: T) = this.name <= that.name
 
-object Order for Person
+module Order for Person
   fun <=(this: T, that: T) = this.name <= that.name
 
-object Asc extends Order[Person] // instance has term-level name
+module Asc extends Order[Person] // instance has term-level name
   fun <=(this: T, that: T) = this.name <= that.name
-```
 
 // accepts both:
 // - a type which extends Order
@@ -33,11 +34,24 @@ fun sort[T : Order](values: List[T]) = ...
 // accepts only type that extends Order (necessary?)
 fun sort[T <: Order[T]](values: List[T]) = ...
 ```
+
 - is it possible to pass typeclass instances explicitly?
-- is passing typeclass instances explicitly the only way to select
-  a specific instance?
+- is passing typeclass instances explicitly the only way to select a specific instance?
 - is it necessary to summon typeclass instance values?
 
 ```
 Order.for[Person]
+```
+
+- ideas on bounds regarding traits as interfaces vs. typeclasses:
+
+```scala
+// T needs to be a subtype of Order:
+fun sort(values: Array[T < Order]) = ...
+// T needs to have an Order typeclass instance:
+fun sort(values: Array[T : Order]) = ...
+// T needs to either     (issue: what's the precedence?)
+// - be a subtype of Order
+// - have an Order typeclass instance
+fun sort(values: Array[T <: Order]) = ...
 ```

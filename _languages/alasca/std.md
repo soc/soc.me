@@ -25,7 +25,7 @@ std
   class StringBuilder: UTF-8 byte stream with length, mutable
 
   value Option:  Some(value)/None
-  value Result:  Ok(value)/Error(value) ... Ok/Fail? Good/Bad?
+  value Result:  Ok(value)/Error(value) ... Ok/Fail? Pass/Fail? Good/Bad?
 
 std.data
   package json
@@ -42,7 +42,8 @@ std.math
 
 std.regex
 std.stream
-std.text (?)
+std.text
+  class Text: decomposed UTF-8 bytestream with locale
 std.time
   value Instant
   value Period
@@ -53,7 +54,8 @@ std.time
   ZonedDateTime
 ```
 
-.size vs. .length vs. sizeOf[T]
+---
 
---> .size: collections, string, text, etc.
---> length: text ("real" length)?
+- .size vs. .length vs. sizeOf[T]
+  - .size: collections, string, text, etc.
+  - .length: text ("real" length)?

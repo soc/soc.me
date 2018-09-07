@@ -3,7 +3,10 @@ title:  "Alasca: Traits, Sealed Traits and Enum Traits"
 date:   2018-08-31 12:00:00 +0200
 ---
 
-trait: interfaces with implementations (and type classes _(todo)_)
+#### Traits
+ 
+- traits are interfaces with implementations (and type classes _(todo)_)
+
 ```scala
 trait Name
 	fun name: String
@@ -15,35 +18,37 @@ trait Name
 trait Age(age: Int32)
 ```
 
-sealed traits
-- @sealed requires that all classes/values/objects of a trait are defined in the trait's companion object:
+#### Sealed Traits
+
+- `@sealed` requires that all classes/values/modules of a trait are defined in the trait's companion module:
 
 ```scala
 @sealed
 trait Car(expensive: Boolean)
 	fun model: String
 
-object Car
-	object NoCar                extends Car
+module Car
+	module NoCar                extends Car
 		fun model: String = "none"
 	class Jaguar(model: String) extends Car(true)
 	value Nissan(model: String) extends Car(true)
 ```
 
-enum traits
-- an @enum trait is more restrictive than a sealed trait: it can only contain objects
+#### Enum Traits
+
+- an `@enum` trait is more restrictive than a sealed trait: it can only contain modules
 
 ```scala
-object Friend
-	object Joe    extends Age(23), Friend
-	object Joanna extends Age(42), Friend
-	object John   extends Age(17), Friend
+module Friend
+	module Joe    extends Age(23), Friend
+	module Joanna extends Age(42), Friend
+	module John   extends Age(17), Friend
 
 @enum
 trait Friend
 ```
 
- - in return, it receives some helper methods by default:
+ - in return, an enum value receives some helper methods by default:
 
 ```scala
 Friends.values == ImmutableArray(Joe, Joanna, John)

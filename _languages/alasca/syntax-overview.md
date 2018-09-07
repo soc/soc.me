@@ -4,12 +4,13 @@ date:   2018-08-31 12:00:00 +0200
 ---
 
 ```scala
-// `package` declares a unit of compilation. key question: is package foo.bar
-// considered to be contained in package foo? (nesting vs. namespacing)
-package examples
+// an open module declares a unit of compilation.
+// key question: is module foo.bar considered to be
+// contained in package foo? (nesting vs. namespacing)
+module examples
 
-// `object` is used to organize free-standing functions
-object Person          // all types start uppercase ---v
+// closed modules are used to organize free-standing functions
+module Person          // all types start uppercase ---v
 	fun apply(firstName: String, lastName: String, age: Int32): Person =
 		Person.new(name, age)
 	fun from(string: String): Person =
@@ -28,13 +29,13 @@ trait Option[T]
 	fun isEmpty: Boolean
 	fun map[R](f: T => R): Option[R]
 
-object Option
+module Option
 	class Some[T](value: T) extends Option[T]
   	@override
 		fun isEmpty: Boolean = false
 		@override
 		fun map[R](f: T => R): Option[R] = f(value)
-	object None             extends Option[Nothing]
+	module None             extends Option[Nothing]
 		@override
 		fun isEmpty: Boolean = true
 		@override
@@ -44,16 +45,16 @@ object Option
 @sealed
 trait Option[T](isDefined: Boolean, @private value: T)
 	fun isDefined: Boolean = !isDefined
-	fun map[R](f: T => R): Option[R]
+	fun map[R](f: T => R): Option[R] = ...
 
-object Option
+module Option
 	// no new field is generated if parent already has one with the same name
 	// override this with an explicit `let newValue: T` ... extends ... newValue)
 	// visibility of the field can be increased, though (e.g. with @public)
 	class Some[T](@public value: T) extends Option[T](true, value)
 		@override
 		fun map[R](f: T => R): Option[R] = f(value)
-	object None             extends Option[Nothing](false, ())
+	module None                     extends Option[Nothing](false, ())
 		@override
 		fun map[R](f: T => R): Option[R] = None
 
@@ -64,7 +65,7 @@ value Option[T] @private(@private value: T|std.unsafe.Null)
 	fun isDefined: Boolean = value === std.unsafe.null
 	fun map[R](f: T => R): Option[R]
 
-object Option
+module Option
 	fun Some[T](value: T): Option[T] = Option.new(value)
 		@override
 		fun map[R](f: T => R): Option[R] = f(value)
@@ -103,7 +104,7 @@ class Foo(i: Int)
 value Bar(i: Int)
 
 	
-object Main
+module Main
 	fun run: Unit =
 		// Person(...) is a short-hand for Person.apply(...)
 	  let persons = List(Person("John", "Doe", 42), Person("Jane", "Doe", 23))
@@ -117,7 +118,7 @@ object Main
 		
 		let outer0: Outer = SubOuter.new(42)
 		// `new` is virtually dispatched instance is of type SubInner
-		// issue: Outer.Inner doesn't work, would refer to object, not type. `#` instead?
+		// issue: Outer.Inner doesn't work, would refer to module, not type. `#` instead?
 		let inner0: Outer#Inner = outer.new(23)
 		// better readability due to `X.new(...)` instead of `new X(...)` syntax
 		let inner1 = Outer.new(42).new(23)
