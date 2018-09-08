@@ -80,7 +80,9 @@ layout: default
     <td>
       <div><a href="interfaces/improving-the-xfce-settings-ui">Improving the XFCE Settings UI</a></div>
     </td>
-    <td></td>
+    <td>
+      <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic Package Manager UI</a></div>
+    </td>
     <td></td>
     <td></td>
   </tr>
