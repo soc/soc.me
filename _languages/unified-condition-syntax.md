@@ -16,7 +16,7 @@ with a single, unified condition syntax that scales from simple one-liners to co
 #### Motivation
 
 The intention is to cut the different syntax options down to a single one that is still easily recognizable by users,
-not to minimize keywords (i. e. `a == b then c else d`) or turn conditions into methods (like Smalltalk).
+not to minimize keywords (i. e. `a == b ? c : d`) or turn conditions into methods (like Smalltalk).
 
 #### Principles
 
@@ -64,7 +64,7 @@ if xs                               /* same as */
                  else "z"           else                          "z"
 ```
 
-##### pattern matching (`is`), introducing bindings (`@`)
+##### pattern matching (`is`), introducing bindings (`$`)
 ```lua
 if alice
   .age < 18                         then "18"
