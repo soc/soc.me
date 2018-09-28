@@ -37,11 +37,23 @@ fun sort[T <: Order[T]](values: List[T]) = ...
 
 - is it possible to pass typeclass instances explicitly?
 - is passing typeclass instances explicitly the only way to select a specific instance?
+<<<<<<< Updated upstream
 - is it necessary to summon typeclass instance values?
+=======
+  ```
+  sort(persons).with(Asc) // special method to explicitly supply typeclass instance?
+  ```
+- are typeclass instances first-class values?
+- is it necessary to allow summoning typeclass instance values?
+- if both a typeclass instance and a subtyping relationship are present for type `T`,
+  which implementation is chosen for the given type?
+- ... or disallow defining typeclass instances if type already implements trait?
+>>>>>>> Stashed changes
 
 ```
 Order.for[Person]
 ```
+<<<<<<< Updated upstream
 
 - ideas on bounds regarding traits as interfaces vs. typeclasses:
 
@@ -55,3 +67,5 @@ fun sort(values: Array[T : Order]) = ...
 // - have an Order typeclass instance
 fun sort(values: Array[T <: Order]) = ...
 ```
+=======
+>>>>>>> Stashed changes

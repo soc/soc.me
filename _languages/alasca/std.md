@@ -22,7 +22,7 @@ std
   value Float64: 64 bit floating point value   (=Float)
 
   class String:  UTF-8 byte stream with length
-  class StringBuilder: UTF-8 byte stream with length, mutable
+  class StringBuffer: UTF-8 byte stream with length, mutable
 
   value Option:  Some(value)/None
   value Result:  Ok(value)/Error(value) ... Ok/Fail? Pass/Fail? Good/Bad?
