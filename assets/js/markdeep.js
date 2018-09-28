@@ -1,6 +1,6 @@
 /**
   markdeep.js
-  Version 1.00
+  Version 1.02
 
   Copyright 2015-2018, Morgan McGuire, http://casual-effects.com
   All rights reserved.
@@ -28,10 +28,12 @@
   Sagalaev, which is used for code highlighting. (BSD 3-clause license)
 */
 /**See http://casual-effects.com/markdeep for @license and documentation.
-markdeep.min.js 1.00 (C) 2018 Morgan McGuire 
+markdeep.min.js 1.02 (C) 2018 Morgan McGuire 
 highlight.min.js 9.12.0 (C) 2017 Ivan Sagalaev https://highlightjs.org/*/
-function renderMarkdeep() {
+(function() {
 'use strict';
+
+var MARKDEEP_FOOTER = '<div class="markdeepFooter"><i>formatted by <a href="http://casual-effects.com/markdeep" style="color:#999">Markdeep&nbsp;1.02&nbsp;&nbsp;</a></i><div style="display:inline-block;font-size:13px;font-family:\'Times New Roman\',serif;vertical-align:middle;transform:translate(-3px,-1px)rotate(135deg);">&#x2712;</div></div>';
 
 // For minification. This is admittedly scary.
 var _ = String.prototype;
@@ -88,7 +90,7 @@ function measureFontSize(fontStack) {
 
 
 // Lucida Console on Windows has capital V's that look like lower case, so don't use it
-var codeFontStack = "\"Fira Code\",Menlo,Consolas,monospace";
+var codeFontStack = "Menlo,Consolas,monospace";
 var codeFontSize  = 105.1316178 / measureFontSize(codeFontStack) + 'px';
 
 var BODY_STYLESHEET = entag('style', 'body{max-width:680px;' +
@@ -98,9 +100,10 @@ var BODY_STYLESHEET = entag('style', 'body{max-width:680px;' +
     'line-height:140%; ' +
     '-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;' +
     'color:#222;' +
-    'font-family:"Fira Sans",Heuristica,Palatino,Georgia,"Times New Roman",serif}');
+    'font-family:Palatino,Georgia,"Times New Roman",serif}');
 
-/** You can embed your own stylesheet AFTER the <script> tags in your file to override these defaults. */
+/** You can embed your own stylesheet AFTER the <script> tags in your
+    file to override these defaults. */
 var STYLESHEET = entag('style',
     'body{' +
     'counter-reset: h1 h2 h3 h4 h5 h6 paragraph' +
@@ -117,19 +120,15 @@ var STYLESHEET = entag('style',
 
     '.md div.title{' +
     'font-size:26px;' +
-    'font-weight:600;' +
-    'line-height:100%;' +
-    'color: #FFFFFF;' +
-    'text-shadow: 0px 1px 1px #000;' +
+    'font-weight:800;' +
+    'line-height:120%;' +
+    'text-align:center' +
     '}' +
 
     '.md div.afterTitles{height:10px}' +
 
     '.md div.subtitle{' +
-    'text-align:center;' +
-    'font-weight:600;' +
-    'color: #FFFFFF;' +
-    'text-shadow: 0px 1px 1px #000;' +
+    'text-align:center' +
     '}' +
 
     '.md .image{display:inline-block}' +
@@ -148,12 +147,16 @@ var STYLESHEET = entag('style',
     'page-break-inside:avoid' +
     '}' +
 
-     // Justification tends to handle URLs and code blocks poorly
-     // when inside of a bullet, so disable it there
-    '.md li{text-align:left}' +
+    // Justification tends to handle URLs and code blocks poorly
+    // when inside of a bullet, so disable it there
+    '.md li{text-align:left;text-indent:0}' +
 
-     // Make code blocks use 4-space tabs
-    '.md pre.listing {tab-size:4;-moz-tab-size:4;-o-tab-size:4}' +
+    // Make code blocks use 4-space tabs.
+    // Set up a line number counter.
+    '.md pre.listing {tab-size:4;-moz-tab-size:4;-o-tab-size:4;counter-reset:line}' +
+
+    '.md pre.listing .linenumbers span.line:before{width:30px;margin-left:-52px;font-size:80%;text-align:right;counter-increment:line;' +
+    'content:counter(line);display:inline-block;padding-right:13px;margin-right:8px;color:#ccc}' +
 
      // Force captions on line listings down close and then center them
     '.md div.tilde{' +
@@ -203,8 +206,8 @@ var STYLESHEET = entag('style',
 
     '.md small{font-size:60%}' +
 
-    '.md div.title,.md div.subtitle,contents,.md .tocHeader,h1,h2,h3,h4,h5,h6,.md .shortTOC,.md .mediumTOC,.nonumberh1,.nonumberh2,.nonumberh3,.nonumberh4,.nonumberh5,.nonumberh6{' +
-    'font-family:"Fira Sans",Verdana,Helvetica,Arial,sans-serif;' +
+    '.md div.title,contents,.md .tocHeader,h1,h2,h3,h4,h5,h6,.md .shortTOC,.md .mediumTOC,.nonumberh1,.nonumberh2,.nonumberh3,.nonumberh4,.nonumberh5,.nonumberh6{' +
+    'font-family:Verdana,Helvetica,Arial,sans-serif;' +
     'margin:13.4px 0 13.4px;' +
     'padding:15px 0 3px;' +
     'border-top:none;' +
@@ -240,7 +243,7 @@ var STYLESHEET = entag('style',
 
     // Not restricted to a:link because we want things like svn URLs to have this font, which
     // makes "//" look better.
-    '.md a{font-family:Heuristica,Georgia,Palatino,\'Times New Roman\'}' +
+    '.md a{font-family:Georgia,Palatino,\'Times New Roman\'}' +
 
     '.md h1,.md .tocHeader,.md .nonumberh1{' +
     'border-bottom:3px solid;' +
@@ -327,8 +330,8 @@ var STYLESHEET = entag('style',
     '}' +
 
     '.md pre.tilde{' +
-    //'border-top: 1px solid #CCC;' + 
-    //'border-bottom: 1px solid #CCC;' + 
+    'border-top: 1px solid #CCC;' + 
+    'border-bottom: 1px solid #CCC;' + 
     'padding: 5px 0 5px 20px;' +
     'margin:0 0 0 0;' +
     'background:#FCFCFC;' +
@@ -336,7 +339,8 @@ var STYLESHEET = entag('style',
     '}' +
 
     '.md a.target{width:0px;height:0px;visibility:hidden;font-size:0px;display:inline-block}' +
-    '.md a:link, .md a:visited{color:var(--accent-color);text-decoration:underline #80A6A6}' +
+    '.md a:link, .md a:visited{color:#38A;text-decoration:none}' +
+    '.md a:link:hover{text-decoration:underline}' +
 
     '.md dt{' +
     'font-weight:700' +
@@ -351,7 +355,9 @@ var STYLESHEET = entag('style',
     '}' +
 
     '.md code{' +
-    'white-space:pre;' +
+    'white-space:pre-wrap;' +
+    'word-break:break-all;overflow-wrap:break-word;' +
+    'text-align:left;' +
     'page-break-inside:avoid' +
     '}' +
 
@@ -464,7 +470,26 @@ var STYLESHEET = entag('style',
     'height:0' +
    '}' +
                        
-   '.md .admonition p:last-child{margin-bottom:0}' 
+   '.md .admonition p:last-child{margin-bottom:0}'  +
+
+   '.md li.checked,.md li.unchecked{'+
+    'list-style:none;'+
+    'overflow:visible;'+
+    'text-indent:-1.2em'+
+                       '}' +
+                       
+   '.md li.checked:before,.md li.unchecked:before{' +
+   'content:"\\2611";' +
+   'display:block;'+
+   'float:left;' +
+   'width:1em;' +
+   'font-size:120%'+
+                       '}'+
+                       
+   '.md li.unchecked:before{'+
+   'content:"\\2610"' +
+   '}'
+
 );
 
 var MARKDEEP_LINE = '<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>';
@@ -521,6 +546,59 @@ var FRENCH = {
     }
 };
 
+// Translated by "Warmist"
+var LITHUANIAN = {
+    keyword: {
+        table:     'lentelė',
+        figure:    'paveikslėlis',
+        listing:   'sąrašas',
+        diagram:   'diagrama',
+        contents:  'Turinys',
+
+        sec:       'sk',
+        section:   'skyrius',
+        subsection: 'poskyris',
+
+        Monday:    'pirmadienis',
+        Tuesday:   'antradienis',
+        Wednesday: 'trečiadienis',
+        Thursday:  'ketvirtadienis',
+        Friday:    'penktadienis',
+        Saturday:  'šeštadienis',
+        Sunday:    'sekmadienis',
+
+        January:   'Sausis',
+        February:  'Vasaris',
+        March:     'Kovas',
+        April:     'Balandis',
+        May:       'Gegužė',
+        June:      'Birželis',
+        July:      'Liepa',
+        August:    'Rugpjūtis',
+        September: 'Rugsėjis',
+        October:   'Spalis',
+        November:  'Lapkritis',
+        December:  'Gruodis',
+
+        jan: 'saus',
+        feb: 'vas',
+        mar: 'kov',
+        apr: 'bal',
+        may: 'geg',
+        jun: 'birž',
+        jul: 'liep',
+        aug: 'rugpj',
+        sep: 'rugs',
+        oct: 'spal',
+        nov: 'lapkr',
+        dec: 'gruod',
+
+        '&ldquo;': '&bdquo;',
+        '&rtquo;': '&ldquo;'
+    }
+};
+
+    
 // Translated by Zdravko Velinov
 var BULGARIAN = {
     keyword: {
@@ -627,7 +705,112 @@ var PORTUGUESE = {
     }
 };
 
+
+// Translated by Jan Toušek
+var CZECH = {
+    keyword: {
+        table:     'Tabulka',
+        figure:    'Obrázek',
+        listing:   'Seznam',
+        diagram:   'Diagram',
+
+        contents:  'Obsah',
+
+        sec:       'kap.',  // Abbreviation for section
+        section:   'kapitola',
+        subsection:'podkapitola',
+
+        Monday:    'pondělí',
+        Tuesday:   'úterý',
+        Wednesday: 'středa',
+        Thursday:  'čtvrtek',
+        Friday:    'pátek',
+        Saturday:  'sobota',
+        Sunday:    'neděle',
+
+        January:   'leden',
+        February:  'únor',
+        March:     'březen',
+        April:     'duben',
+        May:       'květen',
+        June:      'červen',
+        July:      'červenec',
+        August:    'srpen',
+        September: 'září',
+        October:   'říjen',
+        November:  'listopad',
+        December:  'prosinec',
+
+        jan: 'led',
+        feb: 'úno',
+        mar: 'bře',
+        apr: 'dub',
+        may: 'kvě',
+        jun: 'čvn',
+        jul: 'čvc',
+        aug: 'srp',
+        sep: 'zář',
+        oct: 'říj',
+        nov: 'lis',
+        dec: 'pro',
+
+        '&ldquo;': '&bdquo;',
+        '&rdquo;': '&ldquo;'
+    }
+};
+
     
+var ITALIAN = {
+    keyword: {
+        table:     'tabella',
+        figure:    'figura',
+        listing:   'lista',
+        diagram:   'diagramma',
+        contents:  'indice',
+
+        sec:       'sez',
+        section:   'sezione',
+        subsection: 'paragrafo',
+
+        Monday:    'lunedì',
+        Tuesday:   'martedì',
+        Wednesday: 'mercoledì',
+        Thursday:  'giovedì',
+        Friday:    'venerdì',
+        Saturday:  'sabato',
+        Sunday:    'domenica',
+
+        January:   'Gennaio',
+        February:  'Febbraio',
+        March:     'Marzo',
+        April:     'Aprile',
+        May:       'Maggio',
+        June:      'Giugno', 
+        July:      'Luglio',
+        August:    'Agosto', 
+        September: 'Settembre', 
+        October:   'Ottobre', 
+        November:  'Novembre',
+        December:  'Dicembre',
+
+        jan: 'gen',
+        feb: 'feb',
+        mar: 'mar',
+        apr: 'apr',
+        may: 'mag',
+        jun: 'giu',
+        jul: 'lug',
+        aug: 'ago',
+        sep: 'set',
+        oct: 'ott',
+        nov: 'nov',
+        dec: 'dic',
+
+        '&ldquo;': '&ldquo;',
+        '&rtquo;': '&rdquo;'
+    }
+};
+
 var RUSSIAN = {
     keyword: {
         table:     'таблица',
@@ -894,13 +1077,14 @@ var GERMAN = {
 var SWEDISH = {
     keyword: {
         table:     'tabell',
-        figure:    'figur',
+        figure:    'illustration',
         listing:   'lista',
         diagram:   'diagram',
 
         contents:  'innehållsförteckning',
-        sec:       'sek',
-        subsection:'undersektion',
+        sec:       'kap',
+        section:   'kapitel',
+        subsection:'avsnitt',
 
         Monday:    'måndag',
         Tuesday:   'tisdag',
@@ -967,7 +1151,10 @@ var LANG_TABLE = {
     hu: HUNGARIAN,
     sv: SWEDISH,
     pt: PORTUGUESE,
-    ja: JAPANESE
+    ja: JAPANESE,
+    it: ITALIAN,
+    lt: LITHUANIAN,
+    cz: CZECH
 // Awaiting localization by a native speaker:
 //    es: SPANISH
 //    ...
@@ -1104,7 +1291,7 @@ function nodeToMarkdeepSource(node, leaveEscapes) {
     // will try to close by inserting the matching close tags at the end of the
     // document. Remove anything that looks like that and comes *after*
     // the first fallback style.
-    source = source.rp(/<style class="fallback">[\s\S]*<\/style>/gi, '');
+    //source = source.rp(/<style class="fallback">[\s\S]*?<\/style>/gi, '');
     
     // Remove artificially inserted close tags from URLs and
     source = source.rp(/<\/https?:.*>|<\/ftp:.*>|<\/[^ "\t\n>]+@[^ "\t\n>]+>/gi, '');
@@ -1167,8 +1354,10 @@ function extractDiagram(sourceString) {
         nextLineBeginning = sourceString.indexOf('\n', lineBeginning) + 1;
         wideCharacters = unicodeSyms(sourceString, lineBeginning + xMin, lineBeginning + xMax);
         textOnLeft  = textOnLeft  || /\S/.test(sourceString.ss(lineBeginning, lineBeginning + xMin));
-        // Text on the right ... if the line is not all '*'        
-        textOnRight = textOnRight || /[^ *\t\n\r]/.test(sourceString.ss(lineBeginning + xMax + wideCharacters + 1, nextLineBeginning));
+        noRightBorder = noRightBorder || (sourceString[lineBeginning + xMax + wideCharacters] !== '*');
+
+        // Text on the right ... if the line is not all '*'
+        textOnRight = ! noRightBorder && (textOnRight || /[^ *\t\n\r]/.test(sourceString.ss(lineBeginning + xMax + wideCharacters + 1, nextLineBeginning)));
     }
 
     var noDiagramResult = {beforeString: sourceString, diagramString: '', alignmentHint: '', afterString: ''};
@@ -1204,6 +1393,7 @@ function extractDiagram(sourceString) {
 
         var nextLineBeginning = 0, wideCharacters = 0;
         var textOnLeft = false, textOnRight = false;
+        var noRightBorder = false;
 
         advance();
                                   
@@ -1380,20 +1570,28 @@ function replaceTables(s, protect) {
 
 
 function replaceLists(s, protect) {
+    // Identify task list bullets in a few patterns and reformat them to a standard format for
+    // easier processing.
+    s = s.rp(/^(\s*)(?:-\s*)?(?:\[ \]|\u2610)(\s+)/mg, '$1\u2610$2');
+    s = s.rp(/^(\s*)(?:-\s*)?(?:\[x\]|\u2611)(\s+)/mg, '$1\u2611$2');
+        
     // Identify list blocks:
-    // Blank line or line ending in colon, line that starts with #., *, +, or -,
+    // Blank line or line ending in colon, line that starts with #., *, +, -, ☑, or ☐
     // and then any number of lines until another blank line
     var BLANK_LINES = /\n\s*\n/.source;
 
     // Preceding line ending in a colon
+
+    // \u2610 is the ballot box (unchecked box) character
     var PREFIX     = /[:,]\s*\n/.source;
     var LIST_BLOCK_REGEXP = 
         new RegExp('(' + PREFIX + '|' + BLANK_LINES + '|<p>\s*\n|<br/>\s*\n?)' +
-                   /((?:[ \t]*(?:\d+\.|-|\+|\*)(?:[ \t]+.+\n(?:[ \t]*\n)?)+)+)/.source, 'gm');
+                   /((?:[ \t]*(?:\d+\.|-|\+|\*|\u2611|\u2610)(?:[ \t]+.+\n(?:[ \t]*\n)?)+)+)/.source, 'gm');
 
     var keepGoing = true;
 
-    var ATTRIBS = {'+': protect('class="plus"'), '-': protect('class="minus"'), '*': protect('class="asterisk"')};
+    var ATTRIBS = {'+': protect('class="plus"'), '-': protect('class="minus"'), '*': protect('class="asterisk"'),
+                   '\u2611': protect('class="checked"'), '\u2610': protect('class="unchecked"')};
     var NUMBER_ATTRIBS = protect('class="number"');
 
     // Sometimes the list regexp grabs too much because subsequent lines are indented *less*
@@ -1463,7 +1661,7 @@ function replaceLists(s, protect) {
                     
                     if (current) {
                         // Add the list item
-                        result += '\n' + current.indentChars + '<li ' + attribs + '>' + trimmed.rp(/^(\d+\.|-|\+|\*) /, '');
+                        result += '\n' + current.indentChars + '<li ' + attribs + '>' + trimmed.rp(/^(\d+\.|-|\+|\*|\u2611|\u2610) /, '');
                     } else {
                         // Just reached something that is *less* indented than the root--
                         // copy forward and then re-process that list
@@ -1892,6 +2090,9 @@ function insertTableOfContents(s, protect) {
 
         table[removeHTMLTags(text).trim().toLowerCase()] = number;
 
+        // Remove links from the title itself
+        text = text.rp(/<a\s.*>(.*?)<\/a>/g, '$1');
+
         // Only insert for the first three levels
         if (level <= 3) {
             // Indent and append (the Array() call generates spaces)
@@ -1903,7 +2104,7 @@ function insertTableOfContents(s, protect) {
                 ++numAboveLevel1;
             }
         }
-        
+
         return entag('a', '&nbsp;', protect('class="target" name="' + name + '"')) + header;
     });
 
@@ -2069,7 +2270,7 @@ function markdeepToHTML(str, elementMode) {
     }
 
     // SECTION HEADERS
-    // This is common code for numbered headers. Nno-number ATX headers are processed
+    // This is common code for numbered headers. No-number ATX headers are processed
     // separately
     function makeHeaderFunc(level) {
         return function (match, header) {
@@ -2109,6 +2310,7 @@ function markdeepToHTML(str, elementMode) {
 
             var diagramSVG = diagramToSVG(result.diagramString, result.alignmentHint);
             var captionAbove = option('captionAbove', 'diagram')
+
             return result.beforeString +
                 (result.caption && captionAbove ? result.caption : '') +
                 diagramSVG +
@@ -2152,9 +2354,14 @@ function markdeepToHTML(str, elementMode) {
 
                 // Highlight and append this block
                 var highlighted = hljs.highlightAuto(sourceCode, lang).value;
+
+                // Mark each line as a span to support line numbers
+                highlighted = highlighted.rp(/^(.*)$/gm, entag('span', '$1', 'class="line"'));
+
                 if (cssSubClass) {
                     highlighted = entag('div', highlighted, 'class="' + cssSubClass + '"');
                 }
+
                 body += highlighted;
 
                 // Advance the next nested block
@@ -2254,8 +2461,10 @@ function markdeepToHTML(str, elementMode) {
     str = str.rp(/(\\begin\{eqnarray\}[\s\S]*?\\end\{eqnarray\})/g, protector);
     str = str.rp(/(\\begin\{equation\*\}[\s\S]*?\\end\{equation\*\})/g, protector);
 
-    // For headers, we consume leading and trailing whitespace to avoid creating an
-    // extra paragraph tag around the header itself.
+    // HEADERS
+    //
+    // We consume leading and trailing whitespace to avoid creating an extra paragraph tag
+    // around the header itself.
 
     // Setext-style H1: Text with ======== right under it
     str = str.rp(/(?:^|\s*\n)(.+?)\n[ \t]*={3,}[ \t]*\n/g, makeHeaderFunc(1));
@@ -2264,12 +2473,20 @@ function markdeepToHTML(str, elementMode) {
     str = str.rp(/(?:^|\s*\n)(.+?)\n[ \t]*-{3,}[ \t]*\n/g, makeHeaderFunc(2));
 
     // ATX-style headers:
+    //
+    //  # Foo #
+    //  # Foo
+    //  (# Bar)
+    //
+    // If note that '#' in the title are only stripped if they appear at the end, in
+    // order to allow headers with # in the title.
+
     for (var i = 6; i > 0; --i) {
-        str = str.rp(new RegExp(/^\s*/.source + '#{' + i + ',' + i +'}(?:[ \t])([^\n#]+)#*[ \t]*\n', 'gm'), 
+        str = str.rp(new RegExp(/^\s*/.source + '#{' + i + ',' + i +'}(?:[ \t])([^\n]+?)#*[ \t]*\n', 'gm'), 
                  makeHeaderFunc(i));
 
         // No-number headers
-        str = str.rp(new RegExp(/^\s*/.source + '\\(#{' + i + ',' + i +'}\\)(?:[ \t])([^\n#]+)\\(?#*\\)?\\n[ \t]*\n', 'gm'), 
+        str = str.rp(new RegExp(/^\s*/.source + '\\(#{' + i + ',' + i +'}\\)(?:[ \t])([^\n]+?)\\(?#*\\)?\\n[ \t]*\n', 'gm'), 
                      '\n</p>\n' + entag('div', '$1', protect('class="nonumberh' + i + '"')) + '\n<p>\n\n');
     }
 
@@ -2349,7 +2566,8 @@ function markdeepToHTML(str, elementMode) {
     // (process before reference links to avoid ambiguity on the captions)
     str = replaceTables(str, protect);
 
-    // REFERENCE-LINKS: [foo][] or [bar][foo] + [foo]: http://foo.com
+    // REFERENCE-LINK TABLE: [foo]: http://foo.com
+    // (must come before reference images and reference links in processing)
     str = str.rp(/^\[([^\^#].*?)\]:(.*?)$/gm, function (match, symbolicName, url) {
         referenceLinkTable[symbolicName.toLowerCase().trim()] = {link: url.trim(), used: false};
         return '';
@@ -2367,9 +2585,12 @@ function markdeepToHTML(str, elementMode) {
         var hash;
 
         // Detect videos
-        if (/(.mp4|.m4v|.avi|.mpg|.mov)$/i.test(url)) {
+        if (/\.(mp4|m4v|avi|mpg|mov|webm)$/i.test(url)) {
             // This is video. Any attributes provided will override the defaults given here
             img = '<video ' + protect('class="markdeep" src="' + url + '"' + attribs + ' width="480px" controls="true"') + '/>';
+        } else if (/\.(mp3|mp2|ogg|wav|m4a|aac|flac)$/i.test(url)) {
+            // TODO
+            img = '<audio ' + protect('class="markdeep" controls ' + attribs + '><source src="' + url + '">') + '</audio>';
         } else if (hash = url.match(/^https:\/\/(?:www\.)?(?:youtube\.com\/\S*?v=|youtu\.be\/)([\w\d-]+)(&.*)?$/i)) {
             // Youtube video
             img = '<iframe ' + protect('class="markdeep" src="https://www.youtube.com/embed/' + hash[1] + '"' + attribs + ' width="480px" height="300px" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen') + '></iframe>';
@@ -2421,6 +2642,22 @@ function markdeepToHTML(str, elementMode) {
     str = str.rp(/(^|[^!])\[[ \t]*?\]\(("?)([^<>\s"]+?)\2\)/g, function (match, pre, maybeQuote, url) {
         return pre + '<a ' + protect('href="' + url + '"') + '>' + url + '</a>';
     });
+
+    // REFERENCE IMAGE: ![...][ref attribs]
+    // Rewrite as a regular image for further processing
+    str = str.rp(/(!\[[^\[\]]*?\])\[("?)([^"<>\s]+?)\2(\s[^\]]*?)?\]/, function (match, caption, maybeQuote, symbolicName, attribs) {
+        symbolicName = symbolicName.toLowerCase().trim();
+        var t = referenceLinkTable[symbolicName];
+        if (! t) {
+            console.log("Reference image '" + symbolicName + "' never defined");
+            return '?';
+        } else {
+            t.used = true;
+            var s = caption + '(' + t.link + (t.attribs || '') + ')';
+            return s;
+        }
+    });
+
 
     // IMAGE GRID: Rewrite rows and grids of images into a grid
     var imageGridAttribs = protect('width="100%"');
@@ -2559,7 +2796,7 @@ function markdeepToHTML(str, elementMode) {
     str = str.rp(/\^([-+]?\d+)\b/g, '<sup>$1</sup>');
 
     // PAGE BREAK:
-    str = str.rp(/\b\\(pagebreak|newpage)\b/gi, protect('<div style="page-break-after:always"> </div>\n'))
+    str = str.rp(/(^|\s|\b)\\(pagebreak|newpage)(\b|\s|$)/gi, protect('<div style="page-break-after:always"> </div>\n'))
     
     // SCHEDULE LISTS: date : title followed by indented content
     str = replaceScheduleLists(str, protect);
@@ -2586,8 +2823,8 @@ function markdeepToHTML(str, elementMode) {
     // Remove empty paragraphs (mostly avoided by the above, but some can still occur)
     str = str.rp(/<p>[\s\n]*<\/p>/gi, '');
     
-    // Reference links
-    str = str.rp(/\[(.+?)\]\[(.*?)\]/g, function (match, text, symbolicName) {
+    // REFERENCE LINK
+    str = str.rp(/(^|[^!])\[([^\[\]]+?)\]\[(.*?)\]/g, function (match, pre, text, symbolicName) {
         // Empty symbolic name is replaced by the text
         if (! symbolicName.trim()) {
             symbolicName = text;
@@ -2600,7 +2837,7 @@ function markdeepToHTML(str, elementMode) {
             return '?';
         } else {
             t.used = true;
-            return '<a ' + protect('href="' + t.link + '"') + '>' + text + '</a>';
+            return pre + '<a ' + protect('href="' + t.link + '"') + '>' + text + '</a>';
         }
     });
 
@@ -2628,10 +2865,13 @@ function markdeepToHTML(str, elementMode) {
         allHeaders.forEach(function (header) {
             header = removeHTMLTags(header.ss(4, header.length - 5)).trim();
             var link = '<a ' + protect('href="#' + mangle(header) + '"') + '>';
+
+            var sectionExp = '(' + keyword('section') + '|' + keyword('subsection') + ')';
+            var headerExp = '(\\b' + escapeRegExpCharacters(header) + ')';
+            
             // Search for links to this section
-            str = str.rp(RegExp("(\\b" + escapeRegExpCharacters(header) + ")(?=\\s" + keyword('subsection') + "|\\s" + 
-                                keyword('section') + ")", 'gi'),
-                         link + "$1</a>"); 
+            str = str.rp(RegExp(headerExp + '\\s+' + sectionExp, 'gi'), link + "$1</a> $2");
+            str = str.rp(RegExp(sectionExp + '\\s+' + headerExp, 'gi'), '$1 ' + link + "$2</a>");
         });
     }
 
@@ -2658,15 +2898,15 @@ function markdeepToHTML(str, elementMode) {
                maybeShowLabel(_ref);
     });
 
-    // FIGURE, TABLE, and LISTING references:
+    // FIGURE, TABLE, DIAGRAM, and LISTING references:
     // (must come after figure/table/listing processing, obviously)
-    str = str.rp(/\b(figure|fig\.|table|tbl\.|listing|lst\.)\s+\[([^\s\]]+)\]/gi, function (match, _type, _ref) {
+    str = str.rp(RegExp('\\b(fig\\.|tbl\\.|lst\\.|' + keyword('figure') + '|' + keyword('table') + '|' + keyword('listing') + '|' + keyword('diagram') + ')\\s+\\[([^\\s\\]]+)\\]', 'gi'), function (match, _type, _ref) {
         // Fix abbreviations
         var type = _type.toLowerCase();
         switch (type) {
-        case 'fig.': type = 'figure'; break;
-        case 'tbl.': type = 'table'; break;
-        case 'lst.': type = 'listing'; break;
+        case 'fig.': type = keyword('figure').toLowerCase(); break;
+        case 'tbl.': type = keyword('table').toLowerCase(); break;
+        case 'lst.': type = keyword('listing').toLowerCase(); break;
         }
 
         // Clean up the reference
@@ -2723,6 +2963,7 @@ function markdeepToHTML(str, elementMode) {
     // Remove any bogus leading close-paragraph tag inserted by our extra newlines
     str = str.rp(/^\s*<\/p>/, '');
 
+
     // If not in element mode and not an INSERT child, maybe add a TOC
     if (! elementMode) {// && ! myURLParse[2]) {
         var temp = insertTableOfContents(str, protect);
@@ -2762,6 +3003,18 @@ function markdeepToHTML(str, elementMode) {
     return '<span class="md">' + entag('p', str) + '</span>';
 }
 
+/** Workaround for IE11 */
+function strToArray(s) {
+    if (Array.from) {
+        return Array.from(s);
+    } else {
+        var a = [];
+        for (var i = 0; i < s.length; ++i) {
+            a[i] = s[i];
+        }
+        return a;
+    }
+}
 
 /**
    Adds whitespace at the end of each line of str, so that all lines have equal length in
@@ -2770,9 +3023,15 @@ function markdeepToHTML(str, elementMode) {
 */
 function equalizeLineLengths(str) {
     var lineArray = str.split('\n');
+
+    if ((lineArray.length > 0) && (lineArray[lineArray.length - 1] === '')) {
+        // Remove the empty last line generated by split on a trailing newline
+        lineArray.pop();
+    }
+        
     var longest = 0;
     lineArray.forEach(function(line) {
-        longest = max(longest, Array.from(line).length);
+        longest = max(longest, strToArray(line).length);
     });
 
     // Worst case spaces needed for equalizing lengths
@@ -2783,7 +3042,7 @@ function equalizeLineLengths(str) {
     lineArray.forEach(function(line) {
         // Append the needed number of spaces onto each line, and
         // reconstruct the output with newlines
-        result += line + spaces.ss(Array.from(line).length) + '\n';
+        result += line + spaces.ss(strToArray(line).length) + '\n';
     });
 
     return result;
@@ -2940,7 +3199,7 @@ function diagramToSVG(diagramString, alignmentHint) {
         // Convert the string to an array to better handle greater-than 16-bit unicode
         // characters, which JavaScript does not process correctly with indices. Do this after
         // the above string processing.
-        str = Array.from(str);
+        str = strToArray(str);
         grid.width = str.indexOf('\n');
 
         /** Mark this location. Takes a Vec2 or (x, y) */
@@ -4148,7 +4407,6 @@ if (! window.alreadyProcessedMarkdeep) {
     var markdeepProcessor = function() {
         // Recompute the source text from the current version of the document
         var source = nodeToMarkdeepSource(document.body);
-
         var markdeepHTML = markdeepToHTML(source, false);
 
         // console.log(markdeepHTML); // Final processed source 
@@ -4157,7 +4415,9 @@ if (! window.alreadyProcessedMarkdeep) {
         if (needMathJax) {
             markdeepHTML = MATHJAX_CONFIG + markdeepHTML; 
         }
-                
+        
+        markdeepHTML += MARKDEEP_FOOTER;
+        
         // Replace the document. If using MathJax, include the custom Markdeep definitions
         var longDocument = source.length > 1000;
         var head = BODY_STYLESHEET + STYLESHEET + sectionNumberingStylesheet() + HIGHLIGHT_STYLESHEET;
@@ -4227,7 +4487,7 @@ if (! window.alreadyProcessedMarkdeep) {
 
             --numIncludeChildrenLeft;
 
-            // console.log(window.location.pathname, 'numIncludeChildrenLeft = ' + numIncludeChildrenLeft);
+            //console.log(window.location.pathname, 'numIncludeChildrenLeft = ' + numIncludeChildrenLeft);
             
             if (numIncludeChildrenLeft <= 0) {
                 if (IAmAChild) {
@@ -4251,7 +4511,7 @@ if (! window.alreadyProcessedMarkdeep) {
         }
 
         ++numIncludeChildrenLeft;
-        // console.log(window.location.pathname, 'numIncludeChildrenLeft = ' + numIncludeChildrenLeft);
+        //console.log(window.location.pathname, 'numIncludeChildrenLeft = ' + numIncludeChildrenLeft);
         
         // Replace this tag with a frame that loads the document.  Once loaded, it will
         // send a message with its contents for use as a replacement.
@@ -4277,6 +4537,5 @@ if (! window.alreadyProcessedMarkdeep) {
     }
 }
 
-console.log("dscacs");
-};
+})();
 
