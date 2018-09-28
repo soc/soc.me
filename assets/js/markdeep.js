@@ -30,10 +30,8 @@
 /**See http://casual-effects.com/markdeep for @license and documentation.
 markdeep.min.js 1.02 (C) 2018 Morgan McGuire 
 highlight.min.js 9.12.0 (C) 2017 Ivan Sagalaev https://highlightjs.org/*/
-(function() {
+function renderMarkdeep() {
 'use strict';
-
-var MARKDEEP_FOOTER = '<div class="markdeepFooter"><i>formatted by <a href="http://casual-effects.com/markdeep" style="color:#999">Markdeep&nbsp;1.02&nbsp;&nbsp;</a></i><div style="display:inline-block;font-size:13px;font-family:\'Times New Roman\',serif;vertical-align:middle;transform:translate(-3px,-1px)rotate(135deg);">&#x2712;</div></div>';
 
 // For minification. This is admittedly scary.
 var _ = String.prototype;
@@ -90,7 +88,7 @@ function measureFontSize(fontStack) {
 
 
 // Lucida Console on Windows has capital V's that look like lower case, so don't use it
-var codeFontStack = "Menlo,Consolas,monospace";
+var codeFontStack = "\"Fira Code\",Menlo,Consolas,monospace"
 var codeFontSize  = 105.1316178 / measureFontSize(codeFontStack) + 'px';
 
 var BODY_STYLESHEET = entag('style', 'body{max-width:680px;' +
@@ -100,7 +98,7 @@ var BODY_STYLESHEET = entag('style', 'body{max-width:680px;' +
     'line-height:140%; ' +
     '-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;' +
     'color:#222;' +
-    'font-family:Palatino,Georgia,"Times New Roman",serif}');
+    'font-family:"Fira Sans",Heuristica,Palatino,Georgia,"Times New Roman",serif}');
 
 /** You can embed your own stylesheet AFTER the <script> tags in your
     file to override these defaults. */
@@ -120,15 +118,18 @@ var STYLESHEET = entag('style',
 
     '.md div.title{' +
     'font-size:26px;' +
-    'font-weight:800;' +
-    'line-height:120%;' +
-    'text-align:center' +
+    'font-weight:600;' +
+    'line-height:100%;' +
+    'text-shadow: 0px 1px 1px #000;' +
     '}' +
 
     '.md div.afterTitles{height:10px}' +
 
     '.md div.subtitle{' +
-    'text-align:center' +
+    'text-align:center;' +
+    'font-weight:600;' +
+    'color: #FFFFFF;' +
+    'text-shadow: 0px 1px 1px #000;' +
     '}' +
 
     '.md .image{display:inline-block}' +
@@ -207,7 +208,7 @@ var STYLESHEET = entag('style',
     '.md small{font-size:60%}' +
 
     '.md div.title,contents,.md .tocHeader,h1,h2,h3,h4,h5,h6,.md .shortTOC,.md .mediumTOC,.nonumberh1,.nonumberh2,.nonumberh3,.nonumberh4,.nonumberh5,.nonumberh6{' +
-    'font-family:Verdana,Helvetica,Arial,sans-serif;' +
+    'font-family:"Fira Sans",Verdana,Helvetica,Arial,sans-serif;' +
     'margin:13.4px 0 13.4px;' +
     'padding:15px 0 3px;' +
     'border-top:none;' +
@@ -243,7 +244,7 @@ var STYLESHEET = entag('style',
 
     // Not restricted to a:link because we want things like svn URLs to have this font, which
     // makes "//" look better.
-    '.md a{font-family:Georgia,Palatino,\'Times New Roman\'}' +
+    '.md a{font-family:Heuristica,Georgia,Palatino,\'Times New Roman\'}' +
 
     '.md h1,.md .tocHeader,.md .nonumberh1{' +
     'border-bottom:3px solid;' +
@@ -330,8 +331,8 @@ var STYLESHEET = entag('style',
     '}' +
 
     '.md pre.tilde{' +
-    'border-top: 1px solid #CCC;' + 
-    'border-bottom: 1px solid #CCC;' + 
+    //'border-top: 1px solid #CCC;' + 
+    //'border-bottom: 1px solid #CCC;' + 
     'padding: 5px 0 5px 20px;' +
     'margin:0 0 0 0;' +
     'background:#FCFCFC;' +
@@ -339,7 +340,7 @@ var STYLESHEET = entag('style',
     '}' +
 
     '.md a.target{width:0px;height:0px;visibility:hidden;font-size:0px;display:inline-block}' +
-    '.md a:link, .md a:visited{color:#38A;text-decoration:none}' +
+    '.md a:link, .md a:visited{color:var(--accent-color);text-decoration:underline #80A6A6}' +
     '.md a:link:hover{text-decoration:underline}' +
 
     '.md dt{' +
@@ -493,637 +494,6 @@ var STYLESHEET = entag('style',
 );
 
 var MARKDEEP_LINE = '<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>';
-
-// Language options:
-var FRENCH = {
-    keyword: {
-        table:     'tableau',
-        figure:    'figure',
-        listing:   'liste',
-        diagram:   'diagramme',
-        contents:  'Table des matières',
-
-        sec:       'sec',
-        section:   'section',
-        subsection: 'paragraphe',
-
-        Monday:    'lundi',
-        Tuesday:   'mardi',
-        Wednesday: 'mercredi',
-        Thursday:  'jeudi',
-        Friday:    'vendredi',
-        Saturday:  'samedi',
-        Sunday:    'dimanche',
-
-        January:   'Janvier',
-        February:  'Février',
-        March:     'Mars',
-        April:     'Avril',
-        May:       'Mai',
-        June:      'Juin', 
-        July:      'Julliet',
-        August:    'Août', 
-        September: 'Septembre', 
-        October:   'Octobre', 
-        November:  'Novembre',
-        December:  'Décembre',
-
-        jan: 'janv',
-        feb: 'févr',
-        mar: 'mars',
-        apr: 'avril',
-        may: 'mai',
-        jun: 'juin',
-        jul: 'juil',
-        aug: 'août',
-        sep: 'sept',
-        oct: 'oct',
-        nov: 'nov',
-        dec: 'déc',
-
-        '&ldquo;': '&laquo;&nbsp;',
-        '&rtquo;': '&nbsp;&raquo;'
-    }
-};
-
-// Translated by "Warmist"
-var LITHUANIAN = {
-    keyword: {
-        table:     'lentelė',
-        figure:    'paveikslėlis',
-        listing:   'sąrašas',
-        diagram:   'diagrama',
-        contents:  'Turinys',
-
-        sec:       'sk',
-        section:   'skyrius',
-        subsection: 'poskyris',
-
-        Monday:    'pirmadienis',
-        Tuesday:   'antradienis',
-        Wednesday: 'trečiadienis',
-        Thursday:  'ketvirtadienis',
-        Friday:    'penktadienis',
-        Saturday:  'šeštadienis',
-        Sunday:    'sekmadienis',
-
-        January:   'Sausis',
-        February:  'Vasaris',
-        March:     'Kovas',
-        April:     'Balandis',
-        May:       'Gegužė',
-        June:      'Birželis',
-        July:      'Liepa',
-        August:    'Rugpjūtis',
-        September: 'Rugsėjis',
-        October:   'Spalis',
-        November:  'Lapkritis',
-        December:  'Gruodis',
-
-        jan: 'saus',
-        feb: 'vas',
-        mar: 'kov',
-        apr: 'bal',
-        may: 'geg',
-        jun: 'birž',
-        jul: 'liep',
-        aug: 'rugpj',
-        sep: 'rugs',
-        oct: 'spal',
-        nov: 'lapkr',
-        dec: 'gruod',
-
-        '&ldquo;': '&bdquo;',
-        '&rtquo;': '&ldquo;'
-    }
-};
-
-    
-// Translated by Zdravko Velinov
-var BULGARIAN = {
-    keyword: {
-        table:     'таблица',
-        figure:    'фигура',
-        listing:   'списък',
-        diagram:   'диаграма',
-
-        contents:  'cъдържание',
-
-        sec:       'сек',
-        section:   'раздел',
-        subsection: 'подраздел',
-
-        Monday:    'понеделник',
-        Tuesday:   'вторник',
-        Wednesday: 'сряда',
-        Thursday:  'четвъртък',
-        Friday:    'петък',
-        Saturday:  'събота',
-        Sunday:    'неделя',
-
-        January:   'януари',
-        February:  'февруари',
-        March:     'март',
-        April:     'април',
-        May:       'май',
-        June:      'юни', 
-        July:      'юли',
-        August:    'август', 
-        September: 'септември', 
-        October:   'октомври', 
-        November:  'ноември',
-        December:  'декември',
-
-        jan: 'ян',
-        feb: 'февр',
-        mar: 'март',
-        apr: 'апр',
-        may: 'май',
-        jun: 'юни',
-        jul: 'юли',
-        aug: 'авг',
-        sep: 'септ',
-        oct: 'окт',
-        nov: 'ноем',
-        dec: 'дек',
-
-        '&ldquo;': '&bdquo;',
-        '&rdquo;': '&rdquo;'
-    }
-};
-
-
-// Translated by Tiago Antão
-var PORTUGUESE = {
-    keyword: {
-        table:     'tabela',
-        figure:    'figura',
-        listing:   'lista',
-        diagram:   'diagrama',
-        contents:  'conteúdo',
-
-        sec:       'sec',
-        section:   'secção',
-        subsection: 'subsecção',
-
-        Monday:    'Segunda-feira',
-        Tuesday:   'Terça-feira',
-        Wednesday: 'Quarta-feira',
-        Thursday:  'Quinta-feira',
-        Friday:    'Sexta-feira',
-        Saturday:  'Sábado',
-        Sunday:    'Domingo',
-
-        January:   'Janeiro',
-        February:  'Fevereiro',
-        March:     'Março',
-        April:     'Abril',
-        May:       'Maio',
-        June:      'Junho', 
-        July:      'Julho',
-        August:    'Agosto', 
-        September: 'Setembro', 
-        October:   'Outubro', 
-        November:  'Novembro',
-        December:  'Dezembro',
-
-        jan: 'jan',
-        feb: 'fev',
-        mar: 'mar',
-        apr: 'abr',
-        may: 'mai',
-        jun: 'jun',
-        jul: 'jul',
-        aug: 'ago',
-        sep: 'set',
-        oct: 'oct',
-        nov: 'nov',
-        dec: 'dez',
-
-        '&ldquo;': '&laquo;',
-        '&rtquo;': '&raquo;'
-    }
-};
-
-
-// Translated by Jan Toušek
-var CZECH = {
-    keyword: {
-        table:     'Tabulka',
-        figure:    'Obrázek',
-        listing:   'Seznam',
-        diagram:   'Diagram',
-
-        contents:  'Obsah',
-
-        sec:       'kap.',  // Abbreviation for section
-        section:   'kapitola',
-        subsection:'podkapitola',
-
-        Monday:    'pondělí',
-        Tuesday:   'úterý',
-        Wednesday: 'středa',
-        Thursday:  'čtvrtek',
-        Friday:    'pátek',
-        Saturday:  'sobota',
-        Sunday:    'neděle',
-
-        January:   'leden',
-        February:  'únor',
-        March:     'březen',
-        April:     'duben',
-        May:       'květen',
-        June:      'červen',
-        July:      'červenec',
-        August:    'srpen',
-        September: 'září',
-        October:   'říjen',
-        November:  'listopad',
-        December:  'prosinec',
-
-        jan: 'led',
-        feb: 'úno',
-        mar: 'bře',
-        apr: 'dub',
-        may: 'kvě',
-        jun: 'čvn',
-        jul: 'čvc',
-        aug: 'srp',
-        sep: 'zář',
-        oct: 'říj',
-        nov: 'lis',
-        dec: 'pro',
-
-        '&ldquo;': '&bdquo;',
-        '&rdquo;': '&ldquo;'
-    }
-};
-
-    
-var ITALIAN = {
-    keyword: {
-        table:     'tabella',
-        figure:    'figura',
-        listing:   'lista',
-        diagram:   'diagramma',
-        contents:  'indice',
-
-        sec:       'sez',
-        section:   'sezione',
-        subsection: 'paragrafo',
-
-        Monday:    'lunedì',
-        Tuesday:   'martedì',
-        Wednesday: 'mercoledì',
-        Thursday:  'giovedì',
-        Friday:    'venerdì',
-        Saturday:  'sabato',
-        Sunday:    'domenica',
-
-        January:   'Gennaio',
-        February:  'Febbraio',
-        March:     'Marzo',
-        April:     'Aprile',
-        May:       'Maggio',
-        June:      'Giugno', 
-        July:      'Luglio',
-        August:    'Agosto', 
-        September: 'Settembre', 
-        October:   'Ottobre', 
-        November:  'Novembre',
-        December:  'Dicembre',
-
-        jan: 'gen',
-        feb: 'feb',
-        mar: 'mar',
-        apr: 'apr',
-        may: 'mag',
-        jun: 'giu',
-        jul: 'lug',
-        aug: 'ago',
-        sep: 'set',
-        oct: 'ott',
-        nov: 'nov',
-        dec: 'dic',
-
-        '&ldquo;': '&ldquo;',
-        '&rtquo;': '&rdquo;'
-    }
-};
-
-var RUSSIAN = {
-    keyword: {
-        table:     'таблица',
-        figure:    'рисунок',
-        listing:   'листинг',
-        diagram:   'диаграмма',
-
-        contents:  'Содержание',
-
-        sec:       'сек',
-        section:   'раздел',
-        subsection: 'подраздел',
-
-        Monday:    'понедельник',
-        Tuesday:   'вторник',
-        Wednesday: 'среда',
-        Thursday:  'четверг',
-        Friday:    'пятница',
-        Saturday:  'суббота',
-        Sunday:    'воскресенье',
-
-        January:   'январьr',
-        February:  'февраль',
-        March:     'март',
-        April:     'апрель',
-        May:       'май',
-        June:      'июнь', 
-        July:      'июль',
-        August:    'август', 
-        September: 'сентябрь', 
-        October:   'октябрь', 
-        November:  'ноябрь',
-        December:  'декабрь',
-
-        jan: 'янв',
-        feb: 'февр',
-        mar: 'март',
-        apr: 'апр',
-        may: 'май',
-        jun: 'июнь',
-        jul: 'июль',
-        aug: 'авг',
-        sep: 'сент',
-        oct: 'окт',
-        nov: 'ноябрь',
-        dec: 'дек',
-        
-        '&ldquo;': '«',
-        '&rdquo;': '»'
-    }
-};
-
-// Translated by Dariusz Kuśnierek 
-var POLISH = {
-    keyword: {
-        table:     'tabela',
-        figure:    'ilustracja',
-        listing:   'wykaz',
-        diagram:   'diagram',
-        contents:  'Spis treści',
-
-        sec:       'rozdz.',
-        section:   'rozdział',
-        subsection: 'podrozdział',
-
-        Monday:    'Poniedziałek',
-        Tuesday:   'Wtorek',
-        Wednesday: 'Środa',
-        Thursday:  'Czwartek',
-        Friday:    'Piątek',
-        Saturday:  'Sobota',
-        Sunday:    'Niedziela',
-
-        January:   'Styczeń',
-        February:  'Luty',
-        March:     'Marzec',
-        April:     'Kwiecień',
-        May:       'Maj',
-        June:      'Czerwiec', 
-        July:      'Lipiec',
-        August:    'Sierpień', 
-        September: 'Wrzesień', 
-        October:   'Październik', 
-        November:  'Listopad',
-        December:  'Grudzień',
-
-        jan: 'sty',
-        feb: 'lut',
-        mar: 'mar',
-        apr: 'kwi',
-        may: 'maj',
-        jun: 'cze',
-        jul: 'lip',
-        aug: 'sie',
-        sep: 'wrz',
-        oct: 'paź',
-        nov: 'lis',
-        dec: 'gru',
-        
-        '&ldquo;': '&bdquo;',
-        '&rdquo;': '&rdquo;'
-    }
-};
-
-// Translated by Sandor Berczi
-var HUNGARIAN = {
-    keyword: {
-        table:     'táblázat',
-        figure:    'ábra',
-        listing:   'lista',
-        diagram:   'diagramm',
-
-        contents:  'Tartalomjegyzék',
-
-        sec:       'fej',  // Abbreviation for section
-        section:   'fejezet',
-        subsection:'alfejezet',
-
-        Monday:    'hétfő',
-        Tuesday:   'kedd',
-        Wednesday: 'szerda',
-        Thursday:  'csütörtök',
-        Friday:    'péntek',
-        Saturday:  'szombat',
-        Sunday:    'vasárnap',
-
-        January:   'január',
-        February:  'február',
-        March:     'március',
-        April:     'április',
-        May:       'május',
-        June:      'június',
-        July:      'július',
-        August:    'augusztus',
-        September: 'szeptember',
-        October:   'október',
-        November:  'november',
-        December:  'december',
-
-        jan: 'jan',
-        feb: 'febr',
-        mar: 'márc',
-        apr: 'ápr',
-        may: 'máj',
-        jun: 'jún',
-        jul: 'júl',
-        aug: 'aug',
-        sep: 'szept',
-        oct: 'okt',
-        nov: 'nov',
-        dec: 'dec',
-
-        '&ldquo;': '&bdquo;',
-        '&rdquo;': '&rdquo;'
-    }
-};
-
-// Translated by Takashi Masuyama
-var JAPANESE = {
-    keyword: {
-        table:     '表',
-        figure:    '図',
-        listing:   '一覧',
-        diagram:   '図',
-        contents:  '目次',
-
-        sec:       '章',
-        section:   '節',
-        subsection: '項',
-
-        Monday:    '月',
-        Tuesday:   '火',
-        Wednesday: '水',
-        Thursday:  '木',
-        Friday:    '金',
-        Saturday:  '土',
-        Sunday:    '日',
-
-        January:   '1月',
-        February:  '2月',
-        March:     '3月',
-        April:     '4月',
-        May:       '5月',
-        June:      '6月',
-        July:      '7月',
-        August:    '8月',
-        September: '9月',
-        October:   '10月',
-        November:  '11月',
-        December:  '12月',
-
-        jan: '1月',
-        feb: '2月',
-        mar: '3月',
-        apr: '4月',
-        may: '5月',
-        jun: '6月',
-        jul: '7月',
-        aug: '8月',
-        sep: '9月',
-        oct: '10月',
-        nov: '11月',
-        dec: '12月',
-
-        '&ldquo;': '「',
-        '&rdquo;': '」'
-    }
-};    
-    
-// Translated by Sandor Berczi
-var GERMAN = {
-    keyword: {
-        table:     'Tabelle',
-        figure:    'Abbildung',
-        listing:   'Auflistung',
-        diagram:   'Diagramm',
-
-        contents:  'Inhaltsverzeichnis',
-
-        sec:       'Kap',
-        section:   'Kapitel',
-        subsection:'Unterabschnitt',
-
-        Monday:    'Montag',
-        Tuesday:   'Dienstag',
-        Wednesday: 'Mittwoch',
-        Thursday:  'Donnerstag',
-        Friday:    'Freitag',
-        Saturday:  'Samstag',
-        Sunday:    'Sonntag',
-
-        January:   'Januar',
-        February:  'Februar',
-        March:     'März',
-        April:     'April',
-        May:       'Mai',
-        June:      'Juni',
-        July:      'Juli',
-        August:    'August',
-        September: 'September',
-        October:   'Oktober',
-        November:  'November',
-        December:  'Dezember',
-
-        jan: 'Jan',
-        feb: 'Feb',
-        mar: 'Mär',
-        apr: 'Apr',
-        may: 'Mai',
-        jun: 'Jun',
-        jul: 'Jul',
-        aug: 'Aug',
-        sep: 'Sep',
-        oct: 'Okt',
-        nov: 'Nov',
-        dec: 'Dez',
-        
-        '&ldquo;': '&bdquo;',
-        '&rdquo;': '&ldquo;'
-    }
-};
-
-// Translated by Nils Nilsson
-var SWEDISH = {
-    keyword: {
-        table:     'tabell',
-        figure:    'illustration',
-        listing:   'lista',
-        diagram:   'diagram',
-
-        contents:  'innehållsförteckning',
-        sec:       'kap',
-        section:   'kapitel',
-        subsection:'avsnitt',
-
-        Monday:    'måndag',
-        Tuesday:   'tisdag',
-        Wednesday: 'onsdag',
-        Thursday:  'torsdag',
-        Friday:    'fredag',
-        Saturday:  'lördag',
-        Sunday:    'söndag',
-
-        January:   'januari',
-        February:  'februari',
-        March:     'mars',
-        April:     'april',
-        May:       'maj',
-        June:      'juni',
-        July:      'juli',
-        August:    'augusti',
-        September: 'september',
-        October:   'oktober',
-        November:  'november',
-        December:  'december',
-
-        jan: 'jan',
-        feb: 'feb',
-        mar: 'mar',
-        apr: 'apr',
-        may: 'maj',
-        jun: 'jun',
-        jul: 'jul',
-        aug: 'aug',
-        sep: 'sep',
-        oct: 'okt',
-        nov: 'nov',
-        dec: 'dec',
-        
-        '&ldquo;': '&rdquo;',
-        '&rdquo;': '&rdquo;'
-    }
-};
    
 var DEFAULT_OPTIONS = {
     mode:               'markdeep',
@@ -1143,21 +513,6 @@ var DEFAULT_OPTIONS = {
 // See http://www.i18nguy.com/unicode/language-identifiers.html for keys
 var LANG_TABLE = {
     en: {keyword:{}},        
-    ru: RUSSIAN,
-    fr: FRENCH,
-    pl: POLISH,
-    bg: BULGARIAN,
-    de: GERMAN,
-    hu: HUNGARIAN,
-    sv: SWEDISH,
-    pt: PORTUGUESE,
-    ja: JAPANESE,
-    it: ITALIAN,
-    lt: LITHUANIAN,
-    cz: CZECH
-// Awaiting localization by a native speaker:
-//    es: SPANISH
-//    ...
 };
 
 [].slice.call(document.getElementsByTagName('meta')).forEach(function(elt) {
@@ -4416,8 +3771,6 @@ if (! window.alreadyProcessedMarkdeep) {
             markdeepHTML = MATHJAX_CONFIG + markdeepHTML; 
         }
         
-        markdeepHTML += MARKDEEP_FOOTER;
-        
         // Replace the document. If using MathJax, include the custom Markdeep definitions
         var longDocument = source.length > 1000;
         var head = BODY_STYLESHEET + STYLESHEET + sectionNumberingStylesheet() + HIGHLIGHT_STYLESHEET;
@@ -4537,5 +3890,5 @@ if (! window.alreadyProcessedMarkdeep) {
     }
 }
 
-})();
+};
 
