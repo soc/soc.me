@@ -48,30 +48,14 @@ figcaption {
 // -------------------------
 
 a {
-  /*text-decoration: none;*/
   color: $link-color;
 
-  &:hover {
-    text-decoration: none;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      -1px -1px 0 #fff,
-      1px -1px 0 #fff;
-    background:  linear-gradient(#999, #999) center 1.15em no-repeat;
-    background-size: 85% 2px;
-  }
   &:focus {
     outline: thin dotted;
   }
   &:hover, &:active {
     outline: none;
   }
-}
-
-main a {
-  background-size: 75% 2px;
-  transition: background-size .2s ease;
 }
 
 main p a,
@@ -84,14 +68,26 @@ main table tbody tr td a,
 main .posts a {
   text-decoration-line: underline;
   text-decoration-color: $color-grey-regular;
-  background-size: 100%;
-  transition: none;
   &:hover {
     text-decoration-line: underline;
     text-decoration-color: $color-grey-medium;
     color: $color-grey-darker;
-    background-size: 100%;
-    transition: none;
+  }
+}
+
+.site-title a,
+.page-link a {
+  background-size: 75% 2px;
+  transition: background-size .2s ease;
+  &:hover {
+    text-decoration: none;
+    text-shadow:
+      1px 1px 0 #fff,
+      -1px 1px 0 #fff,
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff;
+    background:  linear-gradient(#999, #999) center 1.15em no-repeat;
+    background-size: 85% 2px;
   }
 }
 
