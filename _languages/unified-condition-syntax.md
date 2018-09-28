@@ -64,7 +64,7 @@ if xs                               /* same as */
                  else "z"           else                          "z"
 ```
 
-##### pattern matching (`is`), introducing bindings (`@`)
+##### pattern matching (`is`), introducing bindings (`$`)
 ```lua
 if alice
   .age < 18                         then "18"
