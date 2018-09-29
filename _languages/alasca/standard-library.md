@@ -1,11 +1,11 @@
 ---
-title:  "Alasca: Standard Types and Terms"
+title:  "Alasca: Standard Library"
 date:   2018-08-31 12:00:00 +0200
 ---
 
 Ordered from necessary to convenient:
 
-1. Intrinsics
+#### 1. Intrinsics
 
 ```
 object std
@@ -26,13 +26,15 @@ object std
   value Float64: 64 bit floating point value   (=Float)
 ```
 
-2. Runtime:
+#### 2. Runtime
 
 ```
 object std.runtime
+  object atomic
+  object unsafe
 ```
 
-3. Vocabulary
+#### 3. Vocabulary
 
 ```
 object std
@@ -43,7 +45,7 @@ object std
   value Result:  Ok(value)/Error(value) ... Ok/Fail? Pass/Fail? Good/Bad?
 ```
 
-4. Platform
+#### 4. Platform
 
 ```
 object std.concurrent
@@ -51,17 +53,24 @@ object std.concurrent
   class Thread: OS thread
 
 object std.io
+  object console
   object file
-  object net
+    value AbsolutePath
+    value RelativePath
+  object net     // keep common types here ...
+    object http  // ... and ship submodules as individual modules?
+    object scp
+    object tcp
+    object udp
 ```
 
-5. Common
+#### 5. Common
 
 ```
 object std.data
-  object json
+  object json   // ship submodules as individual modules ...
   object xml
-  trait Encoder
+  trait Encoder // ... and keep common types here?
   trait Decoder
   trait Codec extends Encoder, Decoder
 
@@ -72,29 +81,42 @@ object std.math
   class DecBig: Arbitrary-precision decimal value
   value Rational[T]
 
-object std.stream
+object std.stream: bulk operations for in-memory collections, databases, files
+  // let ops = Stream.of[Person].map(_.age).accept(_.isAdult).sum
+  // let collResult: Int                = ops.run         (persons)
+  // let dbResult  : Task[Int]          = ops.runAsync    (dbPersonTable)
+  // let fileResult: Result[Int,String] = ops.runAndHandle(personFile, handleIOErrors)
+  object collection
+  object database
+  object file
+
 
 object std.text
   class Text: decomposed UTF-8 bytestream with locale
 
 object std.time
   value Instant
+  value Duration
   value Period
+  value Clock
   value Date
   value Time
   value DateTime
-  ZonedTime
-  ZonedDateTime
+  value ZoneId
+    value ZoneOffset
+    value TimeZone
+  value ZonedTime
+  value ZonedDateTime
 ```
 
-6. Batteries?
+#### 6. Batteries
 
 ```
-object std.data.db
+object std.data.db // database stuff ... better name?
 
-object std.format
+object std.format  // important enough for top-level?
 
-object std.regex
+object std.regex   // important enough for top-level?
 ```
 
 <!--
