@@ -11,19 +11,23 @@ Ordered from necessary to convenient:
 object std
   value Boolean: "1 bit" value, true/false
 
-  value Int8:     8 bit signed integer value
-  value Int16:   16 bit signed integer value
-  value Int32:   32 bit signed integer value
-  value Int64:   64 bit signed integer value   (=Int)
+  value Int8:       8 bit signed integer value
+  value Int16:     16 bit signed integer value
+  value Int32:     32 bit signed integer value
+  value Int64:     64 bit signed integer value   (=Int)
+  value Int128:   128 bit signed integer value
   
-  value Int8U:    8 bit unsigned integer value (=Byte)
-  value Int16U:  16 bit unsigned integer value
-  value Int32U:  32 bit unsigned integer value
-  value Int64U:  64 bit unsigned integer value
+  value Int8U:      8 bit unsigned integer value (=Byte)
+  value Int16U:    16 bit unsigned integer value
+  value Int32U:    32 bit unsigned integer value
+  value Int64U:    64 bit unsigned integer value (=Index=Size¹)
+  value Int128U:  128 bit unsigned integer value
 
-  value Float16: 16 bit floating point value
-  value Float32: 32 bit floating point value
-  value Float64: 64 bit floating point value   (=Float)
+  value Float16:   16 bit floating point value
+  value Float32:   32 bit floating point value
+  value Float64:   64 bit floating point value   (=Float)
+  value Float128: 128 bit floating point value
+
 ```
 
 #### 2. Runtime
@@ -126,3 +130,10 @@ object std.regex   // important enough for top-level?
   - .size: collections, string, text, etc.
   - .length: text ("real" length)?
 -->
+
+¹ an unsigned `Size` could be dangerous as loop termination conditions could be unintentionally < 0:
+
+```
+// "every element except the last one!"
+loop(i < arr.length - 1)
+// arr.length - 1 == -1 if arr is empty
