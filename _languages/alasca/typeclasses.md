@@ -17,43 +17,20 @@ class Person(name: String) extends Order[Person]
 - typeclass ideas:
 
 ```scala
-module Order[Person]
+module Order[Person]             // no name
 	fun <=(this: T, that: T) = this.name <= that.name
 
-module Order for Person
+module Order for Person          // no name, worse syntax?
   fun <=(this: T, that: T) = this.name <= that.name
 
 module Asc extends Order[Person] // instance has term-level name
   fun <=(this: T, that: T) = this.name <= that.name
 
-// accepts both:
-// - a type which extends Order
-// - a type with a typeclass instance for Order
-fun sort[T : Order](values: List[T]) = ...
-
-// accepts only type that extends Order (necessary?)
-fun sort[T <: Order[T]](values: List[T]) = ...
+// idea:
+// - disallow modules with unstable paths
+// - record all module definitions
+// -> set of defined modules for typeclass and data type are statically known
 ```
-
-- is it possible to pass typeclass instances explicitly?
-- is passing typeclass instances explicitly the only way to select a specific instance?
-<<<<<<< Updated upstream
-- is it necessary to summon typeclass instance values?
-=======
-  ```
-  sort(persons).with(Asc) // special method to explicitly supply typeclass instance?
-  ```
-- are typeclass instances first-class values?
-- is it necessary to allow summoning typeclass instance values?
-- if both a typeclass instance and a subtyping relationship are present for type `T`,
-  which implementation is chosen for the given type?
-- ... or disallow defining typeclass instances if type already implements trait?
->>>>>>> Stashed changes
-
-```
-Order.for[Person]
-```
-<<<<<<< Updated upstream
 
 - ideas on bounds regarding traits as interfaces vs. typeclasses:
 
@@ -67,5 +44,21 @@ fun sort(values: Array[T : Order]) = ...
 // - have an Order typeclass instance
 fun sort(values: Array[T <: Order]) = ...
 ```
-=======
->>>>>>> Stashed changes
+
+- is it possible to pass typeclass instances explicitly?
+- is passing typeclass instances explicitly the only way to select a specific instance?
+- is it necessary to summon typeclass instance values?
+
+  ```
+  sort(persons).with(Asc) // special method to explicitly supply typeclass instance?
+  ```
+- are typeclass instances first-class values?
+- is it necessary to allow summoning typeclass instance values?
+- if both a typeclass instance and a subtyping relationship are present for type `T`,
+  which implementation is chosen for the given type?
+- ... or disallow defining typeclass instances if type already implements trait?
+
+```
+Order.for[Person]
+```
+
