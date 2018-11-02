@@ -13,7 +13,7 @@ value Stream[C, T]
   fun map         (f: T => R)        : Stream[C, R]
 
   // Filtering Transformations
-	fun get         (index: Int)       : Stream[Id, T]
+  fun get         (index: Int)       : Stream[Id, T]
   fun first                          : Stream[Id, T]
   fun last                           : Stream[Id, T]
   fun take        (amount: Int)      : Stream[C, T]
@@ -22,7 +22,7 @@ value Stream[C, T]
   fun dropWhile   (p: T => Boolean)  : Stream[C, T]  
   fun accept      (p: T => Boolean)  : Stream[C, T]
   fun reject      (p: T => Boolean)  : Stream[C, T]
-	fun distinct                       : Stream[C, T]
+  fun distinct                       : Stream[C, T]
 
   // Folding Transformations
   fun fold        (f: (T, T) => R,
@@ -33,7 +33,7 @@ value Stream[C, T]
   fun product[T: Numeric]            : Stream[Id, T]
   fun average[T: Numeric]            : Stream[Id, T]
   fun forAll      (p: T => Boolean)  : Stream[Id, Boolean]
-  fun forSome     (p: T => Boolean)  : Stream[Id, Boolean]
+  fun forAny      (p: T => Boolean)  : Stream[Id, Boolean]
   fun forNone     (p: T => Boolean)  : Stream[Id, Boolean]
 
   // Fan-in Transformations

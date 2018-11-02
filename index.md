@@ -54,6 +54,7 @@ layout: default
       <div><a href="languages/equality-and-identity-part1">Equality &amp; Identity – Part 1</a></div>
       <div><a href="languages/equality-and-identity-part2">Equality &amp; Identity – Part 2</a></div>
       <div><a href="languages/equality-and-identity-part3">Equality &amp; Identity – Part 3</a></div>
+      <div><a href="languages/comparing-and-sorting">Comparing &amp; Sorting</a></div>
       <div><a href="languages/generics">Generics</a></div>
       <div><a href="languages/type-annotations">Type Annotations</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
