@@ -12,8 +12,6 @@ Dot-File/-Directory | Application/Library | Status  | Comment
 ------------------- | :------------------ | :-----: | :------
 .java               |                     | unknown |
 .scala_history      | Scala               | unknown |
-.scalaide           | ScalaIDE            | unknown |
-.swt                | Eclipse             | unknown |
 
 
 #### Category: Bug Reported
@@ -32,7 +30,6 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 
 Dot-File/-Directory | Application/Library | Status   | Comment
 ------------------- | :------------------ | :------: | :---
-.atom               | Atom                | [planned](https://github.com/atom/atom/issues/8281) |
 .cargo, .rustup     | Rust Cargo, Rustup  | [pull request](https://github.com/rust-lang/cargo/pull/5183) |
 .code, .vscode      | Visual Studio Code  | [reported](https://github.com/Microsoft/vscode/issues/3884) |
 .pam_environment    | Linux PAM           | [reported](https://github.com/linux-pam/linux-pam/issues/7) | <small>Bootstrap issue: How should pam_env know where to look for its environment file?</small>
@@ -53,6 +50,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 
 Dot-File/-Directory | Application/Library | Status   | Comment
 ------------------- | :------------------ | :------: | :---
+.atom               | Atom                | [rejected](https://github.com/atom/atom/issues/8281) |
 .bundle             | Bundler             | [rejected?](https://github.com/bundler/bundler/issues/4333) |
 .cups               | Cups                | [rejected](https://github.com/apple/cups/issues/4243) |
 .gem                | RubyGems            | [rejected](https://github.com/rubygems/rubygems/issues/1599) |
