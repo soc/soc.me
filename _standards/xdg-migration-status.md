@@ -36,7 +36,6 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .cargo, .rustup     | Rust Cargo, Rustup  | [pull request](https://github.com/rust-lang/cargo/pull/5183) |
 .code, .vscode      | Visual Studio Code  | [reported](https://github.com/Microsoft/vscode/issues/3884) |
 .pam_environment    | Linux PAM           | [reported](https://github.com/linux-pam/linux-pam/issues/7) | <small>Bootstrap issue: How should pam_env know where to look for its environment file?</small>
-.pki                | Mozilla             | [reported](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
 
 
 #### Category: Fixed
@@ -46,6 +45,7 @@ Dot-File/-Directory | Application/Library | Status   | Comment
 .coursier           | Coursier            | [merged](https://github.com/coursier/coursier/pull/676) |
 .gimp, .thumbnails  | GIMP                | [fixed](https://wiki.gimp.org/wiki/Roadmap#GIMP_2.10) |
 .nano, .nanorc      | GNU Nano            | [merged](http://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403) |
+.pki                | Mozilla             | [fixed](https://hg.mozilla.org/projects/nss/rev/da45424cb9a0b4d8e45e5040e2e3b574d994e254) |
 .purple             | Pidgin              | [fixed](https://developer.pidgin.im/ticket/10029) | <small>will be shipped in [Pidgin 3](https://developer.pidgin.im/wiki/Roadmap3.0.0)</small>
 
 
