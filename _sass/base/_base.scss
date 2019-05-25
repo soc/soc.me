@@ -143,6 +143,11 @@ ul {
   list-style-type: circle;
 }
 
+li:not(:last-child) {
+  margin-bottom: 0.5em;
+  line-height: 1.5em;
+}
+
 // List options
 // -------------------------
 
