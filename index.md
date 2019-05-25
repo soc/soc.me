@@ -83,6 +83,7 @@ layout: default
     </td>
     <td>
       <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic Package Manager UI</a></div>
+      <div><a href="interfaces/vertical-tabs-in-firefox">Vertical Tabs in Firefox</a></div>
     </td>
     <td></td>
     <td></td>
