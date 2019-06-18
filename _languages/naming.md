@@ -34,7 +34,7 @@ date:   2018-07-30 12:00:00 +0200
     </tr>
     <tr>
       <td><code>as</code></td>
-      <td><code>int.asDouble</code>,<br/><code>int.as(Double)</code>,<br/><code>setOfEntries.asMap</code></td>
+      <td><code>int.asDouble</code>,<br/><code>int.as(Double)</code>,<br/><code>map.asSetOfEntries</code>,<br/><code>setOfEntries.asMap</code></td>
       <td>implies a reinterpretation/wrapping/viewing of a verbatim value</td>
     </tr>
     <tr>
