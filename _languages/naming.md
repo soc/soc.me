@@ -15,17 +15,17 @@ date:   2018-07-30 12:00:00 +0200
     <tr>
       <td>–</td>
       <td><code>List(1, 2, 3)</code>,<br/><code>Set("a", "b", "c")</code></td>
-      <td>primary way of construction, wrapping; resulting instance contains passed argument verbatim</td>
+      <td>primary way of construction, wrapping; resulting instance contains passed arguments verbatim</td>
     </tr>
     <tr>
       <td><code>of</code></td>
       <td><code>Person.of(name, age)</code></td>
-      <td>secondary way of construction, wrapping; resulting instance contains passed argument verbatim</td>
+      <td>secondary way of construction, wrapping; resulting instance contains passed arguments verbatim</td>
     </tr>
     <tr>
       <td><code>from</code></td>
       <td><code>Person.from(string)</code>,<br/><code>Person.fromString(string)</code>,<br/><code>Person.from[String](string)</code></td>
-      <td>argument is adapted, converted, or parsed;<br/>the value of the instance is derived and does not contain the passed argument verbatim;<br/>result type is likely to use <code>Option</code> or <code>Result</code> types to signal construction failures</td>
+      <td>arguments are adapted, converted or parsed;<br/>the value of the instance is derived and does not contain the passed arguments verbatim;<br/>result type is likely to use <code>Option</code> or <code>Result</code> types to signal construction failures</td>
     </tr>
     <tr>
       <td><code>to</code></td>
