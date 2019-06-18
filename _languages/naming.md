@@ -3,7 +3,7 @@ title:  "Language Design: Naming"
 date:   2018-07-30 12:00:00 +0200
 ---
 
-<table style="table-layout: auto">
+<table class="table-medium">
   <thead>
     <tr>
       <th style="width: 8%">Name</th>
@@ -11,21 +11,21 @@ date:   2018-07-30 12:00:00 +0200
       <th>Explanation</th>
     </tr>
   </thead>
-  <tbody style="vertical-align: top">
+  <tbody>
     <tr>
-      <td><code>apply</code></td>
+      <td><code>–</code></td>
       <td><code>List(1, 2, 3)</code>,<br/><code>Set("a", "b", "c")</code></td>
-      <td>if resulting instance contains passed argument verbatim, i. e. primary way of construction, wrapping</td>
+      <td>primary way of construction, wrapping; resulting instance contains passed argument verbatim</td>
     </tr>
     <tr>
       <td><code>of</code></td>
       <td><code>Person.of(name, age)</code></td>
-      <td>secondary way to construct instance that doesn’t involve invasive computations like parsing etc.</td>
+      <td>secondary way of construction, wrapping; resulting instance contains passed argument verbatim</td>
     </tr>
     <tr>
       <td><code>from</code></td>
       <td><code>Person.from(string)</code>,<br/><code>Person.fromString(string)</code>,<br/><code>Person.from[String](string)</code></td>
-      <td>if argument is adapted, converted, parsed; the value of the instance is derived and does not contain the passed argument verbatim</td>
+      <td>argument is adapted, converted, parsed; the value of the instance is derived and does not contain the passed argument verbatim; result type is likely to use <code>Option</code> or <code>Result</code> types to signal construction failures</td>
     </tr>
     <tr>
       <td><code>to</code></td>
@@ -35,7 +35,7 @@ date:   2018-07-30 12:00:00 +0200
     <tr>
       <td><code>as</code></td>
       <td><code>int.asDouble</code>,<br/><code>int.as(Double)</code></td>
-      <td>implies a reinterpretation/wrapping of a verbatim value</td>
+      <td>implies a reinterpretation/wrapping/viewing of a verbatim value</td>
     </tr>
     <tr>
       <td><code>with</code></td>
