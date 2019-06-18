@@ -37,6 +37,11 @@ date:   2018-07-30 12:00:00 +0200
       <td><code>int.asDouble</code>,<br/><code>int.as(Double)</code></td>
       <td>implies a reinterpretation/wrapping of a verbatim value</td>
     </tr>
+    <tr>
+      <td><code>with</code></td>
+      <td><code>person.withAge(23)</code>,<br/><code>person.with(age = 23)</code></td>
+      <td>returns a copy of an object in which the value of a field has been replaced with the argument value</td>
+    </tr>
   </tbody>
 </table>
 
