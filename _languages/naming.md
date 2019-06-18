@@ -25,7 +25,7 @@ date:   2018-07-30 12:00:00 +0200
     <tr>
       <td><code>from</code></td>
       <td><code>Person.from(string)</code>,<br/><code>Person.fromString(string)</code>,<br/><code>Person.from[String](string)</code></td>
-      <td>argument is adapted, converted, parsed; the value of the instance is derived and does not contain the passed argument verbatim; result type is likely to use <code>Option</code> or <code>Result</code> types to signal construction failures</td>
+      <td>argument is adapted, converted, or parsed;<br/>the value of the instance is derived and does not contain the passed argument verbatim;<br/>result type is likely to use <code>Option</code> or <code>Result</code> types to signal construction failures</td>
     </tr>
     <tr>
       <td><code>to</code></td>
