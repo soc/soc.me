@@ -15,12 +15,12 @@ date:   2018-07-30 12:00:00 +0200
     <tr>
       <td>–</td>
       <td><code>List(1, 2, 3)</code>,<br/><code>Set("a", "b", "c")</code></td>
-      <td>primary way of construction, wrapping; resulting instance contains passed arguments verbatim</td>
+      <td>primary way of construction, wrapping;<br/>resulting instance contains passed arguments verbatim</td>
     </tr>
     <tr>
       <td><code>of</code></td>
       <td><code>Person.of(name, age)</code></td>
-      <td>secondary way of construction, wrapping; resulting instance contains passed arguments verbatim</td>
+      <td>secondary way of construction, wrapping;<br/>resulting instance contains passed arguments verbatim</td>
     </tr>
     <tr>
       <td><code>from</code></td>
