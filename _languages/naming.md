@@ -14,7 +14,7 @@ date:   2018-07-30 12:00:00 +0200
   <tbody>
     <tr>
       <td>–</td>
-      <td><code>List(1, 2, 3)</code>,<br/><code>Set("a", "b", "c")</code></td>
+      <td><code>List(1, 2, 3)</code>,<br/><code>Array(12.3, 45.6)</code>,<br/><code>Set("a", "b", "c")</code></td>
       <td>primary way of construction, wrapping;<br/>resulting instance contains passed arguments verbatim</td>
     </tr>
     <tr>
