@@ -3,7 +3,7 @@ title:  "Language Design: Naming"
 date:   2018-07-30 12:00:00 +0200
 ---
 
-<table style="table-layout: auto; vertical-align: top">
+<table style="table-layout: auto">
   <thead>
     <tr>
       <th style="width: 8%">Name</th>
@@ -11,7 +11,7 @@ date:   2018-07-30 12:00:00 +0200
       <th>Explanation</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="vertical-align: top">
     <tr>
       <td><code>apply</code></td>
       <td><code>List(1, 2, 3)</code>,<br/><code>Set("a", "b", "c")</code></td>
