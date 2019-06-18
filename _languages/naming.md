@@ -6,8 +6,8 @@ date:   2018-07-30 12:00:00 +0200
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 8%">Name</th>
-      <th style="width: 28%">Example</th>
+      <th style="width: 6%">Name</th>
+      <th style="width: 24%">Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
