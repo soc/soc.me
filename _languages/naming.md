@@ -10,6 +10,6 @@ date:   2018-07-30 12:00:00 +0200
               e. g. Name.ofPerson(person)
   - from    : if argument is adapted, converted, etc.
               i. e. value of instance is derived and does not contain a ref to the passed arg; parsing
-              e. g. Person.fromString(string), Person.from[String](string)
+              e. g. Person.fromString(string), Person.from\[String\](string)
   - to      : implies a conversion of some sort, e. g. array.toList, int.toDouble, array.to(List), int.to(Double)
   - as      : implies a reinterpretation/wrapping of a verbatim value, e. g. int.asDouble, int.as(Double) //bits
