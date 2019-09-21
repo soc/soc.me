@@ -4,16 +4,13 @@ date:   2017-07-21 12:00:00 +0200
 redirect_from: "/lessons-learned/generics.html"
 ---
 
-Scala's Generics reside in a language design sweet-spot largely due to three,
-interconnected reasons:
+Achieving a language design sweet-spot for Generics requires (at least) two orthogonal design decisions:
 
-- Context bounds make Scala's Generics vastly more useful and versatile compared
-  to languages which support only bounds based on subtyping.
 - The `ident: Type` syntax allows simpler and more consistent Generics compared
   to languages which use `Type ident`:<br/>
   [Why is `ident: Type` better than `Type ident`?](type-annotations)
-- The differentiated use of brackets in Scala is more regular, easier
-  to understand and has superior readability compared to languages which
+- A differentiated use of brackets results in a more regular, easier
+  to understand syntax and has superior readability compared to languages which
   overload `<>` to stand for Generics as well as comparisons and bitshifts,
   or use `[]` to stand for operations on arrays:<br/>
   [Why is `[]` better than `<>` for generic types?](#why-is--better-than--for-generic-types)
@@ -49,7 +46,7 @@ A language designed with Generics from the start does not need to repeat these m
 
 **Consistent syntax makes Generics easier to learn**
 
-Scala has an extremely consistent and straight-forward syntax: Generics (`[T]`) always follow the name of a class or a method.
+One language that has an extremely consistent and straight-forward syntax is Scala: Generics (`[T]`) always follow the name of a class or a method.
 
 ```scala
 class Foo[T]
@@ -65,7 +62,7 @@ helping beginners to get up to speed, and improves upon languages which relegate
 Generics to "advanced" parts of their documentation.
 
 
-**Scala's use of brackets is straight-forward and easy to understand**
+One example of a language syntax design that makes effective use of brackets according to intuitive and straight-forward rules:
 
   - `[]` encloses types: everything inbetween is either a type parameter or a type argument
   - `()` groups: for instance a single expression, a parameter list or a tuple
