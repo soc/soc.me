@@ -90,7 +90,7 @@ T id<T>(T \ivalue) { ... }
 def id[T](value: T): T = ...
 ```
 
-Scala's design delivers all three desirable properties:
+Only the last approach delivers all three desirable properties:
 
 |              | Input before output | Definition/usage<br/> consistency | Definition before<br/> usage |
 |--------------|:-------------------:|:----------------------------:|:-----------------------:|
