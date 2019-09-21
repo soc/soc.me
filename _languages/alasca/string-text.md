@@ -19,7 +19,7 @@ let string: String = """Dear Sir or Madam,
 	because ..."""
 ```
 
- - equivalent to `"Dear Sir or Madam, it's a pleasure to converse with you, because ..."`
+ - equivalent to `"Dear Sir or Madam,\nit's a pleasure to converse with you,\nbecause ..."`
  - the right amount of whitespace can be stripped out, because the amount of indentation is well-defined in the language syntax – no 'preceding whitespace'-problem
 
 #### Text

@@ -31,7 +31,8 @@ not to minimize keywords (i. e. `a == b ? c : d`) or turn conditions into method
 
 The following examples assume that the language has indentation-sensitive syntax to ensure unambiguous parsing.
 
-Languages without indentation-sensitve syntax require either mandatory braces around the bodies of `then` branches, or ending `then` branches explicitly, for instance with `end` or a `,`.
+Languages without indentation-sensitive syntax require either mandatory braces around the bodies of `then` branches,
+or ending `then` branches explicitly, for instance with `end` or a `,`.
 
 ##### simple if expression
 ```lua
@@ -88,25 +89,8 @@ if person
                                     else "minor"
 ```
 
-#### Further Considerations
-
-A reasonable question that might be asked is whether this design can be extended to also handle thrown exceptions,
-and whether such an extension could completely replace the `try-catch-finally` idiom.
-
-One language that has done something similar is Ocaml, which has
-[extended its pattern matching syntax/semantics](https://blog.janestreet.com/pattern-matching-and-exception-handling-unite/).
-
-One option might be something along the lines of
-
-```lua
-if readPersonFromFile(file)
-  throws[IOException]($ex)        then "unknown, due to $ex"
-  is Person("Alice", _)           then "alice"
-  is Person(_, $age) && age >= 18 then "adult"
-                                  else "minor"
-```
-
-This might require adding some amount of language magic to deal with the `throws` construct though, depending on the expressiveness of the core language.
+This might require adding some amount of language magic to deal with the `throws` construct though,
+depending on the expressiveness of the core language.
 
 #### Related Work
 
