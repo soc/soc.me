@@ -13,8 +13,8 @@ The most common unary operators are:
 - `+`: useless (on numbers)
 
 <br/>Except for reasons of tradition and familiarity, their privileged position in many languages is unnecessary.
-Considering the rather limited benefit they add – while adding complexity to the core language –
-it is questionable whether unary operators are a good idea to spend a language's complexity budget on.
+Considering they provide rather limited benefits – while adding complexity to the core language –
+it is questionable whether unary operators are a good place to spend a language's complexity budget on.
 
 An alternative is to define methods on the respective types, dropping unary operators altogether:
 
@@ -36,9 +36,12 @@ There are two additional benefits to the use methods instead of operators:
 - Using methods instead of unary operators moves the negation closer to the thing being negated:  
   `if language.users.map(_.lastName).contains("Smith").not then ... else ...`.
   The more traditional `if !language.users.map(_.lastName).contains("Smith") then ... else ...`
-  requires users to read the negation first, then read the condition to the end to figure out what is being negated.
+  requires users to read the negation first, then read the condition to the end of the line to figure out what is being negated.[^1]
 
 - Using methods instead of unary operators allows the use of more elaborate result types:
-  While the operation `BigInt#negate` will always be able to return a `BigInt` result, the same operation on fixed-size
-  types `Int#negate` could benefit from returning an `Option[Int]` to deal with the case of negating `Int.MinValue`,
-  a value that lacks a positive counterpart.
+  While a `negate` operation may always succeed on arbitrary-precision numbers (`BigInt`, `BigDec`, ...),
+  the same operation on the more common fixed-size types (`Int`, `Long`, ...) could benefit from returning an optional
+  result to indicate that a negative value may lack a positive counterpart.
+
+
+[^1]: The Rust community had a similar [discussion](https://internals.rust-lang.org/t/the-is-not-empty-method-as-more-clearly-alternative-for-is-empty/) about this topic. 
