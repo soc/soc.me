@@ -73,6 +73,8 @@ layout: default
       <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
     </td>
     <td>
+      <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
+      <div><a href="http://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness: Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a></div>
     </td>
