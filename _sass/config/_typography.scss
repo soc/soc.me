@@ -6,6 +6,8 @@
 //-------------------------------------
 $title-font-family:       "Merriweather", serif;
 $base-font-family:        "Source Sans Pro", sans-serif;
+$page-font-family:        "Open Sans", "Source Sans Pro", sans-serif;
+
 
 code,
 kbd,
@@ -28,6 +30,7 @@ $ms5:                     $ratio * $ms4; /* 2.488 */
 $ms6:                     $ratio * $ms5; /* 2.986 */
 $ms7:                     $ratio * $ms6; /* 3.583 */
 
+$smallest:                $base-em / $ms2;
 $smaller:                 $base-em / $ms1;
 $normal:                  $base-em * $ms0;
 $bigger:                  $base-em * $ms1;
@@ -130,9 +133,9 @@ h6, .h6 {
 }
 
 h1,h2,h3,h4,h5,h6,.site-title {
-  color: $title-color;
+  color: var(--title-color);
   &,a,a:visited {
-    color: $title-color;
+    color: var(--title-color);
     text-decoration: none;
   }
   a:hover {

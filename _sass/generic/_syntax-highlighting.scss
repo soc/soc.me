@@ -8,7 +8,7 @@
     background: #fff;
 
     .highlighter-rouge & {
-      background: #fdfdfd;
+      background: var(--background-color-code);
     }
 
     .c     { color: #998; font-style: italic } // Comment

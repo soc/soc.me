@@ -1,17 +1,18 @@
 ---
-layout: page
+layout: page-no-title
 title: Archive
 permalink: /archive/
 navigation: true
 ---
 
-<div class="posts">
+<div class="archive">
 {% assign documents = site.documents | sort: 'date' | reverse %}
 {% for post in documents %}
   {% if post.archive != false %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
+  <br/>
   <h2 id="date-{{currentdate}}">{{ currentdate }}</h2>
   {% endif %}
   {% unless post.unlink %}<a href="{{ site.baseurl }}{{ post.url }}">{% endunless %}
@@ -20,4 +21,4 @@ navigation: true
   {% assign date = currentdate %}
   {% endif %}
 {% endfor %}
-</div><!--/posts-->
+</div>
