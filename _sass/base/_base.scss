@@ -1,3 +1,28 @@
+:root {
+  --title-color: #343A40;
+  --text-color: #343A40;
+  --background-color: #FFFFFF;
+  --background-color-alternate: #F7F7F7;
+  --background-color-code: #FDFDFD;
+  --link-color: #343A40;
+  --link-underline-color: #ADB5BD;
+  --link-underline-color-hover: #868E96;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --title-color: #DDDDDD;
+    --text-color: #DDDDDD;
+    --background-color: #333333;
+    --background-color-alternate: #444444;
+    --background-color-code: #222222;
+    --link-color: #DDDDDD;
+    --link-underline-color: #BBBBBB;
+    --link-underline-color-hover: #DDDDDD;
+  }
+}
+
 ////
 /// Very basic styles
 ////
@@ -6,7 +31,8 @@ html,
 body {
   box-sizing: border-box;
   margin: 0;
-  color: $text-color;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 *,
@@ -48,7 +74,7 @@ figcaption {
 // -------------------------
 
 a {
-  color: $link-color;
+  color: var(--link-color);
 
   &:focus {
     outline: thin dotted;
@@ -67,27 +93,12 @@ main table tbody tr th a,
 main table tbody tr td a,
 main .posts a {
   text-decoration-line: underline;
-  text-decoration-color: $color-grey-regular;
+  text-decoration-color: var(--link-underline-color);
+  text-underline-offset: 0.1em;
   &:hover {
     text-decoration-line: underline;
-    text-decoration-color: $color-grey-medium;
-    color: $color-grey-darker;
-  }
-}
-
-.site-title a,
-.page-link a {
-  background-size: 75% 2px;
-  transition: background-size .2s ease;
-  &:hover {
-    text-decoration: none;
-    text-shadow:
-      1px 1px 0 #fff,
-      -1px 1px 0 #fff,
-      -1px -1px 0 #fff,
-      1px -1px 0 #fff;
-    background:  linear-gradient(#999, #999) center 1.15em no-repeat;
-    background-size: 85% 2px;
+    text-decoration-color: var(--link-underline-color-hover);
+    text-underline-offset: 0.1em;
   }
 }
 
@@ -108,7 +119,7 @@ table.table-medium th, table.table-medium td {
 }
 
 table.table-medium tr:nth-child(even) {
-  background: #f7f7f7;
+  background: var(--background-color-alternate);
 }
 
 table.table-small {
@@ -225,7 +236,7 @@ pre,
 code {
   border: 1px solid $color-grey-light;
   border-radius: 3px;
-  background-color: #fdfdfd;
+  background-color: var(--background-color-code);
 }
 
 code {
@@ -250,4 +261,16 @@ table {
       border-bottom: 2px solid #ccc;
     }
   }
+}
+
+/* custom pages */
+
+.about-wrapper {
+  text-align: end;
+}
+
+.about {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: start;
 }
