@@ -20,6 +20,13 @@
     --link-color: #DDDDDD;
     --link-underline-color: #BBBBBB;
     --link-underline-color-hover: #DDDDDD;
+    ::selection {
+      color: #FFFFFF;
+      background-color: #212529;
+    }
+  }
+  .highlight > ::selection {
+    background-color: #000000;
   }
 }
 
