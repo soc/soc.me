@@ -1,7 +1,8 @@
 ---
 layout: page-no-title
-title: Archive
-permalink: /archive/
+title: Texts
+permalink: /texts/
+redirect_from: "/archive"
 navigation: true
 ---
 
@@ -18,6 +19,7 @@ navigation: true
   {% unless post.unlink %}<a href="{{ site.baseurl }}{{ post.url }}">{% endunless %}
   {{ post.title }}
   {% unless post.unlink %}</a>{% endunless %}<br/>
+  {% if post.note %}<em>{{post.note}}</em>{% endif %}
   {% assign date = currentdate %}
   {% endif %}
 {% endfor %}
