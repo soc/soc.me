@@ -22,10 +22,10 @@
 .pagination a,
 .pagination .disabled {
   padding: 1em 1.5em;
-  color: #333;
+  color: var(--link-color);
   border: 1px solid $color-grey;
   border-radius: 0.1875em;
-  background: $color-grey-light;
+  background: var(--background-color-alternate);
   transition: all 0.2s ease-in-out;
 }
 
@@ -35,12 +35,12 @@
 
 .pagination a:hover,
 .pagination a:focus {
-  color: $color-primary;
-  background: white;
+  color: var(--link-color);
+  background: var(--background-color);
 }
 
 .pagination a:active {
-  background: $color-grey-light;
+  background: var(--background-color);
 }
 
 .pagination .button {
@@ -50,12 +50,12 @@
 
 .button-disabled {
   opacity: 0.55;
-  background-color: $color-grey-dark;
+  background-color: var(--background-color-alternate);
 }
 
 .button-disabled:hover,
 .button-disabled:active,
 .button-disabled:focus {
   cursor: not-allowed;
-  background-color: $color-grey-dark;
+  background-color: var(--background-color-alternate);
 }
