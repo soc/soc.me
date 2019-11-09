@@ -113,6 +113,16 @@ main .posts a {
   width: 7em;
 }
 
+.table-index {
+  ol, ul {
+    padding-left: 16px;
+    li {
+      margin-bottom: 0;
+      line-height: 100%;
+    }
+  }
+}
+
 table.table-medium {
   table-layout: fixed;
   line-height: 110%;
