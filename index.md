@@ -51,6 +51,15 @@ layout: default
   <tr>
     <th class="table-topic">Languages</th>
     <td>
+      <div><a href="languages/generics">Generics</a></div>
+      <div><a href="languages/type-annotations">Type Annotations</a></div>
+      <div><a href="languages/unary-operators">Unary Operators</a></div>
+      <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
+      <div><a href="languages/package-objects">Package Objects</a></div>
+      <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
+      <div><a href="languages/notes-on-rust">Notes on Rust</a></div>
+    </td>
+    <td>
       <div>Equality &amp; Identity:
         <ol>
           <li><a href="languages/equality-and-identity-part1">Overview</a></li>
@@ -61,15 +70,6 @@ layout: default
         </ol>
       </div>
       <div><a href="languages/comparing-and-sorting">Comparing &amp; Sorting</a></div>
-      <div><a href="languages/generics">Generics</a></div>
-      <div><a href="languages/type-annotations">Type Annotations</a></div>
-      <div><a href="languages/unary-operators">Unary Operators</a></div>
-      <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
-      <div><a href="languages/package-objects">Package Objects</a></div>
-      <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
-      <div><a href="languages/notes-on-rust">Notes on Rust</a></div>
-    </td>
-    <td>
       <div>Unified Condition Expressions:
         <ol>
           <li><a href="languages/unified-condition-expressions">Introduction</a></li>
