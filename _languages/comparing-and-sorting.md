@@ -45,4 +45,4 @@ fun sort[T : Sortable](values: Array[T]) =
 ```
 
 [^1]: See also [Comparison in C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4367.html#Floating).
-[^2]: Rust is a good example of a language suffering from the problems with intermingling [_partial order_](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html) with [_total order_](https://doc.rust-lang.org/std/cmp/trait.Ord.html).
+[^2]: Rust is a good example of a language suffering from the problems caused by intermingling [_partial order_](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html) with [_total order_](https://doc.rust-lang.org/std/cmp/trait.Ord.html).
