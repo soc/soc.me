@@ -69,7 +69,8 @@ layout: default
       <div><a href="languages/notes-on-rust">Notes on Rust</a></div>
     </td>
     <td>
-      <div><a href="languages/unified-condition-syntax">Unified condition syntax</a></div>
+      <div><a href="languages/unified-condition-syntax">Unified Condition Syntax</a></div>
+      <div><a href="languages/unified-condition-syntax-advanced">Unified Condition Syntax – Advanced Topics</a> (WIP)</div>
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
