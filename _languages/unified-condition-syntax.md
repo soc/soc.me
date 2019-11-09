@@ -89,9 +89,6 @@ if person
                                     else "minor"
 ```
 
-This might require adding some amount of language magic to deal with the `throws` construct though,
-depending on the expressiveness of the core language.
-
 #### Related Work
 
 - Haskell – [multi-way if-expressions](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-MultiWayIf)

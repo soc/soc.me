@@ -24,3 +24,6 @@ if readPersonFromFile(file)
   is Person(_, $age) && age >= 18 then "adult"
                                   else "minor"
 ```
+
+This might require adding some amount of language magic to deal with the `throws` construct though,
+depending on the expressiveness of the core language.
