@@ -51,7 +51,7 @@ layout: default
   <tr>
     <th class="table-topic">Languages</th>
     <td>
-      <div>Equality &amp; Identity
+      <div>Equality &amp; Identity:
         <ol>
           <li><a href="languages/equality-and-identity-part1">Overview</a></li>
           <li><a href="languages/equality-and-identity-part2">Problems</a></li>
@@ -69,8 +69,13 @@ layout: default
       <div><a href="languages/notes-on-rust">Notes on Rust</a></div>
     </td>
     <td>
-      <div><a href="languages/unified-condition-syntax">Unified Condition Syntax</a></div>
-      <div><a href="languages/unified-condition-syntax-advanced">Unified Condition Syntax – Advanced Topics</a> (WIP)</div>
+      <div>Unified Condition Expressions:
+        <ol>
+          <li><a href="languages/unified-condition-expressions">Introduction</a></li>
+          <li>Parsing (WIP)</li>
+          <li><a href="languages/unified-condition-expressions-exceptions">Exceptions</a></li>
+        </ol>
+      </div>
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>

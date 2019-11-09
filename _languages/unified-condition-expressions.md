@@ -1,6 +1,7 @@
 ---
-title:  "Language Design: Unified Condition Syntax"
+title:  "Language Design: Unified Condition Expressions – Introduction"
 date:   2018-01-21 12:00:00 +0200
+redirect_from: "/languages/unified-condition-syntax.html"
 ---
 
 #### Idea
@@ -11,7 +12,7 @@ Replace the different syntactic forms of
 - pattern matching and pattern guards,
 - if-let constructs
 
-with a single, unified condition syntax that scales from simple one-liners to complex pattern matches.
+with a single, unified condition expression that scales from simple one-liners to complex pattern matches.
 
 #### Motivation
 
