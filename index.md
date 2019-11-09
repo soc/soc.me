@@ -51,9 +51,14 @@ layout: default
   <tr>
     <th class="table-topic">Languages</th>
     <td>
-      <div><a href="languages/equality-and-identity-part1">Equality &amp; Identity – Part 1</a></div>
-      <div><a href="languages/equality-and-identity-part2">Equality &amp; Identity – Part 2</a></div>
-      <div><a href="languages/equality-and-identity-part3">Equality &amp; Identity – Part 3</a></div>
+      <div>Equality &amp; Identity
+        <ol>
+          <li><a href="languages/equality-and-identity-part1">Overview</a></li>
+          <li><a href="languages/equality-and-identity-part2">Problems</a></li>
+          <li><a href="languages/equality-and-identity-part3">Solution</a></li>
+          <li><a href="languages/equality-and-identity-part4">Fixing Haskell</a></li>
+        </ol>
+      </div>
       <div><a href="languages/comparing-and-sorting">Comparing &amp; Sorting</a></div>
       <div><a href="languages/generics">Generics</a></div>
       <div><a href="languages/type-annotations">Type Annotations</a></div>
