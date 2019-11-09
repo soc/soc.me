@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<div class="wrapper">
+<div class="wrapper frontpage">
 
-<table class="table-medium">
+<table class="table-medium table-index">
   <tr>
     <th class="table-topic"></th>
     <th>Articles</th>
