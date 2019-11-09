@@ -1,6 +1,6 @@
 ---
 title:  "Language Design: Naming"
-date:   2018-07-30 12:00:00 +0200
+date:   2018-06-19 12:00:00 +0200
 ---
 
 <table class="table-medium">
