@@ -74,6 +74,7 @@ layout: default
     </td>
     <td>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
+      <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="http://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness: Functional Data Structures</a></div>
