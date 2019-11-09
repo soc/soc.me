@@ -57,6 +57,7 @@ layout: default
           <li><a href="languages/equality-and-identity-part2">Problems</a></li>
           <li><a href="languages/equality-and-identity-part3">Solution</a></li>
           <li><a href="languages/equality-and-identity-part4">Fixing Haskell</a></li>
+          <li>Implementation in Dora</li>
         </ol>
       </div>
       <div><a href="languages/comparing-and-sorting">Comparing &amp; Sorting</a></div>
