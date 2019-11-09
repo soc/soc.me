@@ -2,6 +2,7 @@
 layout: page-no-title
 title: Texts
 permalink: /texts/
+redirect_from: "/archive"
 navigation: true
 ---
 
