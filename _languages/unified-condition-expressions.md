@@ -69,25 +69,23 @@ if xs                               /* same as */
 ##### pattern matching (`is`), introducing bindings (`$`)
 ```lua
 if alice
-  .age < 18                         then "18"
-  is Person("Alice", $age)          then "$age"
-  is Person("Bob", _)$person        then "{$person.age}"
-                                    else "0"
+  .age < 18                  then "18"
+  is Person("Alice", $age)   then "$age"
+  is Person("Bob", _)$person then "{$person.age}"
+                             else "0"
 ```
 
 ##### pattern matching using "if-let"[^rust][^swift]
 ```lua
-if person is Person("Alice", $age)
-then "$age"
-else "o"
+if person is Person("Alice", $age) then "$age" else "o"
 ```
 
 ##### wildcards (`_`) and pattern guards
 ```lua
-if person
-  is Person("Alice", _)             then "alice"
-  is Person(_, $age) && age >= 18   then "adult"
-                                    else "minor"
+if person                         /* same as */      if person is
+  is Person("Alice", _)           then "alice"         Person("Alice", _)           then "alice"
+  is Person(_, $age) && age >= 18 then "adult"         Person(_, $age) && age >= 18 then "adult"
+                                  else "minor"                                      else "minor"
 ```
 
 #### Related Work
