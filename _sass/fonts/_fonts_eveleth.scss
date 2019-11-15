@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Eveleth Clean Thin';
-    src: url('/assets/fonts/EvelethCleanThin-webfont.woff') format('woff');
+    src: url('/assets/fonts/EvelethCleanThin.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,7 +13,7 @@
     font-style: normal;
     src:
       local('Eveleth Icons'),
-      url('/assets/fonts/EvelethIcons-webfont.woff') format('woff');
+      url('/assets/fonts/EvelethIcons.woff') format('woff');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
     font-style: normal;
     src:
       local('Eveleth Regular'),
-      url('/assets/fonts/EvelethRegular-webfont.woff') format('woff');
+      url('/assets/fonts/EvelethRegular.woff') format('woff');
 }
 
 @font-face {
@@ -31,7 +31,7 @@
     font-style: normal;
     src:
       local('Eveleth Shadow'),
-      url('/assets/fonts/EvelethShadow-webfont.woff') format('woff');
+      url('/assets/fonts/EvelethShadow.woff') format('woff');
 }
 
 @font-face {
@@ -40,5 +40,5 @@
     font-style: normal;
     src:
       local('Eveleth Shapes'),
-      url('/assets/fonts/EvelethShapes-webfont.woff') format('woff');
+      url('/assets/fonts/EvelethShapes.woff') format('woff');
 }

@@ -1,0 +1,35 @@
+/**** Linguistics Pro ****/
+
+@font-face {
+    font-family: 'Linguistics Pro';
+    font-weight: 400;
+    font-style: normal;
+    src:
+            local('Linguistics Pro Regular'),
+            url('/assets/fonts/LinguisticsPro-400.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Linguistics Pro';
+    font-weight: 400;
+    font-style: italic;
+    src:
+            local('Linguistics Pro Italic'),
+            url('/assets/fonts/LinguisticsPro-400-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Linguistics Pro';
+    font-weight: 700;
+    font-style: normal;
+    src:
+            local('Linguistics Pro Bold'),
+            url('/assets/fonts/LinguisticsPro-700.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Linguistics Pro';
+    font-weight: 700;
+    font-style: italic;
+    src:
+            local('Linguistics Pro Bold Italic'),
+            url('/assets/fonts/LinguisticsPro-700-Italic.otf') format('opentype');
+}

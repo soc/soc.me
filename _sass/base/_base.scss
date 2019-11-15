@@ -2,11 +2,12 @@
   --title-color: #343A40;
   --text-color: #343A40;
   --background-color: #FFFFFF;
-  --background-color-alternate: #F7F7F7;
+  --background-color-alternate: #EEEEEE;
   --background-color-code: #FDFDFD;
   --link-color: #343A40;
   --link-underline-color: #ADB5BD;
   --link-underline-color-hover: #868E96;
+  --table-color-alternate: #EEEEEE;
 }
 
 /* dark mode */
@@ -20,6 +21,7 @@
     --link-color: #DDDDDD;
     --link-underline-color: #BBBBBB;
     --link-underline-color-hover: #DDDDDD;
+    --table-color-alternate: #444444;
     ::selection {
       color: #FFFFFF;
       background-color: #212529;
@@ -146,7 +148,7 @@ table.table-small {
 }
 
 table.table-small tr:nth-child(even) {
-  background: #eee;
+  background: var(--table-color-alternate);
 }
 
 table.table-small tr th:first-child,

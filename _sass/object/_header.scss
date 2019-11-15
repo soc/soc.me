@@ -4,8 +4,8 @@
 
 // Site Header
 .site-header {
-  font-family: $title-font-family;
-  color: $title-color;
+  font-family: var(--title-font-family);
+  color: var(--title-color);
   padding: 0.5em 0 0;
   text-align: center;
   @media #{$medium-up} {
@@ -57,12 +57,9 @@
   flex-grow: 1;
 }
 
-// Navigation main
-// inspired https://medium.com/@kollinz/hamburger-menu-alternatives-for-mobile-navigation-a3a3beb555b8#.hg6g5yhtd
-
 .nav-main {
   display: flex;
-  font-family: $page-font-family;
+  font-family: var(--page-font-family);
   font-weight: 800;
   font-size: $smallest;
   text-transform: uppercase;
