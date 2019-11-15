@@ -1,14 +1,24 @@
 ---
 ---
 
-@import "overkyll-jekyll-theme";
 
-/// Import partials from `sass_dir` (defaults to `_sass`)
-
+@import "config/open-color";
 @import "config/colors";
 @import "config/mediaqueries";
 @import "config/fonts";
 @import "config/typography";
+
 @import "base/normalize";
 @import "base/base";
 @import "base/layout";
+
+@import "tool/utilities";
+
+@import "generic/normalize-opentype";
+@import "generic/syntax-highlighting";
+@import "generic/skiplink";
+@import "generic/print";
+
+@import "object/header";
+@import "object/pagination";
+@import "object/posts";

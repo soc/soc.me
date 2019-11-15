@@ -2,10 +2,15 @@
 layout: default
 ---
 
+{% assign title_parts = page.title | split: " – " %}
+
 <div class="wrapper">
   <article class="post">
-    <h1 class="post-title"><a href="{{page.url}}/..">Talks</a></h1>
+    <h1 class="post-title"><a href="{{page.url}}/..">{{ title_parts[0] }}</a></h1>
     <!--<p class="post-meta">{{ page.date | date: "%d/%m/%Y" }}</p>-->
+    {% if title_parts[1] != nil and title_parts[1] != empty %}
+    <h3>{{ title_parts[1] }}</h3>
+    {% endif %}
     {{ content | markdownify }}
   </article>
 </div>

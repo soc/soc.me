@@ -100,7 +100,7 @@ var BODY_STYLESHEET = entag('style', 'body{max-width:680px;' +
     'line-height:140%; ' +
     '-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;' +
     'color:#222;' +
-    'font-family:"Fira Sans",Heuristica,Palatino,Georgia,"Times New Roman",serif}');
+    'font-family:"FiraGO",sans-serif}');
 
 /** You can embed your own stylesheet AFTER the <script> tags in your
     file to override these defaults. */
@@ -120,7 +120,7 @@ var STYLESHEET = entag('style',
 
     '.md div.title{' +
     'font-size:26px;' +
-    'font-weight:600;' +
+    'font-weight:700;' +
     'line-height:100%;' +
     'color: #FFFFFF;' +
     'text-shadow: 0px 1px 1px #000;' +
@@ -130,7 +130,7 @@ var STYLESHEET = entag('style',
 
     '.md div.subtitle{' +
     'text-align:center;' +
-    'font-weight:600;' +
+    'font-weight:700;' +
     'color: #FFFFFF;' +
     'text-shadow: 0px 1px 1px #000;' +
     '}' +
@@ -207,7 +207,7 @@ var STYLESHEET = entag('style',
     '.md small{font-size:60%}' +
 
     '.md div.title,.md div.subtitle,contents,.md .tocHeader,h1,h2,h3,h4,h5,h6,.md .shortTOC,.md .mediumTOC,.nonumberh1,.nonumberh2,.nonumberh3,.nonumberh4,.nonumberh5,.nonumberh6{' +
-    'font-family:"Fira Sans",Verdana,Helvetica,Arial,sans-serif;' +
+    'font-family:"FiraGO",Verdana,Helvetica,Arial,sans-serif;' +
     'margin:13.4px 0 13.4px;' +
     'padding:15px 0 3px;' +
     'border-top:none;' +
@@ -243,7 +243,7 @@ var STYLESHEET = entag('style',
 
     // Not restricted to a:link because we want things like svn URLs to have this font, which
     // makes "//" look better.
-    '.md a{font-family:Heuristica,Georgia,Palatino,\'Times New Roman\'}' +
+    '.md a{font-family:FiraGO,sans-serif}' +
 
     '.md h1,.md .tocHeader,.md .nonumberh1{' +
     'border-bottom:3px solid;' +
@@ -375,9 +375,9 @@ var STYLESHEET = entag('style',
 
     '.md .mediumTOC{float:right;font-size:12px;line-height:15px;border-left:1px solid #CCC;padding-left:15px;margin:15px 0px 15px 25px}' +
 
-    '.md .mediumTOC .level1{font-weight:600}' +
+    '.md .mediumTOC .level1{font-weight:700}' +
 
-    '.md .longTOC .level1{font-weight:600;display:block;padding-top:12px;margin:0 0 -20px}' +
+    '.md .longTOC .level1{font-weight:700;display:block;padding-top:12px;margin:0 0 -20px}' +
      
     '.md .shortTOC{text-align:center;font-weight:bold;margin-top:15px;font-size:14px}' +
 

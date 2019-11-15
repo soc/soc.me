@@ -4,10 +4,11 @@
 
 // Our variables
 //-------------------------------------
-$title-font-family:       "Merriweather", serif;
-$base-font-family:        "Source Sans Pro", sans-serif;
-$page-font-family:        "Open Sans", "Source Sans Pro", sans-serif;
-
+:root {
+  --title-font-family:       "Merriweather", serif;
+  --base-font-family:        "Source Sans Pro", sans-serif;
+  --page-font-family:        "Open Sans", "Source Sans Pro", sans-serif;
+}
 
 code,
 kbd,
@@ -42,7 +43,7 @@ $line-height-base:        $base * $ms2;
 $base-line:               floor(($base-em * $line-height-base));
 
 body {
-  font-family: $base-font-family;
+  font-family: var(--base-font-family);
   font-weight: 400;
   font-size: $base-em * $ms0;
   line-height: $base * $ms4;
@@ -56,7 +57,7 @@ code {
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-  font-family: $title-font-family;
+  font-family: var(--title-font-family);
   font-weight: 500;
 }
 
