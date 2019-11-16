@@ -93,14 +93,7 @@ a {
   }
 }
 
-main p a,
-main li a,
-main sup a,
-main table tr th a,
-main table tr td a,
-main table tbody tr th a,
-main table tbody tr td a,
-main .posts a {
+main a {
   text-decoration-line: underline;
   text-decoration-color: var(--link-underline-color);
   text-underline-offset: 0.1em;
