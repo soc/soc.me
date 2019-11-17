@@ -98,7 +98,7 @@ var BODY_STYLESHEET = entag('style', 'body{max-width:680px;' +
     'line-height:140%; ' +
     '-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;' +
     'color:#222;' +
-    'font-family:"Fira Sans",Heuristica,Palatino,Georgia,"Times New Roman",serif}');
+    'font-family:"FiraGO",Heuristica,Palatino,Georgia,"Times New Roman",serif}');
 
 /** You can embed your own stylesheet AFTER the <script> tags in your
     file to override these defaults. */
@@ -208,7 +208,7 @@ var STYLESHEET = entag('style',
     '.md small{font-size:60%}' +
 
     '.md div.title,contents,.md .tocHeader,h1,h2,h3,h4,h5,h6,.md .shortTOC,.md .mediumTOC,.nonumberh1,.nonumberh2,.nonumberh3,.nonumberh4,.nonumberh5,.nonumberh6{' +
-    'font-family:"Fira Sans",Verdana,Helvetica,Arial,sans-serif;' +
+    'font-family:"FiraGO",Verdana,Helvetica,Arial,sans-serif;' +
     'margin:13.4px 0 13.4px;' +
     'padding:15px 0 3px;' +
     'border-top:none;' +

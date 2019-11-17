@@ -15,7 +15,7 @@ body {
   background-color: #418EA1; }
 
 .reveal {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "FiraGO", sans-serif;
   font-size: 38px;
   font-weight: normal;
   color: #FFFFFF; }
@@ -41,7 +41,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #FFFFFF;
-  font-family: "Fira Sans", sans-serif;
+  font-family: "FiraGO", sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
