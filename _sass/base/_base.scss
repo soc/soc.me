@@ -286,3 +286,8 @@ table {
   flex-direction: column;
   text-align: start;
 }
+
+.note {
+  font-size: $smaller;
+  text-justify: none;
+}

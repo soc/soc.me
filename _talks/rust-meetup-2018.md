@@ -1,6 +1,7 @@
 ---
 title:  "Rust Hack & Learn Karlsruhe – directories: A Tiny Library That Might Help You!"
 date:   2018-03-19 12:00:00 +0200
+note: "(navigate with left and right arrow keys)"
 ---
 
 <iframe
