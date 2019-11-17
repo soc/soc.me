@@ -18,7 +18,6 @@ navigation: true
   {% unless post.unlink %}<a href="{{ site.baseurl }}{{ post.url }}">{% endunless %}{{
     post.title
   }}{% unless post.unlink %}</a>{% endunless %}
-  {% if post.note %}<em>{{post.note}}</em>{% endif %}
   <br/>
   {% assign date = currentdate %}
 {% endfor %}
