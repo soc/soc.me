@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Generics"
 date:   2017-07-21 12:00:00 +0200
-redirect_from: "/lessons-learned/generics.html"
+redirect_from: "/lessons-learned/generics"
 ---
 
 Achieving a language design sweet-spot for Generics requires (at least) two orthogonal design decisions:

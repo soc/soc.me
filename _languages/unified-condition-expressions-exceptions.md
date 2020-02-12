@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Exceptions"
 date:   2018-04-28 12:00:00 +0200
-redirect_from: "/languages/unified-condition-syntax-advanced.html"
+redirect_from: "/languages/unified-condition-syntax-advanced"
 ---
 
 A reasonable question that might be asked is whether this design can be extended to also handle thrown exceptions,

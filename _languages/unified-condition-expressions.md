@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Introduction"
 date:   2018-01-21 12:00:00 +0200
-redirect_from: "/languages/unified-condition-syntax.html"
+redirect_from: "/languages/unified-condition-syntax"
 ---
 
 #### Idea

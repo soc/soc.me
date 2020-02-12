@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Implicit Numeric Conversions"
 date:   2017-05-12 12:00:00 +0200
-redirect_from: "/lessons-learned/implicit-numeric-conversions.html"
+redirect_from: "/lessons-learned/implicit-numeric-conversions"
 ---
 
 _**TL;DR:** The desire to make unrelated types act as if they were in a

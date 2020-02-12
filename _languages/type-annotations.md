@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Type Annotations"
 date:   2017-07-21 12:00:00 +0200
-redirect_from: "/articles/language-design/type-annotations.html"
+redirect_from: "/articles/language-design/type-annotations"
 ---
 
 #### Why is `ident: Type` better than `Type ident`?

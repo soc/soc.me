@@ -2,8 +2,8 @@
 title:  "Standards: XDG Migration Status"
 date:   2017-10-23 12:00:00 +0200
 redirect_from:
-  - "/standards/xdg-are-we-there-yet.html"
-  - "/articles/linux/xdg-are-we-there-yet.html"
+  - "/standards/xdg-are-we-there-yet"
+  - "/articles/linux/xdg-are-we-there-yet"
 ---
 
 #### Category: Status Unknown

@@ -20,7 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 twitter_username: oxnrtr
 github_username:  soc
-plugins_dir:
+plugins:
   - jekyll-redirect-from
 future: false
 collections:

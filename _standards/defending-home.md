@@ -2,9 +2,9 @@
 title:  "Standards: Defending $HOME"
 date:   2017-10-14 12:00:00 +0200
 redirect_from:
-  - "/standards/self-defense-against-dotfiles.html"
-  - "/blog/linux/self-defense-against-dotfiles.html"
-  - "/articles/linux/self-defense-against-dotfiles.html"
+  - "/standards/self-defense-against-dotfiles"
+  - "/blog/linux/self-defense-against-dotfiles"
+  - "/articles/linux/self-defense-against-dotfiles"
 ---
 
 ### Introduction
