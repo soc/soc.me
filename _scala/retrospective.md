@@ -1,7 +1,7 @@
 ---
 title:   "Six Years of Scala Development – Part II: Retrospective"
 date:    2017-05-16 12:00:00 +0200
-redirect_from: "/six-years-of-scala-development/retrospective.html"
+redirect_from: "/six-years-of-scala-development/retrospective"
 ---
 
 For the last six years I had been deeply committed to improving every aspect of
