@@ -85,11 +85,13 @@ layout: default
       <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
     </td>
     <td>
+      <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
+      <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines Summer School 2016</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="http://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
-      <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness: Functional Data Structures</a></div>
+      <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a></div>
     </td>
   </tr>
@@ -119,7 +121,7 @@ layout: default
       <div>scala-enum</div>
       <div>scala-java-time</div>
       <div>SBS</div>
-      <div>Documentation &amp; Website Overhaul</div>
+      <div>Documentation<br/>&amp; Website Overhaul</div>
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
@@ -130,8 +132,8 @@ layout: default
     </td>
     <td>
       <div><a href="https://www.youtube.com/watch?v=TS1lpKBMkgg">We're Doing It All Wrong</a></div>
-      <div><a href="https://www.youtube.com/watch?v=uiJycy6dFSQ">Scala Collections: Why Not?</a></div>
-      <div><a href="https://www.youtube.com/watch?v=4jh94gowim0">psp collections: views and more</a></div>
+      <div><a href="https://www.youtube.com/watch?v=uiJycy6dFSQ">Scala Collections:<br/>Why Not?</a></div>
+      <div><a href="https://www.youtube.com/watch?v=4jh94gowim0">psp collections:<br/>views and more</a></div>
     </td>
   </tr>
 </table>
