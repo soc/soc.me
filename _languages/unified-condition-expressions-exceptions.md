@@ -12,7 +12,7 @@ One language that has done something similar is Ocaml, which has
 
 One option might be something along the lines of
 
-```lua
+```ml
 if readPersonFromFile(file)
   throws[IOException]($ex)        then "unknown, due to $ex"
   is Person("Alice", _)           then "alice"
