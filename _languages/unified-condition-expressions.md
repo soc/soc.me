@@ -36,14 +36,14 @@ Languages without indentation-sensitive syntax require either mandatory braces a
 or ending `then` branches explicitly, for instance with `end` or a `,`.
 
 ##### simple if expression
-```lua
+```ml
 if x == 1.0                         /* same as */
 then "a"                            if x == 1.0 then "a" else "z"
 else "z"
 ```
 
 ##### one comparison operator on multiple targets
-```lua
+```ml
 if x ==                 if x                    /* same as */
   1.0 then "a"            == 1.0 then "a"       if x == 1.0      then "a"
   2.0 then "b"            == 2.0 then "b"       else if x == 2.0 then "b"
@@ -51,15 +51,15 @@ if x ==                 if x                    /* same as */
 ```
 
 ##### different comparison operators, equality and identity
-```lua
+```ml
 if x                                /* same as */
-  == 1.0 then "a"                   if x == 1.0      then "a"
-  eq NaN then "n"                   else if x eq NaN then "b"
-         else "z"                   else                  "z"
+  ==  1.0 then "a"                  if x == 1.0       then "a"
+  === NaN then "n"                  else if x === NaN then "b"
+          else "z"                  else                   "z"
 ```
 
 ##### method calls
-```lua
+```ml
 if xs                               /* same as */
   .isEmpty       then "e"           if xs.isEmpty            then "e"
   .contains(0.0) then "n"           else if xs.contains(0.0) then "n"      
@@ -67,7 +67,7 @@ if xs                               /* same as */
 ```
 
 ##### pattern matching (`is`), introducing bindings (`$`)
-```lua
+```ml
 if alice
   .age < 18                  then "18"
   is Person("Alice", $age)   then "$age"
@@ -76,12 +76,12 @@ if alice
 ```
 
 ##### pattern matching using "if-let"[^rust][^swift]
-```lua
+```ml
 if person is Person("Alice", $age) then "$age" else "o"
 ```
 
 ##### wildcards (`_`) and pattern guards
-```lua
+```ml
 if person                         /* same as */      if person is
   is Person("Alice", _)           then "alice"         Person("Alice", _)           then "alice"
   is Person(_, $age) && age >= 18 then "adult"         Person(_, $age) && age >= 18 then "adult"

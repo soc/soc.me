@@ -73,7 +73,7 @@ layout: default
       <div>Unified Condition Expressions:
         <ol>
           <li><a href="languages/unified-condition-expressions">Introduction</a></li>
-          <li>Parsing (WIP)</li>
+          <li><a href="languages/unified-condition-expressions-implementation">Implementation</a></li>
           <li><a href="languages/unified-condition-expressions-exceptions">Exceptions</a></li>
         </ol>
       </div>
@@ -86,7 +86,7 @@ layout: default
     </td>
     <td>
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
-      <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines Summer School 2016</a></div>
+      <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>

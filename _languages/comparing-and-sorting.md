@@ -9,7 +9,7 @@ Languages usually provide only a single comparison operation/protocol, often req
 
 Consider the following `Comparable` trait:
 
-```scala
+```ml
 trait Comparable[T]
   fun < (that: T): Boolean = ...
   fun > (that: T): Boolean = ...
@@ -25,7 +25,7 @@ Conveniently, IEEE754 standardizes a `totalOrder` relation in §5.10, defining h
 The only requirement language-wise is to introduce a distinct trait which represents _total ordering_, enabling a clean separation of _comparisons_ and _sorting_ operations:
 
 
-```scala
+```ml
 trait Sortable[T]
   fun sortsBefore(that: T): Boolean = ...
   fun sortsAfter (that: T): Boolean = ...
@@ -33,7 +33,7 @@ trait Sortable[T]
 
 This enables the use of each individual trait for its specific purpose, without conflating different concerns:
 
-```scala
+```ml
 // compare values using Comparable
 fun compareReversed[T : Comparable](x: T, y: T) = y < x
 
