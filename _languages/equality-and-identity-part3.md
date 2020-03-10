@@ -39,24 +39,20 @@ Having one operation, which is well-defined on both value types and reference ty
 Compared to the rather complicated, indirect approaches shown earlier, introducing the concept of _identity_ and _equality_ works out beautifully:
 It reduces complexity and avoids unnecessary boxing.
 
-The following table shows how this definition of _identity_ and _equality_ could work in practice
-(the first line in each row stands for identity, the second line stands for equality)[^1]:
+The following table shows how this definition of _identity_ and _equality_ could work in practice:
 
-|             | 1             | 1.0           | '\01'         | Double.NaN    | BigInt(1)     | BigDec("1")   | BigDec("1.0") | Rational(1,1) | Rational(2,2) |
-|-------------|---------------|---------------|---------------|---------------|---------------|---------------|---------------|---------------|---------------|
-|1            |true <br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |false<br/>true |false<br/>true |false<br/>true |
-|1.0          |false<br/>true |true <br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |false<br/>true |false<br/>true |false<br/>true |
-|'\01'        |false<br/>false|false<br/>false|true <br/>true |false<br/>false|false<br/>false|false<br/>false|false<br/>false|false<br/>false|false<br/>false|
-|Double.NaN   |false<br/>false|false<br/>false|false<br/>false|true <br/>false|false<br/>false|false<br/>false|false<br/>false|false<br/>false|false<br/>false|
-|BigInt(1)    |false<br/>true |false<br/>true |false<br/>false|false<br/>false|true <br/>true |false<br/>true |false<br/>true |false<br/>true |false<br/>true |
-|BigDec("1")  |false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |true <br/>true |false<br/>true |false<br/>true |false<br/>true |
-|BigDec("1.0")|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |true <br/>true |false<br/>true |false<br/>true |
-|Rational(1,1)|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |false<br/>true |true <br/>true |false<br/>true |
-|Rational(2,2)|false<br/>true |false<br/>true |false<br/>false|false<br/>false|false<br/>true |false<br/>true |false<br/>true |false<br/>true |true <br/>true |
-{: .table-small}
+|                       | type      | ∘ is ==  | ∘ is === |
+|-----------------------|-----------|----------|----------|
+|true ∘ true            | value     | true     | true     |
+|1 ∘ 1                  | value     | true     | true     |
+|1.0 ∘ 1.0              | value     | true     | true     |
+|Double.NaN ∘ Double.NaN| value     | false    | true     |
+| +0.0 ∘ -0.0           | value     | true     | false    |
+|BigInt(1) ∘ BigInt(1)  | reference | true     | false    |
+|"abc" ∘ "abc"          | reference | true     | false    |
 
 ### Conclusion
 
-Languages should provide two, distinct operations that implement equality comparisons and identity comparisons across all types.
-
-[^1]: The table ignores that compilers can often reject identity comparisons at compile-time, if they can figure out that the types in question are unrelated.
+- Languages should provide two, distinct operations that provide equality comparisons and identity comparisons.
+- Ideally, these operations do not exist on the languages' top type, but are only available when the type is constrained
+  appropriately (e. g. `fun same[E : Identity](a: E, b: E) = a === b`).
