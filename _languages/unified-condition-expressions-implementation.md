@@ -8,14 +8,14 @@ redirect_from: "/languages/unified-condition-expressions-parsing"
 
 As a first approximation – especially if an existing language shall be adapted –
 it makes sense to build a feature-reduced version of unified condition expressions
-using a different keyword parallel to existing syntax.
+using a different keyword, in parallel to existing syntax.
 
-After they have gained sufficient maturity and functionality, they can then be
-switched over to the "real" keyword, and any old implementations of ternary operators,
-switch-cases or if-expressions can be removed
+After unified condition expressions have gained sufficient maturity and functionality,
+they can then be switched over to the "real" keyword, and any old implementations of
+ternary operators, switch-cases or if-expressions can be removed.
 
 
-###### Unified condition expressions, Level 1:
+##### Level 1: Basics
 
 ```ml
 case         // separate keyword
@@ -33,7 +33,7 @@ fragment with each individual branch has to be taken into account, but the
 common fragment has to be retained until code-generation.
 
 
-##### Unified condition expressions, Level 2: Partial Conditions
+##### Level 2: Partial Conditions
 
 ```ml
 case person == ..  // partial common condition fragment
@@ -50,7 +50,7 @@ expression on its own.
 The challenge here is how such code can be expressed best in the AST.
 
 
-##### Unified condition expressions, Level 3: Partial Branches
+##### Level 3: Partial Branches
 
 ```ml
 case person ..
@@ -67,7 +67,7 @@ Level 3 requires introducing indentation-based syntax.
 Depending on how complex the rest of the language is, this can be a rather big leap.
 
 
-##### Unified condition expressions, Level 4: Pattern Matching
+##### Level 4: Pattern Matching
 
 ```ml
 case person is ..
@@ -77,7 +77,7 @@ else false
 ```
 
 
-##### Unified condition expressions, Level 5: Bindings
+##### Level 5: Bindings
 
 ```ml
 case person is ..
