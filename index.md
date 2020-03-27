@@ -46,7 +46,7 @@ layout: default
       <div><a href="hardware/keyboard-setup">Keyboard Setup</a></div>
     </td>
     <td></td>
-    <td></td>
+    <td><a href="https://os.phil-opp.com/">Writing an OS in Rust</a></td>
   </tr>
   <tr>
     <th class="table-topic">Languages</th>
