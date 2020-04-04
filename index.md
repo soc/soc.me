@@ -51,6 +51,7 @@ layout: default
   <tr>
     <th class="table-topic">Languages</th>
     <td>
+      <div><a href="languages/stop-using-for-generics">Language Design:<br/>Stop Using <> for Generics</a></div>
       <div><a href="languages/type-annotations">Type Annotations</a></div>
       <div><a href="languages/generics">Generics</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
