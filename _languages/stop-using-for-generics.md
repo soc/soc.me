@@ -62,7 +62,15 @@ Many languages used `[]` to add syntax for collection literals (`[1, 2, 3]`) or 
 syntax usually becomes dead weight a few years down the road, as the preferred choice
 of data structure implementation evolves.
 
-Using `[]` for generics instead of `<>` shuts down this possibility for good.
+Using `[]` for generics instead of `<>` shuts down this possibility for good, and encourages the use
+of standard method call syntax for these usecases instead:
+
+```
+Array(1, 2, 3)        /* instead of */   [1, 2, 3]
+someList(0)           /* instead of */   someList[0]
+array(0) = 23.42      /* instead of */   array[0] = 23.42
+map("name") = "Joe"   /* instead of */   map["name"] = "Joe"
+```
 
 
 [^java]: Java: The syntax inconsistency is due to the difficulty a compiler would have to tell whether some token stream of `instance` `.` `foo` `<` is the left side of a comparison (with `<` being the "less-than" operator) or the start of a generic type argument within a method call.
