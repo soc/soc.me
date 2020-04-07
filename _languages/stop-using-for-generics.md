@@ -60,7 +60,7 @@ let vec: Vec<u32> = Vec::<u32>::new();
 Many languages used `[]` to add syntax for collection literals (`[1, 2, 3]`) or array lookup
 (`array[0]`), adding pointless complexity to the language for very little benefit – as such built-in
 syntax usually becomes dead weight a few years down the road, as the preferred choice
-of data structure implementation evolves.
+of data structure implementation evolves.[^javalit][^jslit]
 
 Using `[]` for generics instead of `<>` shuts down this possibility for good, and encourages the use
 of standard method call syntax for these usecases instead:
@@ -76,3 +76,5 @@ map("name") = "Joe"   /* instead of */   map["name"] = "Joe"
 [^java]: Java: The syntax inconsistency is due to the difficulty a compiler would have to tell whether some token stream of `instance` `.` `foo` `<` is the left side of a comparison (with `<` being the "less-than" operator) or the start of a generic type argument within a method call.
 [^csharp]: C#: See [ECMA-334, 4th Edition, §9.2.3 – Grammar Ambiguities](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)
 [^cpp]: C++: See [Wikipedia – C++11 right angle bracket](https://en.wikipedia.org/wiki/C%2B%2B11#Right_angle_bracket)
+[^javalit]: Java pretty much abandoned arrays – they never integrated them with collections in 1.2, let alone generics in 1.5.
+[^jslit]: JavaScript stopped giving out new collection literals almost immediately after its first release – no collection type added since received its own literals (`Set`, `Map`, `ByteBuffer`, ...).
