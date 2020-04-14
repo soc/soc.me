@@ -14,7 +14,7 @@ design decisions:
 2. A differentiated use of brackets results in a more regular, easier
    to understand syntax and has superior readability compared to languages which
    overload `<>` to stand for generics as well as comparisons and bitshifts,
-   or use `[]` to stand for operations on arrays:
+   or use `[]` to stand for operations on arrays[^stop-generics]:
      - `[]` encloses types: everything inbetween is either a type parameter or a type argument
      - `()` groups: for instance a single expression, a parameter list or a tuple
      - `{}` sequences: for instance a block that can contain multiple statements and definitions
@@ -45,3 +45,4 @@ And that's all there is to it!
 
 
 [^identtype]: [Why is `ident: Type` better than `Type ident`?](type-annotations)
+[^stop-generics]: [Stop Using <> for Generics](stop-using-for-generics)
