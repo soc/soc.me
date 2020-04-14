@@ -113,8 +113,6 @@ layout: default
     <td>
       <div><a href="scala/departure">Departure</a></div>
       <div><a href="scala/retrospective">Retrospective</a></div>
-      <div><a href="languages/generics">Generics</a></div>
-      <div><a href="languages/type-annotations">Type Annotations</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
       <div><a href="languages/package-objects">Package Objects</a></div>
     </td>
