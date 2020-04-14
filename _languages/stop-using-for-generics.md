@@ -5,7 +5,7 @@ date:   2020-04-04 12:00:00 +0200
 
 _**TL;DR:** Use_ `[]` _instead of_ `<>` _for generics. It will save you a lot of avoidable trouble down the road._
 
-#### `<>` is hard to read for humans
+#### 1. `<>` is hard to read for humans
 
 - Imagine a programming font that in which the height of parentheses (`()`), curly braces (`{}`) or
   square brackets (`[]`) were capped to the height of a lower-case letter.
@@ -13,7 +13,7 @@ _**TL;DR:** Use_ `[]` _instead of_ `<>` _for generics. It will save you a lot of
 - `<` and `>` are usually already used as comparison and bitshift operators, which (as binary operators)
   conform to a completely different grammatical structure compared to their use as brackets.
 
-#### `<>` is hard to parse for compilers
+#### 2. `<>` is hard to parse for compilers
 
 Many languages that were created without Generics in mind had trouble adding generics later on,
 as all pairs of brackets – `(` and `)`, `{` and `}`, `[` and `]` – were already put to use.
@@ -55,7 +55,7 @@ let vec: Vec<u32> = Vec::<u32>::new();
             /*or*/ <Vec<u32>>::new();
 ```
 
-#### It allows `[]` to be (ab)used for syntax "conveniences"
+#### 3. It allows `[]` to be (ab)used for syntax "conveniences"
 
 Many languages used `[]` to add syntax for collection literals (`[1, 2, 3]`) or array lookup
 (`array[0]`), adding pointless complexity to the language for very little benefit – as such built-in
@@ -71,6 +71,8 @@ someList(0)           /* instead of */   someList[0]
 array(0) = 23.42      /* instead of */   array[0] = 23.42
 map("name") = "Joe"   /* instead of */   map["name"] = "Joe"
 ```
+
+---
 
 #### Coda
 
