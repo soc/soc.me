@@ -52,7 +52,7 @@ layout: default
     <th class="table-topic">Languages</th>
     <td>
       <div><a href="languages/stop-using-for-generics">Stop Using <kbd><></kbd> for Generics</a></div>
-      <div><a href="languages/type-annotations">Use <kbd>ident: Type</kbd>, not <kbd>Type ident</kbd></a></div>
+      <div><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></div>
       <div><a href="languages/generics">Generics</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
