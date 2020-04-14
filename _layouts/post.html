@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign title_parts = page.title | split: " – " %}
+{% assign title_parts = page.title | markdownify | remove: '<p>' | remove: '</p>' | split: " – " %}
 
 <div class="wrapper">
   <article class="post">
