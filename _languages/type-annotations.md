@@ -1,5 +1,5 @@
 ---
-title:  "Language Design: `ident: Type` is better than `Type ident`"
+title:  "Language Design: Use `ident: Type`, not `Type ident`"
 date:   2017-07-21 12:00:00 +0200
 redirect_from: "/articles/language-design/type-annotations"
 ---
