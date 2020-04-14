@@ -1,48 +1,43 @@
 ---
-title:  "Language Design: Type Annotations"
+title:  "Language Design: `ident: Type` is better than `Type ident`"
 date:   2017-07-21 12:00:00 +0200
 redirect_from: "/articles/language-design/type-annotations"
 ---
 
-#### Why is `ident: Type` better than `Type ident`?
+#### 1. Names are more important than types
 
-**Names are more important**
-
-In expressive languages, developers generally need to use less temporary variables.
+In expressive languages, developers generally need to use fewer temporary variables.
 This means that in a typical piece of code there are fewer names defined, but
 those names carry higher importance.
 
-`ident: Type` let's developers focus on the names by placing them first.
-
-**Type inference**
-
-In languages with type inference[^type-inference] it also ensures that the
-names can be found at a glance, regardless of whether the type was specified
-explicitly or was inferred by the compiler:
+The `ident: Type` syntax let's developers focus on the name by placing it ahead of its
+type annotation. 
+This means that the vertical offset of names stays consistent, regardless of whether a type
+annotation is present (and how long it is) or not[^type-inference]:
 
 ```scala
 val x: String = "hello"
-val y: Int = 23
-val z = 42
+val y: Float = 23.42
+val z = 11
 // vs. (hypothetical syntax)
-val String x = "hello"
-val Int y = 23
-val z = 42
+String x = "hello"
+Float y = 23.42
+var z = 11
 ```
 
-**Input before output**
+#### 2. Input before output
 
 The `i: Int` syntax naturally leads to a method syntax where the inputs
 (parameters) are defined before the output (result type), which in turn leads to
 more consistency with lambda syntax (whose inputs are also defined before its
 output).
 
-**Consistency between definition and usage**
+#### 3. Consistency between definition and usage
 
 The way a class or method is defined should mirror the way it can be used.
-(See [Why is `[]` better than `<>` for generic types?](generics#why-is--better-than--for-generic-types).)
+(See [Stop using `[]` for generics](stop-using-for-generics).)
 
-**Definition before usage**
+#### 4. Definition before usage
 
 A generic type parameter should be declared before it is used.
 Otherwise it's hard to tell to what a type argument refers to:
@@ -51,7 +46,7 @@ Otherwise it's hard to tell to what a type argument refers to:
 class Id<T>() {
   // Does the result type T refer to the class' <T> in scope,
   // or to the method's <T> that comes after it?
-  T id<T>(T \ivalue) { ... }
+  T id<T>(T x) { ... }
 }                            
 ```
 
@@ -63,31 +58,31 @@ the last three properties mentioned above:
 **Java**
 
 ```java
-<T> T id(T value) { ... }
+<T> T id(T x) { ... }
 ```
 
 **C#**
 
 ```csharp
-T id<T>(T value) { ... }
+T id<T>(T x) { ... }
 ```
 
 **Kotlin**
 
 ```kotlin
-fun <T> id(value: T): T { ... }
+fun <T> id(x: T): T { ... }
 ```
 
 **Ceylon**
 
 ```ceylon
-T id<T>(T \ivalue) { ... }
+T id<T>(T x) { ... }
 ```
 
 **Scala**
 
 ```scala
-def id[T](value: T): T = ...
+def id[T](x: T): T = ...
 ```
 
 Only the last approach delivers all three desirable properties:
