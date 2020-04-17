@@ -53,7 +53,7 @@ layout: default
     <td>
       <div><a href="languages/generics">A Syntax Sweet Spot:</a>
         <ul>
-          <li><a href="languages/stop-using-for-generics">Stop Using <kbd><></kbd> for Generics</a></li>
+          <li><a href="languages/stop-using-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
         </ul>
       </div>
