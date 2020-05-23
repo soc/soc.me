@@ -25,7 +25,7 @@ different meaning.
 That's pretty much the only reason why `<>` started to be used as generics in the first place.
 
 Unfortunately, using `<` and `>` for generics caused parsing problems in every language that tried
-use them for this purpose, forcing language designers to indulge in various ugly workarounds:
+use them for this purpose, forcing language designers to indulge in various ugly workarounds:[^related]
 
 _Java_ approached these issues by making the syntax less consistent – which is the reason why Java's
 definition-site syntax for Generics and its use-site syntax differs substantially:[^java]
@@ -81,6 +81,7 @@ Thankfully, the number of languages using `[]` for generics seems to increase la
 It remains to be seen whether this turns into tidal change similar to the widespread [adoption of `ident: Type` over `Type ident`](https://soc.me/languages/type-annotations) in modern languages.
 
 
+[^related]: [Parsing Ambiguity: Type Argument v. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
 [^java]: Java: The syntax inconsistency is due to the difficulty a compiler would have to tell whether some token stream of `instance` `.` `foo` `<` is the left side of a comparison (with `<` being the "less-than" operator) or the start of a generic type argument within a method call.
 [^csharp]: C#: See [ECMA-334, 4th Edition, §9.2.3 – Grammar Ambiguities](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)
 [^cpp]: C++: See [Wikipedia – C++11 right angle bracket](https://en.wikipedia.org/wiki/C%2B%2B11#Right_angle_bracket)
