@@ -14,12 +14,10 @@ With support for this approach being deprecated and removed, it felt right to us
 it's possible to build an enjoyable user experience with the tools available.
 
 <br/>
-1. Install the [Tree Style Tabs add-on](https://addons.mozilla.org/de/firefox/addon/tree-style-tab/) for Firefox.
+1. Install the [Sidebery Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/sidebery/) and configure it the way you like.
 2. Go to Firefox' profile directory, create a `chrome` directory and create a file named `userChrome.css` in that directory.
 3. Copy [these CSS rules](https://gist.github.com/soc/ae85992200e2ad6477352a1975f261c8) into the file.
-4. Add [these CSS rules](https://gist.github.com/soc/e9f3339723c6d45615108339bcd55a63) to _Tree Style Tabs_' "extra style rules for sidebar contents" section:<br/>
-   _Add-ons_ › _Tree Style Tabs Preferences_ › _Advanced_.
-5. Activate Firefox' bookmark toolbar and right-click into the top left area to add new bookmarks.<br/>
+4. Activate Firefox' bookmark toolbar and right-click into the top left area to add new bookmarks.<br/>
   (Specifying a URL, but not a title will turn them into icons.)
 
 <br/>
