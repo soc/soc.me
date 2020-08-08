@@ -3,9 +3,9 @@ title:  "Language Design: Comparing and Sorting"
 date:   2018-10-31 12:00:00 +0200
 ---
 
-Similarly to [equality and identity](equality-and-identity-part1), most languages have severely restricted facilities to handle distinct ordering relationships like comparisons and sorting.
+Similarly to [equality and identity](equality-and-identity-part1), most languages have severely restricted facilities to handle distinct ordering relationships like comparison and sorting.
 
-Languages usually provide only a single comparison operation/protocol, often requiring workarounds for some data types in which comparing and sorting operations return different results.
+Languages usually provide only a single operation/protocol, often requiring workarounds for some data types in which the comparison operation and the sorting operation return distinct results.
 
 Consider the following `Comparable` trait:
 
