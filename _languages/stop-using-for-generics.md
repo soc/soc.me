@@ -76,7 +76,7 @@ map("name") = "Joe"   /* instead of */   map["name"] = "Joe"
 
 #### Coda
 
-Thankfully, the number of languages using `[]` for generics seems to increase lately – with Scala, Python and Nim joining Eiffel, which was pretty much the sole user of `[]` for decades.
+Thankfully, the number of languages using `[]` for generics seems to increase lately – with Scala, Python, Nim and Go joining Eiffel, which was pretty much the sole user of `[]` for decades.
 
 It remains to be seen whether this turns into tidal change similar to the widespread [adoption of `ident: Type` over `Type ident`](https://soc.me/languages/type-annotations) in modern languages.
 
