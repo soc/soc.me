@@ -4,8 +4,6 @@ date:   2017-07-21 12:00:00 +0200
 redirect_from: "/articles/language-design/type-annotations"
 ---
 
-#### 1. Names are more important than types
-
 In expressive languages, developers generally need to use fewer temporary variables.
 This means that in a typical piece of code there are fewer names defined, but
 those names carry higher importance.
@@ -25,19 +23,21 @@ Float y = 23.42
 var z = 11
 ```
 
-#### 2. Input before output
+In addition to this, there are three technical reasons why `ident: Type` is superior:
+
+#### 1. Input before output
 
 The `i: Int` syntax naturally leads to a method syntax where the inputs
 (parameters) are defined before the output (result type), which in turn leads to
 more consistency with lambda syntax (whose inputs are also defined before its
 output).
 
-#### 3. Consistency between definition and usage
+#### 2. Consistency between definition and usage
 
 The way a class or method is defined should mirror the way it can be used.
 (See [Stop using `<>` for generics](stop-using-for-generics).)
 
-#### 4. Definition before usage
+#### 3. Definition before usage
 
 A generic type parameter should be declared before it is used.
 Otherwise it's hard to tell to what a type argument refers to:
@@ -53,7 +53,7 @@ class Id<T>() {
 #### Language Comparison
 
 As languages have explored various designs[^curly], we can check whether they satisfy
-the last three properties mentioned above:
+the three properties mentioned above:
 
 **Java**
 
