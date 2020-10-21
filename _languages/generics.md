@@ -30,12 +30,12 @@ Instead, the mental model becomes so simple that every class or method can be th
 <br/>
 
 ```scala
-class Foo[T](val bar: String) {
-  def foo[T] = ???
+class Foo[T](let bar: String) {
+  fun foo[T] = ???
 }
 
-def main() {
-  val instance = new Foo[String]("abc")
+fun main() {
+  let instance = Foo[String]("abc")
   instance.foo[String]
 }
 ```  

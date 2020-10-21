@@ -7,10 +7,10 @@ date:   2019-11-05 12:00:00 +0200
 - namespaces: types, terms, ~~packages~~, ~~fields~~, ~~methods~~, ~~labels~~
 - modifiers: ~~keywords~~, annotations 
 - nesting: ~~packages~~, modules, ~~static~~
-- computation vs. storage: fields, methods, ~~properties~~
+- members: fields, methods, ~~properties~~
 - control flow: if-then-else, return, while, ~~break~~, ~~continue~~, ~~loop~~, ~~exceptions~~, ~~throw~~, ~~catch~~
 - constructor~~s~~: only one
-- literals: ~~octal number literals~~, ~class literals~, ...
+- literals: ~~octal number literals~~, ~~class literals~~, ...
 
 2. Correctness
 - separate types for identity, equality, ordering and comparing
