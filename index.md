@@ -91,6 +91,7 @@ layout: default
     <td>
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
+      <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
@@ -111,7 +112,17 @@ layout: default
       <div><a href="interfaces/vertical-tabs-in-firefox">Vertical Tabs in Firefox</a></div>
     </td>
     <td></td>
-    <td></td>
+    <td>
+      <div><a href="https://justine.lol/ape.html">αcτµαlly pδrταblε εxεcµταblε</a></div>
+      <div>Ghosts of Unix Past
+        <ol>
+          <li><a href="https://lwn.net/Articles/411845/">Design patterns</a></li>
+          <li><a href="https://lwn.net/Articles/412131/">Conflated designs</a></li>
+          <li><a href="https://lwn.net/Articles/414618/">Unfixable designs</a></li>
+          <li><a href="https://lwn.net/Articles/416494/">High-maintenance designs</a></li>
+        </ol>
+      </div>
+    </td>
   </tr>
   <tr>
     <th class="table-topic">Scala</th>
