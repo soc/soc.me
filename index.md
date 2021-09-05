@@ -57,6 +57,7 @@ layout: default
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
         </ul>
       </div>
+      <div><a href="languages/popular-wrong-decisions">Popular, but Wrong Syntactic Decisions</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
       <div><a href="languages/package-objects">Package Objects</a></div>
