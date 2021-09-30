@@ -81,6 +81,8 @@ layout: default
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
+      <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
+      <div><a href="https://madhadron.com/posts/seven_languages.html">The seven programming ur-languages</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
