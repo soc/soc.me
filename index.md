@@ -46,6 +46,7 @@ layout: default
       </div>
       <div><a href="languages/popular-wrong-decisions">Popular, but Wrong Syntactic Decisions</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
+      <div><a href="languages/better-enums">Better Enums</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
       <div><a href="languages/package-objects">Package Objects</a></div>
       <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
