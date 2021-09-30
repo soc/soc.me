@@ -36,19 +36,6 @@ layout: default
     </td>
   </tr>
   <tr>
-    <th class="table-topic">Hardware</th>
-    <td>
-      <div><a href="hardware/keyboard-design">Keyboard Design</a></div>
-      <div><a href="hardware/usb-standard">USB-HID Protocol Evolution</a></div>
-    </td>
-    <td>
-      <div><a href="hardware/keyboard-build">Keyboard Build</a></div>
-      <div><a href="hardware/keyboard-setup">Keyboard Setup</a></div>
-    </td>
-    <td></td>
-    <td><a href="https://os.phil-opp.com/">Writing an OS in Rust</a></td>
-  </tr>
-  <tr>
     <th class="table-topic">Languages</th>
     <td>
       <div><a href="languages/generics">A Syntax Sweet Spot:</a>
@@ -124,6 +111,19 @@ layout: default
         </ol>
       </div>
     </td>
+  </tr>
+  <tr>
+    <th class="table-topic">Hardware</th>
+    <td>
+      <div><a href="hardware/keyboard-design">Keyboard Design</a></div>
+      <div><a href="hardware/usb-standard">USB-HID Protocol Evolution</a></div>
+    </td>
+    <td>
+      <div><a href="hardware/keyboard-build">Keyboard Build</a></div>
+      <div><a href="hardware/keyboard-setup">Keyboard Setup</a></div>
+    </td>
+    <td></td>
+    <td><a href="https://os.phil-opp.com/">Writing an OS in Rust</a></td>
   </tr>
   <tr>
     <th class="table-topic">Scala</th>
