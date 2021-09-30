@@ -73,14 +73,10 @@ layout: default
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
-      <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
       <div><a href="talks/scaladays-2014">Simplifying Scala</a></div>
       <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
     </td>
     <td>
-      <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
-      <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
-      <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
       <div><a href="https://madhadron.com/posts/seven_languages.html">The seven programming ur-languages</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
@@ -91,6 +87,19 @@ layout: default
       <div><a href="http://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a></div>
+    </td>
+  </tr>
+  <tr>
+    <th class="table-topic">Runtimes</th>
+    <td></td>
+    <td></td>
+    <td>
+      <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
+    </td>
+    <td>
+      <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
+      <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
+      <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
     </td>
   </tr>
   <tr>
