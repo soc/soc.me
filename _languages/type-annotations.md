@@ -8,15 +8,15 @@ In expressive languages, developers generally need to use fewer temporary variab
 This means that in a typical piece of code there are fewer names defined, but
 those names carry higher importance.
 
-The `ident: Type` syntax let's developers focus on the name by placing it ahead of its
+The `ident: Type` syntax lets developers focus on the name by placing it ahead of its
 type annotation. 
 This means that the vertical offset of names stays consistent, regardless of whether a type
 annotation is present (and how long it is) or not[^type-inference]:
 
 ```scala
-val x: String = "hello"
-val y: Float = 23.42
-val z = 11
+let x: String = "hello"
+let y: Float = 23.42
+let z = 11
 // vs. (hypothetical syntax)
 String x = "hello"
 Float y = 23.42
