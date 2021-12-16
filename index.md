@@ -45,7 +45,7 @@ layout: default
         </ul>
       </div>
       <div><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a></div>
-      <div><a href="languages/popular-wrong-decisions">Popular, but Wrong Syntactic Decisions</a></div>
+      <div><a href="languages/popular-wrong-opinions">Popular, but Wrong Opinions</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
       <div><a href="languages/better-enums">Better Enums</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
