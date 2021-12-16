@@ -7,7 +7,7 @@ layout: default
 <table class="table-medium table-index">
   <tr>
     <th class="table-topic"></th>
-    <th>Articles</th>
+    <th>Essays</th>
     <th>Projects</th>
     <th>Talks</th>
     <th>Links</th>
@@ -44,6 +44,7 @@ layout: default
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
         </ul>
       </div>
+      <div><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a></div>
       <div><a href="languages/popular-wrong-decisions">Popular, but Wrong Syntactic Decisions</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
       <div><a href="languages/better-enums">Better Enums</a></div>
