@@ -80,6 +80,7 @@ layout: default
     <td>
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
       <div><a href="https://madhadron.com/posts/seven_languages.html">The seven programming ur-languages</a></div>
+      <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
