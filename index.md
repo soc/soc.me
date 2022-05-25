@@ -115,6 +115,7 @@ layout: default
     </td>
     <td></td>
     <td>
+      <div><a href="https://www.youtube.com/watch?v=pq1XqP4-qOo">Hybrid Dynamic/Static Linking</a></div>
       <div><a href="https://justine.lol/ape.html">αcτµαlly pδrταblε εxεcµταblε</a></div>
       <div>Ghosts of Unix Past
         <ol>
