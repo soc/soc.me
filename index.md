@@ -47,7 +47,7 @@ layout: default
       <div><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a></div>
       <div><a href="languages/popular-wrong-opinions">Popular, but Wrong Opinions</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
-      <div><a href="languages/better-enums">Better Enums</a></div>
+      <div><a href="languages/nondefinitional-enums">Nondefinitional Enums</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
       <div><a href="languages/package-objects">Package Objects</a></div>
       <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
