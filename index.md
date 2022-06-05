@@ -72,6 +72,14 @@ layout: default
           <li><a href="languages/unified-condition-expressions-exceptions">Exceptions</a></li>
         </ol>
       </div>
+      <div>Naming Conventions:
+        <ol>
+          <li><a href="languages/naming-conventions-creation">Creation</a></li>
+          <li><a href="languages/naming-conventions-conversion">Conversion</a></li>
+          <li>Lookup</li>
+          <li>Streaming</li>
+        </ol>
+      </div>
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
