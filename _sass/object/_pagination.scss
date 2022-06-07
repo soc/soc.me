@@ -7,7 +7,7 @@
   margin: 3rem 0;
   text-align: center;
   .left,.right {
-    margin-bottom: $base-line;
+    margin-bottom: var(--base-line);
     max-width: 45%;
     text-align: left;
   }

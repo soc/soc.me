@@ -18,7 +18,7 @@
 }
 
 .center {
-  margin: 0 auto $line-height-base;
+  margin: 0 auto var(--line-height-base);
   text-align: center;
 }
 
@@ -43,7 +43,7 @@
 
 @mixin list-inline {
   padding: 0;
-  margin: 0 0 $base-line;
+  margin: 0 0 var(--base-line);
   li {
     display: inline-block;
   }

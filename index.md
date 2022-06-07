@@ -1,10 +1,8 @@
 ---
-layout: default
+layout: index
 ---
 
-<div class="wrapper frontpage">
-
-<table class="table-medium table-index">
+<table class="table-index">
   <tr>
     <th class="table-topic"></th>
     <th>Essays</th>
@@ -177,5 +175,3 @@ layout: default
     </td>
   </tr>
 </table>
-
-</div>

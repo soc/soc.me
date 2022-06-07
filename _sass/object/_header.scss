@@ -9,7 +9,7 @@
   padding: 0.5em 0 0;
   text-align: center;
   @media #{$medium-up} {
-    padding-bottom: $base-line;
+    padding-bottom: var(--base-line);
   }
   .wrapper {
     @media #{$small-only} {
@@ -33,14 +33,14 @@
   .site-title {
     font-style: italic;
     display: block;
-    margin: $base-line/2 auto;
-    font-size: $base-em * $ms5;
+    margin: calc(var(--base-line) / 2) auto;
+    font-size: calc(var(--base-em) * var(--ms5));
     @media #{$medium-up} {
       margin: 0 auto;
-      font-size: $title1;
+      font-size: var(--title1);
       text-align: left;
     }
-    line-height: $ms2;
+    line-height: var(--ms2);
     font-weight: 500;
     text-align: center;
     &:hover {
@@ -60,11 +60,9 @@
 .nav-main {
   display: flex;
   font-family: var(--page-font-family);
+  font-size: var(--smaller);
   font-weight: 800;
-  font-size: $smallest;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  vertical-align: bottom;
 
   ul {
     display: table;

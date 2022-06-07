@@ -3,7 +3,7 @@
  */
 
 .highlight {
-    margin: 0 0 $base_line / 2;
+    margin: 0 0 calc(var(--base-line) / 2);
     text-align: left !important; // override .post .figure
     background: #fff;
 
