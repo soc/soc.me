@@ -8,6 +8,30 @@
   --title-font-family:       "Merriweather", serif;
   --base-font-family:        "Source Sans Pro", sans-serif;
   --page-font-family:        "Open Sans", "Source Sans Pro", sans-serif;
+
+  --ratio:                   1.2;
+  --base:                    1.0;
+  --base-em:                 calc(var(--base) * 0.9em);
+
+  --ms0:                     0.8;
+  --ms1:                     calc(var(--ratio));              /* 1.2   */
+  --ms2:                     calc(var(--ratio) * var(--ms1)); /* 1.44  */
+  --ms3:                     calc(var(--ratio) * var(--ms2)); /* 1.728 */
+  --ms4:                     calc(var(--ratio) * var(--ms3)); /* 2.074 */
+  --ms5:                     calc(var(--ratio) * var(--ms4)); /* 2.488 */
+  --ms6:                     calc(var(--ratio) * var(--ms5)); /* 2.986 */
+  --ms7:                     calc(var(--ratio) * var(--ms6)); /* 3.583 */
+
+  --smallest:                calc(var(--base-em) / var(--ms2));
+  --smaller:                 calc(var(--base-em) / var(--ms1));
+  --normal:                  calc(var(--base-em) * var(--ms0));
+  --bigger:                  calc(var(--base-em) * var(--ms1));
+  --title3:                  calc(var(--base-em) * var(--ms2));
+  --title2:                  calc(var(--base-em) * var(--ms3));
+  --title1:                  calc(var(--base-em) * var(--ms4));
+
+  --line-height-base:        calc(var(--base) * var(--ms2));
+  --base-line:               calc(var(--base-em) * var(--line-height-base));
 }
 
 code,
@@ -17,36 +41,11 @@ samp {
   font-family: monospace;
 }
 
-$ratio:                   1.2;
-$base:                    1.0;
-$base-em:                 $base * 0.9em;
-$base-px:                 $base * 8px;
-
-$ms0:                     0.8;
-$ms1:                     $ratio;        /* 1.2   */
-$ms2:                     $ratio * $ms1; /* 1.44  */
-$ms3:                     $ratio * $ms2; /* 1.728 */
-$ms4:                     $ratio * $ms3; /* 2.074 */
-$ms5:                     $ratio * $ms4; /* 2.488 */
-$ms6:                     $ratio * $ms5; /* 2.986 */
-$ms7:                     $ratio * $ms6; /* 3.583 */
-
-$smallest:                $base-em / $ms2;
-$smaller:                 $base-em / $ms1;
-$normal:                  $base-em * $ms0;
-$bigger:                  $base-em * $ms1;
-$title3:                  $base-em * $ms2;
-$title2:                  $base-em * $ms3;
-$title1:                  $base-em * $ms4;
-
-$line-height-base:        $base * $ms2;
-$base-line:               floor(($base-em * $line-height-base));
-
 body {
   font-family: var(--base-font-family);
   font-weight: 400;
-  font-size: $base-em * $ms0;
-  line-height: $base * $ms4;
+  font-size: calc(var(--base-em) * var(--ms0));
+  line-height: calc(var(--base) * var(--ms4));
   hyphens: auto;
   hanging-punctuation: first last;
 }
@@ -65,50 +64,39 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h3,
-h2 { line-height: $base * $ms1; }
-h1 { line-height: $base * $ms0; }
+h2 { line-height: calc(var(--base) * var(--ms1)); }
+h1 { line-height: calc(var(--base) * var(--ms0)); }
 
-h6, .h6 { font-size: $smaller; }
-h5, .h5 { font-size: $normal * 1.2; }
-h4, .h4 { font-size: $bigger; }
-h3, .h3 { font-size: $title3; }
-h2, .h2 { font-size: $title2; }
-h1, .h1 { font-size: $title1; }
-
-// Calculate progressive fontsize between 2 breakpoints:
-// insert the value of your breakpoint and of your 2 fontsize values for each breakpoint.
-// from https://fvsch.com/code/css-locks/
-@mixin csslock-fontsize($breakpoint-down:$breakpoint-down, $breakpoint-up:$breakpoint-up, $size-down:$size-down, $size-up:$size-up) {
-  font-size: calc( 100% * #{$size-down} + ( (#{$size-up} - #{$size-down}) / #{$size-down} ) * (100vw - #{$breakpoint-down}rem) / (#{$breakpoint-up} - #{$breakpoint-down}) );
-}
+h6, .h6 { font-size: var(--smaller); }
+h5, .h5 { font-size: calc(var(--normal) * 1.2); }
+h4, .h4 { font-size: var(--bigger); }
+h3, .h3 { font-size: var(--title3); }
+h2, .h2 { font-size: var(--title2); }
+h1, .h1 { font-size: var(--title1); }
 
 @media #{$medium-up} {
   body {
-    font-size: $base-em * $ms0;
-    @include csslock-fontsize($medium,$large,$ms0,$ms1);
-    line-height: $base * $ms3;
+    font-size: calc(var(--base-em) * var(--ms0));
+    line-height: calc(var(--base) * var(--ms3));
     font-weight: 300;
   }
 }
 
 @media #{$large-up} {
   body {
-    font-size: $base-em * $ms1;
-    @include csslock-fontsize($large,$xlarge,$ms1,$ms2);
+    font-size: calc(var(--base-em) * var(--ms1));
   }
 }
 
 @media #{$xlarge-up} {
   body {
-    font-size: $base-em * $ms2;
-    @include csslock-fontsize($xlarge,$xxlarge,$ms2,$ms4);
+    font-size: calc(var(--base-em) * var(--ms2));
   }
 }
 
 @media #{$xxlarge-up} {
   body {
-    font-size: $base-em * $ms4;
-    @include csslock-fontsize($xxlarge,200,$ms4,$ms5);
+    font-size: calc(var(--base-em) * var(--ms4));
   }
 }
 
@@ -116,8 +104,8 @@ h1, .h1,
 h2, .h2,
 h3, .h3 {
   word-wrap: break-word;
-  margin-top: $base-line;
-  margin-bottom: $base-line;
+  margin-top: var(--base-line);
+  margin-bottom: var(--base-line);
 
   small,
   .small {
@@ -128,8 +116,8 @@ h3, .h3 {
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: ($base-line * 1.5);
-  margin-bottom: ($base-line / 2);
+  margin-top: calc(var(--base-line) * 1.5);
+  margin-bottom: calc(var(--base-line) / 2);
 
   small,
   .small {
@@ -149,9 +137,9 @@ h1,h2,h3,h4,h5,h6,.site-title {
 }
 
 p {
-  margin: 0 0 ($base-line / 2);
+  margin: 0 0 calc(var(--base-line) / 2);
 }
 
 p + ul, p + ol {
-  margin-top: ($base-line / -2);
+  margin-top: calc(var(--base-line) / -2);
 }

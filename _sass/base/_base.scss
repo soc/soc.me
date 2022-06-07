@@ -105,10 +105,12 @@ main a {
 }
 
 .table-topic {
-  width: 7em;
+  width: 6em;
 }
 
-.table-index {
+table.table-index {
+  table-layout: fixed;
+  line-height: 110%;
   ol, ul {
     padding-left: 16px;
     li {
@@ -124,12 +126,14 @@ table.table-medium {
   font-size: 90%;
 }
 
-table.table-medium th, table.table-medium td {
+table.table-index th, table.table-index td,
+table.table-medium th, table.table-medium td{
   padding: 10px;
   text-align: left;
   vertical-align: top;
 }
 
+table.table-index tr:nth-child(even),
 table.table-medium tr:nth-child(even) {
   background: var(--background-color-alternate);
 }
@@ -159,7 +163,7 @@ td > div {
 
 ul,ol {
   margin-top: 0;
-  margin-bottom: 0; /* $base-line;*/
+  margin-bottom: 0; /* var(--base-line);*/
 }
 
 ul {
@@ -194,11 +198,11 @@ li:not(:last-child) {
 
 dl {
   margin-top: 0; // Remove browser default
-  margin-bottom: $base-line;
+  margin-bottom: var(--base-line);
 }
 dt,
 dd {
-  line-height: $line-height-base;
+  line-height: var(--line-height-base);
 }
 dt {
   font-weight: bold;
@@ -217,8 +221,8 @@ q {
 }
 
 blockquote {
-  margin-left: $base-line;
-  padding-left: $base-line / 2;
+  margin-left: var(--base-line);
+  padding-left: calc(var(--base-line) / 2);
   border-left: 2px solid $color-grey-medium;
   > :last-child {
     margin-bottom: 0;
@@ -287,6 +291,6 @@ table {
 }
 
 .note {
-  font-size: $smaller;
+  font-size: var(--smaller);
   text-justify: none;
 }

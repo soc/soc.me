@@ -2,26 +2,27 @@
 /// Layout
 ////
 
-$gutter: $base-em;
+$gutter: var(--base-em);
 $number: 4; // for equal columns
 
 // Page & Wrapper
 // -------------------------
 
 .page {
-  padding-bottom: $base-line*4;
-}
-
-.page, .wrapper {
   margin-right: auto;
   margin-left: auto;
   max-width: 100%;
+  padding-bottom: calc(var(--base-line) * 4);
 }
 
 .wrapper {
-  padding-right: $base-line / 2;
-  padding-left: $base-line / 2;
+  margin-right: auto;
+  margin-left: auto;
   max-width: 50em;
+}
+
+.frontpage {
+  max-width: 64em;
 }
 
 // Inspired from Raphaël Goetter Knacss grid
@@ -48,7 +49,7 @@ $number: 4; // for equal columns
     margin-left: -$gutter/2;
     margin-right: -$gutter/2;
   }
-  margin-bottom: $base-line;
+  margin-bottom: var(--base-line);
 
   & > * {
     margin-left: 2vw;
@@ -57,7 +58,7 @@ $number: 4; // for equal columns
       margin-left: $gutter/2;
       margin-right: $gutter/2;
     }
-    margin-bottom: $base-line;
+    margin-bottom: var(--base-line);
 
     /* inline-block fallback for IE9 generation */
     display: inline-block;

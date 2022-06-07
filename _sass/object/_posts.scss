@@ -3,7 +3,7 @@
 ////
 
 .post {
-  padding-bottom: $base-line;
+  padding-bottom: var(--base-line);
   figure {
     text-align: center;
   }
@@ -20,16 +20,16 @@
 }
 
 .footnotes {
-  margin-top: $base-line * 2;
-  padding-top: $base-line;
-  margin-bottom: $base-line;
-  font-size: $base-em;
+  margin-top: calc(var(--base-line) * 2);
+  padding-top: var(--base-line);
+  margin-bottom: var(--base-line);
+  font-size: var(--base-em);
   border-top: 2px solid $color-grey-medium;
 }
 
 .date {
-  font-size: $smaller;
+  font-size: var(--smaller);
   font-style: italic;
-  margin-top: -$base-line * 1.5;
-  margin-bottom: $base-line;
+  margin-top: calc(var(--base-line) * -1.5);
+  margin-bottom: var(--base-line);
 }
