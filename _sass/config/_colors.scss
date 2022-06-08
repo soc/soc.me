@@ -1,33 +1,7 @@
-////
-/// Colors
-////
-
-$gray:                    #495057;
-$red:                     #f03e3e;
-$blue:                    #1c7cd6;
-$yellow:                  #f59f00;
-$black:                   #000000;
-
-
-// Site color
-//-------------------------------------
-
-// Choose color among https://yeun.github.io/open-color/
-
-$color-primary:           color(grey,7);
-$color-primary-light:     color(gray,2);
-$color-primary-dark:      color(gray,9);
-
-$color-secondary:         color(yellow,7);
-$color-secondary-light:   color(yellow,2);
-$color-secondary-dark:    color(yellow,8);
-
-$color-grey-light:        color(gray,2);
-$color-grey-regular:      color(gray,5);
-$color-grey-medium:       color(gray,6);
-$color-grey:              color(gray,7);
-$color-grey-dark:         color(gray,8);
-
-$text-color:              $color-grey-dark;
-$link-color:              $color-grey-dark;
-$background-color:        $color-grey-light;
+:root {
+  --color-grey-light:   #e9ecef;
+  --color-grey-regular: #adb5bd;
+  --color-grey-medium:  #868e96;
+  --color-grey:         #495057;
+  --color-grey-dark:    #343a40;
+}

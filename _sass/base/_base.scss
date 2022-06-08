@@ -1,9 +1,11 @@
 :root {
   --title-color: #343A40;
   --text-color: #343A40;
+  --quote-color: var(--color-grey);
   --background-color: #FFFFFF;
   --background-color-alternate: #EEEEEE;
   --background-color-code: #FDFDFD;
+  --background-color-quote: var(--background-color-alternate);
   --link-color: #343A40;
   --link-underline-color: #ADB5BD;
   --link-underline-color-hover: #868E96;
@@ -15,9 +17,11 @@
   :root {
     --title-color: #DDDDDD;
     --text-color: #DDDDDD;
+    --quote-color: var(--text-color);
     --background-color: #333333;
     --background-color-alternate: #444444;
     --background-color-code: #222222;
+    --background-color-quote: var(--background-color-alternate);
     --link-color: #DDDDDD;
     --link-underline-color: #BBBBBB;
     --link-underline-color-hover: #DDDDDD;
@@ -217,13 +221,14 @@ dd {
 blockquote,
 blockquote p,
 q {
-  color: $color-grey;
+  color: var(--quote-color);
 }
 
 blockquote {
+  background-color: var(--background-color-quote);
   margin-left: var(--base-line);
   padding-left: calc(var(--base-line) / 2);
-  border-left: 2px solid $color-grey-medium;
+  border-left: 2px solid var(--color-grey-medium);
   > :last-child {
     margin-bottom: 0;
   }
@@ -231,7 +236,7 @@ blockquote {
 
 blockquote cite {
   display: block;
-  color: $color-grey-dark;
+  color: var(--color-grey-dark);
 }
 
 blockquote cite:before {
@@ -240,7 +245,7 @@ blockquote cite:before {
 
 blockquote cite a,
 blockquote cite a:visited {
-  color: $color-grey-dark;
+  color: var(--color-grey-dark);
 }
 
 
@@ -249,7 +254,7 @@ blockquote cite a:visited {
 
 pre,
 code {
-  border: 1px solid $color-grey-light;
+  border: 1px solid var(--color-grey-light);
   border-radius: 3px;
   background-color: var(--background-color-code);
 }
