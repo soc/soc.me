@@ -11,8 +11,6 @@ It implements this differents technologies :
  3. [Unison JS](http://bjork24.github.io/Unison/) Unifying named breakpoints across CSS, JS, and HTML
  4. [LocalFont](https://jaicab.com/localFont/) Implement localStorage web font caching in seconds
  5. [LoadingCSS](https://github.com/filamentgroup/loadCSS) A function for loading CSS asynchronously
- 7. [Open Color](https://yeun.github.io/open-color/) Color optimized for UI like font, background, border, etc.
- 8. [Css lock](https://fvsch.com/code/css-locks/) Progressive increasing fontsize - in canal and river navigation
 
 ## Install
 

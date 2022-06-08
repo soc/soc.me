@@ -23,7 +23,7 @@
 .pagination .disabled {
   padding: 1em 1.5em;
   color: var(--link-color);
-  border: 1px solid $color-grey;
+  border: 1px solid var(--color-grey);
   border-radius: 0.1875em;
   background: var(--background-color-alternate);
   transition: all 0.2s ease-in-out;
