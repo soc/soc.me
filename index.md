@@ -40,7 +40,7 @@ layout: index
         <ul>
           <li><a href="languages/stop-using-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
-          <li><a href="languages/against-mixed-cased-type-names">Against Mixed-cased Type Names</a></li>
+          <li><a href="languages/against-mixed-cased-type-names">Use consistent type names</a></li>
         </ul>
       </div>
       <div><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a></div>
@@ -86,9 +86,9 @@ layout: index
     </td>
     <td>
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
-      <div><a href="https://madhadron.com/posts/seven_languages.html">The seven programming ur-languages</a></div>
+      <div><a href="https://madhadron.com/posts/seven_languages.html">The 7 programming ur-languages</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
-      <div><a href="http://pling.jondgoodwin.com/post/cyclone/">The Fascinating Influence of Cyclone</a></div>
+      <div><a href="http://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="http://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
       <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
@@ -106,7 +106,7 @@ layout: index
       <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
     </td>
     <td>
-      <div><a href="http://www.wolczko.com/CS294/">Virtual Machines and Managed Runtimes</a></div>
+      <div><a href="http://www.wolczko.com/CS294/">Virtual Machines<br/>and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
     </td>
@@ -117,7 +117,7 @@ layout: index
       <div><a href="interfaces/improving-the-xfce-settings-ui">Improving the XFCE Settings UI</a></div>
     </td>
     <td>
-      <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic Package Manager UI</a></div>
+      <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic<br/>Package Manager UI</a></div>
       <div><a href="interfaces/vertical-tabs-in-firefox">Vertical Tabs in Firefox</a></div>
     </td>
     <td></td>
@@ -170,8 +170,8 @@ layout: index
     </td>
     <td>
       <div><a href="https://www.youtube.com/watch?v=TS1lpKBMkgg">We're Doing It All Wrong</a></div>
-      <div><a href="https://www.youtube.com/watch?v=uiJycy6dFSQ">Scala Collections:<br/>Why Not?</a></div>
-      <div><a href="https://www.youtube.com/watch?v=4jh94gowim0">psp collections:<br/>views and more</a></div>
+      <div><a href="https://www.youtube.com/watch?v=uiJycy6dFSQ">Scala Collections: Why Not?</a></div>
+      <div><a href="https://www.youtube.com/watch?v=4jh94gowim0">psp collections: views and more</a></div>
     </td>
   </tr>
 </table>
