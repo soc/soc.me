@@ -1,13 +1,11 @@
 ---
 title:  "Language Design: Equality & Identity – Part 2: Problems"
 date:   2017-10-31 12:00:00 +0200
+page_previous_title: "Equality & Identity – Part 1: Overview"
+page_previous_url:   "equality-and-identity-part1"
+page_next_title:     "Equality & Identity – Part 3: Solution"
+page_next_url:       "equality-and-identity-part3"
 ---
-
-<!--
-#### Abstraction
-
-_todo_
--->
 
 #### Containment
 

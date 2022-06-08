@@ -1,6 +1,10 @@
 ---
 title:  "Language Design: Equality & Identity – Part 3: Solution"
 date:   2017-10-31 12:00:00 +0200
+page_previous_title: "Equality & Identity – Part 2: Problems"
+page_previous_url:   "equality-and-identity-part2"
+page_next_title:     "Equality & Identity – Part 4: Fixing Haskell"
+page_next_url:       "equality-and-identity-part4"
 ---
 
 Let's take a step back and think about what these equality operations do:

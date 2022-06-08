@@ -1,22 +1,29 @@
-{% if page.previous or page.next %}
-
 <nav class="pagination" role="navigation">
-
-  {% if page.previous %}
+{% if page.page_previous_url %}
+  {% assign previous_url = page.page_previous_url %}
+  {% assign previous_title = page.page_previous_title %}
   <div class="left">
-    <a class="pagination-item" href="{{ page.previous.url }}">
-      {{ page.previous.title | remove_first: "Leaving Scala Development – " | remove_first: "Lessons Learned – "}}
-    </a>
+    <a class="pagination-item" href="{{ previous_url }}">{{ previous_title | remove_first: "Language Design: " }}</a>
   </div>
-  {% endif %}
+{% else %}{% if page.previous %}
+  {% assign previous_url = page.previous.url %}
+  {% assign previous_title = page.previous.title %}
+  <div class="left">
+    <a class="pagination-item" href="{{ previous_url }}">{{ previous_title }}</a>
+  </div>
+{% endif %}{% endif %}
 
-  {% if page.next %}
+{% if page.page_next_url %}
+  {% assign next_url = page.page_next_url %}
+  {% assign next_title = page.page_next_title %}
   <div class="right">
-    <a class="pagination-item" href="{{ page.next.url }}">
-      {{ page.next.title | remove_first: "Leaving Scala Development – " | remove_first: "Lessons Learned – "}}
-    </a>
+    <a class="pagination-item" href="{{ next_url }}">{{ next_title  | remove_first: "Language Design: " }}</a>
   </div>
-  {% endif %}
-
+{% else %}{% if page.next %}
+  {% assign next_url = page.next.url %}
+  {% assign next_title = page.next.title %}
+  <div class="right">
+    <a class="pagination-item" href="{{ next_url }}">{{ next_title }}</a>
+  </div>
+{% endif %}{% endif %}
 </nav>
-{% endif %}
