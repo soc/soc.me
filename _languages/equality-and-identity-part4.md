@@ -19,18 +19,22 @@ To be clear, `elem` is picked as the simplest example possible.[^1]
 
 #### Status Quo
 
-So why is `Eq` not doing its job, or rather what is its job description in the first place?
-Reading [`Data.Eq`](http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Eq.html) it turns out, it's not much:
+Why is `Eq` not doing its job, or rather – what is its job description in the first place?
+According to [`Data.Eq`](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Eq.html), not much:
 
-> It is expected to have the following properties: [...]
+> The Haskell Report defines no laws for Eq. However, instances are encouraged to follow these properties: [...]
 
-So why is `Eq` so incredibly low-assurance compared to many other typeclasses that state their laws?
+Why does `Eq` provide no laws, compared to many other typeclasses that state them strongly and explicitly?
 
-The reason becomes obvious if you scroll down the page – if the "expected properties" were upgraded to "laws", you would have law-breaking typeclass instances in one of the most central module of Haskell.
+The reason becomes obvious if one scrolls though the list of typeclass instances.
+If the "encouraged properties" were upgraded to "laws",
+Haskell would have law-breaking typeclass instances in one of its most central modules.
 
-What Haskell does with `Eq` is claiming that there is one definition of equality per type. I consider this to be false – case in point: floating point numbers.
+The fault of Haskell's `Eq` is that it lives in a world in which there is only a single definition of equality per type, which is incorrect in general. Case in point: floating point numbers, which have multiple definitions (see IEE754 §5.10 and §5.11).
 
-There can be multiple useful definitions of equality per type, and depending on the use-case having only one available is not sufficient. Using newtypes to swap one implementation of `==` for another one is not sufficient in the same regard. Even simple functions like list's `elem` require both equality and identity.
+There can be multiple useful definitions of equality per type, and – depending on the use-case – having only one to pick is not sufficient.
+Even simple functions like list's `elem` might require both equality and identity operations to work correctly,
+which means the frequently suggested newtype hack to swap one implementation of `Eq` for another one is insufficient.
 
 #### Available Options
 
@@ -48,21 +52,21 @@ The status quo is discarding property _1._:
 
 Discarding property _2._ would give you:
 
-- Correctly working data structures, example: `elem (0.0/0.0) [0.0/0.0]` returns `True`.
+- (Some) correctly working data structures, example: `elem (0.0/0.0) someFloatList` returns `True`.
 - Specialized data structures like `FloatList`s or `DoubleVector`s (likely in addition to polymorphic variants), which implement functions like `elem` using both `Eq`'s `==` and functions specific to `Float`s or `Double`s. Semantics would differ between polymorphic and specialized variants.
-- A single equality function `==` on `Eq` and type-specific functions in specialized data structures.
+- A single equality function `==` on `Eq`, and type-specific functions in specialized data structures.
 
 Discarding property _3._ would give you:
 
 - Correctly working data structures, example: `elem (0.0/0.0) [0.0/0.0]` returns `True`.
 - Polymorphic data structures like `List`s and `Vector`s.
-- `Eq` provides two functions: An equality function (`==`) and an identity function (`===`).
+- An identity function (`===`), in addition to `Eq`s existing equality function (`==`).
 
 <br/>Here is how the last approach can be implemented:
 
-#### The Solution
+#### A Solution
 
-So how to fix it? Let's go for the simplest fix; instead of introducing a new typeclass for identity, extend `Eq` as follows:
+The simplest fix (instead of introducing a new typeclass for identity) is to extend `Eq` as follows:
 
     class  Eq a  where
       (==), (/=), (===), (/==) :: a -> a -> Bool
@@ -72,10 +76,10 @@ So how to fix it? Let's go for the simplest fix; instead of introducing a new ty
       x === y              = x == y         -- new
       x /== y              = not (x === y)  -- new
 
-So nothing would change for 99% of `Eq`'s instances, but `Float`, `Double` (and a few other types) their instances would now be defined like this:
+Nothing would change for 99% of `Eq`'s instances, but the typeclass instances for `Float`, `Double`, ... would now be defined as:
 
-    instance Eq Double where
-      (==)  = eqDouble
+    instance Eq Float where
+      (==)  = eqFloat
       (===) = Numeric.IEEE.identicalIEEE  -- new
 
 Then change the documentation replacing the "expected properties" of `==` and `/=` with "laws" of `===` and `/==`.
