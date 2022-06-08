@@ -14,11 +14,11 @@ The core issue is that equality on its own is insufficient to implement some, ra
 Asking the simple question "is some element contained in this data structure" in different languages demonstrates the problem:
 
 ```
-Java:     List.of(Double.NaN).contains(Double.NaN); // true
-Scala:    List(Double.NaN).contains(Double.NaN)     // false
+Java:     List.of(Float.NaN).contains(Float.NaN);   // true
+Scala:    List(Float.NaN).contains(Float.NaN)       // false
 Rust:     &[0.0/0.0].contains(0.0/0.0)              // false
-C#:       var list = new List<double>() { double.NaN };
-          list.Contains(double.NaN);                // true
+C#:       var list = new List<float>() { float.NaN };
+          list.Contains(float.NaN);                 // true
 Haskell:  elem (0.0/0.0) [0.0/0.0]                  // false
 ```
 

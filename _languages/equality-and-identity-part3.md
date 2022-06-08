@@ -28,11 +28,11 @@ The core insight is that there are two useful, fundamental ways to compare thing
 
 #### What is an identity comparison?
 
-The definition builds on reference comparison, but extends it to value types.
-It simply compares the bits (and the type) of the value at hand:
+The definition extends the concept of reference comparisons to value types,
+by comparing the bits (and the type) of the value at hand:
 
 - reference types compare the bits of the reference itself.
-- value types compare the bits of themselves, e. g. the bits of an `Int`, a `Double`, or a `Complex` value.
+- value types compare the bits of themselves, e. g. the bits of an `Int`, a `Float`, or a `Complex` value.
 
 This means that an instance of a reference type is only identical to another instance if they are the same reference, and an instance of a value types is only identical to another instance if their values match up exactly.
 
@@ -45,18 +45,20 @@ It reduces complexity and avoids unnecessary boxing.
 
 The following table shows how this definition of _identity_ and _equality_ could work in practice:
 
-|                       | type      | ∘ is ==  | ∘ is === |
-|-----------------------|-----------|----------|----------|
-|true ∘ true            | value     | true     | true     |
-|1 ∘ 1                  | value     | true     | true     |
-|1.0 ∘ 1.0              | value     | true     | true     |
-|Double.NaN ∘ Double.NaN| value     | false    | true     |
-| +0.0 ∘ -0.0           | value     | true     | false    |
-|BigInt(1) ∘ BigInt(1)  | reference | true     | false    |
-|"abc" ∘ "abc"          | reference | true     | false    |
+|                       | type      | ∘ is ==  | ∘ is ===  |
+|-----------------------|-----------|----------|-----------|
+| true ∘ true           | value     | true     | true      |
+| 1 ∘ 1                 | value     | true     | true      |
+| 1.0 ∘ 1.0             | value     | true     | true      |
+| Float.NaN ∘ Float.NaN | value     | false    | true      |
+| +0.0 ∘ -0.0           | value     | true     | false     |
+| BigInt(1) ∘ BigInt(1) | reference | true     | false[^1] |
+| "abc" ∘ "abc"         | reference | true     | false[^1] |
 
 ### Conclusion
 
 - Languages should provide two, distinct operations that provide equality comparisons and identity comparisons.
 - Ideally, these operations do not exist on the languages' top type, but are only available when the type is constrained
   appropriately (e. g. `fun same[E : Identity](a: E, b: E) = a === b`).
+
+[^1]: assuming a reference-based type
