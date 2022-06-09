@@ -6,6 +6,7 @@
   --background-color-alternate: #EEEEEE;
   --background-color-code: #FDFDFD;
   --background-color-quote: var(--background-color-alternate);
+  --background-color-warn: #DDAAAA;
   --link-color: #343A40;
   --link-underline-color: #ADB5BD;
   --link-underline-color-hover: #868E96;
@@ -22,6 +23,7 @@
     --background-color-alternate: #444444;
     --background-color-code: #222222;
     --background-color-quote: var(--background-color-alternate);
+    --background-color-warn: var(--color-red-dark);
     --link-color: #DDDDDD;
     --link-underline-color: #BBBBBB;
     --link-underline-color-hover: #DDDDDD;
@@ -298,4 +300,10 @@ table {
 .note {
   font-size: var(--smaller);
   text-justify: none;
+}
+
+.warn {
+  background-color: var(--background-color-warn);
+  margin: var(--base-line) calc(var(--base-line) * 3);
+  padding: calc(var(--base-line) / 2) var(--base-line);
 }

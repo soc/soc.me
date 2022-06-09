@@ -7,6 +7,11 @@ page_next_title:     "Comparing and Sorting"
 page_next_url:       "comparing-and-sorting"
 ---
 
+<div class="warn">
+  Dear reader, comments on this page are invite-only due to low-quality feedback.<br/>
+  Please refrain from linking this page on community foris of any language mentioned herein.
+</div>
+
 Basic goals, as mentioned in the previous parts:
 
 > You should not lose values inside a data structure.
