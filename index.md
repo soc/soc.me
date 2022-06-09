@@ -19,7 +19,7 @@ layout: index
     <td>
       <div><a href="https://github.com/soc/directories-jvm/">directories-jvm</a></div>
       <div><a href="https://github.com/soc/directories-rs/">directories-rs</a> &amp; <a href="https://github.com/soc/dirs-rs/">dirs-rs</a></div>
-      <div><a href="http://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403">GNU Nano</a></div>
+      <div><a href="https://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403">GNU Nano</a></div>
       <div><a href="https://github.com/coursier/coursier/pull/676">Coursier</a></div>
       <div>Cargo: <a href="https://github.com/rust-lang/rfcs/pull/1615">RFC</a> &amp; <a href="https://github.com/rust-lang/cargo/pull/5183">PR</a></div>
     </td>
@@ -30,7 +30,7 @@ layout: index
       <div><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Unicode &amp; Character Sets</a></div>
       <div><a href="https://googleprojectzero.blogspot.de/2016/02/the-definitive-guide-on-win32-to-nt.html">Path handling on Windows</a></div>
       <div><a href="https://yakking.branchable.com/posts/falsehoods-programmers-believe-about-file-paths/">Falsehoods about paths</a></div>
-      <div><a href="http://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a></div>
+      <div><a href="https://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a></div>
     </td>
   </tr>
   <tr>
@@ -87,14 +87,14 @@ layout: index
     </td>
     <td>
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
-      <div><a href="https://madhadron.com/posts/seven_languages.html">The 7 programming ur-languages</a></div>
+      <div><a href="https://madhadron.com/posts/seven_languages.html">7 programming ur-languages</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
-      <div><a href="http://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
+      <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
-      <div><a href="http://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
+      <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
       <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
-      <div><a href="http://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
-      <div><a href="http://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
+      <div><a href="https://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
+      <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a></div>
     </td>
