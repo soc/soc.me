@@ -1,7 +1,9 @@
 ---
-title:  "Language Design: Popular, but Wrong Opinions"
+title:  "Language Design: Popular, but Wrong"
 date:   2020-10-20 12:00:00 +0200
-redirect_from: "/languages/popular-wrong-decisions"
+redirect_from:
+  - "/languages/popular-wrong-decisions"
+  - "/languages/popular-wrong-opinions"
 ---
 
  1. `static` members
