@@ -39,7 +39,7 @@ layout: index
       <div><a href="languages/familiarity">Familiarity</a></div>
       <div><a href="languages/generics">A Syntax Sweet Spot:</a>
         <ul>
-          <li><a href="languages/stop-using-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
+          <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
           <li><a href="languages/against-mixed-cased-type-names">Use consistent type names</a></li>
         </ul>

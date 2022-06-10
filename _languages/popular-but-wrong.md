@@ -8,8 +8,8 @@ redirect_from:
 
  1. `static` members
  2. properties
- 3. `<>` for generics ([see](stop-using-for-generics))
- 4. `[]` for arrays ([see](stop-using-for-generics))
+ 3. `<>` for generics ([see](stop-using-angle-brackets-for-generics))
+ 4. `[]` for arrays ([see](stop-using-angle-brackets-for-generics))
  5. `Type ident` instead of `ident: Type` ([see](type-annotations))
  6. having if-then-else *and* switch/case *and* a ternary operator ([see](unified-condition-expressions))
  7. separate namespaces for methods and fields

@@ -35,7 +35,7 @@ output).
 #### 2. Consistency between definition and usage
 
 The way a class or method is defined should mirror the way it can be used.
-(See [Stop using `<>` for generics](stop-using-for-generics).)
+(See [Stop using `<>` for generics](stop-using-angle-brackets-for-generics).)
 
 #### 3. Definition before usage
 
