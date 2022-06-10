@@ -63,13 +63,24 @@ syntax usually becomes dead weight a few years down the road, as the preferred c
 of data structure implementation evolves.[^javalit][^jslit]
 
 Using `[]` for generics instead of `<>` shuts down this possibility for good, and encourages the use
-of standard method call syntax for these usecases instead:[^nim]
+of standard method call brackets (`()`) for these use-cases instead:[^nim]
 
 ```
-Array(1, 2, 3)        /* instead of */   [1, 2, 3]
-someList(0)           /* instead of */   someList[0]
-array(0) = 23.42      /* instead of */   array[0] = 23.42
-map("name") = "Joe"   /* instead of */   map["name"] = "Joe"
+Array.get(1, 2, 3)     /* instead of */   [1, 2, 3]
+someList.get(0)        /* instead of */   someList[0]
+array.set(0, 23.42)    /* instead of */   array[0] = 23.42
+map.set("name", "Joe") /* instead of */   map["name"] = "Joe"
+```
+
+At this stage, some small amount of syntax sugar can be considered that would allow every type with
+a `get` method to be written as `instance(arg)` and a `set` method written as `instance(index, arg)`,
+leading to the following code:[^pythonscala]
+
+```
+Array(1, 2, 3)         /* instead of */   [1, 2, 3]
+someList(0)            /* instead of */   someList[0]
+array(0) = 23.42       /* instead of */   array[0] = 23.42
+map("name") = "Joe"    /* instead of */   map["name"] = "Joe"
 ```
 
 ---
@@ -88,3 +99,4 @@ It remains to be seen whether this turns into tidal change similar to the widesp
 [^javalit]: Java pretty much abandoned arrays – they never integrated them with collections in 1.2, let alone generics in 1.5.
 [^jslit]: JavaScript stopped giving out new collection literals almost immediately after its first release – no collection type added since received its own literals (`Set`, `Map`, `ByteBuffer`, ...).
 [^nim]: Nim uses `[]` for generics, but employs [a hack to _also_ use `[]` for lookup](https://nim-lang.org/docs/manual.html#procedures-method-call-syntax).
+[^pythonscala]: [Pyt](https://docs.python.org/3/reference/datamodel.html#object.__getitem__)[hon](https://docs.python.org/3/reference/datamodel.html#object.__setitem__) and [Scala](https://otfried.org/scala/apply.html) demonstrate that this approach works incredibly well.
