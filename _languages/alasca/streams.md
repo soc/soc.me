@@ -53,6 +53,7 @@ value Stream[C, T]
       (s: Stream[C1, T1 : Record])   : Stream[C, concat[recordOf[T], recordOf[T1]]]
   fun groupBy     (f: T => R)        : Stream[C, Stream[R]]
   fun partitionBy
+
   // Flattening Transformations
   fun flatten[T : Flattenable]       : Strean[C, T]
   fun flatMap     (f: T => Option[R]): Stream[C, R]
