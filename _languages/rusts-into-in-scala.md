@@ -87,9 +87,11 @@ The only drawback is that, similar to Rust, the conversion method `into` needs t
 
 #### Java's Supplier
 
-Perhaps amusingly, it's also possible to completely forgo the definition of our own `Into` type in favor of using Java 8's [`Supplier`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) interface:
+Perhaps amusingly, it's also possible to completely forgo the definition of our own `Into` type in favor of using Java 8's
+[`Supplier`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) interface
+(adjusting the types in the approaches above from `Into` to `Supplier accordingly):
 
-    def strings(s: Supplier[String]) = s.into
+    def strings(s: Supplier[String]) = s.get
 
 ... and that's it!
 
