@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Stop Using `<>` for Generics"
 date:   2020-04-04 12:00:00 +0200
+redirect_from: "/languages/stop-using-for-generics"
 ---
 
 _**TL;DR:** Use_ `[]` _instead of_ `<>` _for generics. It will save you a lot of avoidable trouble down the road._
