@@ -36,6 +36,7 @@ layout: index
   <tr>
     <th class="table-topic">Languages</th>
     <td>
+      <div><a href="languages/familiarity">Familiarity</a></div>
       <div><a href="languages/generics">A Syntax Sweet Spot:</a>
         <ul>
           <li><a href="languages/stop-using-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
@@ -44,7 +45,7 @@ layout: index
         </ul>
       </div>
       <div><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a></div>
-      <div><a href="languages/popular-wrong-opinions">Popular, but Wrong Opinions</a></div>
+      <div><a href="languages/popular-but-wrong">Popular, but Wrong</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
       <div><a href="languages/nondefinitional-enums">Nondefinitional Enums</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>

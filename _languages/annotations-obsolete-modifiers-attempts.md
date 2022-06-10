@@ -17,4 +17,4 @@ able to omit the prefix `@`, leading to inconsistencies.
 ##### Ceylon
 
 Ceylon tried the route in which [everything is an annotation, but looks like a modifier (i. e. without prefix `@`)](https://ceylon-lang.org/documentation/1.3/reference/structure/annotation/).
-This made it hard to distinguish between important keywords, and not-so-important annotations.
+This made it hard to distinguish between important keywords, and less important annotations.
