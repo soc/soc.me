@@ -1,6 +1,7 @@
 ---
 title:  "Alasca: Visibility and Exports"
 date:   2018-08-31 12:00:00 +0200
+published: false
 ---
 
 - open modules: namespace to place files, at the top of source files

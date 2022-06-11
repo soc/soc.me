@@ -1,6 +1,7 @@
 ---
 title:  "Alasca: Traits, Sealed Traits and Enum Traits"
 date:   2018-08-31 12:00:00 +0200
+published: false
 ---
 
 #### Traits
