@@ -1,6 +1,7 @@
 ---
 title:  "Alasca: Keywords"
 date:   2018-09-07 12:00:00 +0200
+published: false
 ---
 
 **6 letters** namespaces – declaring namespaces and bringing namespaces into scope:

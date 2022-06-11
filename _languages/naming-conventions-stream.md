@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Naming Conventions – Part 4: Stream"
 date:   2022-06-07 12:00:00 +0200
+published: false
 ---
 
 #### Mapping

@@ -1,6 +1,7 @@
 ---
 title:  "Alasca: String and Text"
 date:   2018-08-31 12:00:00 +0200
+published: false
 ---
 
 #### String
