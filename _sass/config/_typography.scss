@@ -28,7 +28,7 @@
   --bigger:                  calc(var(--base-em) * var(--ms1));
   --title3:                  calc(var(--base-em) * var(--ms2));
   --title2:                  calc(var(--base-em) * var(--ms3));
-  --title1:                  calc(var(--base-em) * var(--ms4));
+  --title1:                  calc(var(--base-em) * var(--ms4) - 0.5px); /* fit more titles into one line */
 
   --line-height-base:        calc(var(--base) * var(--ms2));
   --base-line:               calc(var(--base-em) * var(--line-height-base));
