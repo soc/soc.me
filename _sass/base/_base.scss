@@ -307,3 +307,10 @@ table {
   margin: var(--base-line) calc(var(--base-line) * 3);
   padding: calc(var(--base-line) / 2) var(--base-line);
 }
+
+.footnote {
+  text-decoration: none;
+  &:hover {
+    text-decoration-line: line-through;
+  }
+}
