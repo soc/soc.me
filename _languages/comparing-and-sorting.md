@@ -7,40 +7,48 @@ Similarly to [equality and identity](equality-and-identity-part1), most language
 
 Languages usually provide only a single operation/protocol, often requiring workarounds for some data types in which the comparison operation and the sorting operation return distinct results.
 
-Consider the following `Comparable` trait:
+Consider the following `Comparable` trait as it frequently exists across many languages
+(like [Haskell](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Ord.html),
+[Rust](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html),
+[Swift](https://developer.apple.com/documentation/swift/comparable), ...):
 
 ```ml
 trait Comparable[T]
-  fun < (that: T): Boolean = ...
-  fun > (that: T): Boolean = ...
+  fun < (that: T): Bool
+  fun > (that: T): Bool
+  ...
 ```
 
-... and an IEEE754-conformant implementation of `Comparable` for floating point values, such that `-0.0 < +0.0`, and `Float.NaN < Float.PositiveInfinity` are both false.
+... and an IEEE754-conformant comparison implementation for floating point values,
+i. e. `-0.0 < +0.0`, and `Float.NaN < Float.PositiveInfinity` are both false.
 
-As it becomes obvious, such an implementation of _partial order_ used to correctly _compare_ values, cannot be used to correctly _sort_ values (_total order_).[^1]
+As it becomes obvious, such an implementation of _partial order_ can be used to _compare_ values,
+but cannot be used to correctly _sort_ values (_total order_).[^1]
 
-Worded differently, an implementation of _comparison_ operations for floating point values cannot be used as a stand-in for _sorting_ operations on floating point values.[^2]
+The reason is that the implementation of _comparison operations_ for floating point values (a partial order, IEEE754 §5.11)
+cannot be used as a stand-in for _sorting_ operations on floating point values.
 
-Conveniently, IEEE754 standardizes a `totalOrder` relation in §5.10, defining how floating point numbers should be sorted.
-The only requirement language-wise is to introduce a distinct trait which represents _total ordering_, enabling a clean separation of _comparisons_ and _sorting_ operations:
-
+Conveniently, IEEE754 standardizes a `totalOrder` relation in §5.10, defining how floating point numbers are sorted.
+The only requirement language-wise is to introduce a distinct trait[^2] which represents _total ordering_,
+enabling a clean separation of _comparison operations_ from _sorting operations_:
 
 ```ml
 trait Sortable[T]
-  fun sortsBefore(that: T): Boolean = ...
-  fun sortsAfter (that: T): Boolean = ...
+  fun sortsBefore(that: T): Bool
+  fun sortsAfter (that: T): Bool
+  ...
 ```
 
 This enables the use of each individual trait for its specific purpose, without conflating different concerns:
 
 ```ml
-// compare values using Comparable
+// example of comparing values using Comparable
 fun compareReversed[T : Comparable](x: T, y: T) = y < x
 
-// sort values using Sortable
+// example of sorting values using Sortable
 fun sort[T : Sortable](values: Array[T]) =
   ...
-    x sortsBefore y
+  if values(i).sortsBefore(values(j)) { ... }
   ...
 ```
 
