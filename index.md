@@ -110,6 +110,14 @@ layout: index
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines<br/>and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
+      <div>Cranelift Backend:
+        <ul>
+          <li><a href="https://cfallin.org/blog/2020/09/18/cranelift-isel-1/">Instruction Selection</a></li>
+          <li><a href="https://cfallin.org/blog/2021/01/22/cranelift-isel-2/">Compiler Efficiency</a></li>
+          <li><a href="https://cfallin.org/blog/2021/03/15/cranelift-isel-3/">Correct Register Allocation</a></li>
+          <li><a href="https://cfallin.org/blog/2022/06/09/cranelift-regalloc2/">A New Register Allocator</a></li>
+        </ul>
+      </div>
     </td>
   </tr>
   <tr>
