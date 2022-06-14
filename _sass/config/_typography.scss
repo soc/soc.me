@@ -76,7 +76,7 @@ h1, .h1 { font-size: var(--title1); }
 
 @media #{$medium-up} {
   body {
-    font-size: calc(var(--base-em) * var(--ms0));
+    font-size: calc(var(--base-em));
     line-height: calc(var(--base) * var(--ms3));
     font-weight: 300;
   }
