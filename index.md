@@ -124,6 +124,7 @@ layout: index
           <li><a href="https://cfallin.org/blog/2022/06/09/cranelift-regalloc2/">A New Register Allocator</a></li>
         </ul>
       </div>
+      <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking in Swift</a></div>
       <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
     </td>
   </tr>
