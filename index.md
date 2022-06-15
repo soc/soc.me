@@ -141,6 +141,8 @@ layout: index
     <td>
       <div><a href="https://www.youtube.com/watch?v=pq1XqP4-qOo">Hybrid Dynamic/Static Linking</a></div>
       <div><a href="https://justine.lol/ape.html">αcτµαlly pδrταblε εxεcµταblε</a></div>
+      <div><a href="https://gankra.github.io/blah/c-isnt-a-language/">C Isn't A Language Anymore</a></div>
+      <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
       <div>Ghosts of Unix Past
         <ol>
           <li><a href="https://lwn.net/Articles/411845/">Design patterns</a></li>
