@@ -18,7 +18,6 @@ email: simon@ochsenreither.de
 description: >
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
-twitter_username: oxnrtr
 github_username:  soc
 plugins:
   - jekyll-redirect-from
@@ -28,17 +27,21 @@ collections:
     output: true
     name: "Standards"
     published: true
-  hardware:
-    output: true
-    name: "Hardware"
-    published: true
   languages:
     output: true
     name: "Languages"
     published: true
+  runtimes:
+    output: true
+    name: "Runtimes"
+    published: true
   interfaces:
     output: true
     name: "Interfaces"
+    published: true
+  hardware:
+    output: true
+    name: "Hardware"
     published: true
   scala:
     output: true
@@ -56,17 +59,22 @@ defaults:
       layout: post
   -
     scope:
-      type: hardware
-    values:
-      layout: post
-  -
-    scope:
       type: languages
     values:
       layout: post
   -
     scope:
+      type: runtimes
+    values:
+      layout: post
+  -
+    scope:
       type: interfaces
+    values:
+      layout: post
+  -
+    scope:
+      type: hardware
     values:
       layout: post
   -
