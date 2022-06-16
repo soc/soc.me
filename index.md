@@ -107,7 +107,7 @@ layout: index
   </tr>
   <tr>
     <th class="table-topic">Runtimes</th>
-    <td></td>
+    <td><a href="runtimes/domains-as-cargo-namespaces">Domains as Cargo Namespaces</a></td>
     <td></td>
     <td>
       <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
