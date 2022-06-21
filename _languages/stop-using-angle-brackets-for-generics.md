@@ -43,8 +43,10 @@ instance.<String>foo();
 _C#_ and _Kotlin_ tried to retain a more consistent syntax by introducing unlimited look-ahead:
 Their parser just keeps reading input after the `<` until it can make a decision.[^csharp]
 
-For decades, _C++_ required adding spaces to nested closing generics to allow the compiler to
-distinguish between the right-shift operator `>>` and the end of a nested generic type definition.[^cpp]
+_C++_ suffers from a plethora of `<>`-related issues.[^cpp1]
+The only issue addressed by the C++ committee after decades was the requirement to add spaces to
+nested closing generics to allow the compiler to distinguish between the right-shift operator `>>`
+and the end of a nested generic type definition.[^cpp2] All other issues appear to be unfixable.
 
 _Rust_ is forced to use the hideous "turbofish" operator `::<>` to distinguish between the left side of a
 comparison and the start of a generic type, introducing syntactic inconsistency between generics in
@@ -59,9 +61,9 @@ let vec: Vec<u32> = Vec::<u32>::new();
 #### 3. It allows `[]` to be (ab)used for syntax "conveniences"
 
 Many languages used `[]` to add syntax for collection literals (`[1, 2, 3]`) or array lookup
-(`array[0]`), adding pointless complexity to the language for very little benefit – as such built-in
-syntax usually becomes dead weight a few years down the road, as the preferred choice
-of data structure implementation evolves.[^javalit][^jslit]
+(`array[0]`), adding pointless complexity to the language for very little benefit – in many cases
+such built-in syntax became dead weight after the languages' preferred choice of data structure
+implementation evolved.[^javalit][^jslit]
 
 Using `[]` for generics instead of `<>` shuts down this possibility for good, and encourages the use
 of standard method call brackets (`()`) for these use-cases instead:[^nim]
@@ -88,7 +90,8 @@ map("name") = "Joe"    /* instead of */   map["name"] = "Joe"
 
 #### Coda
 
-Thankfully, the number of languages using `[]` for generics seems to increase lately – with Scala, Python, Nim and Go joining Eiffel, which was pretty much the sole user of `[]` for decades.
+Thankfully, the number of languages using `[]` for generics seems to increase lately –
+with Scala, Python, Nim and Go joining Eiffel, which was pretty much the sole user of `[]` for decades.
 
 It remains to be seen whether this turns into tidal change similar to the widespread [adoption of `ident: Type` over `Type ident`](https://soc.me/languages/type-annotations) in modern languages.
 
@@ -96,7 +99,8 @@ It remains to be seen whether this turns into tidal change similar to the widesp
 [^related]: [Parsing Ambiguity: Type Argument v. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
 [^java]: Java: The syntax inconsistency is due to the difficulty a compiler would have to tell whether some token stream of `instance` `.` `foo` `<` is the left side of a comparison (with `<` being the "less-than" operator) or the start of a generic type argument within a method call.
 [^csharp]: C#: See [ECMA-334, 4th Edition, §9.2.3 – Grammar Ambiguities](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)
-[^cpp]: C++: See [Wikipedia – C++11 right angle bracket](https://en.wikipedia.org/wiki/C%2B%2B11#Right_angle_bracket)
+[^cpp1]: C++: See [What are all the syntax problems introduced by the usage of angle brackets in C++ templates?](https://stackoverflow.com/questions/7304699/what-are-all-the-syntax-problems-introduced-by-the-usage-of-angle-brackets-in-c)
+[^cpp2]: C++: See [Wikipedia – C++11 right angle bracket](https://en.wikipedia.org/wiki/C%2B%2B11#Right_angle_bracket)
 [^javalit]: Java pretty much abandoned arrays – they never integrated them with collections in 1.2, let alone generics in 1.5.
 [^jslit]: JavaScript stopped giving out new collection literals almost immediately after its first release – no collection type added since received its own literals (`Set`, `Map`, `ByteBuffer`, ...).
 [^nim]: Nim uses `[]` for generics, but employs [a hack to _also_ use `[]` for lookup](https://nim-lang.org/docs/manual.html#procedures-method-call-syntax).
