@@ -4,8 +4,6 @@ date:   2022-06-08 12:00:00 +0200
 published: false
 ---
 
-#### Mapping
-
 <table class="table-medium">
   <thead>
     <tr>
