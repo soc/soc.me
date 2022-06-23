@@ -116,6 +116,7 @@ layout: index
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines<br/>and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
+      <div><a href="https://shipilev.net/jvm/anatomy-quarks/">JVM Anatomy Quarks</a></div>
       <div>Cranelift Backend:
         <ul>
           <li><a href="https://cfallin.org/blog/2020/09/18/cranelift-isel-1/">Instruction Selection</a></li>
