@@ -81,7 +81,7 @@ layout: index
         <ol>
           <li><a href="languages/naming-conventions-creation">Creation</a></li>
           <li><a href="languages/naming-conventions-conversion">Conversion</a></li>
-          <li>Lookup</li>
+          <li><a href="languages/naming-conventions-lookup">Lookup</a></li>
           <li>Streaming</li>
         </ol>
       </div>
