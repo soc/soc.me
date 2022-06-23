@@ -1,6 +1,9 @@
 ---
-title:  "Language Design: Naming Conventions – Part 2: Conversion"
+title:  "Language Design: Naming Conventions – Part 1: Creation"
 date:   2018-06-19 12:00:00 +0200
+redirect_from: "/languages/naming"
+page_next_title:     "Naming Conventions – Part 2: Conversion"
+page_next_url:       "naming-conventions-conversion"
 ---
 
 <table class="table-medium">
