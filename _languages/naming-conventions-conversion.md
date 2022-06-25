@@ -32,6 +32,7 @@ page_next_url:       "naming-conventions-lookup"
       <td>
         <ul>
           <li>implies a verbatim reinterpretation/wrapping/viewing of a value</li>
+          <li>replacement for numeric "casts"</li>
         </ul>
       </td>
     </tr>
