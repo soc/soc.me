@@ -9,7 +9,7 @@
   {% assign previous_url = page.previous.url %}
   {% assign previous_title = page.previous.title %}
   <div class="left">
-    <a class="pagination-item" href="{{ previous_url }}">{{ previous_title }}</a>
+    <a class="pagination-item" href="{{ previous_url }}">{{ previous_title | remove_first: "Language Design: " }}</a>
   </div>
 {% endif %}{% endif %}
 
@@ -17,13 +17,13 @@
   {% assign next_url = page.page_next_url %}
   {% assign next_title = page.page_next_title %}
   <div class="right">
-    <a class="pagination-item" href="{{ next_url }}">{{ next_title  | remove_first: "Language Design: " }}</a>
+    <a class="pagination-item" href="{{ next_url }}">{{ next_title | remove_first: "Language Design: " }}</a>
   </div>
 {% else %}{% if page.next %}
   {% assign next_url = page.next.url %}
   {% assign next_title = page.next.title %}
   <div class="right">
-    <a class="pagination-item" href="{{ next_url }}">{{ next_title }}</a>
+    <a class="pagination-item" href="{{ next_url }}">{{ next_title | remove_first: "Language Design: " }}</a>
   </div>
 {% endif %}{% endif %}
 </nav>
