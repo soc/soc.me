@@ -41,10 +41,26 @@ samp {
   font-family: monospace;
 }
 
+.code {
+  border: 1px solid var(--color-grey-light);
+  border-radius: 3px;
+  background-color: var(--background-color-code);
+  font-family: var(--mono-font-family);
+  font-size: calc(var(--normal) * 1.2);
+  white-space: pre-wrap;
+}
+
+.result {
+  color: #99c;
+  margin: 0px;
+  padding: 0px;
+  white-space: pre-wrap;
+}
+
 body {
   font-family: var(--base-font-family);
   font-weight: 400;
-  font-size: calc(var(--base-em) * var(--ms0));
+  font-size: var(--normal);
   line-height: calc(var(--base) * var(--ms4));
   hyphens: auto;
   hanging-punctuation: first last;
