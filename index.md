@@ -50,6 +50,7 @@ layout: index
           <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Design Attempts</a></li>
         </ul>
       </div>
+      <div><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></div>
       <div><a href="languages/popular-but-wrong">Popular, but Wrong</a></div>
       <div><a href="languages/unary-operators">Unary Operators</a></div>
       <div><a href="languages/nondefinitional-enums">Nondefinitional Enums</a></div>
