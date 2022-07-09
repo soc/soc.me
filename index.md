@@ -41,6 +41,7 @@ layout: index
         <ul>
           <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
+          <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
           <li><a href="languages/against-mixed-cased-type-names">Use consistent type names</a></li>
         </ul>
       </div>
