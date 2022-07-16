@@ -1,6 +1,7 @@
 ---
-title:  "Language Design: Unary Operators"
+title:  "Language Design: Unary Operators are Unnecessary"
 date:   2019-09-21 12:00:00 +0200
+redirect_from: "/languages/unary-operators"
 ---
 
 Many languages provide unary operators, usually written as a prefix to the value they apply to.
@@ -13,23 +14,30 @@ The most common unary operators are:
 - `+`: useless (on numbers)
 
 <br/>Except for reasons of tradition and familiarity, their privileged position in many languages is unnecessary.
-Considering they provide rather limited benefits – while adding complexity to the core language –
-it is questionable whether unary operators are a good place to spend a language's complexity budget on.
+They provide rather limited benefits – while adding complexity to the core language.
+
+Unary operators are a waste of a language's complexity budget.
 
 An alternative is to define methods on the respective types, dropping unary operators altogether:
 
-- `not` replaces `!` on booleans
-- `not` replaces `~` on numbers
-- `negate` replaces `-` on numbers
+- `not` replaces `!` on booleans: `someBool.not` instead of `!someBool`
+- `not` replaces `~` on integers: `1.not` instead of `~1`
+- `negate` replaces `-` on numbers: `1.negate` instead of `-1`
 
 <br/>This also elegantly solves the question whether
 
-```scala
+```ml
 let x = 1
 -x.abs
 ```
 
-evaluates to `1` or `-1`, by requiring users to write `x.negate.abs` – thereby leaving no ambiguity to precedence.
+should evaluate to `1` or `-1`, as
+
+```ml
+x.negate.abs
+```
+
+is completely unambiguous.
 
 There are two additional benefits to the use methods instead of operators:
 
@@ -43,5 +51,28 @@ There are two additional benefits to the use methods instead of operators:
   the same operation on the more common fixed-size types (`Int`, `Long`, ...) could benefit from returning an optional
   result to indicate that a negative value may lack a positive counterpart.
 
+---
+
+#### Appendix
+
+Incomplete list of languages and their interpretation of `-1.abs`:
+
+```
+                  | -1.abs | let x = 1; -x.abs
+------------------+----------+---------------------
+ C#               | -1       | -1
+ D                | -1       | -1
+ Dart             | -1       | -1
+ Fantom           | -1       | -1
+ Groovy           | -1       | -1
+ Kitten           |  1       | n.a.
+ JavaScript       | -1       | -1
+ Nim              | -1       | -1
+ Raku             | -1       | -1
+ Ruby             |  1       | -1
+ Rust             | -1       | -1
+ Scala            |  1       | -1
+ Smalltalk        |  1       | n.a.
+```
 
 [^1]: The Rust community had a similar [discussion](https://internals.rust-lang.org/t/the-is-not-empty-method-as-more-clearly-alternative-for-is-empty/) about this topic. 
