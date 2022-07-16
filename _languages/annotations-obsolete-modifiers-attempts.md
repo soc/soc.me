@@ -1,5 +1,5 @@
 ---
-title:  "Language Design: Annotations Obsolete Modifiers – Failed Design Attempts"
+title:  "Language Design: Annotations Obsolete Modifiers – Failed Attempts"
 date:   2021-12-15 14:00:00 +0200
 ---
 

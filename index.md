@@ -37,29 +37,34 @@ layout: index
     <th class="table-topic">Languages</th>
     <td>
       <div><a href="languages/familiarity">Familiarity</a></div>
-      <div><a href="languages/generics">A Syntax Sweet Spot:</a>
+      <div><a href="languages/generics">Easy wins:</a>
         <ul>
+          <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
           <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
-          <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
-          <li><a href="languages/against-mixed-cased-type-names">Use consistent type names</a></li>
+          <li><a href="languages/against-mixed-cased-type-names">Use consistent casing</a></li>
         </ul>
       </div>
-      <div>
-        <a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a>
+      <div>Simplicity matters:
         <ul>
-          <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Design Attempts</a></li>
+          <li><a href="languages/unary-operators-are-unnecessary">Unary Operators are Unnecessary</a></li>
+          <li>Fewer Binary Operators</li>
+          <li><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a>
+            <ul>
+              <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Attempts</a></li>
+            </ul>
+          </li>
+          <li><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></li>
         </ul>
       </div>
-      <div><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></div>
-      <div><a href="languages/popular-but-wrong">Popular, but Wrong</a></div>
-      <div><a href="languages/unary-operators">Unary Operators</a></div>
-      <div><a href="languages/nondefinitional-enums">Nondefinitional Enums</a></div>
-      <div><a href="languages/the-cost-of-everything">The Cost of Everything</a></div>
-      <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
-      <div><a href="languages/package-objects">Package Objects</a></div>
-      <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
-      <div><a href="languages/notes-on-rust">Notes on Rust</a></div>
+      <div>Mistakes were made:
+        <ul>
+          <li><a href="languages/popular-but-wrong">Popular, but Wrong</a></li>
+          <li><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></li>
+          <li><a href="languages/package-objects">Package Objects</a></li>
+          <li><a href="languages/notes-on-rust">Notes on Rust</a></li>
+        </ul>
+      </div>
     </td>
     <td>
       <div>Equality &amp; Identity:
@@ -88,6 +93,7 @@ layout: index
           <li>Streaming</li>
         </ol>
       </div>
+      <div><a href="languages/nondefinitional-enums">Nondefinitional Enums</a></div>
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
@@ -178,6 +184,7 @@ layout: index
       <div><a href="scala/retrospective">Retrospective</a></div>
       <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
       <div><a href="languages/package-objects">Package Objects</a></div>
+      <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
     </td>
     <td>
       <div>scala-enum</div>
@@ -193,9 +200,10 @@ layout: index
       <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
     </td>
     <td>
-      <div><a href="https://www.youtube.com/watch?v=TS1lpKBMkgg">We're Doing It All Wrong</a></div>
-      <div><a href="https://www.youtube.com/watch?v=uiJycy6dFSQ">Scala Collections: Why Not?</a></div>
-      <div><a href="https://www.youtube.com/watch?v=4jh94gowim0">psp collections: views and more</a></div>
+      <div><a href="https://youtu.be/TS1lpKBMkgg">We're Doing It All Wrong</a></div>
+      <div><a href="https://youtu.be/uiJycy6dFSQ">Scala Collections: Why Not?</a></div>
+      <div><a href="https://youtu.be/4jh94gowim0">psp collections: views and more</a></div>
+      <div><a href="https://youtu.be/v8IQ-X2HkGE">The Last Hope for Scala's Infinity War</a></div>
     </td>
   </tr>
 </table>
