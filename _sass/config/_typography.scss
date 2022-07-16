@@ -8,6 +8,7 @@
   --title-font-family:       "Merriweather", serif;
   --base-font-family:        "Source Sans Pro", sans-serif;
   --page-font-family:        "Open Sans", "Source Sans Pro", sans-serif;
+  --mono-font-family:        "Fira Mono", monospace;
 
   --ratio:                   1.2;
   --base:                    1.0;
@@ -38,7 +39,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace;
+  font-family: var(--mono-font-family);
 }
 
 .code {
