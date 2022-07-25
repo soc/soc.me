@@ -36,7 +36,12 @@ layout: index
   <tr>
     <th class="table-topic">Languages</th>
     <td>
-      <div><a href="languages/familiarity">Familiarity</a></div>
+      <div>Design Principles:
+        <ul>
+          <li><a href="languages/modern-minimal">Modern &amp; Minimal</a></li>
+          <li><a href="languages/familiarity">Familiarity</a></li>
+        </ul>
+      </div>
       <div><a href="languages/generics">Easy wins:</a>
         <ul>
           <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
