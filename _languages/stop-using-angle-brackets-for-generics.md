@@ -75,9 +75,7 @@ array.set(0, 23.42)    /* instead of */   array[0] = 23.42
 map.set("name", "Joe") /* instead of */   map["name"] = "Joe"
 ```
 
-At this stage, some small amount of syntax sugar can be considered that would allow every type with
-a `get` method to be written as `instance(arg)` and a `set` method written as `instance(index, arg)`,
-leading to the following code:[^pythonscala]
+A [small amount of syntax sugar](languages/useful-syntax-sugar) can be considered, leading to the following code:[^pythonscala]
 
 ```
 Array(1, 2, 3)         /* instead of */   [1, 2, 3]
