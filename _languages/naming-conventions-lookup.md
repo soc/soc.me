@@ -3,8 +3,8 @@ title:  "Language Design: Naming Conventions – Part 3: Lookup"
 date:   2022-06-07 12:00:00 +0200
 page_previous_title: "Naming Conventions – Part 2: Conversion"
 page_previous_url:   "naming-conventions-conversion"
-page_next_title:     "Naming Conventions – Part 4: Stream"
-page_next_url:       "naming-conventions-stream"
+page_next_title:     "Naming Conventions – Part 4: Streaming"
+page_next_url:       "naming-conventions-streaming"
 ---
 
 <table class="table-medium">
