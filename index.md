@@ -42,7 +42,7 @@ layout: index
           <li><a href="languages/familiarity">Familiarity</a></li>
         </ul>
       </div>
-      <div><a href="languages/generics">Easy wins:</a>
+      <div>Easy wins:
         <ul>
           <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
           <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
@@ -90,6 +90,7 @@ layout: index
           <li><a href="languages/unified-condition-expressions-exceptions">Exceptions</a></li>
         </ol>
       </div>
+      <a href="languages/generics">Type Ascriptions &amp; Generics</a>
       <div>Naming Conventions:
         <ol>
           <li><a href="languages/naming-conventions-creation">Creation</a></li>

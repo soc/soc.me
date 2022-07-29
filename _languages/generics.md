@@ -4,20 +4,18 @@ date:   2017-07-21 12:00:00 +0200
 redirect_from: "/lessons-learned/generics"
 ---
 
-Achieving a language design sweet-spot for the syntax of generics requires two, interconnected
-design decisions:
+Two interconnected design decisions achieve a particularly interesting sweet-spot in language design:
 
 
 1. The `ident: Type` syntax allows consistent and straight-forward placement of generics, compared
-   to languages which use `Type ident`[^identtype]:<br/>
-   Generics (`[T]`) always follow the name of a class or a method, both at the definition-site and at the use-site.
-2. A differentiated use of brackets results in a more regular, easier
-   to understand syntax and has superior readability compared to languages which
-   overload `<>` to stand for generics as well as comparisons and bitshifts,
-   or use `[]` to stand for operations on arrays[^stop-generics]:
-     - `[]` encloses types: everything inbetween is either a type parameter or a type argument
-     - `()` groups: for instance a single expression, a parameter list or a tuple
-     - `{}` sequences: for instance a block that can contain multiple statements and definitions
+   to languages which use `Type ident`[^identtype]:
+   > Generics (`[T]`) always follow the name of a class or a method, both at the definition-site and at the use-site.
+2. A clearly defined use of brackets results in a more regular, easier to understand syntax that has
+   superior readability compared to languages that use `<` and `>` for generics as well as for
+   comparisons and bitshifts, or use `[]` to stand for operations on arrays[^stop-generics]:
+   > `[]` encloses types: everything inbetween is either a type parameter or a type argument.<br/>
+   > `()` groups: for instance a single expression, a parameter list or a tuple.<br/>
+   > `{}` sequences: for instance a block that can contain multiple statements and definitions.
 
 This means that generics do not need to be treated as an "advanced" language concept.
 
@@ -30,14 +28,12 @@ Instead, the mental model becomes so simple that every class or method can be th
 <br/>
 
 ```scala
-class Foo[T](let bar: String) {
-  fun foo[T] = ???
-}
+class Foo[T](let bar: String)
+  fun foo[U] = ???
 
-fun main() {
+fun main()
   let instance = Foo[String]("abc")
-  instance.foo[String]
-}
+  instance.foo[Int64]
 ```  
 
 
