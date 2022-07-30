@@ -13,9 +13,9 @@ Two interconnected design decisions achieve a particularly interesting sweet-spo
 2. A clearly defined use of brackets results in a more regular, easier to understand syntax that has
    superior readability compared to languages that use `<` and `>` for generics as well as for
    comparisons and bitshifts, or use `[]` to stand for operations on arrays[^stop-generics]:
-   > `[]` encloses types: everything inbetween is either a type parameter or a type argument.<br/>
-   > `()` groups: for instance a single expression, a parameter list or a tuple.<br/>
-   > `{}` sequences: for instance a block that can contain multiple statements and definitions.
+   > `[]` _encloses_ type parameters or type arguments<br/>
+   > `()` _groups_ expressions, parameter/argument lists or tuples<br/>
+   > `{}` _sequences_ statements or definitions
 
 This means that generics do not need to be treated as an "advanced" language concept.
 

@@ -58,18 +58,29 @@ let vec: Vec<u32> = Vec::<u32>::new();
             /*or*/ <Vec<u32>>::new();
 ```
 
-#### 3. It allows `[]` to be (ab)used for syntax "conveniences"
+#### 3. It makes the uses of brackets confusing and inconsistent
 
-Many languages used `[]` to add syntax for collection literals (`[1, 2, 3]`) or array lookup
-(`array[0]`), adding pointless complexity to the language for very little benefit – in many cases
-such built-in syntax became dead weight after the languages' preferred choice of data structure
-implementation evolved.[^javalit][^jslit]
+Many legacy languages use `<` and `>` for comparisons, bit-shifts and generics, as well as both `()` and `[]` for function calls.
 
-Using `[]` for generics instead of `<>` shuts down this possibility for good, and encourages the use
-of standard method call brackets (`()`) for these use-cases instead:[^nim]
+Instead, imagine a design where each bracket has a clearly-defined use ...
+
+> `[]` _encloses_ type parameters or type arguments<br/>
+> `()` _groups_ expressions, parameter/argument lists or tuples<br/>
+> `{}` _sequences_ statements or definitions<br/>
+
+... and `<`/`>` is only used as a comparison operator, and not misused as a makeshift bracket.
+
+This substantially simplifies the mental model beginners need to adopt before writing their first program
+(_"`()` is for values, `[]` is for types"_), and encourages the elimination of syntactic special cases like collection literals ...
 
 ```
-Array.get(1, 2, 3)     /* instead of */   [1, 2, 3]
+Array(1, 2, 3)         /* instead of */   [ 1, 2, 3 ]
+Set("a", "b", "c")     /* instead of */   { "a", "b", "c" }
+```
+
+... and array indexing in favor of standard function call syntax[^nim]:
+
+```
 someList.get(0)        /* instead of */   someList[0]
 array.set(0, 23.42)    /* instead of */   array[0] = 23.42
 map.set("name", "Joe") /* instead of */   map["name"] = "Joe"
@@ -78,7 +89,6 @@ map.set("name", "Joe") /* instead of */   map["name"] = "Joe"
 A [small amount of syntax sugar](languages/useful-syntax-sugar) can be considered, leading to the following code:[^pythonscala]
 
 ```
-Array(1, 2, 3)         /* instead of */   [1, 2, 3]
 someList(0)            /* instead of */   someList[0]
 array(0) = 23.42       /* instead of */   array[0] = 23.42
 map("name") = "Joe"    /* instead of */   map["name"] = "Joe"
@@ -89,9 +99,11 @@ map("name") = "Joe"    /* instead of */   map["name"] = "Joe"
 #### Coda
 
 Thankfully, the number of languages using `[]` for generics seems to increase lately –
-with Scala, Python, Nim and Go joining Eiffel, which was pretty much the sole user of `[]` for decades.
+with Scala, Python, and Nim joining Eiffel, which was pretty much the sole user of `[]` for decades.
 
-It remains to be seen whether this turns into tidal change similar to the widespread [adoption of `ident: Type` over `Type ident`](https://soc.me/languages/type-annotations) in modern languages.
+~~It remains to be seen whether this turns into tidal change similar to the widespread
+[adoption of `ident: Type` over `Type ident`](https://soc.me/languages/type-annotations) in modern languages.~~
+_With the recent adoption of `[]` for generics by Go and Carbon this seems to be the likely outcome._
 
 
 [^related]: [Parsing Ambiguity: Type Argument v. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
