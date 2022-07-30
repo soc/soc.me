@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Equality & Identity – Part 5: Fixing Rust"
-date:   2022-06-09 12:00:00 +0200
+date:   2022-06-09
+update: 2022-06-11
 published: false
 ---
 

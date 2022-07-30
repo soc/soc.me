@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Fields & Methods & Properties? – Pick Two!"
-date:   2020-07-07 12:00:00 +0200
+date:   2022-07-07
+update: 2022-07-08
 redirect_from: "languages/stop-building-languages-with-properties"
 ---
 

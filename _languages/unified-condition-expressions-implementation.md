@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Implementation"
-date:   2019-09-21 12:00:00 +0200
+date:   2019-09-21
+update: 2022-06-24
 redirect_from: "/languages/unified-condition-expressions-parsing"
 page_previous_title: "Unified Condition Expressions – Introduction"
 page_previous_url:   "unified-condition-expressions"

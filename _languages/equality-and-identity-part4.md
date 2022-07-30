@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Equality & Identity – Part 4: Fixing Haskell"
-date:   2019-03-14 12:00:00 +0200
+date:   2019-03-14
+update: 2022-06-09
 page_previous_title: "Equality & Identity – Part 3: Solution"
 page_previous_url:   "equality-and-identity-part3"
 page_next_title:     "Comparing and Sorting"

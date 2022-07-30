@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Naming Conventions – Part 2: Conversion"
-date:   2018-06-20 12:00:00 +0200
+date:   2018-06-20
+update: 2022-06-26
 page_previous_title: "Naming Conventions – Part 1: Creation"
 page_previous_url:   "naming-conventions-creation"
 page_next_title:     "Naming Conventions – Part 3: Lookup"

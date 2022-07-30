@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Equality & Identity – Part 1: Overview"
-date:   2017-10-31 12:00:00 +0200
+date:   2017-10-31
+update: 2022-06-08
 redirect_from: "/articles/language-design/equality-and-identity"
 page_next_title:     "Equality & Identity – Part 2: Problems"
 page_next_url:       "equality-and-identity-part2"
