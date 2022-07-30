@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Familiarity – Familiarity is a tie-breaker, not a self-sufficient argument"
-date:   2022-06-10 12:00:00 +0200
+date:   2022-06-10
+update: 2022-07-08
 ---
 
 In the past, many languages did not pick up easily adoptable language design improvements and opted

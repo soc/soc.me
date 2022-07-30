@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Popular, but Wrong"
-date:   2020-10-20 12:00:00 +0200
+date:   2020-10-20
+update: 2022-06-10
 redirect_from:
   - "/languages/popular-wrong-decisions"
   - "/languages/popular-wrong-opinions"

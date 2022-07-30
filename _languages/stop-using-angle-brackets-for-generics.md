@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Stop Using `<>` for Generics"
-date:   2020-04-04 12:00:00 +0200
+date:   2020-04-04
+update: 2022-07-30
 redirect_from: "/languages/stop-using-for-generics"
 ---
 
