@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Nondefinitional Enums"
-date:   2021-08-26 12:00:00 +0200
+date:   2021-08-26
+update: 2022-05-27
 redirect_from: "/languages/better-enums"
 ---
 

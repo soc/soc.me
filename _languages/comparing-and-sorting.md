@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Comparing and Sorting"
-date:   2018-10-31 12:00:00 +0200
+date:   2018-10-31
+update: 2022-06-11
 ---
 
 Similarly to [equality and identity](equality-and-identity-part1), most languages have severely restricted facilities to handle distinct ordering relationships like comparison and sorting.
