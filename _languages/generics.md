@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Generics"
-date:   2017-07-21 12:00:00 +0200
+date:   2017-07-21
+update: 2022-07-30
 redirect_from: "/lessons-learned/generics"
 ---
 

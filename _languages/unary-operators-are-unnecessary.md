@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Unary Operators are Unnecessary"
-date:   2019-09-21 12:00:00 +0200
+date:   2019-09-21
+update: 2022-07-17
 redirect_from: "/languages/unary-operators"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Language Design: Useful Syntax Sugar"
-date:   2020-07-10 12:00:00 +0200
+date:   2022-07-10
 ---
 
 #### `get` sugar

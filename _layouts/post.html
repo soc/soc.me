@@ -11,7 +11,7 @@ layout: default
     {% if title_parts[1] != nil and title_parts[1] != empty %}
     <h3>{{ title_parts[1] }}</h3>
     {% endif %}
-    <div class="date">Published on {{page.date | date: "%Y-%m-%d"}}.</div>
+    <div class="date">Published on {{page.date | date: "%Y-%m-%d"}}.{% if page.update %} Last updated on {{page.update | date: "%Y-%m-%d"}}{% endif %}</div>
     {{ content | markdownify }}
   </article>
   {% include pagination.html %}

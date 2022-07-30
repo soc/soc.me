@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Exceptions"
-date:   2018-04-28 12:00:00 +0200
+date:   2018-04-28
+update: 2022-06-24
 redirect_from: "/languages/unified-condition-syntax-advanced"
 page_previous_title: "Unified Condition Expressions – Implementation"
 page_previous_url:   "unified-condition-expressions-implementation"
@@ -27,4 +28,3 @@ depending on the expressiveness of the core language.
 
 Considering the costs and the complexity involved, it may be a better approach to simply drop exceptions from the design
 of the language and do without this additional layer of control flow.
- 
