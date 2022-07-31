@@ -160,6 +160,7 @@ layout: index
       <div><a href="https://justine.lol/ape.html">αcτµαlly pδrταblε εxεcµταblε</a></div>
       <div><a href="https://gankra.github.io/blah/c-isnt-a-language/">C Isn't A Language Anymore</a></div>
       <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
+      <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
       <div>Ghosts of Unix Past
         <ol>
           <li><a href="https://lwn.net/Articles/411845/">Design patterns</a></li>
