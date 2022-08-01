@@ -141,8 +141,6 @@ layout: index
           <li><a href="https://cfallin.org/blog/2022/06/09/cranelift-regalloc2/">A New Register Allocator</a></li>
         </ul>
       </div>
-      <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking in Swift</a></div>
-      <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
     </td>
   </tr>
   <tr>
@@ -157,10 +155,12 @@ layout: index
     <td></td>
     <td>
       <div><a href="https://www.youtube.com/watch?v=pq1XqP4-qOo">Hybrid Dynamic/Static Linking</a></div>
+      <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking in Swift</a></div>
       <div><a href="https://justine.lol/ape.html">αcτµαlly pδrταblε εxεcµταblε</a></div>
       <div><a href="https://gankra.github.io/blah/c-isnt-a-language/">C Isn't A Language Anymore</a></div>
       <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
       <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
+      <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
       <div>Ghosts of Unix Past
         <ol>
           <li><a href="https://lwn.net/Articles/411845/">Design patterns</a></li>
