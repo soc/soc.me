@@ -107,6 +107,7 @@ layout: index
       <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
     </td>
     <td>
+      <div><a href="https://pointersgonewild.com/2022/05/23/minimalism-in-programming-language-design/">Minimalism in Programming Language Design</a></div>
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
       <div><a href="https://madhadron.com/posts/seven_languages.html">7 programming ur-languages</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
