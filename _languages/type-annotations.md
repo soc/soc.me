@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Use `ident: Type`, not `Type ident`"
-date:   2017-07-21 12:00:00 +0200
+date:   2017-07-21
+update: 2022-08-21
 redirect_from: "/articles/language-design/type-annotations"
 ---
 
@@ -10,8 +11,7 @@ those names carry higher importance.
 
 The `ident: Type` syntax lets developers focus on the name by placing it ahead of its
 type annotation. 
-This means that the vertical offset of names stays consistent, regardless of whether a type
-annotation is present (and how long it is) or not[^type-inference]:
+This means that the vertical offset of names stays consistent, regardless of a type annotation's presence or absence[^type-inference]:
 
 ```scala
 let x: String = "hello"
@@ -63,7 +63,7 @@ the three properties mentioned above:
 
 **C#**
 
-```csharp
+```java
 T id<T>(T x) { ... }
 ```
 
@@ -75,26 +75,26 @@ fun <T> id(x: T): T { ... }
 
 **Ceylon**
 
-```ceylon
+```java
 T id<T>(T x) { ... }
 ```
 
-**Scala**
+**Core**
 
 ```scala
-def id[T](x: T): T = ...
+fun id[T](x: T): T = ...
 ```
 
 Only the last approach delivers all three desirable properties:
 
-|              | Input before output | Definition/usage<br/> consistency | Definition before<br/> usage |
+|              | Input before output | Definition/usage consistency | Definition before usage |
 |--------------|:-------------------:|:----------------------------:|:-----------------------:|
-| ***Java***   | No                  | No                           | Yes                     |
-| ***C#***     | No                  | Yes                          | No                      |
-| ***Kotlin*** | Yes                 | No                           | Yes                     |
-| ***Ceylon*** | No                  | Yes                          | No                      |
-| ***Scala***  | Yes                 | Yes                          | Yes                     |
-{: style="width:100%"}
+| ***Java***   | ❌                   | ❌                            | ✅                       |
+| ***C#***     | ❌                   | ✅                            | ❌                       |
+| ***Kotlin*** | ✅                   | ❌                            | ✅                       |
+| ***Ceylon*** | ❌                   | ✅                            | ❌                       |
+| ***Core***   | ✅                   | ✅                            | ✅                       |
+{: .table-medium .table-layout-auto}
 
 [^type-inference]: type inference means that the compiler can figure out types without having a developer writing them down explicitly
 [^curly]: focusing on curly-brace languages here, as languages like Haskell, ML and OCaml, Idris have slightly different design optima
