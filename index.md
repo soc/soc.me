@@ -72,6 +72,13 @@ layout: index
       </div>
     </td>
     <td>
+      <div class="core-lang">✨ <a href="https://core-lang.dev">The Core Language</a> ✨
+        <ul>
+          <li><a href="https://core-lang.dev/about">About</a></li>
+          <li><a href="https://core-lang.dev/manifesto">Manifesto</a></li>
+        </ul>
+      </div>
+      <br/>
       <div>Equality &amp; Identity:
         <ol>
           <li><a href="languages/equality-and-identity-part1">Overview</a></li>
