@@ -42,4 +42,4 @@ And that's all there is to it!
 
 
 [^identtype]: [Why is `ident: Type` better than `Type ident`?](type-annotations)
-[^stop-generics]: [Stop Using <> for Generics](stop-using-angle-brackets-for-generics)
+[^stop-generics]: [Stop Using `<>` for Generics](stop-using-angle-brackets-for-generics)
