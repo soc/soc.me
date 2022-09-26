@@ -2,7 +2,6 @@
 layout: default
 title: About
 permalink: /about/
-navigation: true
 ---
 
 <div class="wrapper about-wrapper">
