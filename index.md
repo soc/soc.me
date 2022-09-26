@@ -1,5 +1,7 @@
 ---
 layout: index
+title: Index
+navigation: true
 ---
 
 <table class="table-index">
