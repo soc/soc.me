@@ -120,6 +120,7 @@ navigation: true
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
       <div><a href="https://madhadron.com/posts/seven_languages.html">7 programming ur-languages</a></div>
       <div><a href="https://wiki.alopex.li/WirthEvolution">Wirth Evolution:<br/>Pascal Modula-2 Oberon</a></div>
+      <div><a href="https://lawrencecpaulson.github.io/2022/10/05/Standard_ML.html">Memories: Edinburgh ML to Standard ML</a></div>
       <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
