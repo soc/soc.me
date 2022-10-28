@@ -55,7 +55,7 @@ navigation: true
       <div>Simplicity matters:
         <ul>
           <li><a href="languages/unary-operators-are-unnecessary">Unary Operators are Unnecessary</a></li>
-          <li>Fewer Binary Operators</li>
+          <li><a href="languages/binary-operators-are-overused">Binary Operators are Overused</a></li>
           <li><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a>
             <ul>
               <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Attempts</a></li>
