@@ -5,6 +5,8 @@ update: 2022-06-24
 redirect_from: "/languages/unified-condition-syntax-advanced"
 page_previous_title: "Unified Condition Expressions – Implementation"
 page_previous_url:   "unified-condition-expressions-implementation"
+page_next_title:     "Unified Condition Expressions – Comparison with Rust"
+page_next_url:       "unified-condition-expressions-comparison"
 ---
 
 A reasonable question that might be asked is whether this design can be extended to also handle thrown exceptions,
