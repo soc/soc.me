@@ -97,6 +97,7 @@ navigation: true
           <li><a href="languages/unified-condition-expressions">Introduction</a></li>
           <li><a href="languages/unified-condition-expressions-implementation">Implementation</a></li>
           <li><a href="languages/unified-condition-expressions-exceptions">Exceptions</a></li>
+          <li><a href="languages/unified-condition-expressions-comparison">Comparison with Rust</a></li>
         </ol>
       </div>
       <a href="languages/generics">Type Ascriptions &amp; Generics</a>

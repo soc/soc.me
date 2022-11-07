@@ -22,14 +22,12 @@ with a single, unified condition expression that scales from simple one-liners t
 The intention is to cut the different syntax options down to a single one that is still easily recognizable by users,
 not to minimize keywords (i. e. `a == b ? c : d`) or turn conditions into methods (like Smalltalk).
 
-#### Principles
+#### Considerations
 
-- The condition can be split between a common _discriminator_ and individual cases.
-  - This requires doing away with mandatory parentheses around the conditions.
-  - This strongly suggests using a keyword (`then`) to introduce branches, instead of using curly braces,
-    based on readability considerations.
+- The condition can be split between a common _discriminator_ and individual cases.<br>
+  This requires doing away with mandatory parentheses around conditions.
 - The keyword `if` is chosen over other options like `match`, `when`, `switch` or `case`
-  because it is keyword the largest number of developers are familiar with.
+  as it is the keyword most developers are familiar with.
 
 #### Examples
 
@@ -47,10 +45,10 @@ else "z"
 
 ##### one comparison operator on multiple targets
 ```ml
-if x ==                 if x                    /* same as */
-  1.0 then "a"            == 1.0 then "a"       if x == 1.0      then "a"
-  2.0 then "b"            == 2.0 then "b"       else if x == 2.0 then "b"
-      else "z"                   else "z"       else                  "z"
+if x ==       /* same as */    if x             /* same as */       
+  1.0 then "a"                   == 1.0 then "a"       if x == 1.0      then "a"
+  2.0 then "b"                   == 2.0 then "b"       else if x == 2.0 then "b"
+      else "z"                          else "z"       else                  "z"
 ```
 
 ##### different comparison operators, equality and identity
@@ -69,26 +67,26 @@ if xs                               /* same as */
                  else "z"           else                          "z"
 ```
 
-##### pattern matching (`is`), introducing bindings (`$`)
+##### pattern matching (`is`), introducing bindings, flow typing
 ```ml
 if alice
-  .age < 18                  then "18"
-  is Person("Alice", $age)   then "$age"
-  is Person("Bob", _)$person then "{$person.age}"
-                             else "0"
+  .age < 18                 then "18"
+  is Person("Alice", _)     then "{$person.age}"
+  is Person("Bob", let age) then "$age"
+                            else "0"
 ```
 
 ##### pattern matching using "if-let"[^rust][^swift]
 ```ml
-if person is Person("Alice", $age) then "$age" else "o"
+if person is Person("Alice", let age) then "$age" else "o"
 ```
 
 ##### wildcards (`_`) and pattern guards
 ```ml
-if person                         /* same as */      if person is
-  is Person("Alice", _)           then "alice"         Person("Alice", _)           then "alice"
-  is Person(_, $age) && age >= 18 then "adult"         Person(_, $age) && age >= 18 then "adult"
-                                  else "minor"                                      else "minor"
+if person                            /* same as */      if person is
+  is Person("Alice", _)              then "alice"         Person("Alice", _)              then "alice"
+  is Person(_, let age) && age >= 18 then "adult"         Person(_, let age) && age >= 18 then "adult"
+                                     else "minor"                                         else "minor"
 ```
 
 #### Related Work
