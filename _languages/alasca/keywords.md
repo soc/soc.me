@@ -16,6 +16,7 @@ published: false
 - `value` (value types)
 - `alias` (type aliases)
 - `with` ("extends")
+- `enum`
 
 **4 letters** control flow:
 
