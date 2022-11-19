@@ -50,6 +50,7 @@ navigation: true
           <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
           <li><a href="languages/against-mixed-cased-type-names">Use consistent casing</a></li>
+          <li><a href="languages/consistent-keyword-length">Use consistent keyword length</a></li>
         </ul>
       </div>
       <div>Simplicity matters:
