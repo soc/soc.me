@@ -110,7 +110,7 @@ navigation: true
           <li><a href="languages/naming-conventions-streaming">Streaming</a></li>
         </ol>
       </div>
-      <div><a href="languages/nondefinitional-enums">Nondefinitional Enums</a></div>
+      <div><a href="languages/unions">Unions</a></div>
     </td>
     <td>
       <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
