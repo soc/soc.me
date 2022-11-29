@@ -140,7 +140,14 @@ navigation: true
   <tr>
     <th class="table-topic">Runtimes</th>
     <td><a href="runtimes/domains-as-cargo-namespaces">Domains as Cargo Namespaces</a></td>
-    <td></td>
+    <td>
+      <div>Efficient Memory Use:
+        <ol>
+          <li><a href="runtimes/pointer-compression">Pointer Compression</a></li>
+          <li><a href="runtimes/header-compression">Header Compression</a></li>
+        </ol>
+      </div>
+    </td>
     <td>
       <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
     </td>
