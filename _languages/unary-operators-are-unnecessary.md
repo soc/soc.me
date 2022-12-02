@@ -5,6 +5,8 @@ update: 2022-07-17
 redirect_from: "/languages/unary-operators"
 ---
 
+_**TL;DR:** Use methods._
+
 Many languages provide unary operators, usually written as a prefix to the value they apply to.
 
 The most common unary operators are:
@@ -58,22 +60,21 @@ There are two additional benefits to the use methods instead of operators:
 
 Incomplete list of languages and their interpretation of `-1.abs`:
 
-```
-                  | -1.abs | let x = 1; -x.abs
-------------------+----------+---------------------
- C#               | -1       | -1
- D                | -1       | -1
- Dart             | -1       | -1
- Fantom           | -1       | -1
- Groovy           | -1       | -1
- Kitten           |  1       | n.a.
- JavaScript       | -1       | -1
- Nim              | -1       | -1
- Raku             | -1       | -1
- Ruby             |  1       | -1
- Rust             | -1       | -1
- Scala            |  1       | -1
- Smalltalk        |  1       | n.a.
-```
+|             | -1.abs | let x = 1; -x.abs |
+|------------:|-------:|------------------:|
+|          C# |     -1 |                -1 |
+|           D |     -1 |                -1 |
+|        Dart |     -1 |                -1 |
+|      Fantom |     -1 |                -1 |
+|      Groovy |     -1 |                -1 |
+|      Kitten |      1 |              n.a. |
+|  JavaScript |     -1 |                -1 |
+|         Nim |     -1 |                -1 |
+|        Raku |     -1 |                -1 |
+|        Ruby |      1 |                -1 |
+|        Rust |     -1 |                -1 |
+|       Scala |      1 |                -1 |
+|   Smalltalk |      1 |              n.a. |
+{: .table-medium .table-width-small}
 
 [^1]: The Rust community had a similar [discussion](https://internals.rust-lang.org/t/the-is-not-empty-method-as-more-clearly-alternative-for-is-empty/) about this topic. 
