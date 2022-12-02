@@ -17,7 +17,7 @@ be called with `foo.bar.qux()`.
 Package objects are useful, but the way they are defined is pretty weird, and
 one of the obscure, inconsistent and hard to explain decisions of the language:
 
-![Impressum](/assets/img/package-objects-bad.png)
+![package-objects-bad](/assets/img/package-objects-bad.png)
 
 - The package clause is `foo`, not `foo.bar`.
 - Given the package clause, the file package.scala is placed _outside_ of the
@@ -53,7 +53,7 @@ objects is to ignore the confusing syntax completely.
 
 Instead, directly define them this way:
 
-![Impressum](/assets/img/package-objects-good.png)
+![package-objects-good](/assets/img/package-objects-good.png)
 
 Coincidentally, this is exactly the transformation the compiler already does
 when compiling package objects. It side-steps all the unnecessary language
