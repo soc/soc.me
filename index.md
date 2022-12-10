@@ -62,6 +62,7 @@ navigation: true
               <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Attempts</a></li>
             </ul>
           </li>
+          <li><a href="languages/drop-break-and-continue">Drop <kbd>break</kbd> and <kbd>continue</kbd></a></li>
           <li><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></li>
         </ul>
       </div>
