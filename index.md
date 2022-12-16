@@ -74,6 +74,12 @@ navigation: true
           <li><a href="languages/notes-on-rust">Notes on Rust</a></li>
         </ul>
       </div>
+      <div>Rust compatibility:
+        <ul>
+          <li><a href="languages/winding-down-rust-feature-development">Time to wind down Rust feature development</a></li>
+          <li><a href="languages/lower-bar-of-rust-2">The lower bar of a hypothetical Rust 2.0</a></li>
+        </ul>
+      </div>
     </td>
     <td>
       <div class="core-lang">✨ <a href="https://core-lang.dev">The Core Language</a> ✨
