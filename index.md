@@ -133,6 +133,7 @@ navigation: true
       <div><a href="https://lawrencecpaulson.github.io/2022/10/05/Standard_ML.html">Memories: Edinburgh ML to Standard ML</a></div>
       <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
+      <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
