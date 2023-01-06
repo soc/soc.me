@@ -201,6 +201,7 @@ navigation: true
           <li><a href="https://lwn.net/Articles/416494/">High-maintenance designs</a></li>
         </ol>
       </div>
+      <div>On ELF: <a href="https://kestrelcomputer.github.io/kestrel/2018/01/29/on-elf">Part 1</a> <a href="https://kestrelcomputer.github.io/kestrel/2018/02/01/on-elf-2">Part 2</a></div>
     </td>
   </tr>
   <tr>
