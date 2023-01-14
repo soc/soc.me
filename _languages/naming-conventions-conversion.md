@@ -11,15 +11,17 @@ page_next_url:       "naming-conventions-lookup"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 7.5%">Name</th>
-      <th style="width: 27.5%">Example</th>
+      <th style="width: 18%">Name</th>
+      <th style="width: 34%">Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>to</code></td>
-      <td><p><code>array.toList</code></p><p><code>int32Value.toFloat64</code></p><p><code>dictionary.to[Queue]</code></p></td>
+      <td class="code">array.toList
+int32Value.toFloat64
+dictionary.to[Queue]</td>
       <td>
         <ul>
           <li>implies a (potentially lossy) conversion of a value</li>
@@ -29,7 +31,11 @@ page_next_url:       "naming-conventions-lookup"
     </tr>
     <tr>
       <td><code>as</code></td>
-      <td><p><code>int64Value.asFloat64</code></p><p><code>int64Value.as[Float64]</code></p><p><code>stringBuffer.asByteBuffer</code></p><p><code>map.asSetOfEntries</code></p><p><code>setOfEntries.asMap</code></p></td>
+      <td class="code">int64Value.asFloat64
+int64Value.as[Float64]
+stringBuffer.asByteBuffer
+map.asSetOfEntries
+setOfEntries.asMap</td>
       <td>
         <ul>
           <li>implies a verbatim reinterpretation/wrapping/viewing of a value</li>
