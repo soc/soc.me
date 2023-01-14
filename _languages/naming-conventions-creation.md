@@ -10,15 +10,17 @@ page_next_url:       "naming-conventions-conversion"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 7.5%">Name</th>
-      <th style="width: 27.5%">Example</th>
+      <th style="width: 18%">Name</th>
+      <th style="width: 34%">Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>–</td>
-      <td><p><code>List(1, 2, 3)</code></p><p><code>Array(12.3, 45.6)</code></p><p><code>Set("a", "b", "c")</code></p></td>
+      <td class="code">List(1, 2, 3)
+Array(12.3, 45.6)
+Set("a", "b", "c")</td>
       <td>
         <ul>
           <li>primary way of construction</li>
@@ -27,8 +29,8 @@ page_next_url:       "naming-conventions-conversion"
       </td>
     </tr>
     <tr>
-      <td><code>of</code></td>
-      <td><code>Person.of(name, age)</code></td>
+      <td><code>of(val1, ...)</code></td>
+      <td class="code">Person.of(name, age)</td>
       <td>
         <ul>
           <li>secondary way of construction</li>
@@ -38,8 +40,9 @@ page_next_url:       "naming-conventions-conversion"
       </td>
     </tr>
     <tr>
-      <td><code>from</code></td>
-      <td><p><code>Person.from(personEntity)</code></p><p><code>Person.from(family)</code></p></td>
+      <td><code>from(val)</code></td>
+      <td class="code">Person.from(personEntity)
+Person.from(family)</td>
       <td>
         <ul>
           <li>tertiary way of construction</li>
@@ -50,8 +53,9 @@ page_next_url:       "naming-conventions-conversion"
       </td>
     </tr>
     <tr>
-      <td><code>parse</code></td>
-      <td><p><code>Person.parse(string)</code></p><p><code>Int64.parse(string)</code></p></td>
+      <td><code>parse(string)</code></td>
+      <td class="code">Person.parse(string)
+Int64.parse(string)</td>
       <td>
         <ul>
           <li>quaternary way of construction</li>
@@ -61,8 +65,9 @@ page_next_url:       "naming-conventions-conversion"
       </td>
     </tr>
     <tr>
-      <td><code>with</code></td>
-      <td><p><code>person.withAge(23)</code></p><p><code>person.with(age = 23)</code></p></td>
+      <td><code>with(val)</code></td>
+      <td class="code">person.withAge(23)
+person.with(age = 23)</td>
       <td>
         <ul>
           <li>returns a copy of a value with parts replaced by the provided argument</li>
