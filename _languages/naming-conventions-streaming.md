@@ -75,18 +75,41 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>take(amount)</code></p><p><strike><code>keep</code></strike></p><p><strike><code>pick</code></strike></p></td>
-      <td class="code">List(1, 2, 3, 4).take(2)
+      <td><p><code>retainFirst(num)</code></p><p><strike><code>take</code></strike></p><p><strike><code>keep</code></strike></p><p><strike><code>pick</code></strike></p></td>
+      <td class="code">List(1, 2, 3, 4).retainFirst(2)
 <span class="result">--> List(1, 2)</span></td>
       <td>
         <ul>
-          <li>returns a stream that produces the first <code>amount</code> elements of the input stream</li>
+          <li>returns a stream that produces the first <code>num</code> elements of the input stream</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><p><code>takeWhile(pred)</code></p><p><strike><code>keepWhile</code></strike></p><p><strike><code>pickWhile</code></strike></p></td>
-      <td class="code">List(1, 2, 3, 4, 1).takeWhile(_ < 3)
+      <td><p><code>retain(pred)</code></p><p><strike><code>accept</code></strike></p><p><strike><code>select</code></strike></p><p><strike><code>filter</code></strike></p></td>
+      <td class="code">List(1, 2, 3, 1).retain(_ < 2)
+<span class="result">--> List(1, 2, 1)</span></td>
+      <td>
+        <ul>
+          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code></li>
+          <li><code>filter</code> is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out"</li>
+          <li><code>accept</code> is not ideal, as the visitor pattern also makes use of this name</li>
+          <li><code>select</code> is even less ideal, as SQL uses the name for a completely different purpose</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>retainIndex(pred)</code></p></td>
+      <td class="code">List("a", "b", "c").retainIndex(_ % 2 == 0)
+<span class="result">--> List("a", "c")</span></td>
+      <td>
+        <ul>
+          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>retainWhile(pred)</code></p><p><strike><code>takeWhile</code></strike></p><p><strike><code>keepWhile</code></strike></p><p><strike><code>pickWhile</code></strike></p></td>
+      <td class="code">List(1, 2, 3, 1).retainWhile(_ < 3)
 <span class="result">--> List(1, 2)</span></td>
       <td>
         <ul>
@@ -95,28 +118,50 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>takeUntil(pred)</code></p><p><strike><code>keepUntil</code></strike></p><p><strike><code>pickUntil</code></strike></p></td>
-      <td class="code">List(4, 3, 2, 1, 4).takeUntil(_ < 3)
+      <td><p><strike><code>retainUntil(pred)</code></strike></p><p><strike><code>takeUntil</code></strike></p><p><strike><code>keepUntil</code></strike></p><p><strike><code>pickUntil</code></strike></p></td>
+      <td class="code">List(4, 3, 2, 4).retainUntil(_ < 3)
 <span class="result">--> List(4, 3)</span></td>
       <td>
         <ul>
           <li>returns a stream that produces elements of the input stream until the <code>pred</code> evaluates to <code>true</code></li>
+          <li>redundant, equivalent to <code>retainWhile(pred.not)</code></li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><p><code>skip(amount)</code></p><p><strike><code>drop</code></strike></p></td>
-      <td class="code">List(1, 2, 3, 4).skip(1)
+      <td><p><code>rejectFirst(num)</code></p><p><strike><code>skip</code></strike></p><p><strike><code>drop</code></strike></p></td>
+      <td class="code">List(1, 2, 3, 4).rejectFirst(1)
 <span class="result">--> List(2, 3, 4)</span></td>
       <td>
         <ul>
-          <li>returns a stream without the first <code>amount</code> elements of the input stream</li>
+          <li>returns a stream without the first <code>num</code> elements of the input stream</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><p><code>skipWhile(pred)</code></p><p><strike><code>dropWhile</code></strike></p></td>
-      <td class="code">List(1, 2, 3, 4, 1).skipWhile(_ < 2)
+      <td><p><code>reject(pred)</code></p><p><strike><code>filterNot</code></strike></p></td>
+      <td class="code">List(1, 2, 3, 1).reject(_ < 2)
+<span class="result">--> List(3)</span></td>
+      <td>
+        <ul>
+          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code></li>
+          <li><code>filterNot</code> is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out"</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>rejectIndex(pred)</code></p></td>
+      <td class="code">List("a", "b", "c").rejectIndex(_ % 2 == 0)
+<span class="result">--> List("b")</span></td>
+      <td>
+        <ul>
+          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>rejectWhile(pred)</code></p><p><strike><code>skipWhile</code></strike></p><p><strike><code>dropWhile</code></strike></p></td>
+      <td class="code">List(2, 3, 4, 1).rejectWhile(_ < 2)
 <span class="result">--> List(3, 4, 1)</span></td>
       <td>
         <ul>
@@ -125,36 +170,13 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>skipUntil(pred)</code></p><p><strike><code>dropUntil</code></strike></p></td>
-      <td class="code">List(4, 3, 2, 1, 4).skipUntil(_ < 2)
+      <td><p><strike><code>rejectUntil(pred)</code></strike></p><p><strike><code>skipUntil</code></strike></p><p><strike><code>dropUntil</code></strike></p></td>
+      <td class="code">List(3, 2, 1, 4).rejectUntil(_ < 2)
 <span class="result">--> List(1, 4)</span></td>
       <td>
         <ul>
           <li>returns a stream that skips elements of the input stream until <code>pred</code> evaluates to <code>true</code></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><p><code>retain(pred)</code></p><p><strike><code>accept</code></strike></p><p><strike><code>select</code></strike></p></td>
-      <td class="code">List(1, 2, 3, 1).retain(_ < 2)
-<span class="result">--> List(1, 2, 1)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code></li>
-          <li>sometimes called <code>filter</code>, which is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out"</li>
-          <li><code>accept</code> is not ideal, as the visitor pattern also makes use of this name</li>
-          <li><code>select</code> is even less ideal, as SQL uses the name for a completely different purpose</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><code>reject(pred)</code></td>
-      <td class="code">List(1, 2, 3, 1).reject(_ < 2)
-<span class="result">--> List(3)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code></li>
-          <li>sometimes called <code>filterNot</code>, which is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out"</li>
+          <li>redundant, equivalent to <code>rejectWhile(pred.not)</code></li>
         </ul>
       </td>
     </tr>
