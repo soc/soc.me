@@ -191,6 +191,7 @@ navigation: true
       <div><a href="https://justine.lol/ape.html">αcτµαlly pδrταblε εxεcµταblε</a></div>
       <div><a href="https://gankra.github.io/blah/c-isnt-a-language/">C Isn't A Language Anymore</a></div>
       <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
+      <div><a href="https://cor3ntin.github.io/posts/abi/">The Day The Standard Library Died</a></div>
       <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
       <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
       <div>Ghosts of Unix Past
