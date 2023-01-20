@@ -26,7 +26,7 @@ page_previous_url:   "naming-conventions-lookup"
       </td>
     </tr>
     <tr>
-      <td><p><code>mapMany(fun)</code></p><p><strike><code>mapMulti</code></strike></p><p><strike><code>flatMap</code></strike></p><p><strike><code>mapFlat</code></strike></p><p><strike><code>mapAndFlatten</code></strike></p></td>
+      <td><p><code>mapMany(fun)</code></p><p class="obsolete"><s><code>mapMulti</code></s></p><p class="obsolete"><s><code>flatMap</code></s></p><p class="obsolete"><s><code>mapFlat</code></s></p><p class="obsolete"><s><code>mapAndFlatten</code></s></p></td>
       <td class="code">List(1, 2).mapMany(x -> List(x, x))
 <span class="result">--> List(1, 1, 2, 2)</span>
 
@@ -75,7 +75,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>retainFirst(num)</code></p><p><strike><code>take</code></strike></p><p><strike><code>keep</code></strike></p><p><strike><code>pick</code></strike></p></td>
+      <td><p><code>retainFirst(num)</code></p><p class="obsolete"><s><code>take</code></s></p><p class="obsolete"><s><code>keep</code></s></p><p class="obsolete"><s><code>pick</code></s></p></td>
       <td class="code">List(1, 2, 3, 4).retainFirst(2)
 <span class="result">--> List(1, 2)</span></td>
       <td>
@@ -85,7 +85,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>retain(pred)</code></p><p><strike><code>accept</code></strike></p><p><strike><code>select</code></strike></p><p><strike><code>filter</code></strike></p></td>
+      <td><p><code>retain(pred)</code></p><p class="obsolete"><s><code>accept</code></s></p><p class="obsolete"><s><code>select</code></s></p><p class="obsolete"><s><code>filter</code></s></p></td>
       <td class="code">List(1, 2, 3, 1).retain(_ < 2)
 <span class="result">--> List(1, 2, 1)</span></td>
       <td>
@@ -108,7 +108,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>retainWhile(pred)</code></p><p><strike><code>takeWhile</code></strike></p><p><strike><code>keepWhile</code></strike></p><p><strike><code>pickWhile</code></strike></p></td>
+      <td><p><code>retainWhile(pred)</code></p><p class="obsolete"><s><code>takeWhile</code></s></p><p class="obsolete"><s><code>keepWhile</code></s></p><p class="obsolete"><s><code>pickWhile</code></s></p></td>
       <td class="code">List(1, 2, 3, 1).retainWhile(_ < 3)
 <span class="result">--> List(1, 2)</span></td>
       <td>
@@ -118,7 +118,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><strike><code>retainUntil(pred)</code></strike></p><p><strike><code>takeUntil</code></strike></p><p><strike><code>keepUntil</code></strike></p><p><strike><code>pickUntil</code></strike></p></td>
+      <td><p class="obsolete"><s><code>retainUntil(pred)</code></s></p><p class="obsolete"><s><code>takeUntil</code></s></p><p class="obsolete"><s><code>keepUntil</code></s></p><p class="obsolete"><s><code>pickUntil</code></s></p></td>
       <td class="code">List(4, 3, 2, 4).retainUntil(_ < 3)
 <span class="result">--> List(4, 3)</span></td>
       <td>
@@ -129,7 +129,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>rejectFirst(num)</code></p><p><strike><code>skip</code></strike></p><p><strike><code>drop</code></strike></p></td>
+      <td><p><code>rejectFirst(num)</code></p><p class="obsolete"><s><code>skip</code></s></p><p class="obsolete"><s><code>drop</code></s></p></td>
       <td class="code">List(1, 2, 3, 4).rejectFirst(1)
 <span class="result">--> List(2, 3, 4)</span></td>
       <td>
@@ -139,7 +139,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>reject(pred)</code></p><p><strike><code>filterNot</code></strike></p></td>
+      <td><p><code>reject(pred)</code></p><p class="obsolete"><s><code>filterNot</code></s></p></td>
       <td class="code">List(1, 2, 3, 1).reject(_ < 2)
 <span class="result">--> List(3)</span></td>
       <td>
@@ -160,7 +160,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>rejectWhile(pred)</code></p><p><strike><code>skipWhile</code></strike></p><p><strike><code>dropWhile</code></strike></p></td>
+      <td><p><code>rejectWhile(pred)</code></p><p class="obsolete"><s><code>skipWhile</code></s></p><p class="obsolete"><s><code>dropWhile</code></s></p></td>
       <td class="code">List(2, 3, 4, 1).rejectWhile(_ < 2)
 <span class="result">--> List(3, 4, 1)</span></td>
       <td>
@@ -170,7 +170,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><strike><code>rejectUntil(pred)</code></strike></p><p><strike><code>skipUntil</code></strike></p><p><strike><code>dropUntil</code></strike></p></td>
+      <td><p class="obsolete"><s><code>rejectUntil(pred)</code></s></p><p class="obsolete"><s><code>skipUntil</code></s></p><p class="obsolete"><s><code>dropUntil</code></s></p></td>
       <td class="code">List(3, 2, 1, 4).rejectUntil(_ < 2)
 <span class="result">--> List(1, 4)</span></td>
       <td>
@@ -237,7 +237,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>all(pred)</code></p><p><strike><code>forAll</code></strike></p></td>
+      <td><p><code>all(pred)</code></p><p class="obsolete"><s><code>forAll</code></s></p></td>
       <td class="code"></td>
       <td>
         <ul>
@@ -246,7 +246,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>any(pred)</code></p><p><strike><code>forAny</code></strike></p></td>
+      <td><p><code>any(pred)</code></p><p class="obsolete"><s><code>forAny</code></s></p></td>
       <td class="code"></td>
       <td>
         <ul>
@@ -255,7 +255,7 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>none(pred)</code></p><p><strike><code>forNone</code></strike></p></td>
+      <td><p><code>none(pred)</code></p><p class="obsolete"><s><code>forNone</code></s></p></td>
       <td class="code"></td>
       <td>
         <ul>
