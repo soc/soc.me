@@ -229,10 +229,32 @@ List(1, 2).mapMany(x -> None)
       </td>
     </tr>
     <tr>
-      <td><p><code>sum[Numeric]</code></p><p><code>product[Numeric]</code></p><p><code>average[Numeric]</code></p></td>
-      <td class="code"></td>
+      <td><code>sum[Numeric]</code></td>
+      <td class="code">List(1.0, 2.0, 3.0, 4.0).sum
+<span class="result">--> 10.0</span></td>
       <td>
         <ul>
+          <li>computes the sum of the list of numbers</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>product[Numeric]</code></td>
+      <td class="code">List(1.0, 2.0, 3.0, 4.0).product
+<span class="result">--> 24.0</span></td>
+      <td>
+        <ul>
+          <li>computes the product of the list of numbers</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>average[Numeric]</code></td>
+      <td class="code">List(1.0, 2.0, 3.0, 4.0).average
+<span class="result">--> 2.5</span></td>
+      <td>
+        <ul>
+          <li>computes the average of the list of numbers</li>
         </ul>
       </td>
     </tr>
