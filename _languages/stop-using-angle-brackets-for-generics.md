@@ -87,7 +87,7 @@ array.set(0, 23.42)    /* instead of */   array[0] = 23.42
 map.set("name", "Joe") /* instead of */   map["name"] = "Joe"
 ```
 
-A [small amount of syntax sugar](languages/useful-syntax-sugar) can be considered, leading to the following code:[^pythonscala]
+A [small amount of syntax sugar](useful-syntax-sugar) can be considered, leading to the following code:[^pythonscala]
 
 ```
 someList(0)            /* instead of */   someList[0]
