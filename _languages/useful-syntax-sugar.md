@@ -147,7 +147,7 @@ assuming a definition like
 
 ```
 struct Rating(var value: Int32)
-  fun setRating(val: Int32) = ...
+  fun setValue(val: Int32) = ...
 ```
 
 but does not have to pay the complexity cost of adding properties to the language.
