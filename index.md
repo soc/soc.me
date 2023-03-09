@@ -138,6 +138,14 @@ navigation: true
       <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
+      <div>Syntax Comparisons/Overviews:
+        <ol>
+          <li><a href="http://rigaux.org/language-study/syntax-across-languages.html">Rigaux</a></li>
+          <li><a href="https://pldb.com/lists/keywords.html">PLDB</a></li>
+          <li><a href="https://hyperpolyglot.org/">Hyperpolyglot</a></li>
+          <li><a href="http://adam.chlipala.net/mlcomp/">Chlipala</a></li>
+        </ol>
+      </div>
       <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
       <div><a href="https://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
