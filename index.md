@@ -131,6 +131,7 @@ navigation: true
       <div><a href="https://madhadron.com/posts/seven_languages.html">7 programming ur-languages</a></div>
       <div><a href="https://wiki.alopex.li/WirthEvolution">Wirth Evolution:<br/>Pascal Modula-2 Oberon</a></div>
       <div><a href="https://lawrencecpaulson.github.io/2022/10/05/Standard_ML.html">Memories: Edinburgh ML to Standard ML</a></div>
+      <div><a href="https://osa1.net/posts/2023-04-24-ocaml-thoughts.html">My thoughts on OCaml</a></div>
       <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
