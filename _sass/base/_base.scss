@@ -7,6 +7,7 @@
   --background-color-code: #FDFDFD;
   --background-color-quote: var(--background-color-alternate);
   --background-color-warn: #DDAAAA;
+  --background-color-highlight: #ffffaa;
   --link-color: #343A40;
   --link-underline-color: #ADB5BD;
   --link-underline-color-hover: #868E96;
@@ -24,6 +25,7 @@
     --background-color-code: #222222;
     --background-color-quote: var(--background-color-alternate);
     --background-color-warn: var(--color-red-dark);
+    --background-color-highlight: #666644;
     --link-color: #DDDDDD;
     --link-underline-color: #BBBBBB;
     --link-underline-color-hover: #DDDDDD;
@@ -99,6 +101,10 @@ a {
   }
 }
 
+:target {
+  background-color: var(--background-color-highlight);
+}
+
 main a {
   text-decoration-line: underline;
   text-decoration-color: var(--link-underline-color);
@@ -164,8 +170,8 @@ table.table-small tr td:first-child {
   border-right: 2px solid #cccccc;
 }
 
-td > div {
-  padding: 3px 0;
+td > div, td > section {
+  padding: 3px 0 6px 0;
 }
 
 // Lists
