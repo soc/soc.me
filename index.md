@@ -38,13 +38,13 @@ navigation: true
   <tr>
     <th class="table-topic">Languages</th>
     <td>
-      <div>Design Principles:
+      <section id="design-principles">Design Principles:
         <ul>
           <li><a href="languages/modern-minimal">Modern &amp; Minimal</a></li>
           <li><a href="languages/familiarity">Familiarity</a></li>
         </ul>
-      </div>
-      <div>Easy wins:
+      </section>
+      <section id="easy-wins">Easy wins:
         <ul>
           <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
           <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
@@ -52,8 +52,8 @@ navigation: true
           <li><a href="languages/against-mixed-cased-type-names">Use consistent casing</a></li>
           <li><a href="languages/consistent-keyword-length">Use consistent keyword length</a></li>
         </ul>
-      </div>
-      <div>Simplicity matters:
+      </section>
+      <section id="simplicity-matters">Simplicity matters:
         <ul>
           <li><a href="languages/unary-operators-are-unnecessary">Unary Operators are Unnecessary</a></li>
           <li><a href="languages/binary-operators-are-overused">Binary Operators are Overused</a></li>
@@ -65,31 +65,31 @@ navigation: true
           <li><a href="languages/drop-break-and-continue">Drop <kbd>break</kbd> and <kbd>continue</kbd></a></li>
           <li><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></li>
         </ul>
-      </div>
-      <div>Mistakes were made:
+      </section>
+      <section id="mistakes-were-made">Mistakes were made:
         <ul>
           <li><a href="languages/popular-but-wrong">Popular, but Wrong</a></li>
           <li><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></li>
           <li><a href="languages/package-objects">Package Objects</a></li>
           <li><a href="languages/notes-on-rust">Notes on Rust</a></li>
         </ul>
-      </div>
-      <div>Rust compatibility:
+      </section>
+      <section id="rust-compatibility">Rust compatibility:
         <ul>
           <li><a href="languages/winding-down-rust-feature-development">Time to wind down Rust feature development</a></li>
           <li><a href="languages/lower-bar-of-rust-2">The lower bar of a hypothetical Rust 2.0</a></li>
         </ul>
-      </div>
+      </section>
     </td>
     <td>
-      <div class="core-lang">✨ <a href="https://core-lang.dev">The Core Language</a> ✨
+      <section id="core-lang" class="core-lang">✨ <a href="https://core-lang.dev">The Core Language</a> ✨
         <ul>
           <li><a href="https://core-lang.dev/about">About</a></li>
           <li><a href="https://core-lang.dev/manifesto">Manifesto</a></li>
         </ul>
-      </div>
+      </section>
       <br/>
-      <div>Equality &amp; Identity:
+      <section id="equality-and-identity">Equality &amp; Identity:
         <ol>
           <li><a href="languages/equality-and-identity-part1">Overview</a></li>
           <li><a href="languages/equality-and-identity-part2">Problems</a></li>
@@ -98,25 +98,25 @@ navigation: true
           <li>Fixing Rust</li>
           <li>Fixing Swift</li>
         </ol>
-      </div>
+      </section>
       <div><a href="languages/comparing-and-sorting">Comparing &amp; Sorting</a></div>
-      <div>Unified Condition Expressions:
+      <section id="unified-condition-expressions">Unified Condition Expressions:
         <ol>
           <li><a href="languages/unified-condition-expressions">Introduction</a></li>
           <li><a href="languages/unified-condition-expressions-implementation">Implementation</a></li>
           <li><a href="languages/unified-condition-expressions-exceptions">Exceptions</a></li>
           <li><a href="languages/unified-condition-expressions-comparison">Comparison with Rust</a></li>
         </ol>
-      </div>
-      <a href="languages/generics">Type Ascriptions &amp; Generics</a>
-      <div>Naming Conventions:
+      </section>
+      <div><a href="languages/generics">Type Ascriptions &amp; Generics</a></div>
+      <section id="naming-conventions">Naming Conventions:
         <ol>
           <li><a href="languages/naming-conventions-creation">Creation</a></li>
           <li><a href="languages/naming-conventions-conversion">Conversion</a></li>
           <li><a href="languages/naming-conventions-lookup">Lookup</a></li>
           <li><a href="languages/naming-conventions-streaming">Streaming</a></li>
         </ol>
-      </div>
+      </section>
       <div><a href="languages/unions">Unions</a></div>
     </td>
     <td>
@@ -158,12 +158,12 @@ navigation: true
     <th class="table-topic">Runtimes</th>
     <td><a href="runtimes/domains-as-cargo-namespaces">Domains as Cargo Namespaces</a></td>
     <td>
-      <div>Efficient Memory Use:
+      <section id="efficient-memory-use">Efficient Memory Use:
         <ol>
           <li><a href="runtimes/pointer-compression">Pointer Compression</a></li>
           <li><a href="runtimes/header-compression">Header Compression</a></li>
         </ol>
-      </div>
+      </section>
     </td>
     <td>
       <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
@@ -174,14 +174,14 @@ navigation: true
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
       <div><a href="https://shipilev.net/jvm/anatomy-quarks/">JVM Anatomy Quarks</a></div>
       <div><a href="https://v8.dev/blog/pointer-compression/">Pointer Compression in V8</a></div>
-      <div>Cranelift Backend:
+      <section id="cranelift-backend">Cranelift Backend:
         <ul>
           <li><a href="https://cfallin.org/blog/2020/09/18/cranelift-isel-1/">Instruction Selection</a></li>
           <li><a href="https://cfallin.org/blog/2021/01/22/cranelift-isel-2/">Compiler Efficiency</a></li>
           <li><a href="https://cfallin.org/blog/2021/03/15/cranelift-isel-3/">Correct Register Allocation</a></li>
           <li><a href="https://cfallin.org/blog/2022/06/09/cranelift-regalloc2/">A New Register Allocator</a></li>
         </ul>
-      </div>
+      </section>
     </td>
   </tr>
   <tr>
@@ -203,14 +203,14 @@ navigation: true
       <div><a href="https://cor3ntin.github.io/posts/abi/">The Day The Standard Library Died</a></div>
       <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
       <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
-      <div>Ghosts of Unix Past
+      <section id="ghost-of-unix-past">Ghosts of Unix Past
         <ol>
           <li><a href="https://lwn.net/Articles/411845/">Design patterns</a></li>
           <li><a href="https://lwn.net/Articles/412131/">Conflated designs</a></li>
           <li><a href="https://lwn.net/Articles/414618/">Unfixable designs</a></li>
           <li><a href="https://lwn.net/Articles/416494/">High-maintenance designs</a></li>
         </ol>
-      </div>
+      </section>
       <div>On ELF: <a href="https://kestrelcomputer.github.io/kestrel/2018/01/29/on-elf">Part 1</a> <a href="https://kestrelcomputer.github.io/kestrel/2018/02/01/on-elf-2">Part 2</a></div>
     </td>
   </tr>
