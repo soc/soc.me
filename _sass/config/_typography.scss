@@ -5,10 +5,12 @@
 // Our variables
 //-------------------------------------
 :root {
-  --title-font-family:       "Merriweather", serif;
-  --base-font-family:        "Source Sans Pro", sans-serif;
-  --page-font-family:        "Open Sans", "Source Sans Pro", sans-serif;
-  --mono-font-family:        "Fira Mono", monospace;
+  --title-font-family:         "Merriweather", serif;
+  --base-font-family:          "Sofia Sans", "Source Sans Pro", sans-serif;
+  --base-fallback-font-family: "Source Sans Pro", sans-serif;
+  --base-compact-font-family:  "Sofia Sans Semi Condensed", "Source Sans Pro", sans-serif;
+  --page-font-family:          "Sofia Sans", "Open Sans", sans-serif;
+  --mono-font-family:          "Fira Mono", monospace;
 
   --ratio:                   1.2;
   --base:                    1.0;
@@ -159,4 +161,19 @@ p {
 
 p + ul, p + ol {
   margin-top: calc(var(--base-line) / -2);
+}
+
+sup {
+  font-family: var(--base-fallback-font-family);
+}
+
+.compact {
+  font-family: var(--base-compact-font-family);
+  font-weight: 420;
+}
+
+@media #{$medium-up} {
+  .compact {
+    font-weight: 320;
+  }
 }
