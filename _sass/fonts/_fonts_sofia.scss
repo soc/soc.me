@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Sofia Sans';
+  font-weight: 100 900;
+  font-style: normal;
+  src:  local('Sofia Sans'),
+        url("/assets/fonts/SofiaSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans';
+  font-weight: 100 900;
+  font-style: italic;
+  src:  local('Sofia Sans Italic'),
+        url("/assets/fonts/SofiaSans-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-weight: 100 900;
+  font-style: normal;
+  src: local('Sofia Sans Semi Condensed'),
+  url("/assets/fonts/SofiaSansSemiCondensed.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans Semi Condensed';
+  font-weight: 100 900;
+  font-style: italic;
+  src: local('Sofia Sans Semi Condensed Italic'),
+  url("/assets/fonts/SofiaSansSemiCondensed-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans Condensed';
+  font-weight: 100 900;
+  font-style: normal;
+  src: local('Sofia Sans Condensed'),
+  url("/assets/fonts/SofiaSansCondensed.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans Condensed';
+  font-weight: 100 900;
+  font-style: italic;
+  src: local('Sofia Sans Condensed Italic'),
+  url("/assets/fonts/SofiaSansCondensed-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans Extra Condensed';
+  font-weight: 100 900;
+  font-style: normal;
+  src: local('Sofia Sans Extra Condensed'),
+  url("/assets/fonts/SofiaSansExtraCondensed.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sofia Sans Extra Condensed';
+  font-weight: 100 900;
+  font-style: italic;
+  src: local('Sofia Sans Extra Condensed Italic'),
+  url("/assets/fonts/SofiaSansExtraCondensed-Italic.ttf") format("truetype");
+}
