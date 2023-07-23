@@ -116,24 +116,41 @@ main a {
   }
 }
 
-.table-topic {
-  width: 6em;
+// Frontpage
+// -------------------------
+
+.frontpage {
+  a {
+    text-decoration-line: none;
+  }
+
+  table.table-index {
+    table-layout: fixed;
+    line-height: 110%;
+    ol, ul {
+      padding-left: 1em;
+      li {
+        margin-bottom: 0;
+        line-height: 100%;
+      }
+    }
+  }
+
+  th.table-topic {
+    width: 6em;
+    padding: 12px;
+  }
+
+  td > div, td > section {
+    padding: 4px 0 8px 0;
+  }
 }
+
+// Tables
+// -------------------------
 
 table.table-width-small {
   width: 30em;
-}
-
-table.table-index {
-  table-layout: fixed;
-  line-height: 110%;
-  ol, ul {
-    padding-left: 1em;
-    li {
-      margin-bottom: 0;
-      line-height: 100%;
-    }
-  }
 }
 
 table.table-medium {
@@ -172,10 +189,6 @@ table.table-small tr th:first-child,
 table.table-small tr td:first-child {
   font-weight: bold;
   border-right: 2px solid #cccccc;
-}
-
-td > div, td > section {
-  padding: 3px 0 6px 0;
 }
 
 // Lists
