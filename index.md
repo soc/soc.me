@@ -38,22 +38,22 @@ navigation: true
   <tr>
     <th class="table-topic">Languages</th>
     <td>
-      <section id="design-principles">Design Principles:
+      <section id="design-principles"><i>Design Principles:</i>
         <ul>
           <li><a href="languages/modern-minimal">Modern &amp; Minimal</a></li>
           <li><a href="languages/familiarity">Familiarity</a></li>
         </ul>
       </section>
-      <section id="easy-wins">Easy wins:
+      <section id="easy-wins"><i>Easy wins:</i>
         <ul>
           <li><a href="languages/useful-syntax-sugar">Useful Syntax Sugar</a></li>
-          <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd><br/>for Generics</a></li>
+          <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd> for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
           <li><a href="languages/against-mixed-cased-type-names">Use consistent casing</a></li>
           <li><a href="languages/consistent-keyword-length">Use consistent keyword length</a></li>
         </ul>
       </section>
-      <section id="simplicity-matters">Simplicity matters:
+      <section id="simplicity-matters"><i>Simplicity matters:</i>
         <ul>
           <li><a href="languages/unary-operators-are-unnecessary">Unary Operators are Unnecessary</a></li>
           <li><a href="languages/binary-operators-are-overused">Binary Operators are Overused</a></li>
@@ -62,19 +62,19 @@ navigation: true
               <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Attempts</a></li>
             </ul>
           </li>
-          <li><a href="languages/drop-break-and-continue">Drop <kbd>break</kbd> and <kbd>continue</kbd></a></li>
+          <li><a href="languages/drop-break-and-continue" class="compact">Drop <kbd>break</kbd> and <kbd>continue</kbd></a></li>
           <li><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></li>
         </ul>
       </section>
-      <section id="mistakes-were-made">Mistakes were made:
+      <section id="mistakes-were-made"><i>Mistakes were made:</i>
         <ul>
           <li><a href="languages/popular-but-wrong">Popular, but Wrong</a></li>
-          <li><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></li>
+          <li><a href="languages/implicit-numeric-conversions" class="compact">Implicit Numeric Conversions</a></li>
           <li><a href="languages/package-objects">Package Objects</a></li>
           <li><a href="languages/notes-on-rust">Notes on Rust</a></li>
         </ul>
       </section>
-      <section id="rust-compatibility">Rust compatibility:
+      <section id="rust-compatibility"><i>Rust compatibility:</i>
         <ul>
           <li><a href="languages/winding-down-rust-feature-development">Time to wind down Rust feature development</a></li>
           <li><a href="languages/lower-bar-of-rust-2">The lower bar of a hypothetical Rust 2.0</a></li>
@@ -89,7 +89,7 @@ navigation: true
         </ul>
       </section>
       <br/>
-      <section id="equality-and-identity">Equality &amp; Identity:
+      <section id="equality-and-identity"><i>Equality &amp; Identity:</i>
         <ol>
           <li><a href="languages/equality-and-identity-part1">Overview</a></li>
           <li><a href="languages/equality-and-identity-part2">Problems</a></li>
@@ -100,7 +100,7 @@ navigation: true
         </ol>
       </section>
       <div><a href="languages/comparing-and-sorting">Comparing &amp; Sorting</a></div>
-      <section id="unified-condition-expressions">Unified Condition Expressions:
+      <section id="unified-condition-expressions"><i>Unified Condition Expressions:</i>
         <ol>
           <li><a href="languages/unified-condition-expressions">Introduction</a></li>
           <li><a href="languages/unified-condition-expressions-implementation">Implementation</a></li>
@@ -109,7 +109,7 @@ navigation: true
         </ol>
       </section>
       <div><a href="languages/generics">Type Ascriptions &amp; Generics</a></div>
-      <section id="naming-conventions">Naming Conventions:
+      <section id="naming-conventions"><i>Naming Conventions:</i>
         <ol>
           <li><a href="languages/naming-conventions-creation">Creation</a></li>
           <li><a href="languages/naming-conventions-conversion">Conversion</a></li>
@@ -136,10 +136,10 @@ navigation: true
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
-      <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
+      <div><a href="https://pling.jondgoodwin.com/post/cyclone/" class="compact">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
-      <div>Syntax Comparisons/Overviews:
+      <div><i class="compact">Syntax Comparisons/Overviews:</i>
         <ol>
           <li><a href="http://rigaux.org/language-study/syntax-across-languages.html">Rigaux</a></li>
           <li><a href="https://pldb.com/lists/keywords.html">PLDB</a></li>
@@ -156,9 +156,9 @@ navigation: true
   </tr>
   <tr>
     <th class="table-topic">Runtimes</th>
-    <td><a href="runtimes/domains-as-cargo-namespaces">Domains as Cargo Namespaces</a></td>
+    <td><a href="runtimes/domains-as-cargo-namespaces" class="compact">Domains as Cargo Namespaces</a></td>
     <td>
-      <section id="efficient-memory-use">Efficient Memory Use:
+      <section id="efficient-memory-use"><i>Efficient Memory Use:</i>
         <ol>
           <li><a href="runtimes/pointer-compression">Pointer Compression</a></li>
           <li><a href="runtimes/header-compression">Header Compression</a></li>
@@ -174,7 +174,7 @@ navigation: true
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
       <div><a href="https://shipilev.net/jvm/anatomy-quarks/">JVM Anatomy Quarks</a></div>
       <div><a href="https://v8.dev/blog/pointer-compression/">Pointer Compression in V8</a></div>
-      <section id="cranelift-backend">Cranelift Backend:
+      <section id="cranelift-backend"><i>Cranelift Backend:</i>
         <ul>
           <li><a href="https://cfallin.org/blog/2020/09/18/cranelift-isel-1/">Instruction Selection</a></li>
           <li><a href="https://cfallin.org/blog/2021/01/22/cranelift-isel-2/">Compiler Efficiency</a></li>
@@ -187,7 +187,7 @@ navigation: true
   <tr>
     <th class="table-topic">Interfaces</th>
     <td>
-      <div><a href="interfaces/improving-the-xfce-settings-ui">Improving the XFCE Settings UI</a></div>
+      <div><a href="interfaces/improving-the-xfce-settings-ui" class="compact">Improving the XFCE Settings UI</a></div>
     </td>
     <td>
       <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic<br/>Package Manager UI</a></div>
@@ -202,8 +202,8 @@ navigation: true
       <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
       <div><a href="https://cor3ntin.github.io/posts/abi/">The Day The Standard Library Died</a></div>
       <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
-      <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
-      <section id="ghost-of-unix-past">Ghosts of Unix Past
+      <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf" class="compact">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
+      <section id="ghost-of-unix-past"><i>Ghosts of Unix Past:</i>
         <ol>
           <li><a href="https://lwn.net/Articles/411845/">Design patterns</a></li>
           <li><a href="https://lwn.net/Articles/412131/">Conflated designs</a></li>
@@ -252,7 +252,7 @@ navigation: true
     <td>
       <div><a href="https://youtu.be/TS1lpKBMkgg">We're Doing It All Wrong</a></div>
       <div><a href="https://youtu.be/uiJycy6dFSQ">Scala Collections: Why Not?</a></div>
-      <div><a href="https://youtu.be/4jh94gowim0">psp collections: views and more</a></div>
+      <div><a href="https://youtu.be/4jh94gowim0" class="compact">psp collections: views and more</a></div>
       <div><a href="https://youtu.be/v8IQ-X2HkGE">The Last Hope for Scala's Infinity War</a></div>
     </td>
   </tr>
