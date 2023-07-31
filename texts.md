@@ -16,7 +16,7 @@ navigation: true
   <br/>
   <h2 id="date-{{currentdate}}">{{ currentdate }}</h2>
   {% endif %}
-  {% unless post.unlink %}<a href="{{ site.baseurl }}{{ post.url }}">{% endunless %}
+  {% unless post.unlink %}<a href="{{ site.baseurl }}{{ post.url | remove: ".html" }}">{% endunless %}
   {{ post.title }}
   {% unless post.unlink %}</a>{% endunless %}<br/>
   {% assign date = currentdate %}
