@@ -12,6 +12,7 @@
   --link-underline-color: #ADB5BD;
   --link-underline-color-hover: #868E96;
   --table-color-alternate: #EEEEEE;
+  --diagram-color: #000000;
 }
 
 /* dark mode */
@@ -30,6 +31,7 @@
     --link-underline-color: #BBBBBB;
     --link-underline-color-hover: #DDDDDD;
     --table-color-alternate: #444444;
+    --diagram-color: #FFFFFF;
     ::selection {
       color: #FFFFFF;
       background-color: #212529;
@@ -85,6 +87,13 @@ figure > img {
 
 figcaption {
   font-size: $small;
+}
+
+// Diagrams
+// -------------------------
+center.md > svg.diagram {
+  stroke: var(--diagram-color);
+  fill: var(--diagram-color);;
 }
 
 // Links
