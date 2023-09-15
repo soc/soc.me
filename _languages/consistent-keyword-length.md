@@ -1,13 +1,14 @@
 ---
 title:  "Language Design: Use Consistent Keyword Length"
 date:   2018-09-07
-update: 2022-12-02
+update: 2023-09-16
 ---
 
-**6 letters** namespaces – declaring namespaces and bringing namespaces into scope:
+**6 letters** namespaces – declaring and managing namespaces:
 
 - `module` (unifies "object" and "package")
 - `import`
+- `export`
 
 **5 letters** "big" definitions (types):
 
@@ -16,7 +17,6 @@ update: 2022-12-02
 - `union` (alternative to `enum`)
 - `trait` (interface/typeclass)
 - `alias` (type alias)
-- `const`
 
 **4 letters** control flow:
 
