@@ -139,6 +139,7 @@ navigation: true
       <div><a href="https://pling.jondgoodwin.com/post/cyclone/" class="compact">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
+      <div><a href="https://devblogs.microsoft.com/oldnewthing/20230904-00/?p=108704" class="compact">Shift Larger Than Register Size</a></div>
       <div><i class="compact">Syntax Comparisons/Overviews:</i>
         <ol>
           <li><a href="http://rigaux.org/language-study/syntax-across-languages.html">Rigaux</a></li>
