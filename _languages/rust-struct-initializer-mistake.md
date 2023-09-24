@@ -57,7 +57,7 @@ becoming the next "best practice".
 
 ##### Needless Ambiguity
 
-Using `{` for struct initialization also means that something as trivial as `if foo {` is ambiguous in Rust.
+Using `{` for struct initialization also means that something as trivial as `if foo {` is ambiguous to parse in Rust.
 
 
 ##### Lack of Consistent Rules for Type Ascriptions
@@ -67,12 +67,6 @@ Languages from the 70ies managed to get this right, Rust somehow regressed on th
 [type ascriptions](https://rust-lang.github.io/rfcs/0803-type-ascription.html) and
 [giving up on it after 8 years](https://rust-lang.github.io/rfcs/3307-de-rfc-type-ascription.html).
 
-
-##### Default Parameters Made Hard
-
-Using `:` for struct initialization means that it's not a good syntax options for extending the language with default parameters:
-
-    struct X { x: String: "foo" } // ugly
 
 #### A Solution
 
