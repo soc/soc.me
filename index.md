@@ -227,7 +227,10 @@ navigation: true
       <div><a href="hardware/keyboard-setup">Keyboard Setup</a></div>
     </td>
     <td></td>
-    <td><a href="https://os.phil-opp.com/">Writing an OS in Rust</a></td>
+    <td>
+      <div><a href="https://os.phil-opp.com/">Writing an OS in Rust</a></div>
+      <div><a href="https://gist.github.com/erincandescent/8a10eeeea1918ee4f9d9982f7618ef68">RISC-V: The Middling/Bad/Ugly</a></div>
+    </td>
   </tr>
   <tr>
     <th class="table-topic">Scala</th>
