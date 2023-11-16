@@ -1,6 +1,7 @@
 ---
 title:  "The lower bar of a hypothetical Rust 2.0"
 date:   2022-12-18
+update: 2023-11-16
 ---
 
 _**TL;DR:** Rust 2.0 is not going to happen, but here are fixes that would make it actually worthwhile._
@@ -13,7 +14,7 @@ A [recent article](https://www.ncameron.org/blog/rust-in-2023/) touching on "Rus
 </div>
 
 For Rust, we know the exact coordinates of the first boundary, but very little about the second boundary
-as such "critical" engagement is often poorly received in the Rust community and no reasonably complete overview exists.[^1][^2]
+as such "critical" engagement is often poorly received in the Rust community and no reasonably complete overview exists.[^1][^2][^3]
 
 Nevertheless, it only needs a cursory look to conclude that "Rust 2.0" is very unlikely:
 The lower bar is above the upper one, i. e. the necessary change is larger than the change that
@@ -58,20 +59,20 @@ not a useful feature.
 
 #### Make generics use `[]` instead of `<>`/`::<>`
 
-Turns out "trying to preserve the strangeness budget"[^3] can't fix a [broken design](stop-using-angle-brackets-for-generics).
+Turns out "trying to preserve the strangeness budget"[^4] can't fix a [broken design](stop-using-angle-brackets-for-generics).
 
 Pretending it's not broken doesn't help either, otherwise we would have seen results by now,
 because various languages tried that approach really hard for a few decades already.  
 
 #### Remove the hierarchy between `Eq`/`Ord` and `PartialEq`/`PartialOrd` traits
 
-This means that floating point values can correctly implement the total order operation as defined in the IEEE754 spec.[^4]
+This means that floating point values can correctly implement the total order operation as defined in the IEEE754 spec.[^5]
 
 #### Drop `::`
 
 The distinction between path navigation (`::`) and member access (`.`) is not important enough to bother users with it at every single occassion.
 
-Instead, let the IDE handle it with some syntax coloring and be done with it.[^5]
+Instead, let the IDE handle it with some syntax coloring and be done with it.
 
 #### Drop `as`
 
@@ -91,6 +92,6 @@ Instead, use the vastly better [`is` design](unified-condition-expressions-compa
 
 [^1]: ["Does Rust have any design mistakes?"](https://old.reddit.com/r/rust/comments/wvynot/does_rust_have_any_design_mistakes/)
 [^2]: [label:rust-2-breakage-wishlist](https://github.com/rust-lang/rust/issues?q=label%3Arust-2-breakage-wishlist)
-[^3]: [The language strangeness budget](https://steveklabnik.com/writing/the-language-strangeness-budget)
-[^4]: "Aaaakchually, fLoAtS dO NoT hAvE a TotAl OrDeR" – Please read the IEEE754 spec.
-[^5]: "bUt mY gReAt-aUnT'S ThIrD CoUsIn kNoWs a nEiGhBoR WhOsE CaR MeChAnIc HaS A DiSpLaY WiTh oNlY tWo cOlOrS!1!" – Please go away.
+[^3]: [Broken and un-fixable parts of Rust](https://rust-lang.zulipchat.com/#narrow/stream/213817-t-lang/topic/broken.20and.20un-fixable.20parts.20of.20Rust)
+[^4]: [The language strangeness budget](https://steveklabnik.com/writing/the-language-strangeness-budget)
+[^5]: "Aaaakchually, float do not have a total order!?" – Please read the IEEE754 spec.
