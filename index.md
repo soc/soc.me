@@ -85,7 +85,7 @@ navigation: true
       <section id="core-lang" class="core-lang">✨ <a href="https://core-lang.dev">The Core Language</a> ✨
         <ul>
           <li><a href="https://core-lang.dev/about">About</a></li>
-          <li><a href="https://core-lang.dev/manifesto">Manifesto</a></li>
+          <li><a href="https://core-lang.dev/design">Design</a></li>
         </ul>
       </section>
       <br/>
