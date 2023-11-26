@@ -232,33 +232,4 @@ navigation: true
       <div><a href="https://gist.github.com/erincandescent/8a10eeeea1918ee4f9d9982f7618ef68">RISC-V: The Middling/Bad/Ugly</a></div>
     </td>
   </tr>
-  <tr>
-    <th class="table-topic">Scala</th>
-    <td>
-      <div><a href="scala/departure">Departure</a></div>
-      <div><a href="scala/retrospective">Retrospective</a></div>
-      <div><a href="languages/implicit-numeric-conversions">Implicit Numeric Conversions</a></div>
-      <div><a href="languages/package-objects">Package Objects</a></div>
-      <div><a href="languages/rusts-into-in-scala">Rust's <kbd>Into</kbd> in Scala</a></div>
-    </td>
-    <td>
-      <div>scala-enum</div>
-      <div>scala-java-time</div>
-      <div>SBS</div>
-      <div>Documentation<br/>&amp; Website Overhaul</div>
-    </td>
-    <td>
-      <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
-      <div><a href="talks/scalaworld-2015">Compiler Hacking</a></div>
-      <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
-      <div><a href="talks/scaladays-2014">Simplifying Scala</a></div>
-      <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
-    </td>
-    <td>
-      <div><a href="https://youtu.be/TS1lpKBMkgg">We're Doing It All Wrong</a></div>
-      <div><a href="https://youtu.be/uiJycy6dFSQ">Scala Collections: Why Not?</a></div>
-      <div><a href="https://youtu.be/4jh94gowim0" class="compact">psp collections: views and more</a></div>
-      <div><a href="https://youtu.be/v8IQ-X2HkGE">The Last Hope for Scala's Infinity War</a></div>
-    </td>
-  </tr>
 </table>
