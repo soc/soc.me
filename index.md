@@ -30,9 +30,10 @@ navigation: true
     <td>
       <div><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Unicode &amp; Character Sets</a></div>
       <div><a href="https://googleprojectzero.blogspot.de/2016/02/the-definitive-guide-on-win32-to-nt.html">Path handling on Windows</a></div>
-      <div><a href="https://yakking.branchable.com/posts/falsehoods-programmers-believe-about-file-paths/">Falsehoods about paths</a></div>
-      <div><a href="https://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a></div>    </td>
+    </td>
     <td>
+      <div><a href="https://yakking.branchable.com/posts/falsehoods-programmers-believe-about-file-paths/">Falsehoods about paths</a></div>
+      <div><a href="https://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a></div>
     </td>
   </tr>
   <tr>
@@ -50,19 +51,19 @@ navigation: true
           <li><a href="languages/stop-using-angle-brackets-for-generics">Use <kbd>[]</kbd>, not <kbd><></kbd> for Generics</a></li>
           <li><a href="languages/type-annotations">Use<kbd> ident: Type</kbd>,<br/>not<kbd> Type ident</kbd></a></li>
           <li><a href="languages/against-mixed-cased-type-names">Use consistent casing</a></li>
-          <li><a href="languages/consistent-keyword-length">Use consistent keyword length</a></li>
+          <li><a href="languages/consistent-keyword-length" class="compact">Use consistent keyword length</a></li>
         </ul>
       </section>
       <section id="simplicity-matters"><i>Simplicity matters:</i>
         <ul>
-          <li><a href="languages/unary-operators-are-unnecessary">Unary Operators are Unnecessary</a></li>
-          <li><a href="languages/binary-operators-are-overused">Binary Operators are Overused</a></li>
-          <li><a href="languages/annotations-obsolete-modifiers">Annotations Obsolete Modifiers</a>
+          <li><a href="languages/unary-operators-are-unnecessary" class="compact">Unnecessary: Unary Operators</a></li>
+          <li><a href="languages/binary-operators-are-overused" class="compact">Overused: Binary Operators</a></li>
+          <li><a href="languages/annotations-obsolete-modifiers">Obsolete: Modifiers</a>
             <ul>
               <li><a href="languages/annotations-obsolete-modifiers-attempts">Failed Attempts</a></li>
             </ul>
           </li>
-          <li><a href="languages/drop-break-and-continue" class="compact">Drop <kbd>break</kbd> and <kbd>continue</kbd></a></li>
+          <li><a href="languages/drop-break-and-continue">Drop <kbd>break</kbd> and <kbd>continue</kbd></a></li>
           <li><a href="languages/fields-methods-properties-pick-two">Fields & Methods & Properties? Pick Two!</a></li>
         </ul>
       </section>
@@ -130,7 +131,7 @@ navigation: true
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
-      <div><a href="https://pling.jondgoodwin.com/post/cyclone/" class="compact">Cyclone's Fascinating Influence</a></div>
+      <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
       <div><a href="https://devblogs.microsoft.com/oldnewthing/20230904-00/?p=108704" class="compact">Shift Larger Than Register Size</a></div>
@@ -148,13 +149,13 @@ navigation: true
       <div><a href="https://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
-      <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a></div>
-      <div><a href="https://github.com/SeaOfNodes/Simple">Sea of Nodes: a simple showcase</a></div>
+      <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw" class="compact">Living in a Post-Functional World</a></div>
+      <div><a href="https://github.com/SeaOfNodes/Simple" class="compact">Sea of Nodes: a simple showcase</a></div>
     </td>
   </tr>
   <tr>
     <th class="table-topic">Runtimes</th>
-    <td><a href="runtimes/domains-as-cargo-namespaces" class="compact">Domains as Cargo Namespaces</a></td>
+    <td><a href="runtimes/domains-as-cargo-namespaces">Domains as Cargo Namespaces</a></td>
     <td>
       <section id="efficient-memory-use"><i>Efficient Memory Use:</i>
         <ol>
@@ -184,8 +185,8 @@ navigation: true
   <tr>
     <th class="table-topic">Interfaces</th>
     <td>
-      <div><a href="interfaces/x86-prefixes-and-escape-opcodes-flowchart" class="compact">x86 prefix & escape flowchart</a></div>
-      <div><a href="interfaces/improving-the-xfce-settings-ui" class="compact">Improving the XFCE Settings UI</a></div>
+      <div><a href="interfaces/x86-prefixes-and-escape-opcodes-flowchart">x86 prefix & escape flowchart</a></div>
+      <div><a href="interfaces/improving-the-xfce-settings-ui">Improving the XFCE Settings UI</a></div>
     </td>
     <td>
       <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic<br/>Package Manager UI</a></div>
