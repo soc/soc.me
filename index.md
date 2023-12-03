@@ -152,6 +152,7 @@ navigation: true
       <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw">Living in a Post-Functional World</a></div>
+      <div><a href="https://github.com/SeaOfNodes/Simple">Sea of Nodes: a simple showcase</a></div>
     </td>
   </tr>
   <tr>
