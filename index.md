@@ -9,8 +9,8 @@ navigation: true
     <th class="table-topic"></th>
     <th>Essays</th>
     <th>Projects</th>
-    <th>Talks</th>
     <th>Links</th>
+    <th>More Links</th>
   </tr>
   <tr>
     <th class="table-topic">Standards</th>
@@ -19,20 +19,20 @@ navigation: true
       <div><a href="standards/xdg-migration-status">XDG Migration Status</a></div>
     </td>
     <td>
-      <div><a href="https://github.com/soc/directories-jvm/">directories-jvm</a></div>
-      <div><a href="https://github.com/soc/directories-rs/">directories-rs</a> &amp; <a href="https://github.com/soc/dirs-rs/">dirs-rs</a></div>
-      <div><a href="https://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403">GNU Nano</a></div>
-      <div><a href="https://github.com/coursier/coursier/pull/676">Coursier</a></div>
-      <div>Cargo: <a href="https://github.com/rust-lang/rfcs/pull/1615">RFC</a> &amp; <a href="https://github.com/rust-lang/cargo/pull/5183">PR</a></div>
-    </td>
-    <td>
-      <div><a href="talks/rust-meetup-2018">directories: a tiny library that might help you</a></div>
+      <section id="dirs-dev" class="dirs-dev">📂 <a href="https://dirs.dev">The Dirs Project</a> 📂
+        <ul>
+          <li><a href="talks/rust-meetup-2018">Talk</a></li>
+          <li><a href="https://github.com/soc/directories-jvm/">directories-jvm</a></li>
+          <li><a href="https://github.com/soc/directories-rs/">directories-rs</a> &amp; <a href="https://github.com/soc/dirs-rs/">dirs-rs</a></li>
+        </ul>
+      </section>
     </td>
     <td>
       <div><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Unicode &amp; Character Sets</a></div>
       <div><a href="https://googleprojectzero.blogspot.de/2016/02/the-definitive-guide-on-win32-to-nt.html">Path handling on Windows</a></div>
       <div><a href="https://yakking.branchable.com/posts/falsehoods-programmers-believe-about-file-paths/">Falsehoods about paths</a></div>
-      <div><a href="https://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a></div>
+      <div><a href="https://www.cs.tau.ac.il/~nachum/calendar-book/index.shtml">Calendrical calculations</a></div>    </td>
+    <td>
     </td>
   </tr>
   <tr>
@@ -120,11 +120,6 @@ navigation: true
       <div><a href="languages/unions">Unions</a></div>
     </td>
     <td>
-      <div><a href="talks/scalasphere-2016">Language Simplification</a></div>
-      <div><a href="talks/scaladays-2014">Simplifying Scala</a></div>
-      <div><a href="talks/functional-meetup-2014">Scala Puzzlers</a></div>
-    </td>
-    <td>
       <div><a href="https://pointersgonewild.com/2022/05/23/minimalism-in-programming-language-design/">Minimalism in Programming Language Design</a></div>
       <div><a href="https://hillelwayne.com/post/influential-dead-languages/">10 Most(ly dead) Influential Programming Languages</a></div>
       <div><a href="https://madhadron.com/posts/seven_languages.html">7 programming ur-languages</a></div>
@@ -139,6 +134,8 @@ navigation: true
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
       <div><a href="https://devblogs.microsoft.com/oldnewthing/20230904-00/?p=108704" class="compact">Shift Larger Than Register Size</a></div>
+    </td>
+    <td>
       <div><i class="compact">Syntax Comparisons/Overviews:</i>
         <ol>
           <li><a href="http://rigaux.org/language-study/syntax-across-languages.html">Rigaux</a></li>
@@ -167,13 +164,12 @@ navigation: true
       </section>
     </td>
     <td>
-      <div><a href="talks/scaladays-2015">Value Types on the JVM</a></div>
-    </td>
-    <td>
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines<br/>and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
       <div><a href="https://shipilev.net/jvm/anatomy-quarks/">JVM Anatomy Quarks</a></div>
+    </td>
+    <td>
       <div><a href="https://v8.dev/blog/pointer-compression/">Pointer Compression in V8</a></div>
       <section id="cranelift-backend"><i>Cranelift Backend:</i>
         <ul>
@@ -195,7 +191,6 @@ navigation: true
       <div><a href="interfaces/improving-the-synaptic-package-manager-ui">Improving the Synaptic<br/>Package Manager UI</a></div>
       <div><a href="interfaces/vertical-tabs-in-firefox">Vertical Tabs in Firefox</a></div>
     </td>
-    <td></td>
     <td>
       <div><a href="https://www.youtube.com/watch?v=pq1XqP4-qOo">Hybrid Dynamic/Static Linking</a></div>
       <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking in Swift</a></div>
@@ -203,6 +198,8 @@ navigation: true
       <div><a href="https://gankra.github.io/blah/c-isnt-a-language/">C Isn't A Language Anymore</a></div>
       <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
       <div><a href="https://cor3ntin.github.io/posts/abi/">The Day The Standard Library Died</a></div>
+    </td>
+    <td>
       <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
       <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf" class="compact">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
       <section id="ghost-of-unix-past"><i>Ghosts of Unix Past:</i>
@@ -226,10 +223,11 @@ navigation: true
       <div><a href="hardware/keyboard-build">Keyboard Build</a></div>
       <div><a href="hardware/keyboard-setup">Keyboard Setup</a></div>
     </td>
-    <td></td>
     <td>
       <div><a href="https://os.phil-opp.com/">Writing an OS in Rust</a></div>
       <div><a href="https://gist.github.com/erincandescent/8a10eeeea1918ee4f9d9982f7618ef68">RISC-V: The Middling/Bad/Ugly</a></div>
+    </td>
+    <td>
       <div><a href="https://lwn.net/Articles/902094/">Linear Address Masking</a></div>
     </td>
   </tr>
