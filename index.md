@@ -133,7 +133,7 @@ navigation: true
       <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
-      <div><a href="https://gankra.github.io/blah/swift-abi/">Dynamic Linking and Interface Stability</a></div>
+      <div><a href="https://muxup.com/2023q4/ownership-you-can-count-on">Ownership you can count on</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
       <div><a href="https://devblogs.microsoft.com/oldnewthing/20230904-00/?p=108704" class="compact">Shift Larger Than Register Size</a></div>
     </td>
