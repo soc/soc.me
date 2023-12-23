@@ -71,7 +71,7 @@ navigation: true
         <ul>
           <li><a href="languages/popular-but-wrong">Popular, but Wrong</a></li>
           <li><a href="languages/implicit-numeric-conversions" class="compact">Implicit Numeric Conversions</a></li>
-          <li><a href="languages/package-objects">Package Objects</a></li>
+          <li><a href="languages/package-objects-in-scala">Package Objects in Scala</a></li>
           <li><a href="languages/notes-on-rust">Notes on Rust</a></li>
         </ul>
       </section>
