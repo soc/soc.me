@@ -1,6 +1,7 @@
 ---
-title:  "Language Design: Notes on Rust"
+title:  "Language Design: Mistakes in Rust"
 date:   2017-07-30 12:00:00 +0200
+redirect_from: "languages/notes-on-rust"
 ---
 
 It's an impressive language, but the user interface needs a lot of work.
