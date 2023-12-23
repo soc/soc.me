@@ -72,6 +72,7 @@ navigation: true
           <li><a href="languages/popular-but-wrong">Popular, but Wrong</a></li>
           <li><a href="languages/implicit-numeric-conversions" class="compact">Implicit Numeric Conversions</a></li>
           <li><a href="languages/package-objects-in-scala">Package Objects in Scala</a></li>
+          <li><a href="languages/rust-struct-initializer-mistake">Struct initialization in Rust</a></li>
           <li><a href="languages/design-mistakes-in-rust">Design Mistakes in Rust</a></li>
         </ul>
       </section>
