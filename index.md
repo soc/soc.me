@@ -15,6 +15,7 @@ navigation: true
   <tr>
     <th class="table-topic">Standards</th>
     <td>
+      <div><a href="standards/base-uid">Compact Base64-first UIDs</a></div>
       <div><a href="standards/defending-home">Defending <kbd>$HOME</kbd></a></div>
       <div><a href="standards/xdg-migration-status">XDG Migration Status</a></div>
     </td>
