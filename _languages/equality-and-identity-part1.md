@@ -14,7 +14,7 @@ on references, often called _reference equality_. Here are a few examples:
 #### Java
 
 - `==` implements reference equality on reference types.
-- `Object.equals` and `Objects.equals` implement reference equality be default, but can be overridden to implement value equality on reference types.
+- `Object.equals` and `Objects.equals` implement reference equality by default, but can be overridden to implement value equality on reference types.
 - `Arrays.deepEquals` implements value equality on arrays (`equals` does reference equality on arrays).
 - `==` implements value equality on primitive types.
   - Primitive types can be implicitly converted to special wrapper classes, which implement `equals` slightly differently.
