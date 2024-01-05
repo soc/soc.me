@@ -6,14 +6,16 @@ markdeep: true
 
 ### Motivation
 
-- Compact
-  Uses 20 characters for 120 bits
+- Compact  
+  Uses 20 characters for 120 bits.
 - Compatible  
-  Can be used in URLs, form-fields and as HTML attributes
+  Can be used in URLs, form-fields and as HTML attributes.
+- Convenient  
+  The bitstring and the encoded string sort the same.
 - Database-friendly  
-  Time-prefix improves database locality and performance
+  Time-prefix improves database locality and performance.
 - Efficient  
-  Makes most out of the available bits 
+  Makes most out of the available bits.
 
 ### Structure of a BaseUid
 
