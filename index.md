@@ -73,14 +73,9 @@ navigation: true
           <li><a href="languages/popular-but-wrong">Popular, but Wrong</a></li>
           <li><a href="languages/implicit-numeric-conversions" class="compact">Implicit Numeric Conversions</a></li>
           <li><a href="languages/package-objects-in-scala">Package Objects in Scala</a></li>
+          <li><a href="languages/lower-bar-of-rust-2">The lower bar of "Rust 2.0"</a></li>
           <li><a href="languages/rust-struct-initializer-mistake">Struct initialization in Rust</a></li>
-          <li><a href="languages/design-mistakes-in-rust">Design Mistakes in Rust</a></li>
-        </ul>
-      </section>
-      <section id="rust-compatibility"><i>Rust compatibility:</i>
-        <ul>
-          <li><a href="languages/winding-down-rust-feature-development">Time to wind down Rust feature development</a></li>
-          <li><a href="languages/lower-bar-of-rust-2">The lower bar of a hypothetical Rust 2.0</a></li>
+          <li><a href="languages/design-mistakes-in-rust">(More) Rust Design Mistakes</a></li>
         </ul>
       </section>
     </td>
