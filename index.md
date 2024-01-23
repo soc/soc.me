@@ -124,7 +124,6 @@ navigation: true
       <div><a href="https://wiki.alopex.li/WirthEvolution">Wirth Evolution:<br/>Pascal Modula-2 Oberon</a></div>
       <div><a href="https://lawrencecpaulson.github.io/2022/10/05/Standard_ML.html">Memories: Edinburgh ML to Standard ML</a></div>
       <div><a href="https://osa1.net/posts/2023-04-24-ocaml-thoughts.html">My thoughts on OCaml</a></div>
-      <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
@@ -147,7 +146,10 @@ navigation: true
       <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw" class="compact">Living in a Post-Functional World</a></div>
-      <div><a href="https://github.com/SeaOfNodes/Simple" class="compact">Sea of Nodes: a simple showcase</a></div>
+      <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
+      <div><a href="https://blaz.is/blog/post/lets-pretend-that-task-equals-thread/">Pretend That Task = Thread?</a></div>
+      <div><a href="https://bitbashing.io/async-rust.html">Async Rust Is A Bad Language</a></div>
+      <div><a href="https://blog.hugpoint.tech/avoid_async_rust.html">Avoid Async Rust At All Cost</a></div>
     </td>
   </tr>
   <tr>
