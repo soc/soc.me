@@ -4,7 +4,7 @@ date:   2018-09-07
 update: 2023-09-16
 ---
 
-**6 letters** namespaces – declaring and managing namespaces:
+**6 letters** namespacing – declaring and managing namespaces:
 
 - `module` (unifies "object" and "package")
 - `import`
@@ -17,14 +17,15 @@ update: 2023-09-16
 - `union` (alternative to `enum`)
 - `trait` (interface/typeclass)
 - `alias` (type alias)
+- `mixin`
 
 **4 letters** control flow:
 
-- `case`/`then`/`else`
-- `when`/`then`/`else`
+- `case`/`then`/`else` or `when`/`then`/`else`
 - `loop` (alternative to `while`)
+- `skip` (alternative to `continue`)
 - `exit` (alternative to `return`)
-- `yeet` (alternative to `throws`)
+- `yeet` (alternative to `throw`)
 
 **3 letters** "small" definitions (members):
 
