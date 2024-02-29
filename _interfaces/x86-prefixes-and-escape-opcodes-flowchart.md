@@ -47,7 +47,7 @@ markdeep: true
 ┏━┯━┯━┯━┯━┯━┯━┯━┓                                                    ┏━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┓
 ┃0 1 0 0 W R X B┃                                                    ┃1 1 0 1 0 1 0 1┃M R X B W R X B┃
 ┗━┷━┷━┷━┷━┷━┷━┷━┛                                                    ┗━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┛
-REX (1-byte prefix)                                                  REX (2-byte prefix)
+REX (1-byte prefix)                       AMD64 (1999/2003)          REX (2-byte prefix)                APX (2023/????)
 - W extends operand size                                             - M selects legacy map 0 or legacy map 1
 - R extends register bits                                            - R extends register bits
 - X extends index in SIB byte                                        - X extends index in SIB byte
@@ -58,7 +58,7 @@ REX (1-byte prefix)                                                  REX (2-byte
 ┏━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┓                                    ┏━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┓
 ┃1 1 0 0 0 1 0 1┃Ṙ ⩒ ⩒ ⩒ ⩒ L p p┃                                    ┃1 1 0 0 0 1 0 0┃Ṙ Ẋ Ḃ m m m m m┃W ⩒ ⩒ ⩒ ⩒ L p p┃
 ┗━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┛                                    ┗━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┛
-VEX (2-byte prefix)                                                  VEX (3-byte prefix)
+VEX (2-byte prefix)                         AVX (2008/2011)          VEX (3-byte prefix)                AVX (2008/2011)
 - R extends register bits                                            - R extends register bits
 - v encodes additional source register                               - X extends index in SIB byte
 - L selects vector length (0: 128bit | 1: 256bit)                    - B extends base in SIB byte
@@ -71,18 +71,18 @@ VEX (2-byte prefix)                                                  VEX (3-byte
 
 
 ┏━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┓          Notes:
-┃0 1 1 0 0 0 1 0┃Ṙ Ẋ Ḃ Ṙ B m m m┃W ⩒ ⩒ ⩒ ⩒ Ẋ p p┃z Ŀ L b ⩒ a a a┃          - letters with a dot above denote that the
-┗━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┛            prefix contains the bit in inverted form
-EVEX (4-byte prefix)                                                       - the diagram elides escape bytes D8 til DF
-- R extends register bits                                                  - the EVEX prefix has additional variations
-- X extends index in SIB byte                                                not shown here for encoding
-- B extends base in SIB byte                                                 - VEX instructions  
-- m encodes escape bytes (1: 0F | 2: 0F38 | 3: 0F3A)                         - legacy instructions
-- W extends operand size                                                     - conditional CMP/TEST
-- v encodes additional source register
-- p encodes mandatory prefixes (0: none | 1: 66 | 2: F2 | 3: F3)
-- z selects merge mode (0: zero | 1: merge)
-- Ŀ selects vector length (512bit) or rounding control mode (with L)
+┃0 1 1 0 0 0 1 0┃Ṙ Ẋ Ḃ Ṙ B m m m┃W ⩒ ⩒ ⩒ ⩒ Ẋ p p┃z Ŀ L b ⩒ a a a┃          - years after the instruction set extension  
+┗━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┛            denote when it was first announced/shipped       
+EVEX (4-byte prefix)                    AVX-512 (2013/2017)                - letters with a dot above denote that the   
+- R extends register bits                                                    prefix contains the bit in inverted form   
+- X extends index in SIB byte                                              - the diagram elides escape bytes D8 til DF  
+- B extends base in SIB byte                                               - the EVEX prefix has additional variations  
+- m encodes escape bytes (1: 0F | 2: 0F38 | 3: 0F3A)                         not shown here for encoding                
+- W extends operand size                                                     - VEX instructions                         
+- v encodes additional source register                                       - legacy instructions                      
+- p encodes mandatory prefixes (0: none | 1: 66 | 2: F2 | 3: F3)             - conditional CMP/TEST                     
+- z selects merge mode (0: zero | 1: merge)                                
+- Ŀ selects vector length (512bit) or rounding control mode (with L)       
 - L selects vector length (256bit)
 - b encodes source broadcast or rounding control (with Ŀ and L) or exception suppression
 </div>
