@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Implementation"
 date:   2019-09-21
-update: 2022-06-24
+update: 2024-04-01
 redirect_from: "/languages/unified-condition-expressions-parsing"
 page_previous_title: "Unified Condition Expressions – Introduction"
 page_previous_url:   "unified-condition-expressions"
@@ -23,7 +23,7 @@ switch-cases or if-expressions can be removed and their uses migrated to unified
 ##### Level 1: Basics
 
 ```ml
-case person // separate keyword
+if person
   // `...` to indicate start of individual condition fragment
   ... == john { true }
   ... == jane { true }
@@ -40,23 +40,61 @@ common fragment has to be retained until code-generation.
 
 ##### Level 2: Pattern Matching
 
+The core insight is that pattern matching occurs either always (`switch`&`case`, `match`&`case`) or never
+(`if`&`then`&`else`, `?`&`:`) with "legacy" approaches.
+
+With unified condition expressions, this choice can be made for each branch individually, using the `is` keyword:
+
 ```ml
-case person
-  ... is Person("john",       _, 42) { true }
-  ... is Person("jane", "smith",  _) { true }
+if person
+  ... is Person("john", _, 42) { true }  // paternn match
+  ... .age > 23                { false } // no pattern match 
 else false
 ```
 
 
 ##### Level 3: Bindings
 
-```ml
-case person
-  ... is Person("john",  "miller", $age) { age.toString } // introduce binding for john's age
-  ... is Person("jane", $lastName,   23) { lastName }     // introduce binding for jane's last name
-else false
-```
+The main design task is picking a convention/rule that decides whether an identifier inside a pattern match introduces a
+new binding with that name, or refers to an existing binding of that name in scope.
 
+Possible design options include ...
+
+1. ... using a keyword or symbol (for instance `let` or `@`) to introduce bindings in patterns:
+
+   ```ml
+   let age = 43
+   if person
+         // refers to the `age` binding defined earlier
+     ... is Person("john",     "miller", age) { age.toString }
+         // `let` introduces a new binding for jane's last name
+     ... is Person("jane", let lastName,  23) { lastName     }
+   else false
+   ```
+
+2. ... using a keyword or symbol (for instance `$`) to reference existing bindings in scope:
+
+   ```ml
+   let age = 43
+   if person
+         // `$` refers to the `age` binding defined earlier
+     ... is Person("john", "miller", $age) { age.toString }
+         // introduces a new binding for jane's last name
+     ... is Person("jane", lastName,   23) { lastName     }
+   else false
+   ```
+
+3. ... using casing rules to distinguish bindings from references:
+
+   ```ml
+   let Age = 43
+   if person
+         // uppercase refers to the `Age` binding defined earlier
+     ... is Person("john", "miller", Age) { age.toString }
+         // lowercase introduce a new binding for jane's last name 
+     ... is Person("jane", lastName,  23) { lastName     }
+   else false
+   ```
 
 ##### Optional: Partial Conditions
 
@@ -65,7 +103,7 @@ The notion of the condition's common fragment can be made more flexible:
 The common fragment can be partial; i. e. the common fragment may not be a valid expression on its own:
 
 ```ml
-case person == // partial common condition fragment
+if person == // partial common condition fragment
   ... john { true }
   ... jane { true }
 else false
@@ -82,7 +120,7 @@ without introducing problems in other places.
 Similarly, `{}` could be replaced with `then`. 
 
 ```ml
-case person == // no `...` needed to indicate end of common condition fragment
+if person == // no `...` needed to indicate end of common condition fragment
   john then true  // optional: replace `{}` with `then`
   jane then true
 else false
