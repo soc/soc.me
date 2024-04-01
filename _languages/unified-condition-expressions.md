@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Introduction"
 date:   2018-01-21
-update: 2022-06-24
+update: 2024-04-01
 redirect_from: "/languages/unified-condition-syntax"
 page_next_title:     "Unified Condition Expressions – Implementation"
 page_next_url:       "unified-condition-expressions-implementation"
@@ -19,15 +19,16 @@ with a single, unified condition expression that scales from simple one-liners t
 
 #### Motivation
 
-The intention is to cut the different syntax options down to a single one that is still easily recognizable by users,
-not to minimize keywords (i. e. `a == b ? c : d`) or turn conditions into methods (like Smalltalk).
+- Cut the different syntax options down to a single one that is still easily recognizable by users.
+- Make this design scale seamlessly from simple cases to complicated ones.
+
+<br>Minimizing the number of keywords or turning condition syntax into method calls (like Smalltalk) are non-goals.
 
 #### Considerations
 
 - The condition can be split between a common _discriminator_ and individual cases.<br>
   This requires doing away with mandatory parentheses around conditions.
-- The keyword `if` is chosen over other options like `match`, `when`, `switch` or `case`
-  as it is the keyword most developers are familiar with.
+- `if` has been chosen in code examples as the primary keyword, other reasonable keyword choices are `match`, `when`, `switch` or `case`.
 
 #### Examples
 
