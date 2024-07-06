@@ -111,6 +111,7 @@ navigation: true
         <ol>
           <li><a href="languages/naming-conventions-creation">Creation</a></li>
           <li><a href="languages/naming-conventions-conversion">Conversion</a></li>
+          <li><a href="languages/naming-conventions-options">Options</a></li>
           <li><a href="languages/naming-conventions-lookup">Lookup</a></li>
           <li><a href="languages/naming-conventions-streaming">Streaming</a></li>
         </ol>

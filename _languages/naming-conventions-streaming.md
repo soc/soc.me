@@ -1,8 +1,8 @@
 ---
-title:  "Language Design: Naming Conventions – Part 4: Streaming"
+title:  "Language Design: Naming Conventions – Part 5: Streaming"
 date:   2022-06-08
 update: 2023-01-12
-page_previous_title: "Naming Conventions – Part 3: Lookup"
+page_previous_title: "Naming Conventions – Part 4: Lookup"
 page_previous_url:   "naming-conventions-lookup"
 ---
 
