@@ -61,9 +61,28 @@ differs with each generated value, even if the point in time stays the same.
 
 ### Comparison with other UID formats
 
-(todo → get list from https://datatracker.ietf.org/doc/html/draft-ietf-uuidrev-rfc4122bis#section-2.1)
+|                                                                                          | Payload | Compact           | Efficient | Compatible | Ordered | Database-friendly |
+|------------------------------------------------------------------------------------------|--------:|-------------------|:---------:|:----------:|:-------:|:-----------------:|
+| BaseUID                                                                                  | 120bits | ✔ Base64          |     ✔     |     ✔      |    ✔    |         ✔         |
+| UUID text repr.                                                                          | 128bits | ✖ Base16          |     ✔     |     ✖      |    ✔    |         ✖         |
+| [ULID](https://github.com/ulid/spec)                                                     | 128bits | 🞈 Base32         |    🞈     |     ✖      |    ✔    |         ✔         |
+| [LexicalUUID](https://github.com/twitter-archive/cassie)                                 | 128bits | ✖ Base16          |     ✖     |     ✖      |    ✔    |         ✔         |
+| [Flake](https://github.com/boundary/flake)                                               | 128bits | ✔ Base62          |     ✖     |     ✖      |    ❔    |         ✔         |
+| [ShardingID](https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c)   |  64bits | ✖ Base10          |    🞈     |     ✖      |    ✔    |         ✔         |
+| [KSUID](https://github.com/segmentio/ksuid)                                              | 160bits | ✔ Base62          |     ✖     |     ✖      |    ✔    |         ✔         |
+| [Elasticflake](https://github.com/ppearcy/elasticflake)                                  | 120bits | ✔ Base64          |     ✔     |     ✖      |    ✖    |         ✔         |
+| [FlakeID](https://github.com/T-PWK/flake-idgen)                                          |  64bits | ✖ Base10/16       |     ✔     |     ✖      |    ✔    |         ✔         |
+| [Sonyflake](https://github.com/sony/sonyflake)                                           |  63bits | ✖ Base10          |     ✔     |     ✖      |    ✔    |         ✔         |
+| [orderedUuid](https://itnext.io/laravel-the-mysterious-ordered-uuid-29e7500b4f8)         | 120bits | ✖ Base10          |     ✔     |     ✖      |    ✖    |         ✔         |
+| [COMBGUID](https://github.com/richardtallent/RT.Comb)                                    | 120bits | ✖ Base10          |     ✔     |     ✖      |    ✖    |         ✔         |
+| [SID](https://github.com/chilts/sid)                                                     | 128bits | ✔ Base10/16/32/64 |     ✔     |     ✖      |    ✔    |         ✔         |
+| [pushID](https://firebase.googleblog.com/2015/02/the-2120-ways-to-ensure-unique_68.html) | 120bits | ✔ Base64          |     ✔     |     ✖      |    ✔    |         ✔         |
+| [XID](https://github.com/rs/xid)                                                         |  96bits | 🞈 Base32         |     ✔     |     ✖      |    ✔    |         ✔         |
+| [ObjectID](https://docs.mongodb.com/manual/reference/method/ObjectId/)                   |  96bits | ✖ Base16          |     ✔     |     ✖      |    ✔    |         ✔         |
+| [CUID](https://github.com/ericelliott/cuid)                                              |       ❔ | ✖ Base36          |     ✖     |     ✔      |    ✖    |         ✔         |
+{: .table-medium .table-layout-auto }
 
 
 [^1]: This selection ensures that the resulting Base64-encoded string starts with a letter for timestamps between the
-years 2021 and 2260. This allows the use of *BaseUid*s without escaping or additional effort in places that do not allow
-values starting with a digit (such as HTML attributes values, which are required to be valid CSS identifiers).
+    years 2021 and 2260. This allows the use of *BaseUid*s without escaping or additional effort in places that do not
+    allow values starting with a digit (such as HTML attributes values, which are required to be valid CSS identifiers).
