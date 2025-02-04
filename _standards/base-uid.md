@@ -59,6 +59,11 @@ differs with each generated value, even if the point in time stays the same.
                                               └──────────────┘  └──────────────┘                                   └────────────┘
 </div>
 
+### Implementations
+
+- [Java](https://github.com/soc/base-uid/)
+- [Core](https://github.com/core-lang/core/blob/main/core/stdlib/baseuid.core)
+
 ### Comparison with other UID formats
 
 |                                                                                          | Payload | Compact           | Efficient | Compatible | Ordered | Database-friendly |
