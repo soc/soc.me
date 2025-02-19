@@ -23,8 +23,8 @@ navigation: true
       <section id="dirs-dev" class="dirs-dev">📂 <a href="https://dirs.dev">The Dirs Project</a> 📂
         <ul>
           <li><a href="talks/rust-meetup-2018">Talk</a></li>
-          <li><a href="https://github.com/soc/directories-jvm/">directories-jvm</a></li>
-          <li><a href="https://github.com/soc/directories-rs/">directories-rs</a> &amp; <a href="https://github.com/soc/dirs-rs/">dirs-rs</a></li>
+          <li><a href="https://codeberg.org/dirs/directories-jvm/">directories-jvm</a></li>
+          <li><a href="https://codeberg.org/dirs/directories-rs/">directories-rs</a> &amp; <a href="https://codeberg.org/dirs/dirs-rs/">dirs-rs</a></li>
         </ul>
       </section>
     </td>
