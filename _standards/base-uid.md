@@ -61,8 +61,8 @@ differs with each generated value, even if the point in time stays the same.
 
 ### Implementations
 
-- [Java](https://github.com/soc/base-uid/)
-- [Core](https://github.com/core-lang/core/blob/main/core/stdlib/baseuid.core)
+- [Java](https://codeberg.org/soc/base-uid/)
+- [Core](https://codeberg.org/core-lang/core/src/branch/main/stdlib/baseuid.core)
 
 ### Comparison with other UID formats
 
