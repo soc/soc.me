@@ -1,7 +1,10 @@
 ---
-title:  Language Design Talk (WIP) 
-date:   2024-02-29
+title: Principles of Language Design
+date:    2024-02-29
+updated: 2025-02-19
 ---
+
+<p>work in progress</p>
 
 ![slide 01](language-design-2024/language-design-01.jxl)
 ![slide 02](language-design-2024/language-design-02.jxl)
