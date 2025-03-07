@@ -1,14 +1,12 @@
 ---
-title:  "Language Design: Equality & Identity – Part 5: Fixing Rust"
+title:  "Language Design: Equality & Identity – Part 6: Fixing Rust"
 date:   2022-06-09
-update: 2022-06-11
-published: false
+update: 2026-05-29
+page_previous_title: "Equality & Identity – Part 5: Fixing Java"
+page_previous_url:   "equality-and-identity-fixing-java"
+page_next_title:     "Comparing and Sorting"
+page_next_url:       "comparing-and-sorting"
 ---
-
-<div class="warn">
-  Dear reader, comments on this page are invite-only due to low-quality feedback.<br/>
-  Please refrain from linking this page on community foris of any language mentioned herein.
-</div>
 
 Rust designers recognized the issues with Haskell's approach, but were not able to address the issues with Rust's `Eq`
 and `PartialEq` traits.
@@ -19,3 +17,6 @@ It requires that an implementation of partial order is consistent with an implem
 
 This works for many types, but not for floating point types, for which the IEEE754 standard specifies a partial order as
 well as a total order.
+
+The easiest solution for Rust would have been to not introduce the sub-typing relationship between `PartialEq` and `Eq`
+(as well as between `PartialOrd` and `Ord`).
