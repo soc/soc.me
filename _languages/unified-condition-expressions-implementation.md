@@ -9,8 +9,6 @@ page_next_title:     "Unified Condition Expressions – Exceptions"
 page_next_url:       "unified-condition-expressions-exceptions"
 ---
 
-#### How to Parse?
-
 As a first approximation – especially if an existing language shall be adapted –
 it makes sense to build a feature-reduced version of unified condition expressions
 using a different keyword, in parallel to existing syntax.
