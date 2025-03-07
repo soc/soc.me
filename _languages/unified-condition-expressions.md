@@ -11,31 +11,46 @@ page_next_url:       "unified-condition-expressions-implementation"
 
 Replace the different syntactic forms of
 
-- if expressions,
-- pattern matching and pattern guards,
-- if-let constructs
+- `if` statements/expressions
+- `switch` on values
+- `match` on patterns and pattern guards
+- `if`-`let` constructs
 
 with a single, unified condition expression that scales from simple one-liners to complex pattern matches.
 
 #### Motivation
 
 - Cut the different syntax options down to a single one that is still easily recognizable by users.
-- Make this design scale seamlessly from simple cases to complicated ones.
+- Allow the design to scale seamlessly from simple cases to complicated ones.
 
 <br>Minimizing the number of keywords or turning condition syntax into method calls (like Smalltalk) are non-goals.
 
 #### Considerations
 
-- The condition can be split between a common _discriminator_ and individual cases.<br>
-  This requires doing away with mandatory parentheses around conditions.
-- `if` has been chosen in code examples as the primary keyword, other reasonable keyword choices are `match`, `when`, `switch` or `case`.
+1. Ternary expressions and `if` statements can be fully subsumed by `if` expressions.
+2. The difference between `switch` and `if` ...
+   - `switch` has a fixed part – whose value is compared using an equality relation against a set of individual values
+   - `if` supports arbitrary conditions – it allows more than two branches only by chaining `if` to an `else`  
+3. Splitting conditions into a *shared, common part* and individual *condition continuations* requires doing away with mandatory parentheses around conditions.  
+   Demarcating the place ...
+  - where the shared part of condition ends and the individual continuations starts, as well as
+  - where a branch ends and the next individual condition starts
+
+    ... requires either ...
+
+    - mandatory braces around the branch, or
+    - a start keyword like `then` and
+      - either end keyword like `end` or `,`
+      - or indentation-sensitive syntax
+
+    ... to ensure unambiguous parsing.
+4. Alternative keyword choices to `if` and `then` are `match`, `switch`, `case` or `when`.
+5. Though not strictly required, `...` may be used to make the division between the shared part and the individual case more apparent to the reader.
+
 
 #### Examples
 
-The following examples assume that the language has indentation-sensitive syntax to ensure unambiguous parsing.
-
-Languages without indentation-sensitive syntax require either mandatory braces around the bodies of `then` branches,
-or ending `then` branches explicitly, for instance with `end` or a `,`.
+For the code examples, a hypothetical language with indentation-sensitive syntax and the keywords `if` and `then` has been chosen.
 
 ##### simple if expression
 ```ml
@@ -70,16 +85,16 @@ if xs                               /* same as */
 
 ##### pattern matching (`is`), introducing bindings, flow typing
 ```ml
-if alice
-  .age < 18                 then "18"
-  is Person("Alice", _)     then "{$person.age}"
-  is Person("Bob", let age) then "$age"
-                            else "0"
+if person
+  .age < 18                 then 18
+  is Person("Alice", _)     then person.age
+  is Person("Bob", let age) then age
+                            else -1
 ```
 
 ##### pattern matching using "if-let"[^rust][^swift]
 ```ml
-if person is Person("Alice", let age) then "$age" else "o"
+if person is Person("Alice", let age) then age else -1
 ```
 
 ##### wildcards (`_`) and pattern guards
