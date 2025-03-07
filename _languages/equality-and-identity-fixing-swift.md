@@ -6,5 +6,5 @@ published: false
 
 <div class="warn">
   Dear reader, comments on this page are invite-only due to low-quality feedback.<br/>
-  Please refrain from linking this page on community foris of any language mentioned herein.
+  Please refrain from linking this page on community forums of any language mentioned herein.
 </div>
