@@ -1,14 +1,12 @@
 ---
-title:  "Language Design: Equality & Identity – Part 5: Fixing Rust"
+title:  "Language Design: Equality & Identity – Part 6: Fixing Rust"
 date:   2022-06-09
-update: 2022-06-11
-published: false
+update: 2025-03-01
+page_previous_title: "Equality & Identity – Part 5: Java"
+page_previous_url:   "equality-and-identity-java"
+page_next_title:     "Comparing and Sorting"
+page_next_url:       "comparing-and-sorting"
 ---
-
-<div class="warn">
-  Dear reader, comments on this page are invite-only due to low-quality feedback.<br/>
-  Please refrain from linking this page on community foris of any language mentioned herein.
-</div>
 
 Rust designers recognized the issues with Haskell's approach, but were not able to address the issues with Rust's `Eq`
 and `PartialEq` traits.

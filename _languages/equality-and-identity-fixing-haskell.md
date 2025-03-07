@@ -2,16 +2,12 @@
 title:  "Language Design: Equality & Identity – Part 4: Fixing Haskell"
 date:   2019-03-14
 update: 2022-06-09
+redirect_from: "languages/equality-and-identity-part4"
 page_previous_title: "Equality & Identity – Part 3: Solution"
-page_previous_url:   "equality-and-identity-part3"
-page_next_title:     "Comparing and Sorting"
-page_next_url:       "comparing-and-sorting"
+page_previous_url:   "equality-and-identity-solution"
+page_next_title:     "Equality & Identity – Part 5: Java"
+page_next_url:       "equality-and-identity-java"
 ---
-
-<div class="warn">
-  Dear reader, comments on this page are invite-only due to low-quality feedback.<br/>
-  Please refrain from linking this page on community foris of any language mentioned herein.
-</div>
 
 Basic goals, as mentioned in the previous parts:
 
