@@ -90,10 +90,11 @@ navigation: true
       <br/>
       <section id="equality-and-identity"><i>Equality &amp; Identity:</i>
         <ol>
-          <li><a href="languages/equality-and-identity-part1">Overview</a></li>
-          <li><a href="languages/equality-and-identity-part2">Problems</a></li>
-          <li><a href="languages/equality-and-identity-part3">Solution</a></li>
-          <li><a href="languages/equality-and-identity-part4">Fixing Haskell</a></li>
+          <li><a href="languages/equality-and-identity-overview">Overview</a></li>
+          <li><a href="languages/equality-and-identity-problems">Problems</a></li>
+          <li><a href="languages/equality-and-identity-solution">Solution</a></li>
+          <li><a href="languages/equality-and-identity-fixing-haskell">Fixing Haskell</a></li>
+          <li><a href="languages/equality-and-identity-fixing-java">Fixing Java</a></li>
           <li>Fixing Rust</li>
           <li>Fixing Swift</li>
         </ol>
