@@ -1,11 +1,12 @@
 ---
 title:  "Language Design: Equality & Identity – Part 2: Problems"
 date:   2017-10-31
-update: 2022-06-08
+update: 2025-03-07
+redirect_from: "languages/equality-and-identity-part2"
 page_previous_title: "Equality & Identity – Part 1: Overview"
-page_previous_url:   "equality-and-identity-part1"
+page_previous_url:   "equality-and-identity-overview"
 page_next_title:     "Equality & Identity – Part 3: Solution"
-page_next_url:       "equality-and-identity-part3"
+page_next_url:       "equality-and-identity-solution"
 ---
 
 #### Containment
@@ -15,12 +16,12 @@ The core issue is that equality on its own is insufficient to implement some, ra
 Asking the simple question "is some element contained in this data structure" in different languages demonstrates the problem:
 
 ```
-Java:     List.of(Float.NaN).contains(Float.NaN);   // true
-Scala:    List(Float.NaN).contains(Float.NaN)       // false
-Rust:     &[0.0/0.0].contains(0.0/0.0)              // false
-C#:       var list = new List<float>() { float.NaN };
-          list.Contains(float.NaN);                 // true
-Haskell:  elem (0.0/0.0) [0.0/0.0]                  // false
+Java:       List.of(Float.NaN).contains(Float.NaN);          // true
+JavaScript: [NaN].includes(NaN)                              // true
+Rust:       &[0.0/0.0].contains(0.0/0.0)                     // false
+C#:         ((List<float>) [float.NaN]).Contains(float.NaN)  // true
+Haskell:    elem (0.0/0.0) [0.0/0.0]                         // false
+Scala:      List(Float.NaN).contains(Float.NaN)              // false
 ```
 
 Only Java and C# get this right, and the reason why it works in Java is quite incidental:
