@@ -1,10 +1,12 @@
 ---
 title:  "Language Design: Equality & Identity – Part 1: Overview"
 date:   2017-10-31
-update: 2022-06-08
-redirect_from: "/articles/language-design/equality-and-identity"
+update: 2025-03-07
+redirect_from:
+  - "/articles/language-design/equality-and-identity"
+  - "languages/equality-and-identity-part1"
 page_next_title:     "Equality & Identity – Part 2: Problems"
-page_next_url:       "equality-and-identity-part2"
+page_next_url:       "equality-and-identity-problems"
 ---
 
 Most languages have a notion of equality comparisons based on _value equality_.
@@ -20,13 +22,12 @@ on references, often called _reference equality_. Here are a few examples:
   - Primitive types can be implicitly converted to special wrapper classes, which implement `equals` slightly differently.
   - As these wrapper classes are reference types, `==` checks for reference equality of the wrapper classes.
 
-#### Scala
-
-- `==` (defined on `Any`) implements value equality.
-  - An extended version of value equality is used in which different numeric types can be equal if they represent the same value.
-  - This does not extend to arrays, which are plain Java arrays underneath.
-- `eq` (defined on `AnyRef`) implements reference equality.
-- The artifacts of Java's wrapper classes for primitive types are significantly reduced.
+#### JavaScript
+- `==` uses ["loose equality"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness#loose_equality_using).
+- `===` uses ["strict equality"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness#strict_equality_using).
+- `Object.is` uses ["same-value equality"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness#same-value_equality_using_object.is).
+- Specific methods like `Array#includes`, `Set#has`, `Map#has`, `Map#get` use
+  ["same-value-zero equality"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness#same-value-zero_equality).
 
 #### Rust
 
@@ -43,3 +44,11 @@ on references, often called _reference equality_. Here are a few examples:
 - `==` can be overloaded to implement value equality for value types.
 - Numeric types use an extended version of value equality in which different numeric types are equal if they represent the same value.
 - `IEquatable.Equals` can be implemented to reduce boxing for value types, but should return the same results as overridden `Equals` methods on that type.
+
+#### Scala
+
+- `==` (defined on `Any`) implements value equality.
+  - An extended version of value equality is used in which different numeric types can be equal if they represent the same value.
+  - This does not extend to arrays, which are plain Java arrays underneath.
+- `eq` (defined on `AnyRef`) implements reference equality.
+- The artifacts of Java's wrapper classes for primitive types are significantly reduced.
