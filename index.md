@@ -153,6 +153,7 @@ navigation: true
       <div><a href="https://blaz.is/blog/post/lets-pretend-that-task-equals-thread/">Pretend That Task = Thread?</a></div>
       <div><a href="https://bitbashing.io/async-rust.html">Async Rust Is A Bad Language</a></div>
       <div><a href="https://blog.hugpoint.tech/avoid_async_rust.html">Avoid Async Rust At All Cost</a></div>
+      <div><a href="https://typesanitizer.com/blog/errors" class="compact">A treatise on error models for systems programming languages</a></div>
     </td>
   </tr>
   <tr>
