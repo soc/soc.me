@@ -8,38 +8,48 @@ markdeep: true
 <div class="diagram">
  start here
       |
-      v
-╔═══════════════════════════════════════════════╤══╗             ╔══════════════════════════════════════════════════╗
-║ 1-byte instructions (legacy map 0)            │0F------------->║ 2-byte instructions (legacy map 1)               ║
-║                                               └──╢             ║                                                  ║
-╟──────────────────────────────────────────────────╢     .------>║ operand type specified      ┌──┐   ┌──┐          ║
-║                         40-4F                    ║     |       ║ via mandatory prefixes      │38│   │3A--------------.
-╟───────────────────────────|──────────────────────╢     |  .--->║ - none (packed single)      └─|┘   └──┘          ║  |
-║      ┌──┐       ┌──┬──┐   |                      ║     |  |    ║ - 66   (packed double)        |                  ║  |
-║    .--62│       │66│67│   |                      ║     |  |    ║ - F2   (scalar single)        |                  ║  |
-║    | └──┘       └─|┴─|┘   |                      ║     |  |    ║ - F3   (scalar double)        |                  ║  |
-║    |              |  |    |     ┌──┬──┐          ║     |  |    ╚═══════════════════════════════|══════════════════╝  |
-║    |              |  |    |     │C4│C5-----.     ║     |  |                                    v                     |
-║    |              |  |    |     └|─┼──┤    |     ║     |  |    ╔══════════════════════════════════════════════════╗  |
-╟──┐ | ┌──┬──┐      |  |    |      | │D5│    |     ║     |  +--->║ 3-byte instructions (legacy map 2)               ║  |
-║F0│ | │F2│F3│      |  |    |      | └─|┘    |     ║     |  |    ║                                                  ║  |
-╚══╧═|═╧═|╧═|╧══════|══|════|══════|═══|═════|═════╝     |  |    ║ operand type specified                           ║  |
-     |   |  |   ^   |  |    | ^    |   | ^   |           |  |    ║ via mandatory prefixes                           ║  |
-     |   |  |   |   |  |    | |    |   | +---|-----------+  |    ║ - none (packed single)                           ║  |
-     v   '--+---+---+--'    v |    v   v |   v   m bit   |  |    ║ - 66   (packed double)                           ║  |
-  ┏━━━━┓        |         ┏━━━|┓┏━━━━┓┏━━|━┓┏━━━━┓       |  |    ║ - F2   (scalar single)                           ║  |
-  ┃EVEX┃        |         ┃REX1┃┃VEX3┃┃REX2┃┃VEX2┃-------'  |    ║ - F3   (scalar double)                           ║  |
-  ┗━━|━┛        |         ┗━━━━┛┗━━|━┛┗━━━━┛┗━━━━┛          |    ╚══════════════════════════════════════════════════╝  |
-     |          |                  |                        |                                                          |
-     '----------+------------------+------------------------+    ╔══════════════════════════════════════════════════╗  |
-                       m bits                               '--->║ 3-byte instructions (legacy map 3)               ║<-+
-                                                                 ║                                                  ║
-                                                                 ║ operand type specified                           ║
-                                                                 ║ via mandatory prefixes                           ║
-                                                                 ║ - none (packed single)                           ║
-                                                                 ║ - 66   (packed double)                           ║
-                                                                 ║ - F2   (scalar single)                           ║
-                                                                 ║ - F3   (scalar double)                           ║
+      v                                                          ╔══════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════╤══╗             ║ 2-byte instructions               (legacy map 1) ║
+║ 1-byte instructions (legacy map 0)            │0F------------->║                                                  ║
+║                                               └──╢             ║ operand type specified      ┌──┐   ┌──┐          ║
+╟──────────────────────────────────────────────────╢    .------->║ via mandatory prefixes      │38│   │3A--------------.
+║                         40-4F                    ║    |        ║ - none (packed single)      └─|┘   └──┘          ║  |
+╟───────────────────────────|──────────────────────╢    |  .---->║ - 66   (packed double)        |                  ║  |
+║      ┌──┐       ┌──┬──┐   |                      ║    |  |     ║ - F2   (scalar single)        |                  ║  |
+║    .--62│       │66│67│   |                      ║    |  |  +->║ - F3   (scalar double)        |                  ║  |
+║    | └──┘       └─|┴─|┘   |                      ║    |  |  |  ╚═══════════════════════════════|══════════════════╝  |
+║    |              |  |    |     ┌──┬──┐          ║    |  |  |                                  v                     |
+║    |              |  |    |     │C4│C5-----.     ║    |  |  |  ╔══════════════════════════════════════════════════╗  |
+║    |              |  |    |     └|─┼──┤    |     ║    |  |  |  ║ 3-byte instructions               (legacy map 2) ║  |
+╟──┐ | ┌──┬──┐      |  |    |      | │D5│    |     ║    |  +---->║                                                  ║  |
+║F0│ | │F2│F3│      |  |    |      | └─|┘    |     ║    |  |  |  ║ operand type specified                           ║  |
+╚══╧═|═╧═|╧═|╧══════|══|════|══════|═══|═════|═════╝    |  |  +->║ via mandatory prefixes                           ║  |
+     |   |  |  ^ ^  |  |    | ^  ^ |   | ^   |          |  |  |  ║ - none (packed single)                           ║  |
+     |   |  |  | |  |  |    | |  | |   | +---|----------+  |  |  ║ - 66   (packed double)                           ║  |
+     v   '--+--+ +--+--'    v |  | v   v |   v   m bit  |  |  |  ║ - F2   (scalar single)                           ║  |
+  ┏━━━━┓       |          ┏━━━|┓┏|━━━┓┏━━|━┓┏━━━━┓      |  |  |  ║ - F3   (scalar double)                           ║  |
+  ┃EVEX┃       |          ┃REX1┃┃VEX3┃┃REX2┃┃VEX2┃------'  |  |  ╚══════════════════════════════════════════════════╝  |
+  ┗━━|━┛       |          ┗━━━━┛┗━━|━┛┗━━━━┛┗━━━━┛         |  |                                                        |
+     |         ^                   |                       |  |  ╔══════════════════════════════════════════════════╗  |
+     |         |                   +-------->--------------+---->║ 3-byte instructions               (legacy map 3) ║<-+
+     |         |       m bits                                 |  ║                                                  ║
+     '---------+---->-----------------------------------------+->║ operand type specified                           ║
+                                                              |  ║ via mandatory prefixes                           ║
+                                                              |  ║ - none (packed single)                           ║
+                                                              |  ║ - 66   (packed double)                           ║
+                                                              |  ║ - F2   (scalar single)                           ║
+                                                              |  ║ - F3   (scalar double)                           ║
+                                                              |  ╚══════════════════════════════════════════════════╝
+                                                              |  
+                                                              |  ╔══════════════════════════════════════════════════╗
+                                                              +->║ "promoted" legacy instructions           (map 4) ║
+                                                              |  ║                                                  ║
+                                                              |  ║ instruction from legacy maps 1/2/3               ║
+                                                              |  ║ promoted to EVEX for use with APX                ║
+                                                              |  ╚══════════════════════════════════════════════════╝
+                                                              |                                                      
+                                                              |  ╔══════════════════════════════════════════════════╗
+                                                              +->║ AVX512-Float16 instructions            (map 5/6) ║
                                                                  ╚══════════════════════════════════════════════════╝
 </div>
 
@@ -62,9 +72,9 @@ VEX (2-byte prefix)                         AVX (2008/2011)          VEX (3-byte
 - R extends register bits                                            - R extends register bits
 - v encodes additional source register                               - X extends index in SIB byte
 - L selects vector length (0: 128bit | 1: 256bit)                    - B extends base in SIB byte
-- p encodes mandatory prefixes                                       - m encodes escape bytes (1: 0F | 2: 0F38 | 3: 0F3A)
+- p encodes mandatory prefixes                                       - m selects instruction map (1: 0F | 2: 0F38 | 3: 0F3A)
   (0: none | 1: 66 | 2: F2 | 3: F3)                                  - W extends operand size
-- escape byte 0F implied (legacy map 1)                              - v encodes additional source register
+- instruction map 0F (legacy map 1) implied                          - v encodes additional source register
                                                                      - L selects vector length (0: 128bit, 1: 256bit)                
                                                                      - p encodes mandatory prefixes
                                                                        (0: none | 1: 66 | 2: F2 | 3: F3)
@@ -77,7 +87,7 @@ EVEX (4-byte prefix)                    AVX-512 (2013/2017)                - let
 - R extends register bits                                                    prefix contains the bit in inverted form   
 - X extends index in SIB byte                                              - the diagram elides escape bytes D8 til DF  
 - B extends base in SIB byte                                               - the EVEX prefix has additional variations  
-- m encodes escape bytes (1: 0F | 2: 0F38 | 3: 0F3A)                         not shown here for encoding                
+- m selects instruction map (1: 0F | 2: 0F38 | 3: 0F3A | 4 | 5 | 6)            not shown here for encoding                
 - W extends operand size                                                     - VEX instructions                         
 - v encodes additional source register                                       - legacy instructions                      
 - p encodes mandatory prefixes (0: none | 1: 66 | 2: F2 | 3: F3)             - conditional CMP/TEST                     
