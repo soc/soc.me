@@ -1,6 +1,7 @@
 ---
-title:  Compact Base64-first Database-friendly UIDs
-date:   2024-12-30
+title:    Compact Base64-first Database-friendly UIDs
+date:     2023-12-30
+updated:  2025-05-22
 markdeep: true
 ---
 
@@ -26,8 +27,7 @@ A *BaseUid* consist of two parts:
 1. 48bits of POSIX time in nanoseconds, left-shifted by 2 bits[^1]
 2. 72bits of randomness
 
-These two parts are concatenated into a 120bit long bitstring ...
-
+<br>These two parts are concatenated into a 120bit long bitstring:
 <div class="diagram">
          8      16      24      32      40      48      56      64      72      80      88      96      104     112     120
 ┏━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┓
@@ -35,11 +35,14 @@ These two parts are concatenated into a 120bit long bitstring ...
 ┗━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┛
 </div>
 
-... which is then converted to an ASCII string using the lexicographically-ordered Base64 alphabet ...  
-`-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`  
-... resulting in 20 characters, of which 8 characters represent the time-component and 12 characters represent the randomness-component.
+<br>The bitstring is encoded as an ASCII string using the lexicographically-ordered Base64 alphabet 
+`-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`.
 
-For example, a *BaseUid* from the start of 2022 could be `ANjssJkyfa3H00J9ZPJG`.  
+This produces an ASCII string of 20 characters, of which 8 characters represent the time-component and 12 characters represent the randomness-component.
+
+#### Example
+
+A *BaseUid* from the start of 2022 could be `ANjssJkyfa3H00J9ZPJG`.  
 `ANjssJky` is the timestamp-component for `2022-01-01T00:00:00Z` and `fa3H00J9ZPJG` is the randomness-component that
 differs with each generated value, even if the point in time stays the same.
 
@@ -84,7 +87,8 @@ differs with each generated value, even if the point in time stays the same.
 | [pushID](https://firebase.googleblog.com/2015/02/the-2120-ways-to-ensure-unique_68.html) | 120bits | ✔ Base64          |     ✔     |     ✖      |    ✔    |         ✔         |
 | [XID](https://github.com/rs/xid)                                                         |  96bits | 🞈 Base32         |     ✔     |     ✖      |    ✔    |         ✔         |
 | [ObjectID](https://docs.mongodb.com/manual/reference/method/ObjectId/)                   |  96bits | ✖ Base16          |     ✔     |     ✖      |    ✔    |         ✔         |
-| [CUID](https://github.com/ericelliott/cuid)                                              |       ❔ | ✖ Base36          |     ✖     |     ✔      |    ✖    |         ✔         |
+| [CUID](https://github.com/ericelliott/cuid)                                              | 128bits | ✖ Base36          |     ✖     |     ✔      |    ✖    |         ✔         |
+| [TypeID](https://github.com/jetify-com/typeid)                                           | 128bits | 🞈 Base32         |     ✖     |     ✔      |    ✔    |         ✔         |     
 {: .table-medium .table-layout-auto }
 
 
