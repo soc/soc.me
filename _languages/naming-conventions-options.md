@@ -1,6 +1,7 @@
 ---
-title:  "Language Design: Naming Conventions – Part 3: Options"
-date:   2024-07-05
+title:   "Language Design: Naming Conventions – Part 3: Options"
+date:    2024-07-05
+updated: 2025-05-22
 page_previous_title: "Naming Conventions – Part 2: Conversion"
 page_previous_url:   "naming-conventions-conversion"
 page_next_title:     "Naming Conventions – Part 4: Lookup"
@@ -24,39 +25,39 @@ None.or(Some(2))
     </tr>
     <tr>
       <td><code>orElse</code></td>
-      <td class="code">Some(1).orElse(2)
+      <td class="code">Some(1).orElse(() -> Some(2))
 <span class="result">--> Some(1)</span>
-None.orElse(2)
-<span class="result">--> Some(2)</span></td>
-    </tr>
-    <tr>
-      <td><code>orGet</code></td>
-      <td class="code">Some(1).orGet(() -> Some(2))
-<span class="result">--> Some(1)</span>
-None.orGet(() -> Some(2))
+None.orElse(() -> Some(2))
 <span class="result">--> Some(2)</span>
-None.orGet(() -> None)
+None.orElse(() -> None)
 <span class="result">--> None</span></td>
     </tr>
     <tr>
-      <td><code>orElseGet</code></td>
-      <td class="code">Some(1).orElseGet(() -> 2)
-<span class="result">--> Some(1)</span>
-None.orElseGet(() -> 2)
-<span class="result">--> Some(2)</span></td>
+      <td><code>getOr</code></td>
+      <td class="code">Some(1).getOr(2)
+<span class="result">--> 1</span>
+None.getOr(2)
+<span class="result">--> 2</span></td>
     </tr>
     <tr>
-      <td><code>orElsePanic</code></td>
-      <td class="code">Some(1).orElsePanic()
+      <td><code>getOrElse</code></td>
+      <td class="code">Some(1).getOrElse(() -> 2)
 <span class="result">--> 1</span>
-None.orElsePanic()
+None.getOrElse(() -> 2)
+<span class="result">--> 2</span></td>
+    </tr>
+    <tr>
+      <td><code>getOrPanic</code></td>
+      <td class="code">Some(1).getOrPanic()
+<span class="result">--> 1</span>
+None.getOrPanic()
 <span class="result"># program aborts</span></td>
     </tr>
     <tr>
-      <td><code>orElsePanicWith</code></td>
-      <td class="code">Some(1).orElsePanicWith("expected some")
+      <td><code>getOrPanicWith</code></td>
+      <td class="code">Some(1).getOrPanicWith("expected some")
 <span class="result">--> 1</span>
-None.orElsePanicWith("expected some")
+None.getOrPanicWith("expected some")
 <span class="result"># program aborts with message "expected some"</span></td>
     </tr>
   </tbody>
@@ -68,6 +69,6 @@ None.orElsePanicWith("expected some")
 
 Naming scheme:
 
-- `...Else...` indicates going from `Option[T]` to `T`
-- `...Get` indicates a closure argument
+- `get` indicates going from `Option[T]` to `T`
+- `else` indicates a closure argument
 - all panicking methods contain `...Panic`
