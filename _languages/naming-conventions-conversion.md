@@ -4,8 +4,8 @@ date:   2018-06-20
 update: 2022-06-26
 page_previous_title: "Naming Conventions – Part 1: Creation"
 page_previous_url:   "naming-conventions-creation"
-page_next_title:     "Naming Conventions – Part 3: Options"
-page_next_url:       "naming-conventions-options"
+page_next_title:     "Naming Conventions – Part 3: Option & Result"
+page_next_url:       "naming-conventions-option-and-result"
 ---
 
 <table class="table-medium">
