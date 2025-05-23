@@ -2,8 +2,8 @@
 title:  "Language Design: Naming Conventions – Part 4: Lookup"
 date:   2022-06-07
 update: 2022-07-26
-page_previous_title: "Naming Conventions – Part 3: Options"
-page_previous_url:   "naming-conventions-options"
+page_previous_title: "Naming Conventions – Part 3: Option & Result"
+page_previous_url:   "naming-conventions-option-and-result"
 page_next_title:     "Naming Conventions – Part 5: Streaming"
 page_next_url:       "naming-conventions-streaming"
 ---
