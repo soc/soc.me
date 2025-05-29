@@ -134,6 +134,7 @@ navigation: true
       <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
       <div><a href="https://devblogs.microsoft.com/oldnewthing/20230904-00/?p=108704" class="compact">Shift Larger Than Register Size</a></div>
       <div><a href="https://ericlippert.com/2020/02/27/hundred-year-mistakes/">Hundred year mistakes</a></div>
+      <div><a href="https://verdagon.dev/grimoire/grimoire">Memory Safety Approaches</a></div>
     </td>
     <td>
       <div><i class="compact">Syntax Comparisons/Overviews:</i>
