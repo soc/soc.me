@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Stop Using `<>` for Generics"
 date:   2020-04-04
-update: 2022-07-30
+update: 2025-05-30
 redirect_from: "/languages/stop-using-for-generics"
 ---
 
@@ -20,9 +20,8 @@ _**TL;DR:** Use_ `[]` _instead of_ `<>` _for generics. It will save you a lot of
 Many languages that were created without Generics in mind had trouble adding generics later on,
 as all pairs of brackets – `(` and `)`, `{` and `}`, `[` and `]` – were already put to use.
 
-`<` and `>`, used in as binary comparison operators (and in binary bitshift operators)
-were usually the only symbols left in the grammar that are practical to overload with a new,
-different meaning.
+`<` and `>`, used in binary operators for comparisons and bitshifts, were usually the only symbols left in the
+grammar that are practical to overload with a new, different meaning.
 
 That's pretty much the only reason why `<>` started to be used as generics in the first place.
 
@@ -107,7 +106,7 @@ with Scala, Python, and Nim joining Eiffel, which was pretty much the sole user 
 _With the recent adoption of `[]` for generics by Go and Carbon this seems to be the likely outcome._
 
 
-[^related]: [Parsing Ambiguity: Type Argument v. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
+[^related]: [Parsing Ambiguity: Type Argument vs. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
 [^java]: Java: The syntax inconsistency is due to the difficulty a compiler would have to tell whether some token stream of `instance` `.` `foo` `<` is the left side of a comparison (with `<` being the "less-than" operator) or the start of a generic type argument within a method call.
 [^csharp]: C#: See [ECMA-334, 4th Edition, §9.2.3 – Grammar Ambiguities](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)
 [^cpp1]: C++: See [What are all the syntax problems introduced by the usage of angle brackets in C++ templates?](https://stackoverflow.com/questions/7304699/what-are-all-the-syntax-problems-introduced-by-the-usage-of-angle-brackets-in-c)
