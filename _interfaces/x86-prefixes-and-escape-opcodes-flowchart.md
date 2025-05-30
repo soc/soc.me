@@ -1,7 +1,7 @@
 ---
 title:  "x86 prefixes and escape opcodes flowchart"
 date:   2023-07-29
-updated: 2023-09-24
+update: 2025-04-27
 markdeep: true
 ---
 

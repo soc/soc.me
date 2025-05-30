@@ -1,7 +1,7 @@
 ---
 title: Principles of Language Design
-date:    2024-02-29
-updated: 2025-02-19
+date:   2024-02-29
+update: 2025-05-23
 ---
 
 <picture id="slide-01">
