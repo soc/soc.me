@@ -1,7 +1,7 @@
 ---
-title:   "Language Design: Naming Conventions – Part 3: Option & Result"
-date:    2024-07-05
-updated: 2025-05-23
+title:  "Language Design: Naming Conventions – Part 3: Option & Result"
+date:   2024-07-05
+update: 2025-05-23
 redirect_from: "/languages/naming-conventions-options"
 page_previous_title: "Naming Conventions – Part 2: Conversion"
 page_previous_url:   "naming-conventions-conversion"
