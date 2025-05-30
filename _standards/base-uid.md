@@ -1,7 +1,7 @@
 ---
 title:    Compact Base64-first Database-friendly UIDs
 date:     2023-12-30
-updated:  2025-05-22
+update:   2025-05-22
 markdeep: true
 ---
 
