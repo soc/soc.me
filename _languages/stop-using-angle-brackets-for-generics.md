@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Stop Using `<>` for Generics"
 date:   2020-04-04
-update: 2022-07-30
+update: 2025-07-10
 redirect_from: "/languages/stop-using-for-generics"
 ---
 
@@ -9,40 +9,33 @@ _**TL;DR:** Use_ `[]` _instead of_ `<>` _for generics. It will save you a lot of
 
 #### 1. `<>` is hard to read for humans
 
-- Imagine a programming font that in which the height of parentheses (`()`), curly braces (`{}`) or
-  square brackets (`[]`) were capped to the height of a lower-case letter.
-  This is of course ridiculous – but exactly what happens with the (ab)use of the `<>` symbols for brackets.
-- `<` and `>` are usually already used as comparison and bitshift operators, which (as binary operators)
-  conform to a completely different grammatical structure compared to their use as brackets.
+`<` and `>` are usually already used as comparison and bitshift operators, which (as binary operators)
+conform to a completely different grammatical structure compared to their use as brackets.  
+This, often in combination with other design mistakes – like the use of both `()` and `[]` for function calls,
+or literal syntax to construct lists, sets and maps – leads to a confusing and inconsistent use of brackets in many languages.
+
+On top of that, imagine a programming font that in which the height of parentheses (`()`), curly braces (`{}`) or
+square brackets (`[]`) were capped to the height of a lower-case letter.  
+This is of course ridiculous – but exactly what happens with the (ab)use of the `<>` symbols for brackets.
 
 #### 2. `<>` is hard to parse for compilers
 
-Many languages that were created without Generics in mind had trouble adding generics later on,
+Many languages that were created without generics in mind had trouble adding generics later on,
 as all pairs of brackets – `(` and `)`, `{` and `}`, `[` and `]` – were already put to use.
 
-`<` and `>`, used in as binary comparison operators (and in binary bitshift operators)
-were usually the only symbols left in the grammar that are practical to overload with a new,
-different meaning.
+`<` and `>`, used in binary operators for comparisons and bitshifts, were usually the only symbols left in the
+grammar that are practical to overload with a new, different meaning.
 
 That's pretty much the only reason why `<>` started to be used as generics in the first place.
 
 Unfortunately, using `<` and `>` for generics caused parsing problems in every language that tried
 use them for this purpose, forcing language designers to indulge in various ugly workarounds:[^related]
 
-_Java_ approached these issues by making the syntax less consistent – which is the reason why Java's
-definition-site syntax for Generics and its use-site syntax differs substantially:[^java]
-
-```java
-// class definition/instantiation: type parameter after name
-class Foo<T> {}
-new Foo<String>();
-// method definition/invocation: type parameter before name
-<T> void foo() { ... }
-instance.<String>foo();
-```
+_Java_ approached these issues by making the syntax less consistent (before function return types, but after class names)
+and limiting where generics can be used (for instance not with statically imported methods).[^java]
 
 _C#_ and _Kotlin_ tried to retain a more consistent syntax by introducing unlimited look-ahead:
-Their parser just keeps reading input after the `<` until it can make a decision.[^csharp]
+Their parsers keep reading input after the `<` until a decision can be made.[^csharp]
 
 _C++_ suffers from a plethora of `<>`-related issues.[^cpp1]
 The only issue addressed by the C++ committee after decades was the requirement to add spaces to
@@ -59,17 +52,15 @@ let vec: Vec<u32> = Vec::<u32>::new();
             /*or*/ <Vec<u32>>::new();
 ```
 
-#### 3. It makes the uses of brackets confusing and inconsistent
+#### A better design
 
-Many legacy languages use `<` and `>` for comparisons, bit-shifts and generics, as well as both `()` and `[]` for function calls.
-
-Instead, imagine a design where each bracket has a clearly-defined use ...
+Instead of repeating the mistakes of the past, imagine each bracket has a clearly-defined use:
 
 > `[]` _encloses_ type parameters or type arguments<br/>
 > `()` _groups_ expressions, parameter/argument lists or tuples<br/>
 > `{}` _sequences_ statements or definitions<br/>
 
-... and `<`/`>` is only used as a comparison operator, and not misused as a makeshift bracket.
+`<`/`>` is only used as a comparison operator, and not misused as a makeshift bracket.
 
 This substantially simplifies the mental model beginners need to adopt before writing their first program
 (_"`()` is for values, `[]` is for types"_), and encourages the elimination of syntactic special cases like collection literals ...
@@ -95,8 +86,6 @@ array(0) = 23.42       /* instead of */   array[0] = 23.42
 map("name") = "Joe"    /* instead of */   map["name"] = "Joe"
 ```
 
----
-
 #### Coda
 
 Thankfully, the number of languages using `[]` for generics seems to increase lately –
@@ -107,7 +96,7 @@ with Scala, Python, and Nim joining Eiffel, which was pretty much the sole user 
 _With the recent adoption of `[]` for generics by Go and Carbon this seems to be the likely outcome._
 
 
-[^related]: [Parsing Ambiguity: Type Argument v. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
+[^related]: [Parsing Ambiguity: Type Argument vs. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
 [^java]: Java: The syntax inconsistency is due to the difficulty a compiler would have to tell whether some token stream of `instance` `.` `foo` `<` is the left side of a comparison (with `<` being the "less-than" operator) or the start of a generic type argument within a method call.
 [^csharp]: C#: See [ECMA-334, 4th Edition, §9.2.3 – Grammar Ambiguities](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)
 [^cpp1]: C++: See [What are all the syntax problems introduced by the usage of angle brackets in C++ templates?](https://stackoverflow.com/questions/7304699/what-are-all-the-syntax-problems-introduced-by-the-usage-of-angle-brackets-in-c)
