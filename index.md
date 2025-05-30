@@ -148,6 +148,7 @@ navigation: true
       <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
       <div><a href="https://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
+      <div><a href="https://keleshev.com/parsing-ambiguity-type-argument-v-less-than">Parsing Ambiguity:<br/>Type Argument vs. Less Than</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw" class="compact">Living in a Post-Functional World</a></div>
       <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
