@@ -1,7 +1,7 @@
 ---
-title:  "Language Design: Naming Conventions – Part 4: Lookup"
+title:  "Library Design: Naming Conventions – Part 4: Lookup"
 date:   2022-06-07
-update: 2022-07-26
+update: 2025-07-10
 page_previous_title: "Naming Conventions – Part 3: Option & Result"
 page_previous_url:   "naming-conventions-option-and-result"
 page_next_title:     "Naming Conventions – Part 5: Streaming"
@@ -11,8 +11,8 @@ page_next_url:       "naming-conventions-streaming"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
