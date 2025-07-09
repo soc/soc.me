@@ -1,7 +1,7 @@
 ---
-title:  "Language Design: Naming Conventions – Part 5: Streaming"
+title:  "Library Design: Naming Conventions – Part 5: Streaming"
 date:   2022-06-08
-update: 2024-12-27
+update: 2025-07-10
 page_previous_title: "Naming Conventions – Part 4: Lookup"
 page_previous_url:   "naming-conventions-lookup"
 ---
@@ -11,8 +11,8 @@ page_previous_url:   "naming-conventions-lookup"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
@@ -50,8 +50,8 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
@@ -200,8 +200,8 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
@@ -295,8 +295,8 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
@@ -357,8 +357,8 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
