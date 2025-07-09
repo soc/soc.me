@@ -1,7 +1,7 @@
 ---
-title:  "Language Design: Naming Conventions – Part 2: Conversion"
+title:  "Library Design: Naming Conventions – Part 2: Conversion"
 date:   2018-06-20
-update: 2022-06-26
+update: 2025-07-10
 page_previous_title: "Naming Conventions – Part 1: Creation"
 page_previous_url:   "naming-conventions-creation"
 page_next_title:     "Naming Conventions – Part 3: Option & Result"
@@ -11,8 +11,8 @@ page_next_url:       "naming-conventions-option-and-result"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
