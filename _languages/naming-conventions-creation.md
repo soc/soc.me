@@ -1,7 +1,7 @@
 ---
-title:  "Language Design: Naming Conventions – Part 1: Creation"
+title:  "Library Design: Naming Conventions – Part 1: Creation"
 date:   2018-06-19
-update: 2022-06-24
+update: 2025-07-10
 redirect_from: "/languages/naming"
 page_next_title:     "Naming Conventions – Part 2: Conversion"
 page_next_url:       "naming-conventions-conversion"
@@ -10,8 +10,8 @@ page_next_url:       "naming-conventions-conversion"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Name</th>
-      <th style="width: 34%">Example</th>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
@@ -64,6 +64,20 @@ Int64.parse(string)</td>
         </ul>
       </td>
     </tr>
+  </tbody>
+</table>
+
+#### Modification
+
+<table class="table-medium">
+  <thead>
+    <tr>
+      <th style="width: 18%">Function Name</th>
+      <th style="width: 34%">Code Example</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>with(val)</code></td>
       <td class="code">person.withAge(23)
