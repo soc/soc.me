@@ -1,6 +1,7 @@
 ---
 title:  "Pointer Compression"
-date:   2022-11-29 12:00:00 +0200
+date:   2022-11-29
+update: 2025-07-12
 markdeep: true
 ---
 
@@ -14,7 +15,9 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 - Shaving off upper bits of the pointer reduces the addressable space.
 - Shaving off lower bits of the pointer reduces the granularity.
 
-#### type 1: normal reference, 1 byte granularity, 256 TiB address space
+#### Possible Designs
+
+##### type 1: normal reference, 1 byte granularity, 256 TiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -27,7 +30,7 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 
 **→ 48 bits address, 16 "free" bits**
 
-#### type 2: normal reference, 8 byte granularity, 256 TiB address space
+##### type 2: normal reference, 8 byte granularity, 256 TiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -40,7 +43,7 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 
 **→ 44 bits address, 20 "free" bits**
 
-#### type 3: normal reference, 8 byte granularity, 16TiB address space
+##### type 3: normal reference, 8 byte granularity, 16TiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -53,7 +56,7 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 
 **→ 40 bits address, 24 "free" bits**
 
-#### type 4: normal reference, 8 byte granularity, 1TiB address space
+##### type 4: normal reference, 8 byte granularity, 1TiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -66,7 +69,7 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 
 **→ 36 bits address, 28 "free" bits**
 
-#### type 5: vtable/type/klass reference, 128 byte granularity, 256 TiB address space
+##### type 5: vtable/type/class reference, 128 byte granularity, 256 TiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -79,7 +82,7 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 
 **→ 40 bits address, 24 "free" bits**
 
-#### type 6: vtable/type/klass reference, 128 byte granularity, 1TiB address space
+##### type 6: vtable/type/class reference, 128 byte granularity, 1TiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -92,7 +95,7 @@ _**TL;DR:** How large is a pointer on 64-bit systems – and how small can it pr
 
 **→ 32 bits address, 32 "free" bits**
 
-#### type 7: vtable/type/klass reference, 128 byte granularity, 4GiB address space
+##### type 7: vtable/type/class reference, 128 byte granularity, 4GiB address space
 
 <div class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
