@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Drop `break` and `continue`"
 date:   2022-12-10
+update: 2025-07-17
 markdeep: true
 ---
 
@@ -33,9 +34,9 @@ Of the 10 loops with `continue`s maybe 5 are easily convertible.
 |                                                |
 |                                            +---+
 |                                            |   |
-|                                            |   |<---loops with break
+|                        loops with break--->|   |
 |                                            +---+
-|                                            |   |<---loops with continue
+|                     loops with continue--->|   |
 '--------------------------------------------+---'
 </div>
 
@@ -50,7 +51,7 @@ What's the detriment? The loss of the ability to read the head of the loop and k
 ```
 while true { // is it really an endless loop? only way to find out is reading the whole loop body!
   ...
-  if isNewLine() {
+  if shouldBreak() {
     break;
   }
 }
@@ -60,15 +61,16 @@ This inability is so ingrained in people, that they cannot fathom the mental loa
 when they do not have to keep "this loop may contain a `break` or `continue`" in the back of their head:
 
 ```
-while !isNewLine { // loop head shows immediately when the loop terminates
+let continue = true
+while continue { // loop head shows immediately when the loop terminates
   ...
-  isNewLine = true
+  continue = shouldBreak().not
 }
 ```
 
 ### Conclusion
 
 Dropping `break` and `continue` removes mental load from 98.5% of the loops that don't use them,
-with the pain of having a few loops that are now more painful to write.
+with the disadvantage that a few loops are now more painful to write.
 
 That's a good trade-off.
