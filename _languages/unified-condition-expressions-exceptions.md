@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Exceptions"
 date:   2018-04-28
-update: 2022-06-24
+update: 2025-07-17
 redirect_from: "/languages/unified-condition-syntax-advanced"
 page_previous_title: "Unified Condition Expressions – Implementation"
 page_previous_url:   "unified-condition-expressions-implementation"
@@ -17,12 +17,15 @@ One language that has done something similar is Ocaml, which has
 
 One option might be something along the lines of
 
-```ml
-if readPersonFromFile(file)
-  throws[IOException]($ex)        then "unknown, due to $ex"
-  is Person("Alice", _)           then "alice"
-  is Person(_, $age) && age >= 18 then "adult"
-                                  else "minor"
+```
+if readColorFromUri(location)
+  // type-based pattern
+  throws[IOException](let ex)        then "file error due to \{ex}"
+  // value-based pattern
+  throws(NetException(let msg))      then "network error with message \{msg}"
+  // regular cases as usual
+  == Color.RED                       then "red"
+                                     else "other color"
 ```
 
 This might require adding some amount of language magic to deal with the `throws` construct though,
