@@ -56,7 +56,7 @@ Schemes to decrease header size often trade in a more compressed representation 
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
   ╰──────────────────────┬──────────────────────╯ ╰──────────────────────────────┬──────────────────────────────────────╯ ╰──┬──╯
      24 bits: vtable/type/class pointer                    36 bits: forwarding pointer                          4 bits: other uses                  
-     128 byte granularity, 4GiB address space (type 7)¹    8 byte granularity, 1TiB address space (type 4)²
+     128 byte granularity, 2 GiB address space (type 7)¹   8 byte granularity, 512 GiB address space (type 4)²
 </div>
 
 ---
