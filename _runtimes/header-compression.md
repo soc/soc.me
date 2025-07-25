@@ -45,7 +45,7 @@ Schemes to decrease header size often trade in a more compressed representation 
  +---------------+---------------+---------------+---------------+
   ╰──────────────────────┬──────────────────────╯ ╰──────┬──────╯
      24 bits: vtable/type/class pointer                  8 bits: other uses                  
-     128 byte granularity, 4GiB address space (type 7)¹                                                                          .
+     64 byte granularity, 1 GiB address space (type 7)¹                                                                          .
 </div>
 
 ##### 8-byte instance header, with space for a forwarding pointer
@@ -56,9 +56,9 @@ Schemes to decrease header size often trade in a more compressed representation 
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
   ╰──────────────────────┬──────────────────────╯ ╰──────────────────────────────┬──────────────────────────────────────╯ ╰──┬──╯
      24 bits: vtable/type/class pointer                    36 bits: forwarding pointer                          4 bits: other uses                  
-     128 byte granularity, 4GiB address space (type 7)¹    8 byte granularity, 1TiB address space (type 4)²
+     64 byte granularity, 1 GiB address space (type 7)¹   8 byte granularity, 512 GiB address space (type 4)²
 </div>
 
 ---
-¹: [Pointer Compression Type 7](pointer-compression#type-7-vtabletypeclass-reference-128-byte-granularity-4gib-address-space)<br/>
-²: [Pointer Compression Type 4](pointer-compression#type-4-normal-reference-8-byte-granularity-1tib-address-space)
+¹: [Pointer Compression Type 7](pointer-compression#type-7-vtabletypeclass-reference-64-byte-granularity-1-gib-address-space)<br/>
+²: [Pointer Compression Type 4](pointer-compression#type-4-normal-reference-8-byte-granularity-512-gib-address-space)
