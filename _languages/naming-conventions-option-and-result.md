@@ -1,13 +1,34 @@
 ---
 title:  "Library Design: Naming Conventions – Part 3: Option & Result"
 date:   2024-07-05
-update: 2025-07-10
+update: 2025-08-02
 redirect_from: "/languages/naming-conventions-options"
 page_previous_title: "Naming Conventions – Part 2: Conversion"
 page_previous_url:   "naming-conventions-conversion"
 page_next_title:     "Naming Conventions – Part 4: Lookup"
 page_next_url:       "naming-conventions-lookup"
 ---
+
+Many languages’ `Option` and `Result` types suffer from an organically-grown and therefore inconsistently named set of functions.
+
+To avoid this, a simple naming scheme can be used to derive a full set of useful methods with predictable names for these types.
+
+The examples below use variant names `Some` and `None` for `Option`, and variant names `Pass` and `Fail` for `Result`.[^1]
+
+#### Naming Scheme
+
+Given a function operating on `Option[T]` or `Result[T, E]` ...
+- `get...` indicates a result type of `T`,  
+  its lack indicates a result type of `Option[T]`/`Result[T, E]`
+- `...Else` indicates a closure argument,  
+  its lack indicates an eagerly evaluated value
+- `...Panic` indicates a possibly panicking function,  
+  its lack indicates a total function
+- additional combinator function names are adopted from [Naming Conventions – Streaming](naming-conventions-streaming) as appropriate  
+  where `...None` or `...Fail` variants indicate working on the error value instead of on the success value
+
+
+<br/>
 
 <table class="table-medium">
   <thead>
@@ -90,11 +111,5 @@ Fail(1).getOrPanicWith("expected pass")
 
 <br/>
 
----
-
-Naming scheme:
-
-- `Option` has variants `Some` and `None`; `Result` has variants `Pass` and `Fail`
-- `get` indicates going from `Option[T]`/`Result[T]` to `T`
-- `else` indicates a closure argument
-- all panicking methods contain `...Panic`
+[^1]: Having variant names with the same length avoids pointless debates and diverging code style decisions on whether
+      the arms of matches should be lined up or not.
