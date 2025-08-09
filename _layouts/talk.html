@@ -11,7 +11,7 @@ layout: default
     {% if title_parts[1] != nil and title_parts[1] != empty %}
     <h3>{{ title_parts[1] }}</h3>
     {% endif %}
-    {% if page.note %}<em class="note">{{page.note}}</em>{% endif %}
+    {% if page.note %}<em class="small">{{page.note}}</em>{% endif %}
     {{ content | markdownify }}
   </article>
 </div>
