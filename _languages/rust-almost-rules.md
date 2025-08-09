@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Rust's Almost-Rules"
 date:   2024-08-05
+update: 2026-06-02
 ---
 
 (Inspired by [Almost Rules](https://matklad.github.io/2022/07/10/almost-rules.html).)
@@ -23,7 +24,12 @@ date:   2024-08-05
 
 ##### `T {}` initializes a struct
 
-- except inside an `if`, where `{` starts a branch
+- except inside an `if`, where `{` starts a branch (see [Rust's Struct Initializer Syntax Was a Mistake](rust-struct-initializer-mistake))
+
+##### types are uppercase
+
+- except "primitive" types
+  - except the primitive types array, slice, tuple and unit 
 
 ##### Rust has no varargs
 
@@ -32,8 +38,7 @@ date:   2024-08-05
 
 ##### patterns introduce bindings
 
-- except in macro pattern matching, where identifiers are matched verbatim
-
+- except in macro pattern matching, where the same syntax matches identifiers verbatim
 
 ### Semantics
 
@@ -42,5 +47,6 @@ date:   2024-08-05
 - except `f64` and `f32`, which do not
 
 ##### struct initializers use temporary lifetime extension
+
 - except tuple structs
   - except when using curly braces to initialize tuple structs
