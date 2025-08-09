@@ -83,7 +83,10 @@ navigation: true
       <section id="core-lang" class="core-lang">✨ <a href="https://core-lang.dev">The Core Language</a> ✨
         <ul>
           <li><a href="https://core-lang.dev/about">About</a></li>
-          <li><a href="https://core-lang.dev/design">Design</a></li>
+          <li><a href="https://core-lang.dev/design">Principles</a></li>
+          <li><a href="https://core-lang.dev/overview">Overview</a></li>
+          <li><a href="https://core-lang.dev/changes">Changes</a></li>
+          <li><a href="https://core-lang.dev/internals">Internals</a></li>
         </ul>
       </section>
       <section id="equality-and-identity"><i>Equality &amp; Identity:</i>
