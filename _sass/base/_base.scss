@@ -315,6 +315,10 @@ pre {
   opacity: 0.5;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 table {
   width: 100%;
   table-layout: fixed;
@@ -338,8 +342,9 @@ table {
 }
 
 .note {
-  font-size: var(--smaller);
-  text-justify: none;
+  background-color: var(--background-color-highlight);
+  margin: var(--base-line) calc(var(--base-line) * 3);
+  padding: calc(var(--base-line) / 2) var(--base-line);
 }
 
 .warn {

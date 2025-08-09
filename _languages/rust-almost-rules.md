@@ -1,6 +1,7 @@
 ---
 title:  "Language Design: Rust's Almost-Rules"
 date:   2024-08-05
+update: 2025-08-10
 ---
 
 (Inspired by [Almost Rules](https://matklad.github.io/2022/07/10/almost-rules.html).)
@@ -33,6 +34,10 @@ date:   2024-08-05
 ##### patterns introduce bindings
 
 - except in macro pattern matching, where identifiers are matched verbatim
+
+##### Semicola are mandatory, except where they aren't
+
+- consider `struct Foo;` vs. `struct Foo {}`
 
 
 ### Semantics
