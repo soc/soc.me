@@ -13,6 +13,7 @@
   --link-underline-color-hover: #868E96;
   --table-color-alternate: #EEEEEE;
   --diagram-color: #000000;
+  --border-color-code: var(--color-grey-light);
 }
 
 /* dark mode */
@@ -32,6 +33,7 @@
     --link-underline-color-hover: #DDDDDD;
     --table-color-alternate: #444444;
     --diagram-color: #FFFFFF;
+    --border-color-code: var(--color-grey-dark);
     ::selection {
       color: #FFFFFF;
       background-color: #212529;
@@ -292,7 +294,7 @@ blockquote cite a:visited {
 
 pre,
 code {
-  border: 1px solid var(--color-grey-light);
+  border: 1px solid var(--border-color-code);
   border-radius: 3px;
   background-color: var(--background-color-code);
 }
