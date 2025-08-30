@@ -5,7 +5,7 @@ update: 2022-07-08
 redirect_from: "languages/stop-building-languages-with-properties"
 ---
 
-_**TL;DR:** Properties are a hack employed to retrofit "nice" syntax into languages that already shipped with fields and methods. Instead, design language rules for fields and methods that get deliver the same (or more) benefits – at a lower price!_
+_**TL;DR:** Properties are a hack employed to retrofit "nice" syntax into languages that already shipped with fields and methods. Instead, design the language to deliver the same (or more) benefits with fields!_
 
 #### Why do properties exist?
 
@@ -29,7 +29,7 @@ public class Person {
 This means that – instead of e. g. `person.getFirstName()` – users can write `person.firstName`.
 
 In C#, this is not perfect: changing a field to a property is source compatible, but not binary compatible;
-and changing getters and setters to a property is neither.
+and changing a getter/setter pair to a property is neither.
 
 ##### Kotlin
 
@@ -76,7 +76,7 @@ or contain complex custom logic (non-"auto-implemented properties" in C#, "compu
 
 #### How to replace property getters with fields and methods?
 
-Consider a class definition that contains one field `let` and two methods `fun`:
+Consider a class definition with one field (`name`) and two methods (`firstName` and `lastName`) ...
 
 ```
 class Person(let name: String)
@@ -84,7 +84,7 @@ class Person(let name: String)
   fun lastName:  String = this.name.split(" ").get(1)
 ```
 
-Usage:
+... and its usage:
 
 ```
 let person = Person("Jane Doe")
@@ -99,18 +99,18 @@ As a mental model, a desugared encoding of `Person`'s `name` value could look li
 class Person(name: String)
   @private
   let _name: String = name
-  fun name: String = this._name
+  fun name: String = self._name
   ... /* other methods, as in the last example */
 ```
 
-If the `Person` class definition is changed to contain two fields and one method ...
+If the `Person` class definition was now changed to contain two fields and one method ...
 
 ```
 class Person(let firstName: String, let lastName: String)
   fun name: String = this.firstName + " " + this.lastName
 ```
 
-... the usage stays the same, despite the implementation changing completely:
+... code using the class should not require changes, except adjusting the constructor call:
 
 ```
 let person = Person("Jane", "Doe")
@@ -120,7 +120,7 @@ person.lastName   // "Doe"
 ```
 
 Still, users of the class can see what's happening when they access `Person`'s members,
-because the IDE can use different colors to mark fields (`let`) and methods (`fun`).
+because the IDE can use different colors to mark fields (keyword `let`) and methods (keyword `fun`).
 
 #### How to replace property setters with fields and methods?
 
@@ -128,21 +128,21 @@ While mutability is on its way out, and the benefits of this approach are less p
 let's review an example that demonstrates how property setters can also be replaced with fields and functions:
 
 ```
-class Wine(let name: String, var rating: Int32)
+class Wine(let name: String, var rating: In64)
 ```
 
 As a mental model, a desugared encoding of `Wine`'s `rating` variable could look like this:
 
 ```
-class Wine(let name: String, rating: Int32)
+class Wine(let name: String, rating: Int64)
   @private
-  let _rating: Int32 = rating
-  fun rating: Int32 = this._rating
-  fun setRating(newRating: Int32) = this._rating = newRating
+  var _rating: Int64 = rating
+  fun rating: Int64 = self._rating
+  fun setRating(newRating: Int64) = self._rating = newRating
 ```
 
-We use `setRating`, but instead of special property syntax `set;` or a `@setter("rating")` annotation,
-we define some slight syntactic sugar for methods starting with `set`:
+Instead of a special property syntax like `set;` or a `@setter("rating")` annotation,
+it's possible to define some slight syntactic sugar for methods starting with `set`:
 
 > `x.setY(z)` can be written as `x.y = z`
 
@@ -161,10 +161,10 @@ To add additional checks when setting a new value (which is a popular use-case f
 we explicitly define a `setRating` method:
 
 ```
-class Wine(let name: String, var rating: Int32)
-  fun setRating(newRating: Int32) =
+class Wine(let name: String, var rating: Int64)
+  fun setRating(newRating: Int64) =
     require(newRating >= 0 && newRating <= 100, s"rating must be between 0 and 100, but was $newRating")
-    this.rating = newRating
+    self.rating = newRating
 ```
 
 It is used like this:
@@ -173,22 +173,22 @@ It is used like this:
 let wine = Wine("Schatoh-la Fid", 96)
 wine.rating       // 96
 wine.rating = 97
-wine.rating = -1  /* not ok */
+wine.rating = -1  /* fails */
 ```
 
 But now we realize, that – to protect our new invariant – we also want to run this check on construction,
 so we refactor:
 
 ```
-class Wine(let name: String, var rating: Int32)
+class Wine(let name: String, var rating: Int64)
   checkRating(rating)
 
   @override
-  fun setRating(newRating: Int32) =
+  fun setRating(newRating: Int64) =
     checkRating(newRating)
     this.rating = newRating
 
-  fun checkRating(newRating: Int32) =
+  fun checkRating(newRating: Int64) =
     require(newRating >= 0 && newRating <= 100, s"rating must be between 0 and 100, but was $newRating")
 ```
 
@@ -196,7 +196,7 @@ At this point, the use of (property) setters becomes questionable, as more mutab
 checks that we need to be called at all the right places. Instead, consider this:
 
 ```
-struct Rating(let value: Int32)
+value Rating(let value: Int64)
   require(value >= 0 && value <= 100, s"rating must be between 0 and 100, but was $value")
 
 class Wine(let name: String, var rating: Rating)
@@ -204,11 +204,11 @@ class Wine(let name: String, var rating: Rating)
 let wine = Wine("Schatoh-la Fid", Rating(96))
 wine.rating               // Rating(96)
 wine.rating = Rating(97)
-wine.rating = Rating(-1)  /* not ok */
+wine.rating = Rating(-1)  /* fails */
 ```
 
 This preserves the simplicity of the `Wine` class definition, and moves the verification of the rating
-to its own type that makes it trivial to ensure all invariants are preserved.
+to its own type, making it easier to ensure all invariants are preserved.
 
 #### What about method references?
 
@@ -235,7 +235,7 @@ There are three options:
 2. Explicit lambda syntax
 
     Instead of dealing with type inference and ambiguity, `person.firstName` could be specified to always evaluate,
-    using a lambda for `bar`.
+    requiring the use of a lambda for `bar`.
     ```
     fun bar(f: () => String) = ...
     bar(() => person.firstName)
@@ -243,13 +243,13 @@ There are three options:
 
 3. Reference syntax
 
-    Specific syntax could be introduced to create references from methods:
+    Special syntax could be introduced to create references from methods:
     ```
     fun bar(f: () => String) = ...
     bar(person::firstName)
     ```
     This approach is especially interesting if the language has other program elements for which a "reference" syntax
-    could also be beneficial and could replace special constructs like Java's `String.class` or C#'s `typeof(String)`.
+    could also be beneficial, as it could replace special constructs like Java's `String.class` or C#'s `typeof(String)`.
 
 #### Coda
 
