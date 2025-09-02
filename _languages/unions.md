@@ -1,16 +1,20 @@
 ---
 title:  "Language Design: Unions"
 date:   2021-08-26
-update: 2022-11-26
+update: 2024-09-03
 redirect_from: "/languages/better-enums"
 redirect_from: "/languages/nondefinitional-enums"
 ---
 
 _**TL;DR:** Tagged unions whose variants do not require syntactic wrappers._
 
+<div class="note">
+🎉 This idea was proposed for C# 15 under the name "Nominal Type Unions"! 🎉
+</div>
+
 ### Introduction
 
-A "traditional" enum (ADT) definition as it exists in various languages defines both the enum itself
+A "traditional" discriminated union definition as it exists in various languages defines both the enum itself
 (`Pet`), as well as its variants (`Cat` and `Dog`):
 
     enum Pet {
@@ -35,30 +39,29 @@ and its variants (`Cat` and `Dog`) refer to existing types in scope that may or 
 
 #### Observation
 
-- ADTs are generally tagged unions (their variants can be told apart, even if they contain the same values)
-and come with wrappers (`Cat`, `Dog`) around their payloads.
+- Discriminated unions contain a tag to allow telling their variants – even in cases where the types are them same: `Result[String, String]` – apart.
+They come with wrappers (`Cat`, `Dog`) around their payloads.
 - Untagged unions do not contain metadata (runtime tags) to distinguish variants, but require that every access is qualified with variant information.
 - Union types do not contain metadata (runtime tags) to distinguish variants and do not use syntactic wrappers.
 
-<table>
+<br/>
+<table class="table-medium">
   <tr>
     <th></th>
     <th>Syntactic Wrapping</th>
     <th>No Syntactic Wrapping</th>
   </tr>
   <tr>
-    <td><b>Runtime Tagging</b></td>
-    <td>tagged union/ADT/enum</td>
-    <td>?</td>
+    <th>Runtime Tags</th>
+    <td>discriminated union/tagged union<br/>(Rust's enum, F#)</td>
+    <td>?<br/>(Algol's <i>united modes</i>)</td>
   </tr>
   <tr>
-    <td><b>No Runtime Tagging</b></td>
-    <td>untagged union (Rust, C, C++)</td>
-    <td>union type</td>
+    <th>No Runtime Tags</th>
+    <td>untagged union<br/>(Rust's union, C, C++)</td>
+    <td>union type<br/>(TypeScript)</td>
   </tr>
 </table>
-
-
 
 
 ### Filling in the upper right quadrant
@@ -83,7 +86,7 @@ does not define `Cat` or `Dog`, but refers to existing `Cat` and `Dog` types in 
 ### Benefits of such unions
 
 1. Union variants have types, because they have a "real" class/struct/... declaration.<br>
-   (This fixes a mistake that some languages like Rust or Haskell made with their enums/ADTs.[^enum-variants-1][^enum-variants-2])
+   (This fixes a mistake that some languages like Rust or Haskell made with their enum/data types.[^enum-variants-1][^enum-variants-2])
 2. Variants can be reference types or value types (as they refer to "real" `class` or `value` definitions).
 3. No "stutter", where variant names have to be invented to wrap existing types. (Rust has this issue.)
 4. Union values can be passed/created more easily, as no syntactic wrapping is required.
@@ -102,7 +105,7 @@ does not define `Cat` or `Dog`, but refers to existing `Cat` and `Dog` types in 
     value Some[T](value: T)
     module None
 
-..., but even trivial ADTs like a JSON representation would benefit.
+..., but even trivial types like a JSON representation would benefit.
 
 Instead of ...
 
@@ -135,7 +138,7 @@ No wrapping required when passing arguments (unlike "traditional" enum approache
 
     fun someValue(value: JsonValue) = ...
     someValue(JsonString("test")) // "traditional" approach
-    someValue("test")             // with non-definitional unions
+    someValue("test")             // proposed union design
 
 #### Example for 5.
 
@@ -143,7 +146,7 @@ Consider this class definition:
 
     class Name(name: String)
 
-With non-definitional unions, `Name` can be used multiple times – in different unions (and elsewhere):
+With the proposed union design, `Name` can be used multiple times – in different unions (and elsewhere):
 
     union PersonIdentifier of
       Name,
@@ -155,10 +158,10 @@ With non-definitional unions, `Name` can be used multiple times – in different
 
 ---
 
-Non-definitional unions reduce indirection at use-sites and can be used in more scenarios (compared to more "traditional" enums),
+This kind of union design reduce indirection at use-sites and can be used in more scenarios (compared to more "traditional" enums),
 while not changing their runtime costs or representation.
 
 [^untagged-unions]: `type Num = Int | Int` does not allow detecting whether an `Int` instance is the first or the second variant; the definition is equivalent to `type Num = Int`
-[^sealed]:  Unlike sealed interfaces in Java though, `Cat` and `Dog` are not subtypes of `Pet` in non-definitional unions.
+[^sealed]:  Unlike sealed interfaces in Java though, in the proposed union design `Cat` and `Dog` are not subtypes of `Pet`.
 [^enum-variants-1]: [Types for enum variants](https://github.com/rust-lang/rfcs/pull/1450)
 [^enum-variants-2]: [Enum variant types](https://github.com/rust-lang/rfcs/pull/2593)
