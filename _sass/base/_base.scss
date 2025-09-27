@@ -267,7 +267,9 @@ q {
 blockquote {
   background-color: var(--background-color-quote);
   margin-left: var(--base-line);
+  margin-right: var(--base-line);
   padding-left: calc(var(--base-line) / 2);
+  padding-right: calc(var(--base-line) / 2);
   border-left: 2px solid var(--color-grey-medium);
   > :last-child {
     margin-bottom: 0;
