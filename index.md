@@ -192,6 +192,7 @@ navigation: true
     <th class="table-topic">Interfaces</th>
     <td>
       <div><a href="interfaces/x86-prefixes-and-escape-opcodes-flowchart">x86 prefix & escape flowchart</a></div>
+      <div><a href="interfaces/intels-original-64bit-extensions-for-x86">Intel's original 64bit extensions for x86</a></div>
       <div><a href="interfaces/improving-the-xfce-settings-ui">Improving the XFCE Settings UI</a></div>
     </td>
     <td>
