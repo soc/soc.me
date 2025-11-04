@@ -186,6 +186,14 @@ navigation: true
           <li><a href="https://cfallin.org/blog/2022/06/09/cranelift-regalloc2/">A New Register Allocator</a></li>
         </ul>
       </section>
+      <section id="null-program" class="compact"><i>Chris Wellons' null program blog:</i>
+        <ul>
+          <li><a href="https://nullprogram.com/blog/2023/02/15/">CRT-free in 2023</a></li>
+          <li><a href="https://nullprogram.com/blog/2023/02/11/">Review of the C standard lib</a></li>
+          <li><a href="https://nullprogram.com/blog/2023/03/23/">Practical libc-free threading</a></li>
+          <li><a href="https://nullprogram.com/blog/2019/03/28/">Fibers: Most Elegant Win API</a></li>
+        </ul>
+      </section>
     </td>
   </tr>
   <tr>
