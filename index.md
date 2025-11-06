@@ -171,6 +171,7 @@ navigation: true
       </section>
     </td>
     <td>
+      <div><a href="https://cpu.land/">Putting the “You” in CPU</a></div>
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines<br/>and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
