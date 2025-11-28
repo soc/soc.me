@@ -171,14 +171,16 @@ navigation: true
       </section>
     </td>
     <td>
-      <div><a href="https://cpu.land/">Putting the “You” in CPU</a></div>
       <div><a href="http://www.wolczko.com/CS294/">Virtual Machines<br/>and Managed Runtimes</a></div>
       <div><a href="https://soft-dev.org/events/vmss16/">Virtual Machines<br/>Summer School 2016</a></div>
       <div><a href="https://carolchen.me/blog/technical/jits-impls/">How JIT Compilers are Implemented and Fast</a></div>
       <div><a href="https://shipilev.net/jvm/anatomy-quarks/">JVM Anatomy Quarks</a></div>
+      <div><a href="https://v8.dev/blog/pointer-compression/">Pointer Compression in V8</a></div>
+      <div><a href="https://muxup.com/2023q4/storing-data-in-pointers">Storing data in pointers</a></div>
+      <div><a href="https://coredumped.dev/2024/09/09/what-is-the-best-pointer-tagging-method/">Best pointer tagging method?</a></div>
     </td>
     <td>
-      <div><a href="https://v8.dev/blog/pointer-compression/">Pointer Compression in V8</a></div>
+      <div><a href="https://cpu.land/">Putting the “You” in CPU</a></div>
       <section id="cranelift-backend"><i>Cranelift Backend:</i>
         <ul>
           <li><a href="https://cfallin.org/blog/2020/09/18/cranelift-isel-1/">Instruction Selection</a></li>
