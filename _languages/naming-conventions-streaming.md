@@ -1,7 +1,7 @@
 ---
 title:  "Library Design: Naming Conventions – Part 5: Streaming"
 date:   2022-06-08
-update: 2025-07-10
+update: 2025-12-14
 page_previous_title: "Naming Conventions – Part 4: Lookup"
 page_previous_url:   "naming-conventions-lookup"
 ---
@@ -11,24 +11,20 @@ page_previous_url:   "naming-conventions-lookup"
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Function Name</th>
+      <th style="width: 20%">Function Name</th>
       <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>map(fun)</code></td>
+      <td><code>map(&lt;fun>)</code></td>
       <td class="code">List(1, 2, 3).map(_ + 1)
-<span class="result">--> List(1, 2, 3)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream in which <code>fun</code> is applied to each element</li>
-        </ul>
-      </td>
+<span class="result">--> List(2, 3, 4)</span></td>
+      <td>Returns a stream in which <code>fun</code> is applied to each element.</td>
     </tr>
     <tr>
-      <td><p><code>mapMany(fun)</code></p><p class="obsolete"><s><code>mapMulti</code></s></p><p class="obsolete"><s><code>flatMap</code></s></p><p class="obsolete"><s><code>mapFlat</code></s></p><p class="obsolete"><s><code>mapAndFlatten</code></s></p></td>
+      <td><p><code>mapMany(&lt;fun>)</code></p><p class="obsolete"><s><code>mapMulti</code></s></p><p class="obsolete"><s><code>flatMap</code></s></p><p class="obsolete"><s><code>mapFlat</code></s></p><p class="obsolete"><s><code>mapAndFlatten</code></s></p></td>
       <td class="code">List(1, 2).mapMany(x -> List(x, x))
 <span class="result">--> List(1, 1, 2, 2)</span>
 
@@ -36,11 +32,7 @@ List(1, 2).mapMany(x -> Some(x))
 <span class="result">--> List(1, 2)</span>
 List(1, 2).mapMany(x -> None)
 <span class="result">--> List()</span></td>
-      <td>
-        <ul>
-          <li>returns a stream in which <code>fun</code> is applied to each element, producing a sequence of elements that is subsequently flattened</li> 
-        </ul>
-      </td>
+      <td>Returns a stream in which <code>fun</code> is applied to each element, producing a sequence of elements that is subsequently flattened.</td>
     </tr>
   </tbody>
 </table>
@@ -50,7 +42,7 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Function Name</th>
+      <th style="width: 20%">Function Name</th>
       <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
@@ -60,125 +52,96 @@ List(1, 2).mapMany(x -> None)
       <td><code>first</code></td>
       <td class="code">List(1, 2, 3).first
 <span class="result">--> Option(1)</span></td>
-      <td>
-        <ul>
-          <li>returns the first element of the stream</li>
-        </ul>
-      </td>
+      <td>Returns the first element of the stream.</td>
     </tr>
     <tr>
       <td><code>last</code></td>
       <td class="code">List(1, 2, 3).last
 <span class="result">--> Option(3)</span></td>
-      <td>
-        <ul>
-          <li>returns the last element of the stream</li>
-        </ul>
-      </td>
+      <td>Returns the last element of the stream.</td>
     </tr>
     <tr>
-      <td><p><code>retainFirst(num)</code></p><p class="obsolete"><s><code>take</code></s></p><p class="obsolete"><s><code>keep</code></s></p><p class="obsolete"><s><code>pick</code></s></p></td>
+      <td><p><code>retainFirst(&lt;num>)</code></p><p class="obsolete"><s><code>take</code></s></p><p class="obsolete"><s><code>keep</code></s></p><p class="obsolete"><s><code>pick</code></s></p></td>
       <td class="code">List(1, 2, 3, 4).retainFirst(2)
 <span class="result">--> List(1, 2)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces the first <code>num</code> elements of the input stream</li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces the first <code>num</code> elements of the input stream.</td>
     </tr>
     <tr>
-      <td><p><code>retain(pred)</code></p><p class="obsolete"><s><code>accept</code></s></p><p class="obsolete"><s><code>select</code></s></p><p class="obsolete"><s><code>filter</code></s></p></td>
+      <td><p><code>retain(&lt;pred>)</code></p><p class="obsolete"><s><code>accept</code></s></p><p class="obsolete"><s><code>select</code></s></p><p class="obsolete"><s><code>filter</code></s></p></td>
       <td class="code">List(1, 2, 3, 1).retain(_ < 2)
 <span class="result">--> List(1, 2, 1)</span></td>
       <td>
+        Returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code>.<br>
+        Alternatives considered:
         <ul>
-          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code></li>
-          <li><code>filter</code> is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out"</li>
-          <li><code>accept</code> is not ideal, as the visitor pattern also makes use of this name</li>
-          <li><code>select</code> is even less ideal, as SQL uses the name for a completely different purpose</li>
+          <li><code>filter</code> is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out".</li>
+          <li><code>accept</code> is not ideal, as the visitor pattern also makes use of this name.</li>
+          <li><code>select</code> is even less ideal, as SQL uses the name for a completely different purpose.</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><p><code>retainIndex(pred)</code></p></td>
+      <td><p><code>retainIndex(&lt;pred>)</code></p></td>
       <td class="code">List("a", "b", "c").retainIndex(_ % 2 == 0)
 <span class="result">--> List("a", "c")</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code></li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces only elements for which <code>pred</code> evaluates to <code>true</code>.</td>
     </tr>
     <tr>
-      <td><p><code>retainWhile(pred)</code></p><p class="obsolete"><s><code>takeWhile</code></s></p><p class="obsolete"><s><code>keepWhile</code></s></p><p class="obsolete"><s><code>pickWhile</code></s></p></td>
+      <td><p><code>retainWhile(&lt;pred>)</code></p><p class="obsolete"><s><code>takeWhile</code></s></p><p class="obsolete"><s><code>keepWhile</code></s></p><p class="obsolete"><s><code>pickWhile</code></s></p></td>
       <td class="code">List(1, 2, 3, 1).retainWhile(_ < 3)
 <span class="result">--> List(1, 2)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces elements of the input stream until the <code>pred</code> evaluates to <code>false</code></li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces elements of the input stream until the <code>pred</code> evaluates to <code>false</code>.</td>
     </tr>
     <tr>
-      <td><p class="obsolete"><s><code>retainUntil(pred)</code></s></p><p class="obsolete"><s><code>takeUntil</code></s></p><p class="obsolete"><s><code>keepUntil</code></s></p><p class="obsolete"><s><code>pickUntil</code></s></p></td>
+      <td><p class="obsolete"><s><code>retainUntil(&lt;pred>)</code></s></p><p class="obsolete"><s><code>takeUntil</code></s></p><p class="obsolete"><s><code>keepUntil</code></s></p><p class="obsolete"><s><code>pickUntil</code></s></p></td>
       <td class="code">List(4, 3, 2, 4).retainUntil(_ < 3)
 <span class="result">--> List(4, 3)</span></td>
       <td>
+        Returns a stream that produces elements of the input stream until the <code>pred</code> evaluates to <code>true</code>.
         <ul>
-          <li>returns a stream that produces elements of the input stream until the <code>pred</code> evaluates to <code>true</code></li>
-          <li>redundant, equivalent to <code>retainWhile(pred.not)</code></li>
+          <li>Redundant, equivalent to <code>retainWhile(pred.not)</code>.</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><p><code>rejectFirst(num)</code></p><p class="obsolete"><s><code>skip</code></s></p><p class="obsolete"><s><code>drop</code></s></p></td>
+      <td><p><code>rejectFirst(&lt;num>)</code></p><p class="obsolete"><s><code>skip</code></s></p><p class="obsolete"><s><code>drop</code></s></p></td>
       <td class="code">List(1, 2, 3, 4).rejectFirst(1)
 <span class="result">--> List(2, 3, 4)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream without the first <code>num</code> elements of the input stream</li>
-        </ul>
-      </td>
+      <td>Returns a stream without the first <code>num</code> elements of the input stream.</td>
     </tr>
     <tr>
-      <td><p><code>reject(pred)</code></p><p class="obsolete"><s><code>filterNot</code></s></p></td>
+      <td><p><code>reject(&lt;pred>)</code></p><p class="obsolete"><s><code>filterNot</code></s></p></td>
       <td class="code">List(1, 2, 3, 1).reject(_ < 2)
 <span class="result">--> List(3)</span></td>
       <td>
+        Returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code>.<br>
+        Alternatives considered:
         <ul>
-          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code></li>
-          <li><code>filterNot</code> is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out"</li>
+          <li><code>filterNot</code> is a poor name as it's unclear (especially for non-native speakers) whether "filtered elements" are those retained, or those "filtered out".</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><p><code>rejectIndex(pred)</code></p></td>
+      <td><p><code>rejectIndex(&lt;pred>)</code></p></td>
       <td class="code">List("a", "b", "c").rejectIndex(_ % 2 == 0)
 <span class="result">--> List("b")</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code></li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces only elements for which <code>pred</code> evaluates to <code>false</code>.</td>
     </tr>
     <tr>
-      <td><p><code>rejectWhile(pred)</code></p><p class="obsolete"><s><code>skipWhile</code></s></p><p class="obsolete"><s><code>dropWhile</code></s></p></td>
+      <td><p><code>rejectWhile(&lt;pred>)</code></p><p class="obsolete"><s><code>skipWhile</code></s></p><p class="obsolete"><s><code>dropWhile</code></s></p></td>
       <td class="code">List(2, 3, 4, 1).rejectWhile(_ < 2)
 <span class="result">--> List(3, 4, 1)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that skips elements of the input stream until <code>pred</code> evaluates to <code>false</code></li>
-        </ul>
-      </td>
+      <td>Returns a stream that skips elements of the input stream until <code>pred</code> evaluates to <code>false</code>.</td>
     </tr>
     <tr>
-      <td><p class="obsolete"><s><code>rejectUntil(pred)</code></s></p><p class="obsolete"><s><code>skipUntil</code></s></p><p class="obsolete"><s><code>dropUntil</code></s></p></td>
+      <td><p class="obsolete"><s><code>rejectUntil(&lt;pred>)</code></s></p><p class="obsolete"><s><code>skipUntil</code></s></p><p class="obsolete"><s><code>dropUntil</code></s></p></td>
       <td class="code">List(3, 2, 1, 4).rejectUntil(_ < 2)
 <span class="result">--> List(1, 4)</span></td>
       <td>
-        <ul>
-          <li>returns a stream that skips elements of the input stream until <code>pred</code> evaluates to <code>true</code></li>
-          <li>redundant, equivalent to <code>rejectWhile(pred.not)</code></li>
+        Returns a stream that skips elements of the input stream until <code>pred</code> evaluates to <code>true</code>.<br>
+        Alternatives considered:
+        <ul> 
+          <li>Redundant, equivalent to <code>rejectWhile(pred.not)</code>.</li>
         </ul>
       </td>
     </tr>
@@ -186,11 +149,7 @@ List(1, 2).mapMany(x -> None)
       <td><code>distinct</code></td>
       <td class="code">List(1, 2, 3, 1).distinct
 <span class="result">--> List(1, 2, 3)</span></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces only the first occurrence of elements occurring multiple times</li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces only the first occurrence of elements occurring multiple times.</td>
     </tr>
   </tbody>
 </table>
@@ -200,92 +159,59 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Function Name</th>
+      <th style="width: 20%">Function Name</th>
       <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>fold(fun, start)</code></td>
+      <td><code>fold(&lt;num>, &lt;start>)</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
-      <td><code>reduce(fun)</code></td>
+      <td><code>reduce(&lt;fun>)</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
       <td><code>combine[Monoid]</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
       <td><code>sum[Numeric]</code></td>
       <td class="code">List(1.0, 2.0, 3.0, 4.0).sum
 <span class="result">--> 10.0</span></td>
-      <td>
-        <ul>
-          <li>computes the sum of the list of numbers</li>
-        </ul>
-      </td>
+      <td>Computes the sum of the list of numbers.</td>
     </tr>
     <tr>
       <td><code>product[Numeric]</code></td>
       <td class="code">List(1.0, 2.0, 3.0, 4.0).product
 <span class="result">--> 24.0</span></td>
-      <td>
-        <ul>
-          <li>computes the product of the list of numbers</li>
-        </ul>
-      </td>
+      <td>Computes the product of the list of numbers.</td>
     </tr>
     <tr>
       <td><code>average[Numeric]</code></td>
       <td class="code">List(1.0, 2.0, 3.0, 4.0).average
 <span class="result">--> 2.5</span></td>
-      <td>
-        <ul>
-          <li>computes the average of the list of numbers</li>
-        </ul>
-      </td>
+      <td>Computes the average of the list of numbers.</td>
     </tr>
     <tr>
-      <td><p><code>all(pred)</code></p><p class="obsolete"><s><code>forAll</code></s></p></td>
+      <td><p><code>all(&lt;pred>)</code></p><p class="obsolete"><s><code>forAll</code></s></p></td>
       <td class="code"></td>
-      <td>
-        <ul>
-          <li>returns <code>true</code> if <code>pred</code> returns <code>true</code> for all elements</li>
-        </ul>
-      </td>
+      <td>Returns <code>true</code> if <code>pred</code> returns <code>true</code> for all elements.</td>
     </tr>
     <tr>
-      <td><p><code>any(pred)</code></p><p class="obsolete"><s><code>forAny</code></s></p></td>
+      <td><p><code>any(&lt;pred>)</code></p><p class="obsolete"><s><code>forAny</code></s></p></td>
       <td class="code"></td>
-      <td>
-        <ul>
-          <li>returns <code>true</code> if <code>pred</code> returns <code>true</code> for any element</li>
-        </ul>
-      </td>
+      <td>Returns <code>true</code> if <code>pred</code> returns <code>true</code> for any element.</td>
     </tr>
     <tr>
-      <td><p><code>none(pred)</code></p><p class="obsolete"><s><code>forNone</code></s></p></td>
+      <td><p><code>none(&lt;pred>)</code></p><p class="obsolete"><s><code>forNone</code></s></p></td>
       <td class="code"></td>
-      <td>
-        <ul>
-          <li>returns <code>true</code> if <code>pred</code> returns <code>false</code> for all elements</li>
-        </ul>
-      </td>
+      <td>Returns <code>true</code> if <code>pred</code> returns <code>false</code> for all elements.</td>
     </tr>
   </tbody>
 </table>
@@ -295,7 +221,7 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Function Name</th>
+      <th style="width: 20%">Function Name</th>
       <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
@@ -304,50 +230,32 @@ List(1, 2).mapMany(x -> None)
     <tr>
       <td><code>joinInner[Record]</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
       <td><code>joinLeft[Record]</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
       <td><code>joinRight[Record]</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
       <td><code>joinFull[Record]</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
-      <td><code>groupBy(fun)</code></td>
+      <td><code>groupBy(&lt;fun>)</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
     <tr>
-      <td><code>partitionBy(fun)</code></td>
+      <td><code>partitionBy(&lt;fun>)</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-        </ul>
-      </td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -357,7 +265,7 @@ List(1, 2).mapMany(x -> None)
 <table class="table-medium">
   <thead>
     <tr>
-      <th style="width: 18%">Function Name</th>
+      <th style="width: 20%">Function Name</th>
       <th style="width: 34%">Code Example</th>
       <th>Explanation</th>
     </tr>
@@ -366,19 +274,15 @@ List(1, 2).mapMany(x -> None)
     <tr>
       <td><code>concat</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces the values from the first stream and then the values of the second stream</li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces the values from the first stream and then the values of the second stream.</td>
     </tr>
     <tr>
       <td><code>interleave</code></td>
       <td class="code"></td>
       <td>
+        Returns a stream that produces a value, alternating between the first and second stream.
         <ul>
-          <li>returns a stream that produces a value, alternating between the first and second stream</li>
-          <li>likely requires multiple method variants that handle streams of different lengths in different ways</li>
+          <li>Likely requires multiple method variants that handle streams of different lengths in different ways.</li>
         </ul>
       </td>
     </tr>
@@ -386,20 +290,16 @@ List(1, 2).mapMany(x -> None)
       <td><code>zip</code></td>
       <td class="code"></td>
       <td>
+        Returns a stream that produces a tuple value, where the first element is from the first stream and the second element is from the second stream.
         <ul>
-          <li>returns a stream that produces a tuple value, where the first element is from the first stream and the second element is from the second stream</li>
-          <li>likely requires multiple method variants that handle streams of different lengths in different ways</li>
+          <li>Likely requires multiple method variants that handle streams of different lengths in different ways.</li>
         </ul>
       </td>
     </tr>
     <tr>
       <td><code>zipWithIndex</code></td>
       <td class="code"></td>
-      <td>
-        <ul>
-          <li>returns a stream that produces a tuple value, where the first element is from the stream and the second element is the index at which the value was produced</li>
-        </ul>
-      </td>
+      <td>Returns a stream that produces a tuple value, where the first element is from the stream and the second element is the index at which the value was produced.</td>
     </tr>
   </tbody>
 </table>
