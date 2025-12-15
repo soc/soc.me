@@ -45,7 +45,7 @@ Schemes to decrease header size often trade in a more compressed representation 
  | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ |
  +---------------+---------------+---------------+---------------+
   ╰──────────────────────┬──────────────────────╯ ╰──────┬──────╯
-     24 bits: vtable/type/class pointer                  8 bits: other uses                  
+     24 bits: vtable/type/class pointer                  8 bits: other uses
      64 byte granularity, 1 GiB address space (type 7)¹                                                                          .
 </div>
 
@@ -56,8 +56,14 @@ Schemes to decrease header size often trade in a more compressed representation 
  | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ |
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
   ╰──────────────────────┬──────────────────────╯ ╰──────────────────────────────┬──────────────────────────────────────╯ ╰──┬──╯
-     24 bits: vtable/type/class pointer                    36 bits: forwarding pointer                          4 bits: other uses                  
+     24 bits: vtable/type/class pointer                    36 bits: forwarding pointer                          4 bits: other uses
      64 byte granularity, 1 GiB address space (type 7)¹   8 byte granularity, 512 GiB address space (type 4)²
+
+                                                                                                         Examples of "other uses"
+                                                                                                         - marked bit
+                                                                                                         - pinned bit
+                                                                                                         - locked bit
+                                                                                                         - forwarding (failed) bit
 </div>
 
 ---
