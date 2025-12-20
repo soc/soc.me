@@ -50,13 +50,13 @@ reading the rest of the keyboard keys (second mention of the keyboard usage page
 
 Given this descriptor, the payload sent from the keyboard to the computer looks like this:
 
-<div class="diagram">
+<pre class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
  | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ |
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
   ╰──────┬──────╯ ╰──────┬──────╯ ╰──────┬──────╯ ╰──────┬──────╯ ╰──────┬──────╯ ╰──────┬──────╯ ╰──────┬──────╯ ╰──────┬───────┘
        Modifiers      Reserved       Scancode 1      Scancode 2      Scancode 3      Scancode 4      Scancode 5      Scancode 6
-</div>
+</pre>
 
 This means that each report can report the scancodes of at most 6 simultanouesly pressed keys,
 a limitation often described with the term _6KRO_ (six key roll-over).
@@ -65,7 +65,7 @@ Various approaches have been tried to work around this limitation in the past, b
 
 ### Universal Report Format for Keyboards
 
-<div class="diagram">
+<pre class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+┅
  | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ |
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+┅
@@ -86,11 +86,11 @@ Various approaches have been tried to work around this limitation in the past, b
 ┅+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
  ┈───────┬──────────────────────╯ ╰──────────────────────┬──────────────────────╯ ╰──────────────────────┬──────────────────────╯
   Universal code 8                                Universal code 9                                Universal code 10
-</div>
+</pre>
 
 #### Universal Code – Unicode codepoints
 
-<div class="diagram">
+<pre class="diagram">
  +---------------+---------------+---------------+
  |0┊ ┊ ┊u┊u┊u┊u┊u|u┊u┊u┊u┊u┊u┊u┊u|u┊u┊u┊u┊u┊u┊u┊u|
  +---------------+---------------+---------------+
@@ -120,13 +120,13 @@ Various approaches have been tried to work around this limitation in the past, b
  +------┅
    ╰─┬─╯
  Multiple codepoints – end
-</div>
+</pre>
 
 
 
 #### Universal Code – Legacy Usage Pages
 
-<div class="diagram">
+<pre class="diagram">
 +---------------+---------------+---------------+
 |1┊s┊s┊s┊s┊s┊s┊s|p┊p┊p┊p┊p┊p┊p┊p|p┊p┊p┊p┊p┊p┊p┊p|
 +---------------+---------------+---------------+
@@ -140,4 +140,4 @@ Legacy Selector
    ╰─────┬─────╯ ╰──────────────┬──────────────╯
 Keyboard Page 0x07    Usage ID 0x04 (letter "A")
 
-</div>
+</pre>

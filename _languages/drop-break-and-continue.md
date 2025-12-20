@@ -28,7 +28,7 @@ Of those 90 loops with `break`s, 80 are easily convertible to equivalent code no
 
 Of the 10 loops with `continue`s maybe 5 are easily convertible.
 
-<div class="diagram">
+<pre class="diagram">
 .------------------------------------------------.
 | all loops                                      |
 |                                                |
@@ -38,7 +38,7 @@ Of the 10 loops with `continue`s maybe 5 are easily convertible.
 |                                            +---+
 |                     loops with continue--->|   |
 '--------------------------------------------+---'
-</div>
+</pre>
 
 This means that out of 1000 loops, supporting `break` and `continue` focuses on making 1.5% of the loops more convenient,
 to the detriment of the other 98.5% of the loops.

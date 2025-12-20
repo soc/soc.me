@@ -11,14 +11,14 @@ Consider a reference-based class definition `class Cat(name: String, lives: Int6
 
 Then an instance `Cat("Colin", 9)` may be represented in memory like this:
 
-<div class="diagram">
+<pre class="diagram">
  +---------------+---------------+---------------+
  | header        | reference     |             9 |
  +---------------+---------------+---------------+
                          |
                          v
                       "Colin"
-</div>
+</pre>
 
 - The header needs to include information on the instance's type for dynamic dispatch and garbage-collection purposes.
 - The runtime may need a number of bits for miscellaneous uses.
@@ -40,18 +40,18 @@ Schemes to decrease header size often trade in a more compressed representation 
 
 ##### 4-byte instance header
 
-<div class="diagram">
+<pre class="diagram">
  +---------------+---------------+---------------+---------------+
  | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ |
  +---------------+---------------+---------------+---------------+
   ╰──────────────────────┬──────────────────────╯ ╰──────┬──────╯
      24 bits: vtable/type/class pointer                  8 bits: other uses
      64 byte granularity, 1 GiB address space (type 7)¹                                                                          .
-</div>
+</pre>
 
 ##### 8-byte instance header, with space for a forwarding pointer
 
-<div class="diagram">
+<pre class="diagram">
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
  | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ | ┊ ┊ ┊ ┊ ┊ ┊ ┊ |
  +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
@@ -64,7 +64,7 @@ Schemes to decrease header size often trade in a more compressed representation 
                                                                                                          - pinned bit
                                                                                                          - locked bit
                                                                                                          - forwarding (failed) bit
-</div>
+</pre>
 
 ---
 ¹: [Pointer Compression Type 7](pointer-compression#type-7-vtabletypeclass-reference-64-byte-granularity-1-gib-address-space)<br/>

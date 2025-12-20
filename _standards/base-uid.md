@@ -28,12 +28,12 @@ A *BaseUid* consist of two parts:
 2. 72bits of randomness
 
 <br>These two parts are concatenated into a 120bit long bitstring:
-<div class="diagram">
+<pre class="diagram">
          8      16      24      32      40      48      56      64      72      80      88      96      104     112     120
 ┏━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┓
 ┃               time (00-47)                    ┆                               rnd (48-119)                            ┃
 ┗━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┻━┷━┷━┷━┛
-</div>
+</pre>
 
 <br>The bitstring is encoded as an ASCII string using the lexicographically-ordered Base64 alphabet 
 `-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz`.
@@ -50,7 +50,7 @@ differs with each generated value, even if the point in time stays the same.
 
 *BaseUid*s can easily be converted into UUIDv8 format if required:
 
-<div class="diagram">
+<pre class="diagram">
          8      16      24      32      40      48      56      64      72      80      88      96      104     112     120     128
 ┏━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┳━┯━┯━┯━┓
 ┃               time (00-47)                    ┆VER┆rnd (52-63)┆V┆             rnd (66-125)                                  ┆Z┃
@@ -60,7 +60,7 @@ differs with each generated value, even if the point in time stays the same.
                                               ┌VER (constant)┐  ┌VAR (constant)┐                                   ┌Z (constant)┐
                                               │ 1 0 0 0      │  │ 1 0          │                                   │ 0 0        │
                                               └──────────────┘  └──────────────┘                                   └────────────┘
-</div>
+</pre>
 
 ### Implementations
 
