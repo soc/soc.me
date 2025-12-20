@@ -5,7 +5,7 @@ update: 2025-04-27
 markdeep: true
 ---
 
-<div class="diagram">
+<pre class="diagram">
  start here
       |
       v                                                          ╔══════════════════════════════════════════════════╗
@@ -51,9 +51,9 @@ markdeep: true
                                                               |  ╔══════════════════════════════════════════════════╗
                                                               +->║ AVX512-Float16 instructions            (map 5/6) ║
                                                                  ╚══════════════════════════════════════════════════╝
-</div>
+</pre>
 
-<div class="diagram">
+<pre class="diagram">
 ┏━┯━┯━┯━┯━┯━┯━┯━┓                                                    ┏━┯━┯━┯━┯━┯━┯━┯━┳━┯━┯━┯━┯━┯━┯━┯━┓
 ┃0 1 0 0 W R X B┃                                                    ┃1 1 0 1 0 1 0 1┃M R X B W R X B┃
 ┗━┷━┷━┷━┷━┷━┷━┷━┛                                                    ┗━┷━┷━┷━┷━┷━┷━┷━┻━┷━┷━┷━┷━┷━┷━┷━┛
@@ -95,4 +95,4 @@ EVEX (4-byte prefix)                    AVX-512 (2013/2017)                - let
 - Ŀ selects vector length (512bit) or rounding control mode (with L)       
 - L selects vector length (256bit)
 - b encodes source broadcast or rounding control (with Ŀ and L) or exception suppression
-</div>
+</pre>
