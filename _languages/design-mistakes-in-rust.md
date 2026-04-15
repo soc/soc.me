@@ -7,7 +7,7 @@ redirect_from:
   - "languages/lower-bar-of-rust-2"
 ---
 
-_**As Rust 2.0 is not going to happen, Rust users will never get these language design fixes:**_[^1][^2][^3]
+_**As Rust 2.0 is not going to happen, Rust users will never get these language design fixes:**_[^1][^2][^3][^nimfsoft]
 
 <details class="note">
   <summary><b>A note on the lower bar of a hypothetical Rust 2.0</b></summary>
@@ -138,6 +138,7 @@ Remove it and implement automatic semicolon inference, such that IDEs can show t
 [^1]: ["Does Rust have any design mistakes?"](https://old.reddit.com/r/rust/comments/wvynot/does_rust_have_any_design_mistakes/)
 [^2]: [label:rust-2-breakage-wishlist](https://github.com/rust-lang/rust/issues?q=label%3Arust-2-breakage-wishlist)
 [^3]: [Broken and un-fixable parts of Rust](https://rust-lang.zulipchat.com/#narrow/stream/213817-t-lang/topic/broken.20and.20un-fixable.20parts.20of.20Rust)
+[^nimfsoft]: [An Analysis of Rust's Language Design Flaws](https://nimfsoft.art/blog/2025/06/26/analysis-of-rust-language-design-flaws/)
 [^choice]: Especially considering that half the people immediately define a `::new()` functions to avoid struct initialization syntax.<br>Having the choice between both is already a net-negative on its own.
 [^4]: [The language strangeness budget](https://steveklabnik.com/writing/the-language-strangeness-budget)
 [^varargs]: All language designers hate varargs, but handing out macros as a replacement is considerably worse.

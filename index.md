@@ -128,6 +128,7 @@ navigation: true
       <div><a href="https://wiki.alopex.li/WirthEvolution">Wirth Evolution:<br/>Pascal Modula-2 Oberon</a></div>
       <div><a href="https://lawrencecpaulson.github.io/2022/10/05/Standard_ML.html">Memories: Edinburgh ML to Standard ML</a></div>
       <div><a href="https://osa1.net/posts/2023-04-24-ocaml-thoughts.html">My thoughts on OCaml</a></div>
+      <div><a href="https://nimfsoft.art/blog/2025/06/26/analysis-of-rust-language-design-flaws/">Rust's Language Design Flaws</a></div>
       <div><a href="https://belkadan.com/blog/tags/swift-regrets/">Swift Regrets</a></div>
       <div><a href="http://download.swift.org/docs/assets/generics.pdf">Compiling Swift Generics</a><sup>pdf</sup></div>
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
