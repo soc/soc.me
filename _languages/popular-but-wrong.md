@@ -8,7 +8,7 @@ redirect_from:
 ---
 
  1. `static` members
- 2. properties
+ 2. properties ([see](fields-methods-properties-pick-two))
  3. `<>` for generics ([see](stop-using-angle-brackets-for-generics))
  4. `[]` for arrays ([see](stop-using-angle-brackets-for-generics))
  5. `Type ident` instead of `ident: Type` ([see](type-annotations))
