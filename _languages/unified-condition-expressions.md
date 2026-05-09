@@ -1,7 +1,7 @@
 ---
 title:  "Language Design: Unified Condition Expressions – Introduction"
 date:   2018-01-21
-update: 2024-04-01
+update: 2026-05-09
 redirect_from: "/languages/unified-condition-syntax"
 page_next_title:     "Unified Condition Expressions – Implementation"
 page_next_url:       "unified-condition-expressions-implementation"
@@ -107,9 +107,11 @@ if person                            /* same as */      if person is
 
 #### Related Work
 
+- PL/I – [select-when statement](https://en.wikibooks.org/wiki/Software_Engineers_Handbook/Language_Dictionary/PLI#Multi-branch_Conditionals:_SELECT)
+- SQL – [case-when expression](https://modern-sql.com/feature/case)
 - Haskell – [multi-way if-expressions](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-MultiWayIf)
-- CommonLisp – [cond](http://www.lispworks.com/documentation/HyperSpec/Body/m_cond.htm)
-  and [case](http://www.lispworks.com/documentation/HyperSpec/Body/m_case_.htm#case)
+- CommonLisp – [cond macro](http://www.lispworks.com/documentation/HyperSpec/Body/m_cond.htm)
+  and [case macro](http://www.lispworks.com/documentation/HyperSpec/Body/m_case_.htm#case)
 
 [^rust]: Rust – https://doc.rust-lang.org/book/second-edition/ch06-03-if-let.html
 [^swift]: Swift – https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html
