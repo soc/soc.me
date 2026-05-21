@@ -1,0 +1,19 @@
+name: Publish
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  publish:
+    runs-on: codeberg-tiny
+    steps:
+      - uses: actions/checkout@v5
+      - uses: https://github.com/actions/jekyll-build-pages@v1
+      #- run: |
+       #   bundle install
+        #  jekyll build
+      - uses: actions/git-pages@v2
+        with:
+          site: https://soc.codeberg.page/
+          token: ${{ forge.token }}
+          source: _site/
