@@ -244,25 +244,6 @@ li:not(:last-child) {
   margin-bottom: 0.2em;
 }
 
-// List options
-// -------------------------
-
-// Unstyled keeps list items block level, just removes default browser padding and list-style
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-// Inline turns list items into inline-block
-.list-inline {
-  @extend .list-unstyled;
-
-  > li {
-    display: inline-block;
-    margin: 0 -5px 0 0;
-  }
-}
-
 // Description Lists
 // -------------------------
 
