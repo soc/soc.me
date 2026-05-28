@@ -127,6 +127,29 @@ main a {
   }
 }
 
+// Page & Wrapper
+// -------------------------
+
+.page {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+  padding-bottom: calc(var(--base-line) * 4);
+}
+
+.wrapper {
+  box-sizing: content-box;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 50em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.frontpage {
+  max-width: 64em;
+}
+
 // Frontpage
 // -------------------------
 
