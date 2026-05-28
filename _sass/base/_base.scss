@@ -142,8 +142,6 @@ main a {
   margin-right: auto;
   margin-left: auto;
   max-width: 50em;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .frontpage {
@@ -159,7 +157,8 @@ main a {
   }
 
   table.table-index {
-    table-layout: fixed;
+    table-layout: unset;
+    width: unset;
     line-height: 110%;
     ol, ul {
       padding-left: 1em;
@@ -167,6 +166,10 @@ main a {
         margin-bottom: 0;
         line-height: 100%;
       }
+    }
+    @media #{$large-up} {
+      table-layout: fixed;
+      width: 100%;
     }
   }
 
