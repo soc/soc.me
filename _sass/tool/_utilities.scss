@@ -2,31 +2,8 @@
 // Utility classes
 // --------------------------------------------------
 
-
-// Floats
-// -------------------------
-
-.clearfix {
-  &:before,
-  &:after {
-    content: " "; // 1
-    display: table; // 2
-  }
-  &:after {
-    clear: both;
-  }
-}
-
 .center {
-  margin: 0 auto var(--line-height-base);
   text-align: center;
-}
-
-.pull-right {
-  float: right !important;
-}
-.pull-left {
-  float: left !important;
 }
 
 .left {
@@ -36,19 +13,6 @@
 .right {
   float: right;
 }
-
-
- // List
- // -------------------------
-
-@mixin list-inline {
-  padding: 0;
-  margin: 0 0 var(--base-line);
-  li {
-    display: inline-block;
-  }
-}
-
 
 // Toggling content
 // -------------------------
@@ -82,20 +46,4 @@
 
 .affix {
   position: fixed;
-}
-
-
- // Icons
- // -------------------------
-
-.icon {
-  > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    path {
-      fill: var(--color-grey);
-    }
-  }
 }
