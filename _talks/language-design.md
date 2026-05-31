@@ -1,7 +1,7 @@
 ---
 title: Principles of Language Design
 date:   2024-02-29
-update: 2025-05-23
+update: 2026-05-31
 ---
 
 <picture id="slide-01">
@@ -166,25 +166,33 @@ update: 2025-05-23
 </picture>
 <picture id="slide-41">
   <source srcset="language-design-2024/language-design-41.jxl" type="image/jxl">
-  <img src="language-design-2024/language-design-41.png" alt="slide 40" class="aspect-ratio-16-to-9">
+  <img src="language-design-2024/language-design-41.png" alt="slide 41" class="aspect-ratio-16-to-9">
 </picture>
 <picture id="slide-42">
   <source srcset="language-design-2024/language-design-42.jxl" type="image/jxl">
-  <img src="language-design-2024/language-design-42.png" alt="slide 40" class="aspect-ratio-16-to-9">
+  <img src="language-design-2024/language-design-42.png" alt="slide 42" class="aspect-ratio-16-to-9">
 </picture>
 <picture id="slide-43">
   <source srcset="language-design-2024/language-design-43.jxl" type="image/jxl">
-  <img src="language-design-2024/language-design-43.png" alt="slide 40" class="aspect-ratio-16-to-9">
+  <img src="language-design-2024/language-design-43.png" alt="slide 43" class="aspect-ratio-16-to-9">
 </picture>
 <picture id="slide-44">
   <source srcset="language-design-2024/language-design-44.jxl" type="image/jxl">
-  <img src="language-design-2024/language-design-44.png" alt="slide 40" class="aspect-ratio-16-to-9">
+  <img src="language-design-2024/language-design-44.png" alt="slide 44" class="aspect-ratio-16-to-9">
 </picture>
 <picture id="slide-45">
   <source srcset="language-design-2024/language-design-45.jxl" type="image/jxl">
-  <img src="language-design-2024/language-design-45.png" alt="slide 40" class="aspect-ratio-16-to-9">
+  <img src="language-design-2024/language-design-45.png" alt="slide 45" class="aspect-ratio-16-to-9">
 </picture>
 <picture id="slide-46">
   <source srcset="language-design-2024/language-design-46.jxl" type="image/jxl">
-  <img src="language-design-2024/language-design-46.png" alt="slide 40" class="aspect-ratio-16-to-9">
+  <img src="language-design-2024/language-design-46.png" alt="slide 46" class="aspect-ratio-16-to-9">
+</picture>
+<picture id="slide-47">
+  <source srcset="language-design-2024/language-design-47.jxl" type="image/jxl">
+  <img src="language-design-2024/language-design-47.png" alt="slide 47" class="aspect-ratio-16-to-9">
+</picture>
+<picture id="slide-46">
+  <source srcset="language-design-2024/language-design-48.jxl" type="image/jxl">
+  <img src="language-design-2024/language-design-48.png" alt="slide 48" class="aspect-ratio-16-to-9">
 </picture>
