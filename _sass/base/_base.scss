@@ -371,3 +371,27 @@ table {
     text-decoration-line: line-through;
   }
 }
+
+/* custom styles for "Unions" page */
+
+#untagged-unions::before, #discriminated-unions::before, #union-types::before, #typed-unions::before {
+  margin-right: 4px;
+  position: relative;
+  top: -4px;
+}
+
+#untagged-unions::before {
+  content: "◰";
+}
+
+#discriminated-unions::before {
+  content: "◱";
+}
+
+#union-types::before {
+  content: "◳";
+}
+
+#typed-unions::before {
+  content: "◲";
+}
