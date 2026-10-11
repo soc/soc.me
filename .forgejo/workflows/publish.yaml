@@ -9,8 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: https://github.com/actions/jekyll-build-pages@v1
-      - uses: actions/git-pages@v2
+      - uses: https://codeberg.org/git-pages/action@5d66ec6a97f913ccc5fc5e859873ad49e71afe17
         with:
           site: https://soc.codeberg.page/
           token: ${{ forge.token }}
           source: _site/
+          pretty-urls: true
