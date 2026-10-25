@@ -9,7 +9,7 @@ navigation: true
 <div class="archive">
 {% assign documents = site.documents | sort: 'date' | reverse %}
 {% for post in documents %}
-  {% if post.archive != false %}
+  {% if post.archive != false and post.draft != true %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% assign yeardate = site.time | date: "%Y" %}
   {% if currentdate != date %}
