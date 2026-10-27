@@ -219,9 +219,10 @@ navigation: true
       <div><a href="https://gankra.github.io/blah/c-isnt-a-language/">C Isn't A Language Anymore</a></div>
       <div><a href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">To Save C, We Must Save ABI</a></div>
       <div><a href="https://cor3ntin.github.io/posts/abi/">The Day The Standard Library Died</a></div>
+      <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
     </td>
     <td>
-      <div><a href="https://outerproduct.net/boring/2021-05-07_abi-wrong.html">Your ABI is Probably Wrong</a></div>
+      <div><a href="https://yorickpeterse.com/articles/the-mess-that-is-handling-structure-arguments-and-returns-in-llvm/">LLVM struct arguments & returns</a></div>
       <div><a href="https://www.microsoft.com/en-us/research/uploads/prod/2020/03/kacc.pdf" class="compact">Kinds Are Calling Conventions</a><sup>pdf</sup></div>
       <section id="ghost-of-unix-past"><i>Ghosts of Unix Past:</i>
         <ol>
@@ -232,6 +233,7 @@ navigation: true
         </ol>
       </section>
       <div>On ELF: <a href="https://kestrelcomputer.github.io/kestrel/2018/01/29/on-elf">Part 1</a> <a href="https://kestrelcomputer.github.io/kestrel/2018/02/01/on-elf-2">Part 2</a></div>
+      <div><a href="https://asawicki.info/articles/graphics_apis_yesterday_today_tomorrow_en.php">Graphics APIs – Yesterday, Today, and Tomorrow</a></div>
     </td>
   </tr>
   <tr>
