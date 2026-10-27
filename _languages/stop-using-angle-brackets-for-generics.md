@@ -42,15 +42,24 @@ The only issue addressed by the C++ committee after decades was the requirement 
 nested closing generics to allow the compiler to distinguish between the right-shift operator `>>`
 and the end of a nested generic type definition.[^cpp2] All other issues appear to be unfixable.
 
-_Rust_ is forced to use the hideous "turbofish" operator `::<>` to distinguish between the left side of a
-comparison and the start of a generic type, introducing syntactic inconsistency between generics in
-a type context and generics in a term context:
+_Rust_ is forced to use the so-called "turbofish" operator `::<>` to distinguish between the left
+side of a comparison and the start of a generic type, introducing syntactic inconsistency between
+generics in a type context and generics in a term context:
 
 ```rust
 let vec: Vec<u32> = Vec::<u32>::new();
             /*or*/ <Vec::<u32>>::new();
             /*or*/ <Vec<u32>>::new();
 ```
+Despite that, even simple code snippets still get caught in the cross-fire:
+
+```rust
+1 as u32 << 1; // error: `<<` is interpreted as a start of generic arguments for `u32`, not a shift
+```
+
+_WGSL_'s specification of template lists requires multiple pages of "template list discovery algorithm"[^wgsl],
+hoping to dig itself out of the ambiguities caused by using `<` and `>` for comparisons, shifts and
+compound assignments in addition to their use for template lists.
 
 #### A better design
 
@@ -88,12 +97,8 @@ map("name") = "Joe"    /* instead of */   map["name"] = "Joe"
 
 #### Coda
 
-Thankfully, the number of languages using `[]` for generics seems to increase lately –
-with Scala, Python, and Nim joining Eiffel, which was pretty much the sole user of `[]` for decades.
-
-~~It remains to be seen whether this turns into tidal change similar to the widespread
-[adoption of `ident: Type` over `Type ident`](https://soc.me/languages/type-annotations) in modern languages.~~
-_With the recent adoption of `[]` for generics by Go and Carbon this seems to be the likely outcome._
+Thankfully the tide is turning, and an increasing number of languages adopted `[]` for generics –
+with Go, Scala, Python, and Nim joining Eiffel, which was pretty much the sole user of `[]` for decades.
 
 
 [^related]: [Parsing Ambiguity: Type Argument vs. Less Than](https://keleshev.com/parsing-ambiguity-type-argument-v-less-than) is a similar article focusing on some of these issues in more depth.  
@@ -101,6 +106,7 @@ _With the recent adoption of `[]` for generics by Go and Carbon this seems to be
 [^csharp]: C#: See [ECMA-334, 4th Edition, §9.2.3 – Grammar Ambiguities](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)
 [^cpp1]: C++: See [What are all the syntax problems introduced by the usage of angle brackets in C++ templates?](https://stackoverflow.com/questions/7304699/what-are-all-the-syntax-problems-introduced-by-the-usage-of-angle-brackets-in-c)
 [^cpp2]: C++: See [Wikipedia – C++11 right angle bracket](https://en.wikipedia.org/wiki/C%2B%2B11#Right_angle_bracket)
+[^wgsl]: WebGPU Shading Language: See[Specification – 3.9 Template Lists](https://www.w3.org/TR/WGSL/#template-lists-sec)
 [^javalit]: Java pretty much abandoned arrays – they never integrated them with collections in 1.2, let alone generics in 1.5.
 [^jslit]: JavaScript stopped giving out new collection literals almost immediately after its first release – no collection type added since received its own literals (`Set`, `Map`, `ByteBuffer`, ...).
 [^nim]: Nim uses `[]` for generics, but employs [a hack to _also_ use `[]` for lookup](https://nim-lang.org/docs/manual.html#procedures-method-call-syntax).
