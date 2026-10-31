@@ -101,24 +101,6 @@ h1, .h1 { font-size: var(--title1); }
   }
 }
 
-@media #{$large-up} {
-  body {
-    font-size: calc(var(--base-em) * var(--ms1));
-  }
-}
-
-@media #{$xlarge-up} {
-  body {
-    font-size: calc(var(--base-em) * var(--ms2));
-  }
-}
-
-@media #{$xxlarge-up} {
-  body {
-    font-size: calc(var(--base-em) * var(--ms4));
-  }
-}
-
 h1, .h1,
 h2, .h2,
 h3, .h3 {
