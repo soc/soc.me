@@ -147,6 +147,7 @@ navigation: true
           <li><a href="http://adam.chlipala.net/mlcomp/">Chlipala</a></li>
         </ol>
       </div>
+      <div><a href="https://pablosabater.dev/posts/how-to-build-a-pratt-parser/">How to Build a Pratt Parser</a></div>
       <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
       <div><a href="https://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
       <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
