@@ -2,8 +2,6 @@
 title:  "Language Design: Four Kinds of Unions"
 date:   2021-08-26
 update: 2026-07-28
-redirect_from: "/languages/better-enums"
-redirect_from: "/languages/nondefinitional-enums"
 ---
 
 ### Overview
@@ -22,7 +20,7 @@ redirect_from: "/languages/nondefinitional-enums"
   <tr>
     <th>Runtime Tags</th>
     <td><a href="#discriminated-unions">discriminated union/tagged union</a><br/>(Rust <i>enum</i>, F# <i>discriminated union</i>)</td>
-    <td><a href="#typed-unions">typed union</a><br/>(Algol <i>united mode</i>, Core <i>union</i>, C# <i>union</i>)</td>
+    <td><a href="#type-unions">type union</a><br/>(Algol <i>united mode</i>, Core <i>union</i>, C# <i>union</i>)</td>
   </tr>
 </table>
 <br/>
@@ -67,7 +65,7 @@ A value of such a union does not contain metadata (runtime tags) to tell its var
 This means that `type Num = Int | Int` does not allow detecting whether `Int` refers to the first or
 the second variant; the definition is equivalent to `type Num = Int`.
 
-### Typed Unions
+### Type Unions
 
 The combination of unions with runtime tag but without syntactic wrapping has existed in various languages,
 though no common, language-spanning name has been established for this concept.
@@ -103,84 +101,5 @@ Intuitively, this works similarly to `permits` clauses of [_sealed interfaces_ i
 
 does not define `Cat` or `Dog`, but refers to existing `Cat` and `Dog` types in scope.[^sealed]
 
-#### Benefits of such unions
-
-1. Union variants have types, because they have a "real" class/struct/... declaration.<br>
-   (This fixes a mistake that some languages like Rust or Haskell made with their enum/data types.[^enum-variants-1][^enum-variants-2])
-2. Variants can be reference types or value types (as they refer to "real" `class` or `value` definitions).
-3. No "stutter", where variant names have to be invented to wrap existing types. (Rust has this issue.)
-4. Union values can be passed/created more easily, as no syntactic wrapping is required.
-5. Variants can be re-used in different unions.
-6. The ability to build ad-hoc unions out of existing types obviates the need for a separate type alias feature.
-
----
-
-##### Example for 1., 2., 3.
-
-    enum Option[T] { Some(value: T), None }
-
-... would receive little benefit from being written as ...
-
-    union Option[T] of Some[T], None
-    value Some[T](value: T)
-    value None
-
-..., but even trivial types like a JSON representation would benefit.
-
-Instead of ...
-
-    enum JsonValue {
-      JsonObject(Map[String, JsonValue])
-      JsonArray (Array[JsonValue]),
-      JsonString(String),
-      JsonNumber(Float64),
-      JsonBool  (Bool),
-      JsonNull,
-      ...
-    }
-
-... one would write (with `Array`, `Float64` and `String` being existing types in the language):
-
-    union JsonValue of
-      Map[String, JsonValue]
-      Array[JsonValue],
-      String,
-      Float64
-      Bool,
-      JsonNull,
-      ...
-
-    value JsonNull
-
-##### Example for 4.
-
-No wrapping required when passing arguments (unlike "traditional" enum approaches):
-
-    fun someValue(value: JsonValue) = ...
-    someValue(JsonString("test")) // "traditional" approach
-    someValue("test")             // proposed union design
-
-##### Example for 5.
-
-Consider this class definition:
-
-    class Name(name: String)
-
-With the proposed union design, `Name` can be used multiple times – in different unions (and elsewhere):
-
-    union PersonIdentifier of
-      Name,
-      ... // other identifiers like TaxId, Description, PhoneNumber etc.
-
-    union DogTag of
-      Name,
-      ... // other identifiers like RegId, ...
-
----
-
-This kind of union design reduce indirection at use-sites and can be used in more scenarios (compared to more "traditional" enums),
-while not changing their runtime costs or representation.
 
 [^sealed]:  Unlike sealed interfaces in Java though, in the proposed union design `Cat` and `Dog` are not subtypes of `Pet`.
-[^enum-variants-1]: [Types for enum variants](https://github.com/rust-lang/rfcs/pull/1450)
-[^enum-variants-2]: [Enum variant types](https://github.com/rust-lang/rfcs/pull/2593)
