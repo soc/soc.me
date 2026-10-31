@@ -374,7 +374,7 @@ table {
 
 /* custom styles for "Unions" page */
 
-#untagged-unions::before, #discriminated-unions::before, #union-types::before, #typed-unions::before {
+#untagged-unions::before, #discriminated-unions::before, #union-types::before, #type-unions::before {
   margin-right: 4px;
   position: relative;
   top: -4px;
@@ -392,6 +392,6 @@ table {
   content: "◳";
 }
 
-#typed-unions::before {
+#type-unions::before {
   content: "◲";
 }

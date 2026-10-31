@@ -4,9 +4,9 @@ date:   2026-08-25
 markdeep: true
 ---
 
-Union types in the sense of [typed unions](unions#typed-unions) share many similarities with other
+Union types in the sense of [type unions](unions#type-unions) share many similarities with other
 kinds of unions when it comes to representing union values in memory, but also pose a few question
-unique to typed unions.
+unique to type unions.
 
 ### Starting Point
 

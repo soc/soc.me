@@ -108,6 +108,14 @@ navigation: true
           <li><a href="languages/unified-condition-expressions-comparison">Comparison with Rust</a></li>
         </ol>
       </section>
+      <section id="unions"><i>Unions:</i>
+        <ol>
+          <li><a href="languages/unions">Overview</a></li>
+          <li><a href="languages/unions-type-unions">Type Union Benefits</a></li>
+          <li><a href="languages/unions-memory">Type Unions in Memory</a></li>
+          <li><a href="languages/unions-bytecode">Type Unions in Bytecode</a></li>
+        </ol>
+      </section>
       <div><a href="languages/generics">Type Ascriptions &amp; Generics</a></div>
       <section id="naming-conventions"><i>Naming Conventions:</i>
         <ol>
@@ -118,7 +126,6 @@ navigation: true
           <li><a href="languages/naming-conventions-streaming">Streaming</a></li>
         </ol>
       </section>
-      <div><a href="languages/unions">Unions</a></div>
     </td>
     <td>
       <div><a href="https://pointersgonewild.com/2022/05/23/minimalism-in-programming-language-design/">Minimalism in Programming Language Design</a></div>
