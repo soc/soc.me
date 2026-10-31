@@ -133,7 +133,7 @@ navigation: true
       <div><a href="https://journal.stuffwithstuff.com/2012/12/19/the-impoliteness-of-overriding-methods/">Impoliteness of Overriding</a></div>
       <div><a href="https://pling.jondgoodwin.com/post/cyclone/">Cyclone's Fascinating Influence</a></div>
       <div><a href="https://muxup.com/2023q4/ownership-you-can-count-on">Ownership you can count on</a></div>
-      <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
+      <div><a href="https://eed3si9n.com/dependency-resolver-semantics" class="compact">Dependency Resolver Semantics</a></div>
       <div><a href="https://devblogs.microsoft.com/oldnewthing/20230904-00/?p=108704" class="compact">Shift Larger Than Register Size</a></div>
       <div><a href="https://ericlippert.com/2020/02/27/hundred-year-mistakes/">Hundred year mistakes</a></div>
       <div><a href="https://verdagon.dev/grimoire/grimoire">Memory Safety Approaches</a></div>
@@ -148,10 +148,10 @@ navigation: true
         </ol>
       </div>
       <div><a href="https://pablosabater.dev/posts/how-to-build-a-pratt-parser/">How to Build a Pratt Parser</a></div>
-      <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
-      <div><a href="https://eed3si9n.com/dependency-resolver-semantics">Semantics of Dependency Resolvers</a></div>
-      <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html">In Praise of Mandatory Indentation</a></div>
+      <div><a href="https://pling.jondgoodwin.com/post/semicolon-inference/">Semicolon Inference</a></div>
+      <div><a href="https://okasaki.blogspot.com/2008/02/in-praise-of-mandatory-indentation-for.html" class="compact">Praise of Mandatory Indentation</a></div>
       <div><a href="https://keleshev.com/parsing-ambiguity-type-argument-v-less-than">Parsing Ambiguity:<br/>Type Argument vs. Less Than</a></div>
+      <div><a href="http://blog.ezyang.com/2014/07/type-classes-confluence-coherence-global-uniqueness/">Type classes: confluence, coherence & global uniqueness</a></div>
       <div><a href="https://www.youtube.com/watch?v=pNhBQJN44YQ">Extreme Cleverness:<br/>Functional Data Structures</a></div>
       <div><a href="https://www.youtube.com/watch?v=8OJ_-L1QcDw" class="compact">Living in a Post-Functional World</a></div>
       <div><a href="https://matklad.github.io/2022/07/10/almost-rules.html">Almost Rules in Rust</a></div>
